@@ -402,6 +402,7 @@ void system_frame_gen(int do_skip)
 
     /* active screen width */
     bitmap.viewport.w = 256 + ((reg[12] & 0x01) << 6);
+    if (config.widescreen_h40) bitmap.viewport.w += 80;
 
     /* check viewport changes */
     if (bitmap.viewport.h != bitmap.viewport.oh)

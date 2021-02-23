@@ -1513,6 +1513,14 @@ void render_bg_m5(int line)
 
   /* Common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = *(uint32 *)&vsram[0];
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -1665,6 +1673,14 @@ void render_bg_m5_vs(int line)
 
   /* Common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = 0;
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -1855,6 +1871,14 @@ void render_bg_m5_im2(int line)
   /* Common data */
   int odd = odd_frame;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = *(uint32 *)&vsram[0];
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -2008,6 +2032,14 @@ void render_bg_m5_im2_vs(int line)
   /* Common data */
   int odd = odd_frame;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = 0;
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -2201,6 +2233,14 @@ void render_bg_m5(int line)
 
   /* Scroll Planes common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = *(uint32 *)&vsram[0];
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -2358,6 +2398,14 @@ void render_bg_m5_vs(int line)
 
   /* Scroll Planes common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = 0;
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -2553,6 +2601,14 @@ void render_bg_m5_im2(int line)
   /* Scroll Planes common data */
   int odd = odd_frame;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = *(uint32 *)&vsram[0];
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -2711,6 +2767,14 @@ void render_bg_m5_im2_vs(int line)
   /* common data */
   int odd = odd_frame;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
+  if (config.widescreen_h40 && (
+    (render_obj == render_obj_m5) ||
+    (render_obj == render_obj_m5_im2) ||
+    (render_obj == render_obj_m5_im2_ste) ||
+    (render_obj == render_obj_m5_ste)
+  )) {
+    xscroll += 40 + (40 << 16);
+  }
   uint32 yscroll      = 0;
   uint32 pf_col_mask  = playfield_col_mask;
   uint32 pf_row_mask  = playfield_row_mask;
@@ -3187,6 +3251,8 @@ void render_obj_m5(int line)
 
     /* Display area offset */
     xpos = xpos - 0x80;
+    if (config.widescreen_h40)
+      xpos += 40;
 
     /* Sprite size */
     temp = object_info->size;
@@ -3300,6 +3366,8 @@ void render_obj_m5_ste(int line)
 
     /* Display area offset */
     xpos = xpos - 0x80;
+    if (config.widescreen_h40)
+      xpos += 40;
 
     /* Sprite size */
     temp = object_info->size;
@@ -3416,6 +3484,8 @@ void render_obj_m5_im2(int line)
 
     /* Display area offset */
     xpos = xpos - 0x80;
+    if (config.widescreen_h40)
+      xpos += 40;
 
     /* Sprite size */
     temp = object_info->size;
@@ -3529,6 +3599,8 @@ void render_obj_m5_im2_ste(int line)
 
     /* Display area offset */
     xpos = xpos - 0x80;
+    if (config.widescreen_h40)
+      xpos += 40;
 
     /* Sprite size */
     temp = object_info->size;
@@ -3854,7 +3926,12 @@ void parse_satb_m5(int line)
 
         /* Update sprite list (only name, attribute & xpos are parsed from VRAM) */
         object_info->attr  = p[link + 2];
-        object_info->xpos  = p[link + 3] & 0x1ff;
+        
+        if (config.widescreen_h40)
+          object_info->xpos  = p[link + 3];
+        else
+          object_info->xpos  = p[link + 3] & 0x1ff;
+
         object_info->ypos  = ypos;
         object_info->size  = size & 0x0f;
 
@@ -4015,6 +4092,8 @@ void window_clip(unsigned int data, unsigned int sw)
 
   /* Display width (16 or 20 columns) */
   sw = 16 + (sw << 2);
+  // if (config.widescreen_h40)
+    sw += 5;
 
   if(hp)
   {

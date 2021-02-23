@@ -39,7 +39,7 @@ else ifneq (,$(findstring rpi,$(platform)))
    override platform += unix
 endif
 
-TARGET_NAME := genesis_plus_gx
+TARGET_NAME := genesis_plus_gx_wide
 
 LIBS := -lm
 

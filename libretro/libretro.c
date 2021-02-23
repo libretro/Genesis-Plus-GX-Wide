@@ -630,6 +630,8 @@ static void config_default(void)
    {
      config.input[i].padtype = DEVICE_PAD2B | DEVICE_PAD3B | DEVICE_PAD6B;
    }
+   config.widescreen_h40 = 1;
+   config.vdp_fix_dma_boundary_bug = 1;
 }
 
 static void bram_load(void)
@@ -844,7 +846,12 @@ static double calculate_display_aspect_ratio(void)
          return (6.0 / 5.0) * ((double)vwidth / (double)vheight);
    }
 
-   is_h40  = bitmap.viewport.w == 320; /* Could be read directly from the register as well. */
+   /* Could be read directly from the register as well. */
+   is_h40  = bitmap.viewport.w == (config.widescreen_h40 ? 400 : 320);
+   
+   if (is_h40 && config.widescreen_h40)
+    return bitmap.viewport.w/(double)bitmap.viewport.h;
+   
    dotrate = system_clock / (is_h40 ? 8.0 : 10.0);
 
    if (config.aspect_ratio == 1) /* Force NTSC PAR */
@@ -1431,6 +1438,28 @@ static void check_variables(void)
       config.no_sprite_limit = 0;
     else
       config.no_sprite_limit = 1;
+  }
+
+  var.key = "genesis_plus_gx_widescreen_h40";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    orig_value = config.widescreen_h40;
+    if (!var.value || !strcmp(var.value, "disabled"))
+      config.widescreen_h40 = 0;
+    else if (var.value && !strcmp(var.value, "enabled"))
+      config.widescreen_h40 = 1;
+    if (orig_value != config.widescreen_h40) {
+      update_viewports = true;
+    }
+  }
+
+  var.key = "genesis_plus_gx_vdp_fix_dma_boundary_bug";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    if (!var.value || !strcmp(var.value, "disabled"))
+      config.vdp_fix_dma_boundary_bug = 0;
+    else if (var.value && !strcmp(var.value, "enabled"))
+      config.vdp_fix_dma_boundary_bug = 1;
   }
 
   if (reinit)
@@ -2025,6 +2054,8 @@ void retro_set_environment(retro_environment_t cb)
       { "genesis_plus_gx_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
 #endif
       { "genesis_plus_gx_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
+      { "genesis_plus_gx_widescreen_h40", "Force H40 mode to H50 for 16:9; disabled|enabled" },
+      { "genesis_plus_gx_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
       { NULL, NULL },
    };
 
@@ -2203,7 +2234,7 @@ void retro_set_input_state(retro_input_state_t cb) { input_state_cb = cb; }
 
 void retro_get_system_info(struct retro_system_info *info)
 {
-   info->library_name = "Genesis Plus GX";
+   info->library_name = "Genesis Plus GX (Widescreen Mod)";
 #ifndef GIT_VERSION
 #define GIT_VERSION ""
 #endif

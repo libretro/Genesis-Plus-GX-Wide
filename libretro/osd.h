@@ -130,6 +130,8 @@ typedef struct
   uint8 gun_cursor;
   uint32 overclock;
   uint8 no_sprite_limit;
+  uint8 widescreen_h40;
+  uint8 vdp_fix_dma_boundary_bug;
 } t_config;
 
 extern t_config config;
