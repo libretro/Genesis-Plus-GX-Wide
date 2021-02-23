@@ -371,8 +371,10 @@ static int huffman_tree_node_compare(const void *item1, const void *item2)
 	const struct node_t *node2 = *(const struct node_t **)item2;
 	if (node2->weight != node1->weight)
 		return node2->weight - node1->weight;
+#if 0
 	if (node2->bits - node1->bits == 0)
 		fprintf(stderr, "identical node sort keys, should not happen!\n");
+#endif
 	return (int)node1->bits - (int)node2->bits;
 }
 
