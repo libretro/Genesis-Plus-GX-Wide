@@ -4092,6 +4092,8 @@ void window_clip(unsigned int data, unsigned int sw)
 
   /* Display width (16 or 20 columns) */
   sw = 16 + (sw << 2);
+  // I don't think this updates when the widescreen setting is toggled so I'm
+  // just gonna add the offset all the time for now
   // if (config.widescreen_h40)
     sw += 5;
 
