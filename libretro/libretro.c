@@ -2056,7 +2056,7 @@ void retro_set_environment(retro_environment_t cb)
       { CORE_NAME "_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
 #endif
       { CORE_NAME "_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
-      { CORE_NAME "_widescreen_h40", "Force H40 mode to H50 for 16:9; disabled|enabled" },
+      { CORE_NAME "_widescreen_h40", "Force H40 mode to H50 for 16:9; enabled|disabled" },
       { CORE_NAME "_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
       { NULL, NULL },
    };
