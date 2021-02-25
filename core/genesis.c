@@ -5,7 +5,7 @@
  *  Support for SG-1000, Mark-III, Master System, Game Gear, Mega Drive & Mega CD hardware
  *
  *  Copyright (C) 1998-2003  Charles Mac Donald (original code)
- *  Copyright (C) 2007-2020  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2018  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -54,6 +54,8 @@ uint8 zstate;             /* Z80 bus state (d0 = BUSACK, d1 = /RESET) */
 uint8 pico_current;       /* PICO current page */
 
 static uint8 tmss[4];     /* TMSS security register */
+
+extern uint8 reset_do_not_clear_buffers;
 
 /*--------------------------------------------------------------------------*/
 /* Init, reset, shutdown functions                                          */
@@ -250,8 +252,11 @@ void gen_reset(int hard_reset)
     m68k.cycles = ((lines_per_frame - 192 + 159 - (27 * vdp_pal)) * MCYCLES_PER_LINE) + 1004;
 
     /* clear RAM (on real hardware, RAM values are random / undetermined on Power ON) */
-    memset(work_ram, 0x00, sizeof (work_ram));
-    memset(zram, 0x00, sizeof (zram));
+    if (!reset_do_not_clear_buffers)
+    {
+      memset(work_ram, 0x00, sizeof(work_ram));
+      memset(zram, 0x00, sizeof(zram));
+    }
   }
   else
   {
@@ -326,6 +331,7 @@ void gen_reset(int hard_reset)
       {
         /* save default cartridge slot mapping */
         cart.base = m68k.memory_map[0].base;
+        if (cart.base == boot_rom) cart.base = &cart.rom[0];
 
         /* BOOT ROM is mapped at $000000-$0007FF */
         m68k.memory_map[0].base = boot_rom;
@@ -341,7 +347,10 @@ void gen_reset(int hard_reset)
     if ((system_hw == SYSTEM_MARKIII) || ((system_hw & SYSTEM_SMS) && (region_code == REGION_JAPAN_NTSC)))
     {
       /* some korean games rely on RAM to be initialized with values different from $00 or $ff */
-      memset(work_ram, 0xf0, sizeof(work_ram));
+      if (!reset_do_not_clear_buffers)
+      {
+        memset(work_ram, 0xf0, sizeof(work_ram));
+      }
     }
 
     /* reset cartridge hardware */

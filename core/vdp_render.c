@@ -43,6 +43,8 @@
 #include "md_ntsc.h"
 #include "sms_ntsc.h"
 
+extern int8 reset_do_not_clear_buffers;
+
 #ifndef HAVE_NO_SPRITE_LIMIT
 #define MAX_SPRITES_PER_LINE 20
 #define TMS_MAX_SPRITES_PER_LINE 4
@@ -3931,7 +3933,6 @@ void parse_satb_m5(int line)
           object_info->xpos  = p[link + 3];
         else
           object_info->xpos  = p[link + 3] & 0x1ff;
-
         object_info->ypos  = ypos;
         object_info->size  = size & 0x0f;
 
@@ -4164,17 +4165,20 @@ void render_init(void)
 
 void render_reset(void)
 {
-  /* Clear display bitmap */
-  memset(bitmap.data, 0, bitmap.pitch * bitmap.height);
+  if (!reset_do_not_clear_buffers)
+  {
+    /* Clear display bitmap */
+    memset(bitmap.data, 0, bitmap.pitch * bitmap.height);
 
-  /* Clear line buffers */
-  memset(linebuf, 0, sizeof(linebuf));
+    /* Clear line buffers */
+    memset(linebuf, 0, sizeof(linebuf));
 
-  /* Clear color palettes */
-  memset(pixel, 0, sizeof(pixel));
+    /* Clear color palettes */
+    memset(pixel, 0, sizeof(pixel));
 
-  /* Clear pattern cache */
-  memset ((char *) bg_pattern_cache, 0, sizeof (bg_pattern_cache));
+    /* Clear pattern cache */
+    memset((char *)bg_pattern_cache, 0, sizeof(bg_pattern_cache));
+  }
 
   /* Reset Sprite infos */
   spr_ovr = spr_col = object_count[0] = object_count[1] = 0;
