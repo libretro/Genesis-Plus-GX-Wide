@@ -634,7 +634,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_psg_channel_0_volume",
+      CORE_NAME "_psg_channel_0_volume",
       "PSG Tone Channel 0 Volume %",
       "Reduce the volume of the PSG Tone Channel 0.",
       {
@@ -654,7 +654,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_1_volume",
+      CORE_NAME "_psg_channel_1_volume",
       "PSG Tone Channel 1 Volume %",
       "Reduce the volume of the PSG Tone Channel 1.",
       {
@@ -674,7 +674,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_2_volume",
+      CORE_NAME "_psg_channel_2_volume",
       "PSG Tone Channel 2 Volume %",
       "Reduce the volume of the PSG Tone Channel 2.",
       {
@@ -694,7 +694,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_3_volume",
+      CORE_NAME "_psg_channel_3_volume",
       "PSG Noise Channel 3 Volume %",
       "Reduce the volume of the PSG Noise Channel 3.",
       {
@@ -714,7 +714,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_0_volume",
+      CORE_NAME "_md_channel_0_volume",
       "Mega Drive / Genesis FM Channel 0 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 0. Only works with MAME FM emulators.",
       {
@@ -734,7 +734,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_1_volume",
+      CORE_NAME "_md_channel_1_volume",
       "Mega Drive / Genesis FM Channel 1 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 1. Only works with MAME FM emulators.",
       {
@@ -754,7 +754,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_2_volume",
+      CORE_NAME "_md_channel_2_volume",
       "Mega Drive / Genesis FM Channel 2 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 2. Only works with MAME FM emulators.",
       {
@@ -774,7 +774,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_3_volume",
+      CORE_NAME "_md_channel_3_volume",
       "Mega Drive / Genesis FM Channel 3 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 3. Only works with MAME FM emulators.",
       {
@@ -794,7 +794,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_4_volume",
+      CORE_NAME "_md_channel_4_volume",
       "Mega Drive / Genesis FM Channel 4 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 4. Only works with MAME FM emulators.",
       {
@@ -814,7 +814,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_5_volume",
+      CORE_NAME "_md_channel_5_volume",
       "Mega Drive / Genesis FM Channel 5 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 5. Only works with MAME FM emulators.",
       {
@@ -834,7 +834,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_0_volume",
+      CORE_NAME "_sms_fm_channel_0_volume",
       "Master System FM (YM2413) Channel 0 Volume %",
       "Reduce the volume of the Master System FM Channel 0.",
       {
@@ -854,7 +854,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_1_volume",
+      CORE_NAME "_sms_fm_channel_1_volume",
       "Master System FM (YM2413) Channel 1 Volume %",
       "Reduce the volume of the Master System FM Channel 1.",
       {
@@ -874,7 +874,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_2_volume",
+      CORE_NAME "_sms_fm_channel_2_volume",
       "Master System FM (YM2413) Channel 2 Volume %",
       "Reduce the volume of the Master System FM Channel 2.",
       {
@@ -894,7 +894,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_3_volume",
+      CORE_NAME "_sms_fm_channel_3_volume",
       "Master System FM (YM2413) Channel 3 Volume %",
       "Reduce the volume of the Master System FM Channel 3.",
       {
@@ -914,7 +914,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_4_volume",
+      CORE_NAME "_sms_fm_channel_4_volume",
       "Master System FM (YM2413) Channel 4 Volume %",
       "Reduce the volume of the Master System FM Channel 4.",
       {
@@ -934,7 +934,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_5_volume",
+      CORE_NAME "_sms_fm_channel_5_volume",
       "Master System FM (YM2413) Channel 5 Volume %",
       "Reduce the volume of the Master System FM Channel 5.",
       {
@@ -954,7 +954,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_6_volume",
+      CORE_NAME "_sms_fm_channel_6_volume",
       "Master System FM (YM2413) Channel 6 Volume %",
       "Reduce the volume of the Master System FM Channel 6.",
       {
@@ -974,7 +974,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_7_volume",
+      CORE_NAME "_sms_fm_channel_7_volume",
       "Master System FM (YM2413) Channel 7 Volume %",
       "Reduce the volume of the Master System FM Channel 7.",
       {
@@ -994,7 +994,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_8_volume",
+      CORE_NAME "_sms_fm_channel_8_volume",
       "Master System FM (YM2413) Channel 8 Volume %",
       "Reduce the volume of the Master System FM Channel 8.",
       {

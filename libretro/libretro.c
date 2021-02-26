@@ -1262,9 +1262,9 @@ static void check_variables(bool first_run)
   struct retro_system_av_info info;
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
   unsigned c;
-  char md_fm_channel_volume_base_str[]  = "genesis_plus_gx_md_channel_0_volume";
-  char sms_fm_channel_volume_base_str[] = "genesis_plus_gx_sms_fm_channel_0_volume";
-  char psg_channel_volume_base_str[]    = "genesis_plus_gx_psg_channel_0_volume";
+  char md_fm_channel_volume_base_str[]  = CORE_NAME "_md_channel_0_volume";
+  char sms_fm_channel_volume_base_str[] = CORE_NAME "_sms_fm_channel_0_volume";
+  char psg_channel_volume_base_str[]    = CORE_NAME "_psg_channel_0_volume";
 #endif
   bool update_viewports     = false;
   bool reinit               = false;
@@ -1907,26 +1907,26 @@ static void check_variables(bool first_run)
     {
       size_t i;
       struct retro_core_option_display option_display;
-      char av_keys[19][40] = {
-        "genesis_plus_gx_psg_channel_0_volume",
-        "genesis_plus_gx_psg_channel_1_volume",
-        "genesis_plus_gx_psg_channel_2_volume",
-        "genesis_plus_gx_psg_channel_3_volume",
-        "genesis_plus_gx_md_channel_0_volume",
-        "genesis_plus_gx_md_channel_1_volume",
-        "genesis_plus_gx_md_channel_2_volume",
-        "genesis_plus_gx_md_channel_3_volume",
-        "genesis_plus_gx_md_channel_4_volume",
-        "genesis_plus_gx_md_channel_5_volume",
-        "genesis_plus_gx_sms_fm_channel_0_volume",
-        "genesis_plus_gx_sms_fm_channel_1_volume",
-        "genesis_plus_gx_sms_fm_channel_2_volume",
-        "genesis_plus_gx_sms_fm_channel_3_volume",
-        "genesis_plus_gx_sms_fm_channel_4_volume",
-        "genesis_plus_gx_sms_fm_channel_5_volume",
-        "genesis_plus_gx_sms_fm_channel_6_volume",
-        "genesis_plus_gx_sms_fm_channel_7_volume",
-        "genesis_plus_gx_sms_fm_channel_8_volume"
+      char av_keys[19][45] = {
+        CORE_NAME "_psg_channel_0_volume",
+        CORE_NAME "_psg_channel_1_volume",
+        CORE_NAME "_psg_channel_2_volume",
+        CORE_NAME "_psg_channel_3_volume",
+        CORE_NAME "_md_channel_0_volume",
+        CORE_NAME "_md_channel_1_volume",
+        CORE_NAME "_md_channel_2_volume",
+        CORE_NAME "_md_channel_3_volume",
+        CORE_NAME "_md_channel_4_volume",
+        CORE_NAME "_md_channel_5_volume",
+        CORE_NAME "_sms_fm_channel_0_volume",
+        CORE_NAME "_sms_fm_channel_1_volume",
+        CORE_NAME "_sms_fm_channel_2_volume",
+        CORE_NAME "_sms_fm_channel_3_volume",
+        CORE_NAME "_sms_fm_channel_4_volume",
+        CORE_NAME "_sms_fm_channel_5_volume",
+        CORE_NAME "_sms_fm_channel_6_volume",
+        CORE_NAME "_sms_fm_channel_7_volume",
+        CORE_NAME "_sms_fm_channel_8_volume"
       };
 
       option_display.visible = show_advanced_av_settings;
