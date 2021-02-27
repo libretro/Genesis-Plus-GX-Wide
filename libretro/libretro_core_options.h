@@ -520,7 +520,7 @@ struct retro_core_option_definition option_defs_us[] = {
    {
       CORE_NAME "_h40_extra_columns",
       "Extra columns to draw in H40 for widescreen",
-      "To be written",
+      "Set the amount of extra colums to draw for widescreen",
       {
          { "10",NULL },
          { "0", NULL },
@@ -541,8 +541,8 @@ struct retro_core_option_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_vdp_fix_dma_boundary_bug",
-      "Fix VDP DMA Boundary Bug",
-      "To be written",
+      "Fix VDP DMA boundary bug",
+      "Enable this to fix the VDP DMA boundary bug",
       {
          { "disabled", NULL },
          { "enabled",  NULL },
