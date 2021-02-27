@@ -632,7 +632,7 @@ static void config_default(void)
    {
      config.input[i].padtype = DEVICE_PAD2B | DEVICE_PAD3B | DEVICE_PAD6B;
    }
-   config.widescreen_h40 = 1;
+   config.h40_extra_columns = 10;
    config.vdp_fix_dma_boundary_bug = 1;
 }
 
@@ -849,9 +849,10 @@ static double calculate_display_aspect_ratio(void)
    }
 
    /* Could be read directly from the register as well. */
-   is_h40  = bitmap.viewport.w == (config.widescreen_h40 ? 400 : 320);
+   int h40_width = 320 + (config.h40_extra_columns * 8);
+   is_h40 = bitmap.viewport.w == h40_width;
    
-   if (is_h40 && config.widescreen_h40)
+   if (is_h40 && (config.h40_extra_columns > 0))
     return bitmap.viewport.w/(double)bitmap.viewport.h;
    
    dotrate = system_clock / (is_h40 ? 8.0 : 10.0);
@@ -1442,17 +1443,16 @@ static void check_variables(void)
       config.no_sprite_limit = 1;
   }
 
-  var.key = CORE_NAME "_widescreen_h40";
+  var.key = CORE_NAME "_h40_extra_columns";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
-    orig_value = config.widescreen_h40;
-    if (!var.value || !strcmp(var.value, "disabled"))
-      config.widescreen_h40 = 0;
-    else if (var.value && !strcmp(var.value, "enabled"))
-      config.widescreen_h40 = 1;
-    if (orig_value != config.widescreen_h40) {
+    orig_value = config.h40_extra_columns;
+
+    if (!var.value) config.h40_extra_columns = 10;
+    else config.h40_extra_columns = atoi(var.value);
+
+    if (orig_value != config.h40_extra_columns)
       update_viewports = true;
-    }
   }
 
   var.key = CORE_NAME "_vdp_fix_dma_boundary_bug";
@@ -2056,7 +2056,7 @@ void retro_set_environment(retro_environment_t cb)
       { CORE_NAME "_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
 #endif
       { CORE_NAME "_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
-      { CORE_NAME "_widescreen_h40", "Force H40 mode to H50 for 16:9; enabled|disabled" },
+      { CORE_NAME "_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
       { CORE_NAME "_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
       { NULL, NULL },
    };

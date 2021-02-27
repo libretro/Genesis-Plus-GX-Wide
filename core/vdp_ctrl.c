@@ -1991,9 +1991,7 @@ static void vdp_reg_w(unsigned int r, unsigned int d, unsigned int cycles)
           window_clip(reg[17], 1);
 
           /* Update max sprite pixels per line*/
-          // max_sprite_pixels = 320;
-          // if (config.widescreen_h40)
-            max_sprite_pixels = 400;
+          max_sprite_pixels = 1024; // For widescreen, just set it to the max plane width
 
           /* FIFO access slots timings */
           fifo_timing = (int *)fifo_timing_h40;

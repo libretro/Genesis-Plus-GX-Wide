@@ -402,7 +402,7 @@ void system_frame_gen(int do_skip)
 
     /* active screen width */
     bitmap.viewport.w = 256 + ((reg[12] & 0x01) << 6);
-    if (config.widescreen_h40) bitmap.viewport.w += 80;
+    bitmap.viewport.w += config.h40_extra_columns * 8;
 
     /* check viewport changes */
     if (bitmap.viewport.h != bitmap.viewport.oh)
@@ -742,6 +742,7 @@ void system_frame_scd(int do_skip)
 
     /* active screen width */
     bitmap.viewport.w = 256 + ((reg[12] & 0x01) << 6);
+    bitmap.viewport.w += config.h40_extra_columns * 8;
 
     /* check viewport changes */
     if (bitmap.viewport.h != bitmap.viewport.oh)
