@@ -518,15 +518,26 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      CORE_NAME "_widescreen_h40",
-      "Enabled h40 Widescreen",
-      "Enables Widescreen Support",
+      CORE_NAME "_h40_extra_columns",
+      "Extra columns to draw in H40 for widescreen",
+      "To be written",
       {
-         { "enabled", NULL },
-         { "disabled",  NULL },
+         { "10",NULL },
+         { "0", NULL },
+		 { "2", NULL },
+         { "4", NULL },
+		 { "6", NULL },
+         { "8", NULL },
+		 { "12", NULL },
+         { "14", NULL },
+		 { "16", NULL },
+         { "18", NULL },
+		 { "20", NULL },
+         { "22", NULL },
+		 { "24", NULL },
          { NULL, NULL },
       },
-      "enabled"
+      "10"
    },
    {
       CORE_NAME "_vdp_fix_dma_boundary_bug",
