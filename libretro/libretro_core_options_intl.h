@@ -53,7 +53,7 @@ extern "C" {
 
 struct retro_core_option_definition option_defs_pt_br[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       "Hardware do sistema",
       "Executa o conteúdo carregado com um console emulado específico. 'Automático' selecionará o sistema mais apropriado para o jogo atual.",
       {
@@ -70,7 +70,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       "Região do sistema",
       "Especifica de que região o sistema é. Para consoles que não sejam o Game Gear, 'PAL' é de 50hz enquanto 'NTSC' é de 60hz. s jogos podem ser executados mais rapidamente ou mais lentamente do que o normal se a região incorreta estiver selecionada.",
       {
@@ -83,7 +83,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       "Bloqueios do sistema",
       "Emula os bloqueios do sistema que ocorrem no hardware real ao executar acesso ilegal a endereços. Isso só deve ser desativado ao reproduzir certas demos e homebrews que dependem de comportamento ilegal para a operação correta.",
       {
@@ -92,7 +92,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       "ROM de inicialização do sistema",
       "Usa a BIOS/bootloader oficial para o hardware emulado, se estiver presente no diretório de sistema do RetroArch. Exibe a sequência/animação da inicialização específica do console e executa o conteúdo carregado.",
       {
@@ -101,7 +101,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_bram",
+      "genesis_plus_gx_bram",
       "Sistema BRAM do CD",
       "Ao executar o conteúdo de CD da Sega, especifica se um único arquivo salvo será salvo entre todos os jogos de uma região específica (Por-BIOS) ou se será criado um arquivo salvo separado para cada jogo (Por-Jogo). Observe que o CD da Sega possui armazenamento interno limitado, suficiente apenas para alguns títulos. Para evitar ficar sem espaço, a configuração 'Por jogo' é recomendada.",
       {
@@ -112,7 +112,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "per bios"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       "Erro de endereçamento do 68K",
       "A CPU do Mega Drive (Motorola 68000) produz um erro de endereçamento (falha) ao tentar executar o acesso desalinhado à memória. A ativação do 'Erro de endereçamento do 68K' simula esse comportamento. Ele deve ser desativado apenas durante a execução de hacks de ROMs, pois geralmente são desenvolvidos usando emuladores menos precisos e podem contar com acesso inválido à RAM para a operação correta.",
       {
@@ -121,7 +121,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       "Cartucho Lock-On",
       "A tecnologia Lock-On é um recurso do Mega Drive que permite que um jogo mais antigo se conecte à porta de passagem de um cartucho especial para uma jogabilidade estendida ou alterada. Esta opção especifica qual tipo de cartucho especial 'lock-on' a ser emulado. Um arquivo do BIOS correspondente deve estar presente no diretório do sistema do RetroArch.",
       {
@@ -134,7 +134,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       "Som FM do Master System (YM2413)",
       "Ativa a emulação da unidade de som FM usada por certos jogos do Master System para obter uma saída de áudio aprimorada.",
       {
@@ -146,7 +146,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       "Som FM do Mega Drive",
 #ifdef HAVE_YM3438_CORE
       "Seleciona o método usado para emular o sintetizador FM (gerador de som principal) do Mega Drive. As opções 'MAME' são rápidas e executam a toda velocidade na maioria dos sistemas. As opções 'Nuked' têm precisão de ciclo, qualidade muito alta e requisitos substanciais de CPU. O chip 'YM2612' é usado pelo Mega Drive Modelo 1 original. O 'YM3438' é usado em revisões posteriores do Mega Drive.",
@@ -166,7 +166,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       "Saída de som",
       "Selecione reprodução de som estéreo ou mono.",
       {
@@ -177,7 +177,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "stereo"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       "Nível de pré-amplificação do PSG",
       "Define o nível de pré-amplificação do áudio do Gerador de Som Programável (PSG) de 4 canais SN76496 emulado encontrado no Master System, Game Gear e Mega Drive.",
       {
@@ -186,7 +186,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       "Nível de pré-amplificação do FM",
       "Define o nível de pré-amplificação de áudio da Unidade de Som FM emulada do Master System.",
       {
@@ -195,7 +195,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       "Filtro de áudio",
       "Ativa um filtro de áudio passa-baixo para simular melhor o som característico de um Mega Drive Modelo 1.",
       {
@@ -206,7 +206,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       "Filtro passa-baixo %",
       "Especifica a frequência de corte do filtro de áudio passa-baixo. Um valor mais alto aumenta a 'força' percebida do filtro, uma vez que uma faixa mais ampla do espectro de alta frequência é atenuada.",
       {
@@ -216,7 +216,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       "EQ baixa",
       "Ajuste a banda de alcance baixo do equalizador de áudio interno.",
       {
@@ -225,7 +225,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       "EQ média",
       "Ajuste a banda de alcance média do equalizador de áudio interno.",
       {
@@ -234,7 +234,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       "EQ alta",
       "Ajuste a banda de alcance alta do equalizador de áudio interno.",
       {
@@ -244,7 +244,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       "Filtro Blargg NTSC",
       "Aplica um filtro de vídeo para imitar vários sinais de TV NTSC.",
       {
@@ -258,7 +258,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       "Filtro fantasma LCD",
       "Aplica um filtro de imagem fantasma para imitar as características de exibição dos painéis de LCD do Game Gear e do 'Genesis Nomad'.",
       {
@@ -267,7 +267,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       "Bordas",
       "Ative esta opção para exibir as regiões de overscan na parte superior/inferior e/ou esquerda/direita da tela. Normalmente, seriam ocultas pelo painel ao redor da borda de uma televisão de definição padrão.",
       {
@@ -280,7 +280,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       "Tela estendida do Game Gear",
       "Força os títulos do Game Gear a serem executados no modo 'SMS', com uma resolução aumentada de 256x192. Pode mostrar conteúdo adicional, mas geralmente exibe uma borda de dados corrompidos/indesejados de imagem.",
       {
@@ -289,7 +289,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       "Proporção de aspecto fornecida pelo núcleo",
       "Escolhe a proporção preferida do conteúdo. Isso se aplicará somente quando a proporção do RetroArch estiver configurada como 'Core provided' nas configurações de vídeo.",
       {
@@ -300,7 +300,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       "Saída entrelaçada modo 2",
       "O Modo entrelaçado 2 permite que o Mega Drive produza uma imagem de 320x448 de altura dupla (alta resolução) desenhando linhas de varredura alternativas em cada quadro (isso é usado pelos modos multijogador do 'Sonic the Hedgehog 2' e 'Combat Cars'). O 'Campo duplo' imita o hardware original, produzindo uma imagem nítida com artefatos trêmulos/entrelaçados. O 'Campo único' é um filtro de desentrelaçamento, que estabiliza a imagem, mas causa desfoque suave.",
       {
@@ -311,7 +311,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "single field"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       "Mostrar mira da pistola",
       "Exibe a mira da pistola de luz ao usar os tipos de dispositivo de entrada 'MD Menacer', 'MD Justifiers' e 'MS Light Phaser'.",
       {
@@ -320,7 +320,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       "Saída da Pistola de luz",
       "Usa uma entrada 'Pistola de luz' ou 'Toque na tela' controlada por mouse.",
       {
@@ -331,7 +331,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       "Inverter eixo Y do mouse",
       "Inverte o eixo Y do tipo de dispositivo de entrada 'MD Mouse'.",
       {
@@ -341,7 +341,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       "Velocidade da CPU",
       "Faz um overclock da CPU emulada. Pode reduzir a desaceleração, mas pode causar falhas.",
       {
@@ -351,7 +351,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       "Remover limite de sprite por linha",
       "Remove o limite de sprite por varredura do hardware, 8 (Master System) ou 20 (Mega Drive). Isso reduz a tremulação (flickering), mas pode causar falhas visuais, pois alguns jogos exploram o limite de hardware para gerar efeitos especiais.",
       {
@@ -386,7 +386,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
 
 	struct retro_core_option_definition option_defs_tr[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       "Sistem Donanımı",
       "Yüklenen içeriği belirli bir öykünmüş konsolla çalıştırır. 'Otomatik' mevcut oyun için en uygun sistemi seçecektir.",
       {
@@ -403,7 +403,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       "Sistem Bölgesi",
       "Sistemin hangi bölgeden olduğunu belirtin. Game Gear dışındaki konsollar için 'PAL' 50hz, 'NTSC' 60hz'dir. Yanlış bölge seçiliyse, oyunlar normalden daha hızlı veya daha yavaş çalışabilir.",
       {
@@ -416,7 +416,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       "Sistem Kilidi",
       "Geçersiz adres erişimi gerçekleştirirken gerçek donanımda meydana gelen sistem kilitlemelerine öykünün. Bu, yalnızca doğru işlem için yasadışı davranışa dayanan belirli demolar ve homebrew oynatılırken devre dışı bırakılmalıdır.",
       {
@@ -427,7 +427,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       "Sistem Önyükleme ROM'u",
       "RetroArch'ın sistem dizininde varsa, öykünülmüş donanım için resmi BIOS/önyükleyici kullanın. Konsola özgü başlangıç sırası/animasyonu görüntüler, ardından yüklü içeriği çalıştırır.",
       {
@@ -438,7 +438,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_bram",
+      "genesis_plus_gx_bram",
       "CD Sistemi BRAM'i",
       "Sega CD içeriği çalıştırılırken, belirli bir bölgedeki tüm oyunlar arasında (BIOS başına) tek bir kayıt dosyasının paylaşılmasını mı yoksa her oyun için ayrı bir kayıt dosyası oluşturup oluşturmamayı (Oyun Başına) belirtir. Sega CD'sinin sınırlı bir dahili depolama alanına sahip olduğunu ve yalnızca bir avuç başlık için yeterli olduğunu unutmayın. Boşluktan kaçınmak için 'Oyun Başına' ayarı önerilir.",
       {
@@ -449,7 +449,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "per bios"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       "68K Adres Hatası",
       "Genesis CPU (Motorola 68000), hizalanmamış hafıza erişimi gerçekleştirmeye çalışırken bir Adres Hatası (kilitlenme) üretir. '68K Adres Hatası' özelliğini etkinleştirmek bu davranışı simüle eder. ROM hacklerini oynarken sadece devre dışı bırakılmalıdır, çünkü bunlar daha az doğru emülatörler kullanılarak geliştirilir ve doğru işlem için geçersiz RAM erişimine güvenebilir.",
       {
@@ -460,7 +460,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       "Kartuş Kilitleme",
       "Kilitleme Teknolojisi, eski bir oyunun genişletilmiş veya değiştirilmiş bir oyun için özel bir kartuşun geçiş portuna bağlanmasına izin veren bir Genesis özelliğidir. Bu seçenek, hangi tür 'özel kilitleme' kartuşunun taklit edileceğini belirler. RetroArch'ın sistem dizininde ilgili bir bios dosyası bulunmalıdır.",
       {
@@ -473,7 +473,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       "Master System FM (YM2413)",
       "Gelişmiş ses çıkışı için bazı Sega Mark III / Master System oyunları tarafından kullanılan FM Ses Ünitesinin emülasyonunu etkinleştirin.",
       {
@@ -485,7 +485,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       "Mega Drive / Genesis FM",
 #ifdef HAVE_YM3438_CORE
       "Mega Drive / Genesis'in FM sentezleyicisini (ana ses üreteci) taklit etmek için kullanılan yöntemi seçin. 'MAME' seçenekleri hızlı ve çoğu sistemde tam hızda çalışıyor. 'Nuke' seçenekleri döngüde doğrudur, çok kaliteli ve önemli CPU gereksinimlerine sahiptir. 'YM2612' yongası, orijinal Model 1 Genesis tarafından kullanılır. 'YM3438' daha sonra Genesis revizyonlarında kullanılır.",
@@ -505,7 +505,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       "Ses Çıkışı",
       "Stereo veya mono ses üretimini seçin.",
       {
@@ -516,7 +516,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "stereo"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       "PSG Preamp Level",
       "Master System, Game Gear ve Genesis'de bulunan öykünmüş SN76496 4 kanallı Programlanabilir Ses Üretecinin ses ön yükselticisi seviyesini ayarlayın.",
       {
@@ -566,7 +566,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       "FM Preamp Level",
       "Öykünülmüş Sega Mark III/Master System FM Ses Ünitesinin ses ön yükselticisi seviyesini ayarlayın.",
       {
@@ -616,7 +616,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       "Ses Filtresi",
       "Model 1 Genesis'in karakteristik sesini daha iyi simüle etmek için düşük geçişli bir ses filtresini etkinleştirin.",
       {
@@ -627,7 +627,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       "Low-Pass Filtresi %",
       "Düşük ses geçiş filtresinin kesme frekansını belirtin. Daha yüksek bir değer, yüksek frekans spektrumunun daha geniş bir aralığı azaltıldığı için filtrenin algılanan gücünü arttırır.",
       {
@@ -656,7 +656,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       "EQ Low",
       "Dahili ses ekolayzırın düşük aralık bandını ayarlayın.",
       {
@@ -686,7 +686,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       "EQ Mid",
       "Dahili ses ekolayzerinin orta aralık bandını ayarlayın.",
       {
@@ -716,7 +716,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       "EQ High",
       "Dahili ses ekolayzerinin yüksek aralık bandını ayarlayın.",
       {
@@ -747,7 +747,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       "Blargg NTSC Filtresi",
       "Çeşitli NTSC TV sinyallerini taklit etmek için bir video filtresi uygulayın.",
       {
@@ -761,7 +761,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       "LCD Gölgelenme Filtresi",
       "Game Gear ve 'Genesis Nomad' LCD panellerinin ekran özelliklerini taklit etmek için bir görüntü “gölgelenme” filtresi uygulayın.",
       {
@@ -772,7 +772,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       "Çerçeveler",
       "Aşırı tarama bölgelerini ekranın üstünde/altında ve/veya sol/sağında görüntülemek için bunu etkinleştirin. Bunlar normalde standart tanımlı bir televizyonun kenarındaki çerçeve tarafından gizlenir.",
       {
@@ -785,7 +785,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       "Game Gear Genişletilmiş Ekran",
       "Game Gear oyunlarını 256x192 çözünürlüğe sahip 'SMS' modunda çalıştırmaya zorlar. Ek içerik gösterebilir, ancak genellikle bozuk/istenmeyen resim verilerinin kenarlığını görüntüler.",
       {
@@ -796,7 +796,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       "Çekirdek Tarafından Sağlanan En Boy Oranı",
       "Tercih edilen içerik en boy oranını seçin. Bu, yalnızca RetroArch’ın en boy oranı Video ayarlarında 'Çekirdek Tarafından Sağlanan' olarak ayarlandığında uygulanacaktır.",
       {
@@ -807,7 +807,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       "Geçmeli Mod 2 Çıkışı",
       "Geçmeli Mod 2, Genesis'e, her kareye alternatif tarama çizgileri çizerek (bu, 'Sonic the Hedgehog 2' ve 'Savaş Arabaları' çok oyunculu modları tarafından kullanılır) çift yükseklikte (yüksek çözünürlüklü) 320x448 görüntü vermesini sağlar. 'Çift Alan' orijinal donanımı taklit eder, titreyen/birbirine geçen eserler ile keskin bir görüntü oluşturur. 'Tek Alan', görüntüyü dengeleyen ancak hafif bulanıklığa neden olan, birbirinin yerine geçen bir filtredir.",
       {
@@ -818,7 +818,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "single field"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       "Light Gun Göstergesini Göster",
       "'MD Menacer', 'MD Justifiers' ve 'MS Light Phaser' giriş cihazı tiplerini kullanırken Light Gun göstergelerini gösterin.",
       {
@@ -829,7 +829,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       "Light Gun Girdisi",
       "Fare kontrollü 'Light Gun' veya 'Dokunmatik Ekran' girişi kullanın.",
       {
@@ -840,7 +840,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       "Fare Y Eksenini Ters Çevir",
       "'MD Fare' giriş cihazı türünün Y eksenini ters çevirir.",
       {
@@ -852,7 +852,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       "CPU Hızı",
       "Öykünülmüş CPU hız aşırtması. Yavaşlamayı azaltabilir, ancak aksaklığa neden olabilir.",
       {
@@ -867,7 +867,7 @@ struct retro_core_option_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       "Satır Başına Sprite Limitini Kaldır",
       "8 (Ana Sistem) veya 20 (Genesis) tarama başına sprite donanım sınırını kaldırır. Bu, titremeyi azaltır ancak bazı oyunlar özel efektler oluşturmak için donanım sınırını kullandığı için görsel hatalara neden olabilir.",
       {
