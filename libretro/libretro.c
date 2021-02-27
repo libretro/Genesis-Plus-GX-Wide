@@ -1185,7 +1185,6 @@ static double calculate_display_aspect_ratio(void)
    /* Could be read directly from the register as well. */
    int h40_width = 320 + (config.h40_extra_columns * 8);
    is_h40 = bitmap.viewport.w == h40_width;
-
    if (is_h40 && (config.h40_extra_columns > 0))
     return bitmap.viewport.w/(double)bitmap.viewport.h;
 
@@ -2561,7 +2560,7 @@ void retro_set_environment(retro_environment_t cb)
       { CORE_NAME "_overscan", "Borders; disabled|top/bottom|left/right|full" },
       { CORE_NAME "_gg_extra", "Game Gear extended screen; disabled|enabled" },
       { CORE_NAME "_left_border", "Hide Master System Left Border; disabled|enabled" },
-	  { CORE_NAME "_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
+	    { CORE_NAME "_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
       { CORE_NAME "_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
       { CORE_NAME "_aspect_ratio", "Core-provided aspect ratio; auto|NTSC PAR|PAL PAR" },
       { CORE_NAME "_render", "Interlaced mode 2 output; single field|double field" },

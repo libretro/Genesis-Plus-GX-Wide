@@ -1666,6 +1666,9 @@ void render_bg_m5(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
+    int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -1757,7 +1760,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < end; column++, index++)
   {
-	int column_capped = column - (config.h40_extra_columns / 4);
+	  int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -1841,6 +1844,7 @@ void render_bg_m5_vs(int line)
     {
       int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
+
       /* Plane A vertical scroll */
 #ifdef LSB_FIRST
       v_line = (line + vs[column_capped]) & pf_row_mask & pf_row_mask;
@@ -1876,6 +1880,9 @@ void render_bg_m5_vs(int line)
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
 	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
+    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2048,6 +2055,9 @@ void render_bg_m5_im2(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
+    int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -2140,7 +2150,7 @@ void render_bg_m5_im2_vs(int line)
 
   for(column = 0; column < end; column++, index++)
   {
-	int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -2222,7 +2232,7 @@ void render_bg_m5_im2_vs(int line)
 
     for(column = start; column < end; column++, index++)
     {
-	  int column_capped = column - (config.h40_extra_columns / 4);
+	    int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
 #ifdef LSB_FIRST
@@ -2259,6 +2269,9 @@ void render_bg_m5_im2_vs(int line)
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
 	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
+    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2404,6 +2417,9 @@ void render_bg_m5(int line)
     v_line = (line & 7) << 3;
 	
 	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
+    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2606,6 +2622,9 @@ void render_bg_m5_vs(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
+    int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -2649,7 +2668,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < width; column++, index++)
   {
-	int column_capped = column - (config.h40_extra_columns / 4);
+	  int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -2796,6 +2815,9 @@ void render_bg_m5_im2(int line)
     v_line = ((line & 7) << 1 | odd) << 3;
 	
 	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
+    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -3000,6 +3022,9 @@ void render_bg_m5_im2_vs(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
+    int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
+
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -3043,7 +3068,7 @@ void render_bg_m5_im2_vs(int line)
 
   for(column = 0; column < width; column++, index++)
   {
-	int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
