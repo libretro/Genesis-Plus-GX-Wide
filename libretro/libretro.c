@@ -54,6 +54,8 @@
 #include <xtl.h>
 #endif
 
+#define CORE_NAME "genesis_plus_gx_wide"
+
 #define RETRO_DEVICE_MDPAD_3B             RETRO_DEVICE_SUBCLASS(RETRO_DEVICE_JOYPAD, 0)
 #define RETRO_DEVICE_MDPAD_6B             RETRO_DEVICE_SUBCLASS(RETRO_DEVICE_JOYPAD, 1)
 #define RETRO_DEVICE_MSPAD_2B             RETRO_DEVICE_SUBCLASS(RETRO_DEVICE_JOYPAD, 2)
@@ -1261,16 +1263,16 @@ static void check_variables(bool first_run)
   struct retro_system_av_info info;
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
   unsigned c;
-  char md_fm_channel_volume_base_str[]  = "genesis_plus_gx_md_channel_0_volume";
-  char sms_fm_channel_volume_base_str[] = "genesis_plus_gx_sms_fm_channel_0_volume";
-  char psg_channel_volume_base_str[]    = "genesis_plus_gx_psg_channel_0_volume";
+  char md_fm_channel_volume_base_str[]  = CORE_NAME "_md_channel_0_volume";
+  char sms_fm_channel_volume_base_str[] = CORE_NAME "_sms_fm_channel_0_volume";
+  char psg_channel_volume_base_str[]    = CORE_NAME "_psg_channel_0_volume";
 #endif
   bool update_viewports     = false;
   bool reinit               = false;
   bool update_frameskip     = false;
   struct retro_variable var = {0};
 
-  var.key = "genesis_plus_gx_bram";
+  var.key = CORE_NAME "_bram";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
 #if defined(_WIN32)
@@ -1293,7 +1295,7 @@ static void check_variables(bool first_run)
    }
   }
 
-  var.key = "genesis_plus_gx_system_hw";
+  var.key = CORE_NAME "_system_hw";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.system;
@@ -1342,7 +1344,7 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key = "genesis_plus_gx_bios";
+  var.key = CORE_NAME "_bios";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.bios;
@@ -1360,7 +1362,7 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key = "genesis_plus_gx_region_detect";
+  var.key = CORE_NAME "_region_detect";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.region_detect;
@@ -1443,7 +1445,7 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key = "genesis_plus_gx_force_dtack";
+  var.key = CORE_NAME "_force_dtack";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "enabled"))
@@ -1452,7 +1454,7 @@ static void check_variables(bool first_run)
       config.force_dtack = 0;
   }
 
-  var.key = "genesis_plus_gx_addr_error";
+  var.key = CORE_NAME "_addr_error";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "enabled"))
@@ -1461,7 +1463,7 @@ static void check_variables(bool first_run)
       m68k.aerr_enabled = config.addr_error = 0;
   }
 
-  var.key = "genesis_plus_gx_lock_on";
+  var.key = CORE_NAME "_lock_on";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.lock_on;
@@ -1481,7 +1483,7 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key = "genesis_plus_gx_ym2413";
+  var.key = CORE_NAME "_ym2413";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.ym2413;
@@ -1504,7 +1506,7 @@ static void check_variables(bool first_run)
   }
   
 #ifdef HAVE_OPLL_CORE
-  var.key = "genesis_plus_gx_ym2413_core";
+  var.key = CORE_NAME "_ym2413_core";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.opll;
@@ -1525,7 +1527,7 @@ static void check_variables(bool first_run)
   }
 #endif
 
-  var.key = "genesis_plus_gx_sound_output";
+  var.key = CORE_NAME "_sound_output";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (var.value && !strcmp(var.value, "mono"))
@@ -1535,7 +1537,7 @@ static void check_variables(bool first_run)
   }
 
 
-  var.key = "genesis_plus_gx_psg_preamp";
+  var.key = CORE_NAME "_psg_preamp";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     config.psg_preamp = (!var.value) ? 150: atoi(var.value);
@@ -1549,13 +1551,13 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key = "genesis_plus_gx_fm_preamp";
+  var.key = CORE_NAME "_fm_preamp";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     config.fm_preamp = (!var.value) ? 100: atoi(var.value);
   }
 
-  var.key = "genesis_plus_gx_audio_filter";
+  var.key = CORE_NAME "_audio_filter";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (var.value && !strcmp(var.value, "low-pass"))
@@ -1570,14 +1572,14 @@ static void check_variables(bool first_run)
       config.filter = 0;
   }
 
-  var.key = "genesis_plus_gx_lowpass_range";
+  var.key = CORE_NAME "_lowpass_range";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     config.lp_range = (!var.value) ? 60 : ((atoi(var.value) * 65536) / 100);
   }
 
 #if HAVE_EQ
-  var.key = "genesis_plus_gx_audio_eq_low";
+  var.key = CORE_NAME "_audio_eq_low";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     uint8_t new_lg = (!var.value) ? 100 : atoi(var.value);
@@ -1585,7 +1587,7 @@ static void check_variables(bool first_run)
     config.lg = new_lg;
   }
 
-  var.key = "genesis_plus_gx_audio_eq_mid";
+  var.key = CORE_NAME "_audio_eq_mid";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     uint8_t new_mg = (!var.value) ? 100 : atoi(var.value);
@@ -1593,7 +1595,7 @@ static void check_variables(bool first_run)
     config.mg = new_mg;
   }
 
-  var.key = "genesis_plus_gx_audio_eq_high";
+  var.key = CORE_NAME "_audio_eq_high";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     uint8_t new_hg = (!var.value) ? 100 : atoi(var.value);
@@ -1603,7 +1605,7 @@ static void check_variables(bool first_run)
   }
 #endif
 
-  var.key = "genesis_plus_gx_ym2612";
+  var.key = CORE_NAME "_ym2612";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
 #ifdef HAVE_YM3438_CORE
@@ -1647,7 +1649,7 @@ static void check_variables(bool first_run)
     }
   }
 
-  var.key        = "genesis_plus_gx_frameskip";
+  var.key        = CORE_NAME "_frameskip";
   var.value      = NULL;
   orig_value     = frameskip_type;
   frameskip_type = 0;
@@ -1662,14 +1664,14 @@ static void check_variables(bool first_run)
 
   update_frameskip = update_frameskip || (frameskip_type != orig_value);
 
-  var.key             = "genesis_plus_gx_frameskip_threshold";
+  var.key             = CORE_NAME "_frameskip_threshold";
   var.value           = NULL;
   frameskip_threshold = 33;
 
   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
     frameskip_threshold = strtol(var.value, NULL, 10);
 
-  var.key = "genesis_plus_gx_blargg_ntsc_filter";
+  var.key = CORE_NAME "_blargg_ntsc_filter";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.ntsc;
@@ -1705,7 +1707,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_lcd_filter";
+  var.key = CORE_NAME "_lcd_filter";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "disabled"))
@@ -1714,7 +1716,7 @@ static void check_variables(bool first_run)
       config.lcd = (uint8)(0.80 * 256);
   }
 
-  var.key = "genesis_plus_gx_overscan";
+  var.key = CORE_NAME "_overscan";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.overscan;
@@ -1730,7 +1732,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_gg_extra";
+  var.key = CORE_NAME "_gg_extra";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.gg_extra;
@@ -1742,7 +1744,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_aspect_ratio";
+  var.key = CORE_NAME "_aspect_ratio";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.aspect_ratio;
@@ -1756,7 +1758,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_render";
+  var.key = CORE_NAME "_render";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.render;
@@ -1768,7 +1770,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_gun_cursor";
+  var.key = CORE_NAME "_gun_cursor";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "disabled"))
@@ -1777,7 +1779,7 @@ static void check_variables(bool first_run)
       config.gun_cursor = 1;
   }
 
-  var.key = "genesis_plus_gx_gun_input";
+  var.key = CORE_NAME "_gun_input";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "touchscreen"))
@@ -1786,7 +1788,7 @@ static void check_variables(bool first_run)
       retro_gun_mode = RetroLightgun;
   }
 
-  var.key = "genesis_plus_gx_invert_mouse";
+  var.key = CORE_NAME "_invert_mouse";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "disabled"))
@@ -1795,7 +1797,7 @@ static void check_variables(bool first_run)
       config.invert_mouse = 1;
   }
 
-  var.key = "genesis_plus_gx_left_border";
+  var.key = CORE_NAME "_left_border";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.left_border;
@@ -1807,7 +1809,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
   
-    var.key = "genesis_plus_gx_h40_extra_columns";
+    var.key = CORE_NAME "_h40_extra_columns";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     orig_value = config.h40_extra_columns;
@@ -1819,7 +1821,7 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
-  var.key = "genesis_plus_gx_vdp_fix_dma_boundary_bug";
+  var.key = CORE_NAME "_vdp_fix_dma_boundary_bug";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "disabled"))
@@ -1830,7 +1832,7 @@ static void check_variables(bool first_run)
 
 
 #ifdef HAVE_OVERCLOCK
-  var.key = "genesis_plus_gx_overclock";
+  var.key = CORE_NAME "_overclock";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "100%"))
@@ -1849,7 +1851,7 @@ static void check_variables(bool first_run)
   }
 #endif
 
-  var.key = "genesis_plus_gx_no_sprite_limit";
+  var.key = CORE_NAME "_no_sprite_limit";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
     if (!var.value || !strcmp(var.value, "disabled"))
@@ -1862,7 +1864,7 @@ static void check_variables(bool first_run)
   var.key = psg_channel_volume_base_str;
   for (c = 0; c < 4; c++)
   {
-     psg_channel_volume_base_str[28] = c+'0';
+     psg_channel_volume_base_str[33] = c+'0';
      if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var))
      {
         config.psg_ch_volumes[c] = atoi(var.value);
@@ -1877,7 +1879,7 @@ static void check_variables(bool first_run)
   var.key = md_fm_channel_volume_base_str;
   for (c = 0; c < 6; c++)
   {
-    md_fm_channel_volume_base_str[27] = c+'0';
+    md_fm_channel_volume_base_str[32] = c+'0';
     if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var))
       config.md_ch_volumes[c] = atoi(var.value);
   }
@@ -1885,12 +1887,12 @@ static void check_variables(bool first_run)
   var.key = sms_fm_channel_volume_base_str;
   for (c = 0; c < 9; c++)
   {
-     sms_fm_channel_volume_base_str[31] = c+'0';
+     sms_fm_channel_volume_base_str[36] = c+'0';
      if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var))
         config.sms_fm_ch_volumes[c] = atoi(var.value);
   }
 
-  var.key = "genesis_plus_gx_show_advanced_audio_settings";
+  var.key = CORE_NAME "_show_advanced_audio_settings";
   var.value = NULL;
 
   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
@@ -1905,26 +1907,26 @@ static void check_variables(bool first_run)
     {
       size_t i;
       struct retro_core_option_display option_display;
-      char av_keys[19][40] = {
-        "genesis_plus_gx_psg_channel_0_volume",
-        "genesis_plus_gx_psg_channel_1_volume",
-        "genesis_plus_gx_psg_channel_2_volume",
-        "genesis_plus_gx_psg_channel_3_volume",
-        "genesis_plus_gx_md_channel_0_volume",
-        "genesis_plus_gx_md_channel_1_volume",
-        "genesis_plus_gx_md_channel_2_volume",
-        "genesis_plus_gx_md_channel_3_volume",
-        "genesis_plus_gx_md_channel_4_volume",
-        "genesis_plus_gx_md_channel_5_volume",
-        "genesis_plus_gx_sms_fm_channel_0_volume",
-        "genesis_plus_gx_sms_fm_channel_1_volume",
-        "genesis_plus_gx_sms_fm_channel_2_volume",
-        "genesis_plus_gx_sms_fm_channel_3_volume",
-        "genesis_plus_gx_sms_fm_channel_4_volume",
-        "genesis_plus_gx_sms_fm_channel_5_volume",
-        "genesis_plus_gx_sms_fm_channel_6_volume",
-        "genesis_plus_gx_sms_fm_channel_7_volume",
-        "genesis_plus_gx_sms_fm_channel_8_volume"
+      char av_keys[19][45] = {
+        CORE_NAME "_psg_channel_0_volume",
+        CORE_NAME "_psg_channel_1_volume",
+        CORE_NAME "_psg_channel_2_volume",
+        CORE_NAME "_psg_channel_3_volume",
+        CORE_NAME "_md_channel_0_volume",
+        CORE_NAME "_md_channel_1_volume",
+        CORE_NAME "_md_channel_2_volume",
+        CORE_NAME "_md_channel_3_volume",
+        CORE_NAME "_md_channel_4_volume",
+        CORE_NAME "_md_channel_5_volume",
+        CORE_NAME "_sms_fm_channel_0_volume",
+        CORE_NAME "_sms_fm_channel_1_volume",
+        CORE_NAME "_sms_fm_channel_2_volume",
+        CORE_NAME "_sms_fm_channel_3_volume",
+        CORE_NAME "_sms_fm_channel_4_volume",
+        CORE_NAME "_sms_fm_channel_5_volume",
+        CORE_NAME "_sms_fm_channel_6_volume",
+        CORE_NAME "_sms_fm_channel_7_volume",
+        CORE_NAME "_sms_fm_channel_8_volume"
       };
 
       option_display.visible = show_advanced_av_settings;
@@ -2527,48 +2529,48 @@ void retro_set_environment(retro_environment_t cb)
 {
    struct retro_vfs_interface_info vfs_iface_info;
    static const struct retro_variable vars[] = {
-      { "genesis_plus_gx_system_hw", "System hardware; auto|sg-1000|sg-1000 II|mark-III|master system|master system II|game gear|mega drive / genesis" },
-      { "genesis_plus_gx_region_detect", "System region; auto|ntsc-u|pal|ntsc-j" },
-      { "genesis_plus_gx_force_dtack", "System lockups; enabled|disabled" },
-      { "genesis_plus_gx_bios", "System bootrom; disabled|enabled" },
-      { "genesis_plus_gx_bram", "CD System BRAM; per bios|per game" },
-      { "genesis_plus_gx_addr_error", "68k address error; enabled|disabled" },
-      { "genesis_plus_gx_lock_on", "Cartridge lock-on; disabled|game genie|action replay (pro)|sonic & knuckles" },
-      { "genesis_plus_gx_ym2413", "Master System FM (YM2413); auto|disabled|enabled" },
+      { CORE_NAME "_system_hw", "System hardware; auto|sg-1000|sg-1000 II|mark-III|master system|master system II|game gear|mega drive / genesis" },
+      { CORE_NAME "_region_detect", "System region; auto|ntsc-u|pal|ntsc-j" },
+      { CORE_NAME "_force_dtack", "System lockups; enabled|disabled" },
+      { CORE_NAME "_bios", "System bootrom; disabled|enabled" },
+      { CORE_NAME "_bram", "CD System BRAM; per bios|per game" },
+      { CORE_NAME "_addr_error", "68k address error; enabled|disabled" },
+      { CORE_NAME "_lock_on", "Cartridge lock-on; disabled|game genie|action replay (pro)|sonic & knuckles" },
+      { CORE_NAME "_ym2413", "Master System FM (YM2413); auto|disabled|enabled" },
 #ifdef HAVE_OPLL_CORE
-      { "genesis_plus_gx_ym2413_core", "Master System FM (YM2413) core; mame|nuked" },
+      { CORE_NAME "_ym2413_core", "Master System FM (YM2413) core; mame|nuked" },
 #endif
 #ifdef HAVE_YM3438_CORE
-      { "genesis_plus_gx_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)|nuked (ym2612)|nuked (ym3438)" },
+      { CORE_NAME "_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)|nuked (ym2612)|nuked (ym3438)" },
 #else
-      { "genesis_plus_gx_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)" },
+      { CORE_NAME "_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)" },
 #endif
 
-      { "genesis_plus_gx_sound_output", "Sound output; stereo|mono" },
-      { "genesis_plus_gx_audio_filter", "Audio filter; disabled|low-pass" },
-      { "genesis_plus_gx_lowpass_range", "Low-pass filter %; 60|65|70|75|80|85|90|95|5|10|15|20|25|30|35|40|45|50|55"},
+      { CORE_NAME "_sound_output", "Sound output; stereo|mono" },
+      { CORE_NAME "_audio_filter", "Audio filter; disabled|low-pass" },
+      { CORE_NAME "_lowpass_range", "Low-pass filter %; 60|65|70|75|80|85|90|95|5|10|15|20|25|30|35|40|45|50|55"},
       
       #if HAVE_EQ     
-      { "genesis_plus_gx_audio_eq_low",  "EQ Low;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
-      { "genesis_plus_gx_audio_eq_mid",  "EQ Mid;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
-      { "genesis_plus_gx_audio_eq_high", "EQ High; 100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
+      { CORE_NAME "_audio_eq_low",  "EQ Low;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
+      { CORE_NAME "_audio_eq_mid",  "EQ Mid;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
+      { CORE_NAME "_audio_eq_high", "EQ High; 100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
       #endif
       
-      { "genesis_plus_gx_blargg_ntsc_filter", "Blargg NTSC filter; disabled|monochrome|composite|svideo|rgb" },
-      { "genesis_plus_gx_lcd_filter", "LCD Ghosting filter; disabled|enabled" },
-      { "genesis_plus_gx_overscan", "Borders; disabled|top/bottom|left/right|full" },
-      { "genesis_plus_gx_gg_extra", "Game Gear extended screen; disabled|enabled" },
-      { "genesis_plus_gx_left_border", "Hide Master System Left Border; disabled|enabled" },
-	  { "genesis_plus_gx_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
-      { "genesis_plus_gx_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
-      { "genesis_plus_gx_aspect_ratio", "Core-provided aspect ratio; auto|NTSC PAR|PAL PAR" },
-      { "genesis_plus_gx_render", "Interlaced mode 2 output; single field|double field" },
-      { "genesis_plus_gx_gun_cursor", "Show Lightgun crosshair; disabled|enabled" },
-      { "genesis_plus_gx_invert_mouse", "Invert Mouse Y-axis; disabled|enabled" },
+      { CORE_NAME "_blargg_ntsc_filter", "Blargg NTSC filter; disabled|monochrome|composite|svideo|rgb" },
+      { CORE_NAME "_lcd_filter", "LCD Ghosting filter; disabled|enabled" },
+      { CORE_NAME "_overscan", "Borders; disabled|top/bottom|left/right|full" },
+      { CORE_NAME "_gg_extra", "Game Gear extended screen; disabled|enabled" },
+      { CORE_NAME "_left_border", "Hide Master System Left Border; disabled|enabled" },
+	  { CORE_NAME "_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
+      { CORE_NAME "_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
+      { CORE_NAME "_aspect_ratio", "Core-provided aspect ratio; auto|NTSC PAR|PAL PAR" },
+      { CORE_NAME "_render", "Interlaced mode 2 output; single field|double field" },
+      { CORE_NAME "_gun_cursor", "Show Lightgun crosshair; disabled|enabled" },
+      { CORE_NAME "_invert_mouse", "Invert Mouse Y-axis; disabled|enabled" },
 #ifdef HAVE_OVERCLOCK
-      { "genesis_plus_gx_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
+      { CORE_NAME "_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
 #endif
-      { "genesis_plus_gx_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
+      { CORE_NAME "_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
       { NULL, NULL },
    };
 

@@ -60,7 +60,7 @@ extern "C" {
 
 struct retro_core_option_definition option_defs_us[] = {
    {
-      "genesis_plus_gx_system_hw",
+      CORE_NAME "_system_hw",
       "System Hardware",
       "Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game.",
       {
@@ -77,7 +77,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "auto"
    },
    {
-      "genesis_plus_gx_region_detect",
+      CORE_NAME "_region_detect",
       "System Region",
       "Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50hz while 'NTSC' is 60hz. Games may run faster or slower than normal if the incorrect region is selected.",
       {
@@ -90,7 +90,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "auto"
    },
    {
-      "genesis_plus_gx_force_dtack",
+      CORE_NAME "_force_dtack",
       "System Lock-Ups",
       "Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behaviour for correct operation.",
       {
@@ -101,7 +101,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "enabled"
    },
    {
-      "genesis_plus_gx_bios",
+      CORE_NAME "_bios",
       "System Boot ROM",
       "Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content.",
       {
@@ -112,7 +112,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_bram",
+      CORE_NAME "_bram",
       "CD System BRAM",
       "When running Sega CD content, specifies whether to share a single save file between all games from a specific region (Per-BIOS) or to create a separate save file for each game (Per-Game). Note that the Sega CD has limited internal storage, sufficient only for a handful of titles. To avoid running out of space, the 'Per-Game' setting is recommended.",
       {
@@ -123,7 +123,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "per bios"
    },
    {
-      "genesis_plus_gx_addr_error",
+      CORE_NAME "_addr_error",
       "68K Address Error",
       "The Genesis CPU (Motorola 68000) produces an Address Error (crash) when attempting to perform unaligned memory access. Enabling '68K Address Error' simulates this behaviour. It should only be disabled when playing ROM hacks, since these are typically developed using less accurate emulators and may rely on invalid RAM access for correct operation.",
       {
@@ -134,7 +134,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "enabled"
    },
    {
-      "genesis_plus_gx_lock_on",
+      CORE_NAME "_lock_on",
       "Cartridge Lock-On",
       "Lock-On Technology is a Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A corresponding bios file must be present in RetroArch's system directory.",
       {
@@ -147,7 +147,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_ym2413",
+      CORE_NAME "_ym2413",
       "Master System FM (YM2413)",
       "Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output.",
       {
@@ -159,7 +159,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "auto"
    },
    {
-      "genesis_plus_gx_ym2612",
+      CORE_NAME "_ym2612",
       "Mega Drive / Genesis FM",
 #ifdef HAVE_YM3438_CORE
       "Select method used to emulate the FM synthesizer (main sound generator) of the Mega Drive/Genesis. 'MAME' options are fast, and run full speed on most systems. 'Nuked' options are cycle accurate, very high quality, and have substantial CPU requirements. The 'YM2612' chip is used by the original Model 1 Genesis. The 'YM3438' is used in later Genesis revisions.",
@@ -179,7 +179,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "mame (ym2612)"
    },
    {
-      "genesis_plus_gx_sound_output",
+      CORE_NAME "_sound_output",
       "Sound Output",
       "Select stereo or mono sound reproduction.",
       {
@@ -190,7 +190,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "stereo"
    },
    {
-      "genesis_plus_gx_psg_preamp",
+      CORE_NAME "_psg_preamp",
       "PSG Preamp Level",
       "Set the audio preamplifier level of the emulated SN76496 4-channel Programmable Sound Generator found in the Master System, Game Gear and Genesis.",
       {
@@ -240,7 +240,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "150"
    },
    {
-      "genesis_plus_gx_fm_preamp",
+      CORE_NAME "_fm_preamp",
       "FM Preamp Level",
       "Set the audio preamplifier level of the emulated Sega Mark III/Master System FM Sound Unit.",
       {
@@ -290,7 +290,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_audio_filter",
+      CORE_NAME "_audio_filter",
       "Audio Filter",
       "Enable a low pass audio filter to better simulate the characteristic sound of a Model 1 Genesis.",
       {
@@ -301,7 +301,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_lowpass_range",
+      CORE_NAME "_lowpass_range",
       "Low-Pass Filter %",
       "Specify the cut-off frequency of the audio low pass filter. A higher value increases the perceived 'strength' of the filter, since a wider range of the high frequency spectrum is attenuated.",
       {
@@ -330,7 +330,7 @@ struct retro_core_option_definition option_defs_us[] = {
    },
 #ifdef HAVE_EQ
    {
-      "genesis_plus_gx_audio_eq_low",
+      CORE_NAME "_audio_eq_low",
       "EQ Low",
       "Adjust the low range band of the internal audio equaliser.",
       {
@@ -360,7 +360,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_audio_eq_mid",
+      CORE_NAME "_audio_eq_mid",
       "EQ Mid",
       "Adjust the middle range band of the internal audio equaliser.",
       {
@@ -390,7 +390,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_audio_eq_high",
+      CORE_NAME "_audio_eq_high",
       "EQ High",
       "Adjust the high range band of the internal audio equaliser.",
       {
@@ -421,7 +421,7 @@ struct retro_core_option_definition option_defs_us[] = {
    },
 #endif
    {
-      "genesis_plus_gx_frameskip",
+      CORE_NAME "_frameskip",
       "Frameskip",
       "Skip frames to avoid audio buffer under-run (crackling). Improves performance at the expense of visual smoothness. 'Auto' skips frames when advised by the frontend. 'Manual' utilises the 'Frameskip Threshold (%)' setting.",
       {
@@ -433,7 +433,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_frameskip_threshold",
+      CORE_NAME "_frameskip_threshold",
       "Frameskip Threshold (%)",
       "When 'Frameskip' is set to 'Manual', specifies the audio buffer occupancy threshold (percentage) below which frames will be skipped. Higher values reduce the risk of crackling by causing frames to be dropped more frequently.",
       {
@@ -458,7 +458,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "33"
    },
    {
-      "genesis_plus_gx_blargg_ntsc_filter",
+      CORE_NAME "_blargg_ntsc_filter",
       "Blargg NTSC Filter",
       "Apply a video filter to mimic various NTSC TV signals.",
       {
@@ -472,7 +472,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_lcd_filter",
+      CORE_NAME "_lcd_filter",
       "LCD Ghosting Filter",
       "Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and 'Genesis Nomad' LCD panels.",
       {
@@ -483,7 +483,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_overscan",
+      CORE_NAME "_overscan",
       "Borders",
       "Enable this to display the overscan regions at the top/bottom and/or left/right of the screen. These would normally be hidden by the bezel around the edge of a standard-definition television.",
       {
@@ -496,7 +496,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_gg_extra",
+      CORE_NAME "_gg_extra",
       "Game Gear Extended Screen",
       "Forces Game Gear titles to run in 'SMS' mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data.",
       {
@@ -507,7 +507,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_left_border",
+      CORE_NAME "_left_border",
       "Hide Master System Left Border",
       "Cuts off 8 pixels from both the left and right side of the screen when running Master System games, thereby hiding the border seen on the left side of the screen",
       {
@@ -518,7 +518,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_h40_extra_columns",
+      CORE_NAME "_h40_extra_columns",
       "Extra columns to draw in H40 for widescreen",
       "Set the amount of extra colums to draw for widescreen",
       {
@@ -540,7 +540,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "10"
    },
    {
-      "genesis_plus_gx_vdp_fix_dma_boundary_bug",
+      CORE_NAME "_vdp_fix_dma_boundary_bug",
       "Fix VDP DMA boundary bug",
       "Enable this to fix the VDP DMA boundary bug",
       {
@@ -551,7 +551,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_aspect_ratio",
+      CORE_NAME "_aspect_ratio",
       "Core-Provided Aspect Ratio",
       "Choose the preferred content aspect ratio. This will only apply when RetroArch's aspect ratio is set to 'Core provided' in the Video settings.",
       {
@@ -562,7 +562,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "auto"
    },
    {
-      "genesis_plus_gx_render",
+      CORE_NAME "_render",
       "Interlaced Mode 2 Output",
       "Interlaced Mode 2 allows the Genesis to output a double height (high resolution) 320x448 image by drawing alternate scanlines each frame (this is used by 'Sonic the Hedgehog 2' and 'Combat Cars' multiplayer modes). 'Double Field' mimics original hardware, producing a sharp image with flickering/interlacing artefacts. 'Single Field' apples a de-interlacing filter, which stabilises the image but causes mild blurring.",
       {
@@ -573,7 +573,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "single field"
    },
    {
-      "genesis_plus_gx_gun_cursor",
+      CORE_NAME "_gun_cursor",
       "Show Light Gun Crosshair",
       "Display light gun crosshairs when using the 'MD Menacer', 'MD Justifiers' and 'MS Light Phaser' input device types.",
       {
@@ -584,7 +584,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_gun_input",
+      CORE_NAME "_gun_input",
       "Light Gun Input",
       "Use a mouse-controlled 'Light Gun' or 'Touchscreen' input.",
       {
@@ -595,7 +595,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "lightgun"
    },
    {
-      "genesis_plus_gx_invert_mouse",
+      CORE_NAME "_invert_mouse",
       "Invert Mouse Y-Axis",
       "Inverts the Y-axis of the 'MD Mouse' input device type.",
       {
@@ -607,7 +607,7 @@ struct retro_core_option_definition option_defs_us[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      "genesis_plus_gx_overclock",
+      CORE_NAME "_overclock",
       "CPU Speed",
       "Overclock the emulated CPU. Can reduce slowdown, but may cause glitches.",
       {
@@ -622,7 +622,7 @@ struct retro_core_option_definition option_defs_us[] = {
    },
 #endif
    {
-      "genesis_plus_gx_no_sprite_limit",
+      CORE_NAME "_no_sprite_limit",
       "Remove Per-Line Sprite Limit",
       "Removes the 8 (Master System) or 20 (Genesis) sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects.",
       {
@@ -634,7 +634,7 @@ struct retro_core_option_definition option_defs_us[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      "genesis_plus_gx_show_advanced_audio_settings",
+      CORE_NAME "_show_advanced_audio_settings",
       "Show Advanced Audio Volume Settings (Reopen menu)",
       "Enable configuration of low-level audio channel parameters. NOTE: Quick Menu must be toggled for this setting to take effect.",
       {
@@ -645,7 +645,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "disabled"
    },
    {
-      "genesis_plus_gx_psg_channel_0_volume",
+      CORE_NAME "_psg_channel_0_volume",
       "PSG Tone Channel 0 Volume %",
       "Reduce the volume of the PSG Tone Channel 0.",
       {
@@ -665,7 +665,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_1_volume",
+      CORE_NAME "_psg_channel_1_volume",
       "PSG Tone Channel 1 Volume %",
       "Reduce the volume of the PSG Tone Channel 1.",
       {
@@ -685,7 +685,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_2_volume",
+      CORE_NAME "_psg_channel_2_volume",
       "PSG Tone Channel 2 Volume %",
       "Reduce the volume of the PSG Tone Channel 2.",
       {
@@ -705,7 +705,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_psg_channel_3_volume",
+      CORE_NAME "_psg_channel_3_volume",
       "PSG Noise Channel 3 Volume %",
       "Reduce the volume of the PSG Noise Channel 3.",
       {
@@ -725,7 +725,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_0_volume",
+      CORE_NAME "_md_channel_0_volume",
       "Mega Drive / Genesis FM Channel 0 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 0. Only works with MAME FM emulators.",
       {
@@ -745,7 +745,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_1_volume",
+      CORE_NAME "_md_channel_1_volume",
       "Mega Drive / Genesis FM Channel 1 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 1. Only works with MAME FM emulators.",
       {
@@ -765,7 +765,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_2_volume",
+      CORE_NAME "_md_channel_2_volume",
       "Mega Drive / Genesis FM Channel 2 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 2. Only works with MAME FM emulators.",
       {
@@ -785,7 +785,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_3_volume",
+      CORE_NAME "_md_channel_3_volume",
       "Mega Drive / Genesis FM Channel 3 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 3. Only works with MAME FM emulators.",
       {
@@ -805,7 +805,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_4_volume",
+      CORE_NAME "_md_channel_4_volume",
       "Mega Drive / Genesis FM Channel 4 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 4. Only works with MAME FM emulators.",
       {
@@ -825,7 +825,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_md_channel_5_volume",
+      CORE_NAME "_md_channel_5_volume",
       "Mega Drive / Genesis FM Channel 5 Volume %",
       "Reduce the volume of the Mega Drive / Genesis FM Channel 5. Only works with MAME FM emulators.",
       {
@@ -845,7 +845,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_0_volume",
+      CORE_NAME "_sms_fm_channel_0_volume",
       "Master System FM (YM2413) Channel 0 Volume %",
       "Reduce the volume of the Master System FM Channel 0.",
       {
@@ -865,7 +865,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_1_volume",
+      CORE_NAME "_sms_fm_channel_1_volume",
       "Master System FM (YM2413) Channel 1 Volume %",
       "Reduce the volume of the Master System FM Channel 1.",
       {
@@ -885,7 +885,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_2_volume",
+      CORE_NAME "_sms_fm_channel_2_volume",
       "Master System FM (YM2413) Channel 2 Volume %",
       "Reduce the volume of the Master System FM Channel 2.",
       {
@@ -905,7 +905,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_3_volume",
+      CORE_NAME "_sms_fm_channel_3_volume",
       "Master System FM (YM2413) Channel 3 Volume %",
       "Reduce the volume of the Master System FM Channel 3.",
       {
@@ -925,7 +925,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_4_volume",
+      CORE_NAME "_sms_fm_channel_4_volume",
       "Master System FM (YM2413) Channel 4 Volume %",
       "Reduce the volume of the Master System FM Channel 4.",
       {
@@ -945,7 +945,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_5_volume",
+      CORE_NAME "_sms_fm_channel_5_volume",
       "Master System FM (YM2413) Channel 5 Volume %",
       "Reduce the volume of the Master System FM Channel 5.",
       {
@@ -965,7 +965,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_6_volume",
+      CORE_NAME "_sms_fm_channel_6_volume",
       "Master System FM (YM2413) Channel 6 Volume %",
       "Reduce the volume of the Master System FM Channel 6.",
       {
@@ -985,7 +985,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_7_volume",
+      CORE_NAME "_sms_fm_channel_7_volume",
       "Master System FM (YM2413) Channel 7 Volume %",
       "Reduce the volume of the Master System FM Channel 7.",
       {
@@ -1005,7 +1005,7 @@ struct retro_core_option_definition option_defs_us[] = {
       "100"
    },
    {
-      "genesis_plus_gx_sms_fm_channel_8_volume",
+      CORE_NAME "_sms_fm_channel_8_volume",
       "Master System FM (YM2413) Channel 8 Volume %",
       "Reduce the volume of the Master System FM Channel 8.",
       {
