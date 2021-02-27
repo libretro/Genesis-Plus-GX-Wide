@@ -1666,9 +1666,6 @@ void render_bg_m5(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
-    int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -1882,9 +1879,6 @@ void render_bg_m5_vs(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
-    int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -2053,9 +2047,6 @@ void render_bg_m5_im2(int line)
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
 	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
-    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2271,9 +2262,6 @@ void render_bg_m5_im2_vs(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
-    int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -2417,9 +2405,6 @@ void render_bg_m5(int line)
     v_line = (line & 7) << 3;
 	
 	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
-    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2622,9 +2607,6 @@ void render_bg_m5_vs(int line)
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
-    int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
     for(column = start; column < end; column++)
     {
       atbuf = nt[column - (config.h40_extra_columns / 4)];
@@ -2815,9 +2797,6 @@ void render_bg_m5_im2(int line)
     v_line = ((line & 7) << 1 | odd) << 3;
 	
 	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
-    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -3020,9 +2999,6 @@ void render_bg_m5_im2_vs(int line)
     v_line = ((line & 7) << 1 | odd) << 3;
 	
 	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
-
-    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
