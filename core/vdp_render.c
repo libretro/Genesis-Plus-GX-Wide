@@ -4196,7 +4196,7 @@ void window_clip(unsigned int data, unsigned int sw)
     {
       /* Plane W takes up entire line */
       clip[w].left = 0;
-      clip[w].right = sw + (24 / 2); // 24 = max number of extra columns
+      clip[w].right = sw;
       clip[w].enable = 1;
       clip[a].enable = 0;
     }
@@ -4213,7 +4213,7 @@ void window_clip(unsigned int data, unsigned int sw)
   {
     /* Plane A takes up entire line */
     clip[a].left = 0;
-    clip[a].right = sw;
+    clip[a].right = sw + (24 / 2); // 24 = max number of extra columns
     clip[a].enable = 1;
     clip[w].enable = 0;
   }
