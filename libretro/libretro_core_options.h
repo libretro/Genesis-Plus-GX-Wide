@@ -537,7 +537,7 @@ struct retro_core_option_definition option_defs_us[] = {
 		 { "24", NULL },
          { NULL, NULL },
       },
-      "10"
+      "0"
    },
    {
       CORE_NAME "_vdp_fix_dma_boundary_bug",
