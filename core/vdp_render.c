@@ -43,6 +43,8 @@
 #include "md_ntsc.h"
 #include "sms_ntsc.h"
 
+extern int8 reset_do_not_clear_buffers;
+
 #ifndef HAVE_NO_SPRITE_LIMIT
 #define MAX_SPRITES_PER_LINE 20
 #define TMS_MAX_SPRITES_PER_LINE 4
@@ -1660,6 +1662,9 @@ void render_bg_m5(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -1755,7 +1760,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < end; column++, index++)
   {
-    int column_capped = column - (config.h40_extra_columns / 4);
+	  int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -1873,6 +1878,9 @@ void render_bg_m5_vs(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2043,6 +2051,9 @@ void render_bg_m5_im2(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2221,7 +2232,7 @@ void render_bg_m5_im2_vs(int line)
 
     for(column = start; column < end; column++, index++)
     {
-      int column_capped = column - (config.h40_extra_columns / 4);
+	    int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
 #ifdef LSB_FIRST
@@ -2256,6 +2267,9 @@ void render_bg_m5_im2_vs(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2401,6 +2415,9 @@ void render_bg_m5(int line)
 
     /* Pattern row index */
     v_line = (line & 7) << 3;
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2601,6 +2618,9 @@ void render_bg_m5_vs(int line)
 
     /* Pattern row index */
     v_line = (line & 7) << 3;
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2648,7 +2668,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < width; column++, index++)
   {
-    int column_capped = column - (config.h40_extra_columns / 4);
+	  int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -2793,6 +2813,9 @@ void render_bg_m5_im2(int line)
 
     /* Pattern row index */
     v_line = ((line & 7) << 1 | odd) << 3;
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -2995,6 +3018,9 @@ void render_bg_m5_im2_vs(int line)
 
     /* Pattern row index */
     v_line = ((line & 7) << 1 | odd) << 3;
+	
+	int start_real = start + (config.h40_extra_columns / 4);
+    int end_real = end - (config.h40_extra_columns / 4);
 
     int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
@@ -4028,7 +4054,6 @@ void parse_satb_m5(int line)
           object_info->xpos  = p[link + 3];
         else
           object_info->xpos  = p[link + 3] & 0x1ff;
-
         object_info->ypos  = ypos;
         object_info->size  = size & 0x0f;
 
@@ -4257,17 +4282,20 @@ void render_init(void)
 
 void render_reset(void)
 {
-  /* Clear display bitmap */
-  memset(bitmap.data, 0, bitmap.pitch * bitmap.height);
+  if (!reset_do_not_clear_buffers)
+  {
+    /* Clear display bitmap */
+    memset(bitmap.data, 0, bitmap.pitch * bitmap.height);
 
-  /* Clear line buffers */
-  memset(linebuf, 0, sizeof(linebuf));
+    /* Clear line buffers */
+    memset(linebuf, 0, sizeof(linebuf));
 
-  /* Clear color palettes */
-  memset(pixel, 0, sizeof(pixel));
+    /* Clear color palettes */
+    memset(pixel, 0, sizeof(pixel));
 
-  /* Clear pattern cache */
-  memset ((char *) bg_pattern_cache, 0, sizeof (bg_pattern_cache));
+    /* Clear pattern cache */
+    memset((char *)bg_pattern_cache, 0, sizeof(bg_pattern_cache));
+  }
 
   /* Reset Sprite infos */
   spr_ovr = spr_col = object_count[0] = object_count[1] = 0;

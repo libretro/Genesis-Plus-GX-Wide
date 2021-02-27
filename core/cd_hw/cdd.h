@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  CD drive processor & CD-DA fader
  *
- *  Copyright (C) 2012-2020  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2012-2018  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -119,6 +119,7 @@ typedef struct
   int index;
   int lba;
   int scanOffset;
+  int volume;
   uint16 fader[2];
   uint8 status;
   uint16 sectorSize;
@@ -127,6 +128,7 @@ typedef struct
   chd_t chd;
 #endif
   int16 audio[2];
+  int audioSampleOffset;
 } cdd_t; 
 
 /* Function prototypes */

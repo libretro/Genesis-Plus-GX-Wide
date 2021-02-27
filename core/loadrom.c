@@ -3,7 +3,7 @@
  *  ROM Loading Support
  *
  *  Copyright (C) 1998-2003  Charles Mac Donald (original code)
- *  Copyright (C) 2007-2020  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2018  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -417,7 +417,7 @@ int load_bios(int system)
         /* CD BOOTROM loaded ? */
         if (size > 0)
         {
-          /* auto-detect CD hardware model */
+			/* auto-detect CD hardware model */
           if (!memcmp (&scd.bootrom[0x120], "WONDER-MEGA BOOT", 16))
           {
             /* Wondermega CD hardware */
@@ -433,7 +433,7 @@ int load_bios(int system)
             /* default CD hardware */
             cdd.type = CD_TYPE_DEFAULT;
           }
-         
+		  
 #ifdef LSB_FIRST
           /* Byteswap ROM to optimize 16-bit access */
           int i;
@@ -618,6 +618,11 @@ int load_rom(char *filename)
     if (!memcmp("SMS", &extension[0], 3))
     {
       /* Master System II hardware */
+      system_hw = SYSTEM_SMS2;
+    }
+    else if (!memcmp("BMS", &extension[0], 3))
+    {
+      /* Master System II hardware but it's Brazil because TecToy is weird */
       system_hw = SYSTEM_SMS2;
     }
     else if (!memcmp("GG", &extension[1], 2))

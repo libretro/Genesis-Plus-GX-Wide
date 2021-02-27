@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  Savestate support
  *
- *  Copyright (C) 2007-2019  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2016  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -38,6 +38,9 @@
 
 #include "shared.h"
 
+int8 fast_savestates = false;
+int8 reset_do_not_clear_buffers = false;
+
 int state_load(unsigned char *state)
 {
   int i, bufferptr = 0;
@@ -58,7 +61,9 @@ int state_load(unsigned char *state)
   }
 
   /* reset system */
+  reset_do_not_clear_buffers = fast_savestates;
   system_reset();
+  reset_do_not_clear_buffers = false;
 
   /* enable VDP access for TMSS systems */
   for (i=0xc0; i<0xe0; i+=8)
@@ -197,7 +202,7 @@ int state_save(unsigned char *state)
 
   /* version string */
   char version[16];
-  memcpy(version,STATE_VERSION,16);
+  strncpy(version,STATE_VERSION,16);
   save_param(version, 16);
 
   /* GENESIS */
@@ -260,8 +265,8 @@ int state_save(unsigned char *state)
   if (system_hw == SYSTEM_MCD)
   {
     /* CD hardware ID flag */
-    char id[4];
-    memcpy(id,"SCD!",4);
+    char id[5];
+    strncpy(id,"SCD!",4);
     save_param(id, 4);
 
     /* CD hardware */

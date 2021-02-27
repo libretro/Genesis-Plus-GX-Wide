@@ -3,7 +3,7 @@
  *  Sound Hardware
  *
  *  Copyright (C) 1998-2003  Charles Mac Donald (original code)
- *  Copyright (C) 2007-2020  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2019  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -39,6 +39,8 @@
 
 #include "shared.h"
 #include "blip_buf.h"
+
+int8 audio_hard_disable = 0;
 
 /* YM2612 internal clock = input clock / 6 = (master clock / 7) / 6 */
 #define YM2612_CLOCK_RATIO (7*6)
@@ -284,6 +286,13 @@ static unsigned int OPLL2413_Read(unsigned int cycles, unsigned int a)
 
 #endif
 
+#ifdef __LIBRETRO__
+static void NULL_YM_Update(int *buffer, int length) { }
+static void NULL_fm_reset(unsigned int cycles) { }
+static void NULL_fm_write(unsigned int cycles, unsigned int address, unsigned int data) { }
+static unsigned int NULL_fm_read(unsigned int cycles, unsigned int address) { return 0; }
+#endif
+
 void sound_init( void )
 {
   /* Initialize FM chip */
@@ -308,7 +317,7 @@ void sound_init( void )
     else
 #endif
     {
-      /* MAME OPN2*/
+      /* MAME OPN2 */
       YM2612Init();
       YM2612Config(config.ym2612);
       YM_Update = YM2612Update;
@@ -355,6 +364,16 @@ void sound_init( void )
 
   /* Initialize PSG chip */
   psg_init((system_hw == SYSTEM_SG) ? PSG_DISCRETE : PSG_INTEGRATED);
+
+  if (audio_hard_disable)
+  {
+    /* Dummy audio callbacks for audio hard disable */
+    YM_Update = NULL_YM_Update;
+    fm_reset = NULL_fm_reset;
+    fm_write = NULL_fm_write;
+    fm_read = NULL_fm_read;
+    return;
+  }
 }
 
 void sound_reset(void)
@@ -372,6 +391,51 @@ void sound_reset(void)
   
   /* reset FM cycle counters */
   fm_cycles_start = fm_cycles_count = 0;
+}
+
+void sound_update_fm_function_pointers(void)
+{
+  /* Only set function pointers for YM_Update, fm_reset, fm_write, fm_read */
+  if (audio_hard_disable)
+  {
+    /* Dummy audio callbacks for audio hard disable */
+    YM_Update = NULL_YM_Update;
+    fm_reset = NULL_fm_reset;
+    fm_write = NULL_fm_write;
+    fm_read = NULL_fm_read;
+    return;
+  }
+
+  if ((system_hw & SYSTEM_PBC) == SYSTEM_MD)
+  {
+    /* YM2612 */
+#ifdef HAVE_YM3438_CORE
+    if (config.ym3438)
+    {
+      /* Nuked OPN2 */
+      YM_Update = YM3438_Update;
+      fm_reset = YM3438_Reset;
+      fm_write = YM3438_Write;
+      fm_read = YM3438_Read;
+    }
+    else
+#endif
+    {
+      /* MAME OPN2 */
+      YM_Update = YM2612Update;
+      fm_reset = YM2612_Reset;
+      fm_write = YM2612_Write;
+      fm_read = YM2612_Read;
+    }
+  }
+  else
+  {
+    /* YM2413 */
+    YM_Update = (config.ym2413 & 1) ? YM2413Update : NULL;
+    fm_reset = YM2413_Reset;
+    fm_write = YM2413_Write;
+    fm_read = NULL;
+  }
 }
 
 int sound_update(unsigned int cycles)
@@ -400,40 +464,45 @@ int sound_update(unsigned int cycles)
     /* FM buffer start pointer */
     ptr = fm_buffer;
 
-    /* flush FM samples */
-    if (config.hq_fm)
+    if (!audio_hard_disable)
     {
-      /* high-quality Band-Limited synthesis */
-      do
+      /* flush FM samples */
+      if (config.hq_fm)
       {
-        /* left & right channels */
-        l = ((*ptr++ * preamp) / 100);
-        r = ((*ptr++ * preamp) / 100);
-        blip_add_delta(snd.blips[0], time, l-prev_l, r-prev_r);
-        prev_l = l;
-        prev_r = r;
+        /* high-quality Band-Limited synthesis */
+        do
+        {
+          /* left & right channels */
+          l = ((*ptr++ * preamp) / 100);
+          r = ((*ptr++ * preamp) / 100);
+          blip_add_delta(snd.blips[0], time, l - prev_l, r - prev_r);
+          prev_l = l;
+          prev_r = r;
 
-        /* increment time counter */
-        time += fm_cycles_ratio;
+          /* increment time counter */
+          time += fm_cycles_ratio;
+        } while (time < cycles);
       }
-      while (time < cycles);
+      else
+      {
+        /* faster Linear Interpolation */
+        do
+        {
+          /* left & right channels */
+          l = ((*ptr++ * preamp) / 100);
+          r = ((*ptr++ * preamp) / 100);
+          blip_add_delta_fast(snd.blips[0], time, l - prev_l, r - prev_r);
+          prev_l = l;
+          prev_r = r;
+
+          /* increment time counter */
+          time += fm_cycles_ratio;
+        } while (time < cycles);
+      }
     }
     else
     {
-      /* faster Linear Interpolation */
-      do
-      {
-        /* left & right channels */
-        l = ((*ptr++ * preamp) / 100);
-        r = ((*ptr++ * preamp) / 100);
-        blip_add_delta_fast(snd.blips[0], time, l-prev_l, r-prev_r);
-        prev_l = l;
-        prev_r = r;
-
-        /* increment time counter */
-        time += fm_cycles_ratio;
-      }
-      while (time < cycles);
+      time += (((cycles - time + fm_cycles_ratio - 1) / fm_cycles_ratio) + 1) * fm_cycles_ratio;
     }
 
     /* reset FM buffer pointer */
@@ -487,7 +556,7 @@ int sound_context_save(uint8 *state)
   }
   else
   {
-#ifdef HAVE_OPLL_CORE
+#ifdef HAVE_YM3438_CORE
     save_param(&config.opll, sizeof(config.opll));
     if (config.opll)
     {
@@ -561,4 +630,44 @@ int sound_context_load(uint8 *state)
   fm_cycles_count = fm_cycles_start;
 
   return bufferptr;
+}
+
+/* Include the CD audio header files to get the cdd.audio variable */
+#include "scd.h"
+#include "cdd.h"
+
+void save_sound_buffer()
+{
+  int i;
+  snd.fm_last_save[0] = fm_last[0];
+  snd.fm_last_save[1] = fm_last[1];
+  snd.cd_last_save[0] = cdd.audio[0];
+  snd.cd_last_save[1] = cdd.audio[1];
+  for (i = 0; i < 3; i++)
+  {
+    if (snd.blips[i] != NULL)
+    {
+      if (snd.blip_states[i] == NULL)
+      {
+        snd.blip_states[i] = blip_new_buffer_state();
+      }
+      blip_save_buffer_state(snd.blips[i], snd.blip_states[i]);
+    }
+  }
+}
+
+void restore_sound_buffer()
+{
+  int i;
+  fm_last[0] = snd.fm_last_save[0];
+  fm_last[1] = snd.fm_last_save[1];
+  cdd.audio[0] = snd.cd_last_save[0];
+  cdd.audio[1] = snd.cd_last_save[1];
+  for (i = 0; i < 3; i++)
+  {
+    if (snd.blips[i] != NULL && snd.blip_states[i] != NULL)
+    {
+      blip_load_buffer_state(snd.blips[i], snd.blip_states[i]);
+    }
+  }
 }

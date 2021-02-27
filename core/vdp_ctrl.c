@@ -42,6 +42,11 @@
 #include "shared.h"
 #include "hvc.h"
 
+extern int8 reset_do_not_clear_buffers;
+static int8 do_not_invalidate_tile_cache;
+
+static void vdp_set_all_vram(const uint8 *src);
+
 /* Mark a pattern as modified */
 #define MARK_BG_DIRTY(addr)                         \
 {                                                   \
@@ -242,12 +247,14 @@ void vdp_init(void)
 void vdp_reset(void)
 {
   int i;
-
-  memset ((char *) sat, 0, sizeof (sat));
-  memset ((char *) vram, 0, sizeof (vram));
-  memset ((char *) cram, 0, sizeof (cram));
-  memset ((char *) vsram, 0, sizeof (vsram));
-  memset ((char *) reg, 0, sizeof (reg));
+  if (!reset_do_not_clear_buffers)
+  {
+    memset((char *)sat, 0, sizeof(sat));
+    memset((char *)vram, 0, sizeof(vram));
+    memset((char *)cram, 0, sizeof(cram));
+    memset((char *)vsram, 0, sizeof(vsram));
+  }
+  memset((char *)reg, 0, sizeof(reg));
 
   addr            = 0;
   addr_latch      = 0;
@@ -287,10 +294,13 @@ void vdp_reset(void)
   sat_addr_mask       = 0x01FF;
 
   /* reset pattern cache changes */
-  bg_list_index = 0;
-  memset ((char *) bg_name_dirty, 0, sizeof (bg_name_dirty));
-  memset ((char *) bg_name_list, 0, sizeof (bg_name_list));
-
+  if (!reset_do_not_clear_buffers)
+  {
+    /* Loadstate clears these */
+    bg_list_index = 0;
+    memset((char *)bg_name_dirty, 0, sizeof(bg_name_dirty));
+    memset((char *)bg_name_list, 0, sizeof(bg_name_list));
+  }
   /* default Window clipping */
   window_clip(0,0);
 
@@ -467,9 +477,16 @@ int vdp_context_load(uint8 *state)
 {
   int i, bufferptr = 0;
   uint8 temp_reg[0x20];
+  /* Pointer to VRAM block within the savestate */
+  uint8 *state_vram_ptr;
+  /* Save number of dirty tiles before calls to register writes */
+  int bg_list_index_save = bg_list_index;
+  /* Prevent register write code from invalidating the tile cache */
+  do_not_invalidate_tile_cache = true;
 
   load_param(sat, sizeof(sat));
-  load_param(vram, sizeof(vram));
+  state_vram_ptr = &state[bufferptr];
+  bufferptr += sizeof(vram);
   load_param(cram, sizeof(cram));
   load_param(vsram, sizeof(vsram));
   load_param(temp_reg, sizeof(temp_reg));
@@ -556,12 +573,27 @@ int vdp_context_load(uint8 *state)
     color_update_m4(0x40, *(uint16 *)&cram[(0x10 | (border & 0x0F)) << 1]);
   }
 
-  /* invalidate tile cache */
-  for (i=0;i<bg_list_index;i++) 
+  /* If we have a tile cache with any clean tiles */
+  if (bg_list_index_save != bg_list_index)
   {
-    bg_name_list[i]=i;
-    bg_name_dirty[i]=0xFF;
+    /* Restore index value */
+    bg_list_index = bg_list_index_save;
+    /* Copy all VRAM and update dirty tile flags */
+    vdp_set_all_vram(state_vram_ptr);
   }
+  else
+  {
+    /* Copy all vram */
+    memcpy(vram, state_vram_ptr, sizeof(vram));
+    /* invalidate the tile cache */
+    for (i = 0; i < bg_list_index; i++)
+    {
+      bg_name_list[i] = i;
+      bg_name_dirty[i] = 0xFF;
+    }
+  }
+
+  do_not_invalidate_tile_cache = false;
 
   return bufferptr;
 }
@@ -1769,11 +1801,14 @@ static void vdp_reg_w(unsigned int r, unsigned int d, unsigned int cycles)
             bg_list_index = 0x200;
           }
 
-          /* Invalidate pattern cache */
-          for (i=0;i<bg_list_index;i++) 
+          if (!do_not_invalidate_tile_cache)
           {
-            bg_name_list[i] = i;
-            bg_name_dirty[i] = 0xFF;
+            /* Invalidate pattern cache */
+            for (i = 0; i < bg_list_index; i++)
+            {
+              bg_name_list[i] = i;
+              bg_name_dirty[i] = 0xFF;
+            }
           }
 
           /* Update vertical counter max value */
@@ -2235,7 +2270,7 @@ static void vdp_bus_w(unsigned int data)
           remap_line(v_counter);
         }
       }
-
+	  
 #ifdef HOOK_CPU
       if (cpu_hook)
         cpu_hook(HOOK_CRAM_W, 2, addr, data);
@@ -2261,7 +2296,7 @@ static void vdp_bus_w(unsigned int data)
           render_line(v_counter);
         }
       }
-
+	  
 #ifdef HOOK_CPU
       if (cpu_hook)
         cpu_hook(HOOK_VSRAM_W, 2, addr, data);
@@ -2470,7 +2505,7 @@ static unsigned int vdp_68k_data_r_m5(void)
     {
       /* read two bytes from VRAM */
       data = *(uint16 *)&vram[addr & 0xFFFE];
-
+	  
 #ifdef HOOK_CPU
       if (cpu_hook)
         cpu_hook(HOOK_VRAM_R, 2, addr, data);
@@ -3252,6 +3287,27 @@ static void vdp_dma_fill(unsigned int length)
 
       /* address is still incremented */
       addr += reg[15] * length;
+    }
+  }
+}
+
+static void vdp_set_all_vram(const uint8 *src)
+{
+  /* Copies entire vram area from a savestate, and updates the dirty tile flags */
+  int name = 0;
+  int addr = 0;
+
+  for (addr = 0; addr < sizeof(vram); addr += 32)
+  {
+    if (0 != memcmp(vram + addr, src + addr, 32))
+    {
+      name = addr >> 5;
+      if (bg_name_dirty[name] == 0)
+      {
+        bg_name_list[bg_list_index++] = name;
+      }
+      bg_name_dirty[name] |= 0xFF;
+      memcpy(vram + addr, src + addr, 32);
     }
   }
 }
