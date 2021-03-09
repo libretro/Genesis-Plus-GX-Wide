@@ -4212,9 +4212,18 @@ void window_clip(unsigned int data, unsigned int sw)
   }
   else
   {
+    // Problem: window_clip is called as a function from the vdp so we can't
+    // really just re-call it if the number of columns gets changed
+    //
+    // Partial solution: If the number of user-selected columns is greater
+    // than 18 the added window clipping columns gets bumped up to 24.
+    // That way non-android users still get to play around with crazy wide
+    // resolutions but android users dont get screwed
+    int added_columns = config.h40_extra_columns > 18 ? 24 : 18;
+
     /* Plane A takes up entire line */
     clip[a].left = 0;
-    clip[a].right = sw + (24 / 2); // 24 = max number of extra columns
+    clip[a].right = sw + (added_columns / 2);
     clip[a].enable = 1;
     clip[w].enable = 0;
   }
