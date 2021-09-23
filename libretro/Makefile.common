@@ -27,7 +27,7 @@ ifeq ($(HAVE_CHD), 1)
                -I$(LIBRETRO_DEPS_DIR)/lzma-19.00/include \
                -I$(LIBRETRO_DEPS_DIR)/zlib-1.2.11
    SOURCES_C += \
-					 $(LIBRETRO_DEPS_DIR)/lzma-19.00/src/Alloc.c \
+                $(LIBRETRO_DEPS_DIR)/lzma-19.00/src/Alloc.c \
                 $(LIBRETRO_DEPS_DIR)/lzma-19.00/src/Bra86.c \
                 $(LIBRETRO_DEPS_DIR)/lzma-19.00/src/BraIA64.c \
                 $(LIBRETRO_DEPS_DIR)/lzma-19.00/src/CpuArch.c \
@@ -80,6 +80,7 @@ SOURCES_C += \
              $(LIBRETRO_DEPS_DIR)/zlib-1.2.11/inflate.c \
              $(LIBRETRO_DEPS_DIR)/zlib-1.2.11/inftrees.c \
              $(LIBRETRO_DEPS_DIR)/zlib-1.2.11/zutil.c
+
 endif
 
 ifeq ($(SHARED_LIBVORBIS),)

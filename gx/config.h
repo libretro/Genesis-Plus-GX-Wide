@@ -3,7 +3,7 @@
  *
  *  Genesis Plus GX configuration file support
  *
- *  Copyright Eke-Eke (2007-2019)
+ *  Copyright Eke-Eke (2007-2021)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -71,6 +71,7 @@ typedef struct
   uint8 addr_error;
   uint8 bios;
   uint8 lock_on;
+  uint8 add_on;
   uint8 hot_swap;
   uint8 invert_mouse;
   uint8 gun_cursor[2];

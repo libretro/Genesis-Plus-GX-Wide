@@ -55,9 +55,16 @@
 #define TYPE_AR 0x02  /* (Pro) Action Replay */
 #define TYPE_SK 0x03  /* Sonic & Knuckles */
 
+/* CD hardware add-on (MD mode) */
+#define HW_ADDON_AUTO    0x00
+#define HW_ADDON_MEGACD  0x01
+#define HW_ADDON_MEGASD  0x02
+#define HW_ADDON_NONE    0x03
+
 /* Special hardware (0x01 & 0x02 reserved for Master System 3-D glasses & Terebi Oekaki) */
 #define HW_J_CART   0x04
 #define HW_LOCK_ON  0x08
+#define HW_MEGASD   0x10
 
 /* Cartridge extra hardware */
 typedef struct
@@ -81,7 +88,8 @@ typedef struct
   uint32 mask;            /* ROM mask */
   uint8 special;          /* custom external hardware (Lock-On, J-Cart, 3-D glasses, Terebi Oekaki,...) */
   cart_hw_t hw;           /* cartridge internal hardware */
-  uint8 rom[MAXROMSIZE];  /* ROM area */
+  uint8 lockrom[0x10000]; /* Game Genie / (Pro) Action Replay Lock-On ROM area (max 64KB) */
+  uint8 rom[MAXROMSIZE];  /* cartridge ROM area */
 } md_cart_t;
 
 

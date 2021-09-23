@@ -3,7 +3,7 @@
  *
  *  Genesis Plus GX libretro port
  *
- *  Copyright Eke-Eke (2007-2018)
+ *  Copyright Eke-Eke (2007-2021)
  *
  *  Copyright Daniel De Matteis (2012-2016)
  *
@@ -147,9 +147,9 @@ static bool restart_eq = false;
 
 static char g_rom_dir[256];
 static char g_rom_name[256];
-static void *g_rom_data;
-static size_t g_rom_size;
-static char *save_dir;
+static const void *g_rom_data = NULL;
+static size_t g_rom_size      = 0;
+static char *save_dir         = NULL;
 
 static retro_log_printf_t log_cb;
 static retro_video_refresh_t video_cb;
@@ -192,7 +192,8 @@ static char arvalidchars[] = "0123456789ABCDEF";
 static uint32_t overclock_delay;
 #endif
 
-static bool libretro_supports_bitmasks = false;
+static bool libretro_supports_option_categories = false;
+static bool libretro_supports_bitmasks          = false;
 
 #define SOUND_FREQUENCY 44100
 
@@ -944,6 +945,7 @@ static void config_default(void)
    config.addr_error     = 1;
    config.bios           = 0;
    config.lock_on        = 0;
+   config.add_on         = HW_ADDON_AUTO;
    config.lcd            = 0; /* 0.8 fixed point */
 #ifdef HAVE_OVERCLOCK
    config.overclock      = 100;
@@ -958,8 +960,6 @@ static void config_default(void)
    config.lcd      = 0;
    config.render   = 0;
    config.left_border = 0;
-   config.h40_extra_columns = 10;
-   config.vdp_fix_dma_boundary_bug = 0;
 
    /* input options */
    input.system[0] = SYSTEM_GAMEPAD;
@@ -968,6 +968,8 @@ static void config_default(void)
    {
      config.input[i].padtype = DEVICE_PAD2B | DEVICE_PAD3B | DEVICE_PAD6B;
    }
+   config.h40_extra_columns = 10;
+   config.vdp_fix_dma_boundary_bug = 1;
 }
 
 static void bram_load(void)
@@ -1185,6 +1187,7 @@ static double calculate_display_aspect_ratio(void)
    /* Could be read directly from the register as well. */
    int h40_width = 320 + (config.h40_extra_columns * 8);
    is_h40 = bitmap.viewport.w == h40_width;
+
    if (is_h40 && (config.h40_extra_columns > 0))
     return bitmap.viewport.w/(double)bitmap.viewport.h;
 
@@ -1249,12 +1252,6 @@ static void update_overclock(void)
     }
 }
 #endif
-
-static void check_sms_border(void)
-{
-	if (config.left_border && (bitmap.viewport.x == 0) && ((system_hw == SYSTEM_MARKIII) || (system_hw & SYSTEM_SMS) || (system_hw == SYSTEM_PBC)))
-		bitmap.viewport.x = -8;
-}
 
 static void check_variables(bool first_run)
 {
@@ -1460,6 +1457,21 @@ static void check_variables(bool first_run)
       m68k.aerr_enabled = config.addr_error = 1;
     else
       m68k.aerr_enabled = config.addr_error = 0;
+  }
+
+  var.key = CORE_NAME "_add_on";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    orig_value = config.add_on;
+    if (var.value && !strcmp(var.value, "sega/mega cd"))
+      config.add_on = HW_ADDON_MEGACD;
+    else if (var.value && !strcmp(var.value, "megasd"))
+      config.add_on = HW_ADDON_MEGASD;
+    else if (var.value && !strcmp(var.value, "none"))
+      config.add_on = HW_ADDON_NONE;
+    else
+      config.add_on = HW_ADDON_AUTO;
+    /* note: game needs to be reloaded for change to take effect */
   }
 
   var.key = CORE_NAME "_lock_on";
@@ -1802,33 +1814,13 @@ static void check_variables(bool first_run)
     orig_value = config.left_border;
     if (!var.value || !strcmp(var.value, "disabled"))
       config.left_border = 0;
-    else if (var.value && !strcmp(var.value, "enabled"))
+    else if (var.value && !strcmp(var.value, "left border"))
       config.left_border = 1;
+    else if (var.value && !strcmp(var.value, "left & right borders"))
+      config.left_border = 2;
     if (orig_value != config.left_border)
       update_viewports = true;
   }
-  
-    var.key = CORE_NAME "_h40_extra_columns";
-  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
-  {
-    orig_value = config.h40_extra_columns;
-
-    if (!var.value) config.h40_extra_columns = 10;
-    else config.h40_extra_columns = atoi(var.value);
-
-    if (orig_value != config.h40_extra_columns)
-      update_viewports = true;
-  }
-
-  var.key = CORE_NAME "_vdp_fix_dma_boundary_bug";
-  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
-  {
-    if (!var.value || !strcmp(var.value, "disabled"))
-      config.vdp_fix_dma_boundary_bug = 0;
-    else if (var.value && !strcmp(var.value, "enabled"))
-      config.vdp_fix_dma_boundary_bug = 1;
-  }
-
 
 #ifdef HAVE_OVERCLOCK
   var.key = CORE_NAME "_overclock";
@@ -1857,6 +1849,27 @@ static void check_variables(bool first_run)
       config.no_sprite_limit = 0;
     else
       config.no_sprite_limit = 1;
+  }
+
+  var.key = CORE_NAME "_h40_extra_columns";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    orig_value = config.h40_extra_columns;
+
+    if (!var.value) config.h40_extra_columns = 10;
+    else config.h40_extra_columns = atoi(var.value);
+
+    if (orig_value != config.h40_extra_columns)
+      update_viewports = true;
+  }
+
+  var.key = CORE_NAME "_vdp_fix_dma_boundary_bug";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    if (!var.value || !strcmp(var.value, "disabled"))
+      config.vdp_fix_dma_boundary_bug = 0;
+    else if (var.value && !strcmp(var.value, "enabled"))
+      config.vdp_fix_dma_boundary_bug = 1;
   }
 
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
@@ -1894,7 +1907,12 @@ static void check_variables(bool first_run)
   var.key = CORE_NAME "_show_advanced_audio_settings";
   var.value = NULL;
 
-  if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+  /* If frontend supports core option categories,
+   * then genesis_plus_gx_show_advanced_audio_settings
+   * is ignored and no options should be hidden */
+
+  if (!libretro_supports_option_categories &&
+      environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
   {
     bool show_advanced_av_settings_prev = show_advanced_av_settings;
 
@@ -1959,7 +1977,6 @@ static void check_variables(bool first_run)
       bitmap.viewport.x = (config.overscan & 2) ? 14 : -48;
     else
       bitmap.viewport.x = (config.overscan & 2) * 7 ;
-      check_sms_border();
   }
 
   /* Reinitialise frameskipping, if required */
@@ -2527,51 +2544,6 @@ unsigned retro_api_version(void) { return RETRO_API_VERSION; }
 void retro_set_environment(retro_environment_t cb)
 {
    struct retro_vfs_interface_info vfs_iface_info;
-   static const struct retro_variable vars[] = {
-      { CORE_NAME "_system_hw", "System hardware; auto|sg-1000|sg-1000 II|mark-III|master system|master system II|game gear|mega drive / genesis" },
-      { CORE_NAME "_region_detect", "System region; auto|ntsc-u|pal|ntsc-j" },
-      { CORE_NAME "_force_dtack", "System lockups; enabled|disabled" },
-      { CORE_NAME "_bios", "System bootrom; disabled|enabled" },
-      { CORE_NAME "_bram", "CD System BRAM; per bios|per game" },
-      { CORE_NAME "_addr_error", "68k address error; enabled|disabled" },
-      { CORE_NAME "_lock_on", "Cartridge lock-on; disabled|game genie|action replay (pro)|sonic & knuckles" },
-      { CORE_NAME "_ym2413", "Master System FM (YM2413); auto|disabled|enabled" },
-#ifdef HAVE_OPLL_CORE
-      { CORE_NAME "_ym2413_core", "Master System FM (YM2413) core; mame|nuked" },
-#endif
-#ifdef HAVE_YM3438_CORE
-      { CORE_NAME "_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)|nuked (ym2612)|nuked (ym3438)" },
-#else
-      { CORE_NAME "_ym2612", "Mega Drive / Genesis FM; mame (ym2612)|mame (asic ym3438)|mame (enhanced ym3438)" },
-#endif
-
-      { CORE_NAME "_sound_output", "Sound output; stereo|mono" },
-      { CORE_NAME "_audio_filter", "Audio filter; disabled|low-pass" },
-      { CORE_NAME "_lowpass_range", "Low-pass filter %; 60|65|70|75|80|85|90|95|5|10|15|20|25|30|35|40|45|50|55"},
-      
-      #if HAVE_EQ     
-      { CORE_NAME "_audio_eq_low",  "EQ Low;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
-      { CORE_NAME "_audio_eq_mid",  "EQ Mid;  100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
-      { CORE_NAME "_audio_eq_high", "EQ High; 100|0|5|10|15|20|25|30|35|40|45|50|55|60|65|70|75|80|85|90|95" },
-      #endif
-      
-      { CORE_NAME "_blargg_ntsc_filter", "Blargg NTSC filter; disabled|monochrome|composite|svideo|rgb" },
-      { CORE_NAME "_lcd_filter", "LCD Ghosting filter; disabled|enabled" },
-      { CORE_NAME "_overscan", "Borders; disabled|top/bottom|left/right|full" },
-      { CORE_NAME "_gg_extra", "Game Gear extended screen; disabled|enabled" },
-      { CORE_NAME "_left_border", "Hide Master System Left Border; disabled|enabled" },
-	    { CORE_NAME "_h40_extra_columns", "Extra columns to draw in H40 for widescreen; 10|0|2|4|6|8|12|14|16|18|20|22|24" },
-      { CORE_NAME "_vdp_fix_dma_boundary_bug", "Fix 128k DMA boundary; disabled|enabled" },
-      { CORE_NAME "_aspect_ratio", "Core-provided aspect ratio; auto|NTSC PAR|PAL PAR" },
-      { CORE_NAME "_render", "Interlaced mode 2 output; single field|double field" },
-      { CORE_NAME "_gun_cursor", "Show Lightgun crosshair; disabled|enabled" },
-      { CORE_NAME "_invert_mouse", "Invert Mouse Y-axis; disabled|enabled" },
-#ifdef HAVE_OVERCLOCK
-      { CORE_NAME "_overclock", "CPU speed; 100%|125%|150%|175%|200%" },
-#endif
-      { CORE_NAME "_no_sprite_limit", "Remove per-line sprite limit; disabled|enabled" },
-      { NULL, NULL },
-   };
 
    static const struct retro_controller_description port_1[] = {
       { "Joypad Auto", RETRO_DEVICE_JOYPAD },
@@ -2727,12 +2699,42 @@ void retro_set_environment(retro_environment_t cb)
       { 0 },
    };
 
+   static const struct retro_system_content_info_override content_overrides[] = {
+      {
+         "mdx|md|smd|gen|bms|sms|gg|sg|68k|sgd", /* extensions */
+#if defined(LOW_MEMORY)
+         true,                                   /* need_fullpath */
+#else
+         false,                                  /* need_fullpath */
+#endif
+         false                                   /* persistent_data */
+      },
+      { NULL, false, false }
+   };
+
    environ_cb = cb;
 
-   libretro_set_core_options(environ_cb);
+   libretro_supports_option_categories = false;
+   libretro_set_core_options(environ_cb,
+         &libretro_supports_option_categories);
+
+   /* If frontend supports core option categories,
+    * genesis_plus_gx_show_advanced_audio_settings
+    * is unused and should be hidden */
+   if (libretro_supports_option_categories)
+   {
+      struct retro_core_option_display option_display;
+
+      option_display.visible = false;
+      option_display.key     = CORE_NAME "_show_advanced_audio_settings";
+
+      environ_cb(RETRO_ENVIRONMENT_SET_CORE_OPTIONS_DISPLAY,
+            &option_display);
+   }
 
    cb(RETRO_ENVIRONMENT_SET_CONTROLLER_INFO, (void*)ports);
    cb(RETRO_ENVIRONMENT_SET_INPUT_DESCRIPTORS, (void*)desc);
+   cb(RETRO_ENVIRONMENT_SET_CONTENT_INFO_OVERRIDE, (void*)content_overrides);
 
    vfs_iface_info.required_interface_version = 1;
    vfs_iface_info.iface                      = NULL;
@@ -2755,7 +2757,7 @@ void retro_get_system_info(struct retro_system_info *info)
 #define GIT_VERSION ""
 #endif
    info->library_version = "v1.7.4" GIT_VERSION;
-   info->valid_extensions = "m3u|mdx|md|smd|gen|bin|cue|iso|chd|bms|sms|gg|sg";
+   info->valid_extensions = "m3u|mdx|md|smd|gen|bin|cue|iso|chd|bms|sms|gg|sg|68k|sgd";
    info->block_extract = false;
    info->need_fullpath = true;
 }
@@ -2970,7 +2972,6 @@ bool retro_unserialize(const void *data, size_t size)
    update_overclock();
 #endif
 
-   check_sms_border();
    return TRUE;
 }
 
@@ -3039,12 +3040,69 @@ bool retro_load_game(const struct retro_game_info *info)
 #else
    char slash      = '/';
 #endif
+   const struct retro_game_info_ext *info_ext = NULL;
+   char content_path[256];
+   char content_ext[8];
 
-   if (!info)
-      return false;
-  
-  if (!info->path)
-      return false;
+   content_path[0] = '\0';
+   content_ext[0]  = '\0';
+
+   g_rom_data      = NULL;
+   g_rom_size      = 0;
+
+   /* Attempt to fetch extended game info */
+   if (environ_cb(RETRO_ENVIRONMENT_GET_GAME_INFO_EXT, &info_ext))
+   {
+#if !defined(LOW_MEMORY)
+      g_rom_data = (const void *)info_ext->data;
+      g_rom_size = info_ext->size;
+#endif
+      strncpy(g_rom_dir, info_ext->dir, sizeof(g_rom_dir));
+      g_rom_dir[sizeof(g_rom_dir) - 1] = '\0';
+
+      strncpy(g_rom_name, info_ext->name, sizeof(g_rom_name));
+      g_rom_name[sizeof(g_rom_name) - 1] = '\0';
+
+      strncpy(content_ext, info_ext->ext, sizeof(content_ext));
+      content_ext[sizeof(content_ext) - 1] = '\0';
+
+      if (info_ext->file_in_archive)
+      {
+         /* We don't have a 'physical' file in this
+          * case, but the core still needs a filename
+          * in order to detect associated content
+          * (Mega CD Mode 1/MegaSD MD+ mode). We therefore
+          * fake it, using the content directory,
+          * canonical content name, and content file
+          * extension */
+         snprintf(content_path, sizeof(content_path), "%s%c%s.%s",
+               g_rom_dir, slash, g_rom_name, content_ext);
+      }
+      else
+      {
+         strncpy(content_path, info_ext->full_path, sizeof(content_path));
+         content_path[sizeof(content_path) - 1] = '\0';
+      }
+   }
+   else
+   {
+      const char *ext = NULL;
+
+      if (!info || !info->path)
+         return false;
+
+      extract_directory(g_rom_dir, info->path, sizeof(g_rom_dir));
+      extract_name(g_rom_name, info->path, sizeof(g_rom_name));
+
+      strncpy(content_path, info->path, sizeof(content_path));
+      content_path[sizeof(content_path) - 1] = '\0';
+
+      if (ext = strrchr(info->path, '.'))
+      {
+         strncpy(content_ext, ext + 1, sizeof(content_ext));
+         content_ext[sizeof(content_ext) - 1] = '\0';
+      }
+   }
 
 #ifdef FRONTEND_SUPPORTS_RGB565
    {
@@ -3060,9 +3118,6 @@ bool retro_load_game(const struct retro_game_info *info)
 
    init_bitmap();
    config_default();
-
-   extract_directory(g_rom_dir, info->path, sizeof(g_rom_dir));
-   extract_name(g_rom_name, info->path, sizeof(g_rom_name));
 
    if (!environ_cb(RETRO_ENVIRONMENT_GET_SYSTEM_DIRECTORY, &dir) || !dir)
    {
@@ -3114,9 +3169,6 @@ bool retro_load_game(const struct retro_game_info *info)
       log_cb(RETRO_LOG_INFO, "Sega/Mega CD RAM CART is located at: %s\n", CART_BRAM);
    }
 
-   g_rom_data = info->data;
-   g_rom_data = (void *)info->data;
-
    /* Clear disk interface (already done in retro_unload_game but better be safe) */
    disk_count = 0;
    disk_index = 0;
@@ -3130,9 +3182,9 @@ bool retro_load_game(const struct retro_game_info *info)
    }
 
    /* M3U file list support */
-   if ((strlen(info->path) > 4) && !strncmp(info->path + strlen(info->path) - 4, ".m3u", 4))
+   if (!strcmp(content_ext, "m3u"))
    {
-      RFILE *fd = filestream_open(info->path, RETRO_VFS_FILE_ACCESS_READ, RETRO_VFS_FILE_ACCESS_HINT_NONE);
+      RFILE *fd = filestream_open(content_path, RETRO_VFS_FILE_ACCESS_READ, RETRO_VFS_FILE_ACCESS_HINT_NONE);
       if (fd)
       {
          int len;
@@ -3203,14 +3255,14 @@ bool retro_load_game(const struct retro_game_info *info)
    }
    else
    {
-      if (load_rom((char *)info->path) <= 0)
+      if (load_rom(content_path) <= 0)
          return false;
 
       /* automatically add loaded CD to disk interface */
       if ((system_hw == SYSTEM_MCD) && cdd.loaded)
       {
          disk_count = 1;
-         disk_info[0] = strdup(info->path);
+         disk_info[0] = strdup(content_path);
       }
    }
 
@@ -3238,7 +3290,6 @@ bool retro_load_game(const struct retro_game_info *info)
    audio_init(SOUND_FREQUENCY, 0);
    system_init();
    system_reset();
-   check_sms_border();
    is_running = false;
 
    if (system_hw == SYSTEM_MCD)
@@ -3385,7 +3436,11 @@ void retro_init(void)
 
 void retro_deinit(void)
 {
-   libretro_supports_bitmasks = false;
+   libretro_supports_option_categories = false;
+   libretro_supports_bitmasks          = false;
+
+   g_rom_data = NULL;
+   g_rom_size = 0;
 }
 
 void retro_reset(void)
@@ -3408,6 +3463,8 @@ void retro_run(void)
    int do_skip = 0;
    bool updated = false;
    is_running = true;
+   int vwoffset = 0;
+   int bmdoffset = 0;
 
 #ifdef HAVE_OVERCLOCK
   /* update overclock delay */
@@ -3534,11 +3591,28 @@ void retro_run(void)
          draw_cursor(input.analog[5][0], input.analog[5][1], 0xf800);
       }
    }
+   
+   if ((config.left_border != 0) && (reg[0] & 0x20) && (bitmap.viewport.x == 0) && ((system_hw == SYSTEM_MARKIII) || (system_hw & SYSTEM_SMS) || (system_hw == SYSTEM_PBC)))
+   {
+	   bmdoffset = 16;
+	   if (config.left_border == 1)
+	   {
+		   vwoffset = 8;
+	   }
+	   else
+	   {
+		   vwoffset = 16;
+	   }
+   }
 
    if (!do_skip)
-     video_cb(bitmap.data, vwidth, vheight, 720 * 2);
+   {
+		video_cb(bitmap.data + bmdoffset, vwidth - vwoffset, vheight, 720 * 2);	
+   }		
    else
-     video_cb(NULL, vwidth, vheight, 720 * 2);
+   {
+		video_cb(NULL, vwidth - vwoffset, vheight, 720 * 2);
+   }
 
    audio_cb(soundbuffer, audio_update(soundbuffer));
 }
