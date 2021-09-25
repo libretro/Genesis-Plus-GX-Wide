@@ -1176,6 +1176,7 @@ static void extract_directory(char *buf, const char *path, size_t size)
 
 static double calculate_display_aspect_ratio(void)
 {
+   int h40_width;
    double videosamplerate, dotrate;
    bool is_h40 = false;
    if (config.aspect_ratio == 0)
@@ -1185,7 +1186,7 @@ static double calculate_display_aspect_ratio(void)
    }
 
    /* Could be read directly from the register as well. */
-   int h40_width = 320 + (config.h40_extra_columns * 8);
+   h40_width = 320 + (config.h40_extra_columns * 8);
    is_h40 = bitmap.viewport.w == h40_width;
 
    if (is_h40 && (config.h40_extra_columns > 0))
@@ -3462,9 +3463,9 @@ void retro_run(void)
    int result = -1;
    int do_skip = 0;
    bool updated = false;
-   is_running = true;
    int vwoffset = 0;
    int bmdoffset = 0;
+   is_running = true;
 
 #ifdef HAVE_OVERCLOCK
   /* update overclock delay */
@@ -3596,13 +3597,9 @@ void retro_run(void)
    {
 	   bmdoffset = 16;
 	   if (config.left_border == 1)
-	   {
 		   vwoffset = 8;
-	   }
 	   else
-	   {
 		   vwoffset = 16;
-	   }
    }
 
    if (!do_skip)

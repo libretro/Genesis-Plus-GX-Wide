@@ -1514,10 +1514,14 @@ void render_bg_m4(int line)
 #ifndef ALT_RENDERER
 void render_bg_m5(int line)
 {
+  int start_real, end_real;
   int column;
+  uint32 *nt;
+  uint32 yscroll, pf_col_mask, pf_row_mask, pf_shift;
   uint32 atex, atbuf, *src, *dst;
-
+  int a, w, start, end;
   /* Common data */
+  uint32 shift, index, v_line;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
   if (
     (render_obj == render_obj_m5) ||
@@ -1530,32 +1534,33 @@ void render_bg_m5(int line)
       ((config.h40_extra_columns * 4) << 16)
     );
   }
-  uint32 yscroll      = *(uint32 *)&vsram[0];
-  uint32 pf_col_mask  = playfield_col_mask;
-  uint32 pf_row_mask  = playfield_row_mask;
-  uint32 pf_shift     = playfield_shift;
+  yscroll      = *(uint32 *)&vsram[0];
+  pf_col_mask  = playfield_col_mask;
+  pf_row_mask  = playfield_row_mask;
+  pf_shift     = playfield_shift;
+
 
   /* Window & Plane A */
-  int a = (reg[18] & 0x1F) << 3;
-  int w = (reg[18] >> 7) & 1;
+  a = (reg[18] & 0x1F) << 3;
+  w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
-  int start = 0;
-  int end = bitmap.viewport.w >> 4;
+  start = 0;
+  end   = bitmap.viewport.w >> 4;
 
   /* Plane B scroll */
 #ifdef LSB_FIRST
-  uint32 shift  = (xscroll >> 16) & 0x0F;
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
-  uint32 v_line = (line + (yscroll >> 16)) & pf_row_mask;
+  shift  = (xscroll >> 16) & 0x0F;
+  index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
+  v_line = (line + (yscroll >> 16)) & pf_row_mask;
 #else
-  uint32 shift  = (xscroll & 0x0F);
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
-  uint32 v_line = (line + yscroll) & pf_row_mask;
+  shift  = (xscroll & 0x0F);
+  index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
+  v_line = (line + yscroll) & pf_row_mask;
 #endif
 
   /* Plane B name table */
-  uint32 *nt = (uint32 *)&vram[ntbb + (((v_line >> 3) << pf_shift) & 0x1FC0)];
+  nt = (uint32 *)&vram[ntbb + (((v_line >> 3) << pf_shift) & 0x1FC0)];
 
   /* Pattern row index */
   v_line = (v_line & 7) << 3;
@@ -1663,8 +1668,8 @@ void render_bg_m5(int line)
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
-	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
+    start_real = start + (config.h40_extra_columns / 4);
+    end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
     {
@@ -1684,9 +1689,13 @@ void render_bg_m5(int line)
 void render_bg_m5_vs(int line)
 {
   int column;
+  int start_real, end_real;
   uint32 atex, atbuf, *src, *dst;
   uint32 v_line, *nt;
-
+  uint32 yscroll = 0, pf_col_mask, pf_row_mask, pf_shift;
+  uint32 *vs;
+  int a, w, start = 0, end;
+  uint32 shift, index;
   /* Common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
   if (
@@ -1700,27 +1709,26 @@ void render_bg_m5_vs(int line)
       ((config.h40_extra_columns * 4) << 16)
     );
   }
-  uint32 yscroll      = 0;
-  uint32 pf_col_mask  = playfield_col_mask;
-  uint32 pf_row_mask  = playfield_row_mask;
-  uint32 pf_shift     = playfield_shift;
-  uint32 *vs          = (uint32 *)&vsram[0];
+
+  pf_col_mask  = playfield_col_mask;
+  pf_row_mask  = playfield_row_mask;
+  pf_shift     = playfield_shift;
+  vs           = (uint32 *)&vsram[0];
 
   /* Window & Plane A */
-  int a = (reg[18] & 0x1F) << 3;
-  int w = (reg[18] >> 7) & 1;
+  a = (reg[18] & 0x1F) << 3;
+  w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
-  int start = 0;
-  int end = bitmap.viewport.w >> 4;
+  end = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
 #ifdef LSB_FIRST
-  uint32 shift  = (xscroll >> 16) & 0x0F;
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
+  shift  = (xscroll >> 16) & 0x0F;
+  index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
-  uint32 shift  = (xscroll & 0x0F);
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
+  shift  = (xscroll & 0x0F);
+  index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
 #endif
 
   /* Left-most column vertical scrolling when partially shown horizontally (verified on PAL MD2)  */
@@ -1876,8 +1884,8 @@ void render_bg_m5_vs(int line)
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
-	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
+    start_real = start + (config.h40_extra_columns / 4);
+    end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
     {
@@ -1896,11 +1904,16 @@ void render_bg_m5_vs(int line)
 
 void render_bg_m5_im2(int line)
 {
+  int start_real, end_real;
   int column;
+  uint32 *nt;
   uint32 atex, atbuf, *src, *dst;
-
+  uint32 yscroll, pf_col_mask, pf_row_mask;
+  uint32 pf_shift;
+  int a, w, start = 0, end;
   /* Common data */
   int odd = odd_frame;
+  uint32 shift, index, v_line;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
   if (
     (render_obj == render_obj_m5) ||
@@ -1913,32 +1926,31 @@ void render_bg_m5_im2(int line)
       ((config.h40_extra_columns * 4) << 16)
     );
   }
-  uint32 yscroll      = *(uint32 *)&vsram[0];
-  uint32 pf_col_mask  = playfield_col_mask;
-  uint32 pf_row_mask  = playfield_row_mask;
-  uint32 pf_shift     = playfield_shift;
+  yscroll      = *(uint32 *)&vsram[0];
+  pf_col_mask  = playfield_col_mask;
+  pf_row_mask  = playfield_row_mask;
+  pf_shift     = playfield_shift;
 
   /* Window & Plane A */
-  int a = (reg[18] & 0x1F) << 3;
-  int w = (reg[18] >> 7) & 1;
+  a = (reg[18] & 0x1F) << 3;
+  w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
-  int start = 0;
-  int end = bitmap.viewport.w >> 4;
+  end = bitmap.viewport.w >> 4;
 
   /* Plane B scroll */
 #ifdef LSB_FIRST
-  uint32 shift  = (xscroll >> 16) & 0x0F;
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
-  uint32 v_line = (line + (yscroll >> 17)) & pf_row_mask;
+  shift  = (xscroll >> 16) & 0x0F;
+  index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
+  v_line = (line + (yscroll >> 17)) & pf_row_mask;
 #else
-  uint32 shift  = (xscroll & 0x0F);
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
-  uint32 v_line = (line + (yscroll >> 1)) & pf_row_mask;
+  shift  = (xscroll & 0x0F);
+  index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
+  v_line = (line + (yscroll >> 1)) & pf_row_mask;
 #endif
 
   /* Plane B name table */
-  uint32 *nt = (uint32 *)&vram[ntbb + (((v_line >> 3) << pf_shift) & 0x1FC0)];
+  nt = (uint32 *)&vram[ntbb + (((v_line >> 3) << pf_shift) & 0x1FC0)];
 
   /* Pattern row index */
   v_line = (((v_line & 7) << 1) | odd) << 3;
@@ -2046,8 +2058,8 @@ void render_bg_m5_im2(int line)
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
-	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
+    start_real = start + (config.h40_extra_columns / 4);
+    end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
     {
@@ -2066,10 +2078,14 @@ void render_bg_m5_im2(int line)
 
 void render_bg_m5_im2_vs(int line)
 {
+  int start_real, end_real;
+  uint32 shift, index;
+  int a, w, start = 0, end;
   int column;
   uint32 atex, atbuf, *src, *dst;
   uint32 v_line, *nt;
-
+  uint32 yscroll = 0, pf_col_mask, pf_row_mask;
+  uint32 pf_shift, *vs;
   /* Common data */
   int odd = odd_frame;
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
@@ -2084,27 +2100,25 @@ void render_bg_m5_im2_vs(int line)
       ((config.h40_extra_columns * 4) << 16)
     );
   }
-  uint32 yscroll      = 0;
-  uint32 pf_col_mask  = playfield_col_mask;
-  uint32 pf_row_mask  = playfield_row_mask;
-  uint32 pf_shift     = playfield_shift;
-  uint32 *vs          = (uint32 *)&vsram[0];
+  pf_col_mask  = playfield_col_mask;
+  pf_row_mask  = playfield_row_mask;
+  pf_shift     = playfield_shift;
+  vs           = (uint32 *)&vsram[0];
 
   /* Window & Plane A */
-  int a = (reg[18] & 0x1F) << 3;
-  int w = (reg[18] >> 7) & 1;
+  a = (reg[18] & 0x1F) << 3;
+  w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
-  int start = 0;
-  int end = bitmap.viewport.w >> 4;
+  end   = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
 #ifdef LSB_FIRST
-  uint32 shift  = (xscroll >> 16) & 0x0F;
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
+  shift  = (xscroll >> 16) & 0x0F;
+  index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
-  uint32 shift  = (xscroll & 0x0F);
-  uint32 index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
+  shift  = (xscroll & 0x0F);
+  index  = pf_col_mask + 1 - ((xscroll >> 4) & pf_col_mask);
 #endif
 
   /* Left-most column vertical scrolling when partially shown horizontally (verified on PAL MD2)  */
@@ -2259,8 +2273,8 @@ void render_bg_m5_im2_vs(int line)
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
 	
-	int start_real = start + (config.h40_extra_columns / 4);
-    int end_real = end - (config.h40_extra_columns / 4);
+    start_real = start + (config.h40_extra_columns / 4);
+    end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
     {
