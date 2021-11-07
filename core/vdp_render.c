@@ -1529,9 +1529,9 @@ void render_bg_m5(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   yscroll      = *(uint32 *)&vsram[0];
@@ -1704,9 +1704,9 @@ void render_bg_m5_vs(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
 
@@ -1921,9 +1921,9 @@ void render_bg_m5_im2(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   yscroll      = *(uint32 *)&vsram[0];
@@ -2095,9 +2095,9 @@ void render_bg_m5_im2_vs(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   pf_col_mask  = playfield_col_mask;
@@ -2308,9 +2308,9 @@ void render_bg_m5(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   uint32 yscroll      = *(uint32 *)&vsram[0];
@@ -2483,9 +2483,9 @@ void render_bg_m5_vs(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   uint32 yscroll      = 0;
@@ -2700,9 +2700,9 @@ void render_bg_m5_im2(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   uint32 yscroll      = *(uint32 *)&vsram[0];
@@ -2876,9 +2876,9 @@ void render_bg_m5_im2_vs(int line)
     (render_obj == render_obj_m5_im2_ste) ||
     (render_obj == render_obj_m5_ste)
   ) {
-    xscroll += (
-      (config.h40_extra_columns * 4) +
-      ((config.h40_extra_columns * 4) << 16)
+    xscroll = (
+      ((xscroll + config.h40_extra_columns * 4) & 0xFFFF) +
+      ((xscroll + ((config.h40_extra_columns * 4) << 16)) & 0xFFFF0000)
     );
   }
   uint32 yscroll      = 0;
