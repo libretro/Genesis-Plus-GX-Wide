@@ -2772,9 +2772,9 @@ void retro_get_system_av_info(struct retro_system_av_info *info)
    {
       /* 16 bit system */
       if (config.ntsc) {
-         info->geometry.max_width = MD_NTSC_OUT_WIDTH(320 + (bitmap.viewport.x * 2));
+         info->geometry.max_width = MD_NTSC_OUT_WIDTH(320 + (bitmap.viewport.x * 2) + (config.h40_extra_columns * 8));
       } else {
-         info->geometry.max_width = 320 + (bitmap.viewport.x * 2);
+         info->geometry.max_width = 320 + (bitmap.viewport.x * 2) + (config.h40_extra_columns * 8);
       }
       if (config.render) {
          info->geometry.max_height = 480 + (vdp_pal * 96 * (config.overscan & 1));
