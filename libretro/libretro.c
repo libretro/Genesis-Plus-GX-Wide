@@ -951,6 +951,8 @@ static void config_default(void)
    config.overclock      = 100;
 #endif
    config.no_sprite_limit = 0;
+   config.enhanced_vscroll = 0;
+   config.enhanced_vscroll_limit = 8;
 
    /* video options */
    config.overscan = 0;
@@ -1851,6 +1853,19 @@ static void check_variables(bool first_run)
     else
       config.no_sprite_limit = 1;
   }
+
+  var.key = CORE_NAME "_enhanced_vscroll";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+      if (!var.value || !strcmp(var.value, "disabled"))
+         config.enhanced_vscroll = 0;
+      else
+         config.enhanced_vscroll = 1;
+  }
+
+  var.key = CORE_NAME "_enhanced_vscroll_limit";
+  if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+    config.enhanced_vscroll_limit = strtol(var.value, NULL, 10);
 
   var.key = CORE_NAME "_h40_extra_columns";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
