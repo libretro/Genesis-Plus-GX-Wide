@@ -3,7 +3,7 @@
  *
  *  Genesis Plus GX menu
  *
- *  Copyright Eke-Eke (2009-2021)
+ *  Copyright Eke-Eke (2009-2022)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -347,8 +347,10 @@ static gui_item items_audio[] =
   {NULL,NULL,"YM2612 Type: DISCRETE",    "Select YM2612 chip model",                             56,132,276,48},
   {NULL,NULL,"High-Quality FM: ON",      "Enable/Disable YM2612/YM2413 high-quality resampling", 56,132,276,48},
   {NULL,NULL,"High-Quality PSG: ON",     "Enable/Disable SN76489 high-quality resampling",       56,132,276,48},
-  {NULL,NULL,"FM Volume: 1.00",          "Adjust YM2612/YM2413 audio balance",                   56,132,276,48},
-  {NULL,NULL,"PSG Volume: 2.50",         "Adjust SN76489 audio balance",                         56,132,276,48},
+  {NULL,NULL,"FM Volume: 1.00",          "Adjust YM2612/YM2413 output mixing level",             56,132,276,48},
+  {NULL,NULL,"PSG Volume: 2.50",         "Adjust SN76489 output mixing level",                   56,132,276,48},
+  {NULL,NULL,"CD-DA Volume: 1.00",       "Adjust CD audio output mixing level",                  56,132,276,48},
+  {NULL,NULL,"PCM Volume: 1.00",         "Adjust CD hardware RF5C164 output mixing level",       56,132,276,48},
   {NULL,NULL,"Audio Output: STEREO",     "Select audio mixing output type",                      56,132,276,48},
   {NULL,NULL,"Filtering: 3-BAND EQ",     "Select audio filtering type",                          56,132,276,48},
   {NULL,NULL,"Low Gain: 1.00",           "Adjust EQ Low Band Gain",                              56,132,276,48},
@@ -379,12 +381,13 @@ static gui_item items_rompaths[] =
 static gui_item items_system[] =
 {
   {NULL,NULL,"System: MEGA DRIVE/GENESIS", "Select system hardware model",                56,132,276,48},
-  {NULL,NULL,"Region: JAPAN",             "Select system region",                        56,132,276,48},
+  {NULL,NULL,"Region: JAPAN",              "Select system region",                        56,132,276,48},
   {NULL,NULL,"VDP Mode: AUTO",             "Select VDP mode",                             56,132,276,48},
   {NULL,NULL,"System Clock: AUTO",         "Select master clock frequency",               56,132,276,48},
   {NULL,NULL,"System Boot: BIOS->CART",    "Select system booting method",                56,132,276,48},
   {NULL,NULL,"System Lockups: OFF",        "Enable/Disable original system lockups",      56,132,276,48},
   {NULL,NULL,"68k Address Error: OFF",     "Enable/Disable 68k address error exceptions", 56,132,276,48},
+  {NULL,NULL,"CD Access Time: OFF",        "Enable/Disable CD read/seek latency",         56,132,276,48},
   {NULL,NULL,"CD Add-on: MEGA/SEGA CD",    "Select cartridge mode CD hardware add-on",    56,132,276,48},
   {NULL,NULL,"Lock-On: SONIC&KNUCKLES",    "Select Lock-On cartridge type",               56,132,276,48},
   {NULL,NULL,"Cartridge Swap: OFF",        "Enable/Disable cartridge hot swap",           56,132,276,48},
@@ -895,6 +898,8 @@ static void soundmenu ()
   int ret, quit = 0;
   float fm_volume = (float)config.fm_preamp/100.0;
   float psg_volume = (float)config.psg_preamp/100.0;
+  float cdda_volume = (float)config.cdda_volume/100.0;
+  float pcm_volume = (float)config.pcm_volume/100.0;
   gui_menu *m = &menu_audio;
   gui_item *items = m->items;
 
@@ -911,8 +916,10 @@ static void soundmenu ()
 
   sprintf (items[4].text, "FM Volume: %1.2f", fm_volume);
   sprintf (items[5].text, "PSG Volume: %1.2f", psg_volume);
+  sprintf (items[6].text, "CD-DA Volume: %1.2f", cdda_volume);
+  sprintf (items[7].text, "PCM Volume: %1.2f", pcm_volume);
 
-  sprintf (items[6].text, "Audio Output: %s", config.mono ? "MONO":"STEREO");
+  sprintf (items[8].text, "Audio Output: %s", config.mono ? "MONO":"STEREO");
 
   if (config.filter == 2)
   {
@@ -920,27 +927,27 @@ static void soundmenu ()
     float mg = (float)config.mg/100.0;
     float hg = (float)config.hg/100.0;
 
-    sprintf(items[7].text, "Filtering: 3-BAND EQ");
-    sprintf(items[8].text, "Low Gain: %1.2f", lg);
-    strcpy(items[8].comment, "Adjust EQ Low Band Gain");
-    sprintf(items[9].text, "Middle Gain: %1.2f", mg);
-    sprintf(items[10].text, "High Gain: %1.2f", hg);
-    sprintf(items[11].text, "Low Freq: %d", config.low_freq);
-    sprintf(items[12].text, "High Freq: %d", config.high_freq);
-    m->max_items = 13;
+    sprintf(items[9].text, "Filtering: 3-BAND EQ");
+    sprintf(items[10].text, "Low Gain: %1.2f", lg);
+    strcpy(items[10].comment, "Adjust EQ Low Band Gain");
+    sprintf(items[11].text, "Middle Gain: %1.2f", mg);
+    sprintf(items[12].text, "High Gain: %1.2f", hg);
+    sprintf(items[13].text, "Low Freq: %d", config.low_freq);
+    sprintf(items[14].text, "High Freq: %d", config.high_freq);
+    m->max_items = 15;
   }
   else if (config.filter == 1)
   {
     int16 lp_range = (config.lp_range * 100 + 0xffff) / 0x10000;
-    sprintf (items[7].text, "Filtering: LOW-PASS");
-    sprintf (items[8].text, "Low-Pass Rate: %d %%", lp_range);
-    strcpy (items[8].comment, "Adjust Low Pass filter");
-    m->max_items = 9;
+    sprintf (items[9].text, "Filtering: LOW-PASS");
+    sprintf (items[10].text, "Low-Pass Rate: %d %%", lp_range);
+    strcpy (items[10].comment, "Adjust Low Pass filter");
+    m->max_items = 11;
   }
   else
   {
-    sprintf (items[7].text, "Filtering: OFF");
-    m->max_items = 8;
+    sprintf (items[9].text, "Filtering: OFF");
+    m->max_items = 10;
   }
 
   GUI_InitMenu(m);
@@ -1023,35 +1030,51 @@ static void soundmenu ()
 
       case 6:
       {
-        config.mono ^= 1;
-        sprintf (items[6].text, "Audio Out: %s", config.mono ? "MONO":"STEREO");
+        GUI_OptionBox(m,0,"CD-DA Volume",(void *)&cdda_volume,0.01,0.0,1.0,0);
+        sprintf (items[6].text, "CD-DA Volume: %1.2f", cdda_volume);
+        config.cdda_volume = (int)(cdda_volume * 100.0 + 0.5);
         break;
       }
 
       case 7:
       {
+        GUI_OptionBox(m,0,"PCM Volume",(void *)&pcm_volume,0.01,0.0,1.0,0);
+        sprintf (items[7].text, "PCM Volume: %1.2f", pcm_volume);
+        config.pcm_volume = (int)(pcm_volume * 100.0 + 0.5);
+        break;
+      }
+
+      case 8:
+      {
+        config.mono ^= 1;
+        sprintf (items[8].text, "Audio Out: %s", config.mono ? "MONO":"STEREO");
+        break;
+      }
+
+      case 9:
+      {
         config.filter = (config.filter + 1) % 3;
         if (config.filter == 2)
         {
           float lg = (float)config.lg/100.0;
-          sprintf (items[7].text, "Filtering: 3-BAND EQ");
-          sprintf (items[8].text, "Low Gain: %1.2f", lg);
-          strcpy (items[8].comment, "Adjust EQ Low Band Gain");
-          m->max_items = 13;
+          sprintf (items[9].text, "Filtering: 3-BAND EQ");
+          sprintf (items[10].text, "Low Gain: %1.2f", lg);
+          strcpy (items[10].comment, "Adjust EQ Low Band Gain");
+          m->max_items = 15;
           audio_set_equalizer();
         }
         else if (config.filter == 1)
         {
           int lp_range = (config.lp_range * 100 + 0xffff) / 0x10000;
-          sprintf (items[7].text, "Filtering: LOW-PASS");
-          sprintf (items[8].text, "Low-Pass Rate: %d %%", lp_range);
-          strcpy (items[8].comment, "Adjust Low Pass filter");
-          m->max_items = 9;
+          sprintf (items[9].text, "Filtering: LOW-PASS");
+          sprintf (items[10].text, "Low-Pass Rate: %d %%", lp_range);
+          strcpy (items[10].comment, "Adjust Low Pass filter");
+          m->max_items = 11;
         }
         else
         {
-          sprintf (items[7].text, "Filtering: OFF");
-          m->max_items = 8;
+          sprintf (items[9].text, "Filtering: OFF");
+          m->max_items = 10;
         }
 
         while ((m->offset + 4) > m->max_items)
@@ -1062,58 +1085,58 @@ static void soundmenu ()
         break;
       }
 
-      case 8:
+      case 10:
       {
         if (config.filter == 1)
         {
           int16 lp_range = (config.lp_range * 100 + 0xffff) / 0x10000;
           GUI_OptionBox(m,0,"Low-Pass Rate (%)",(void *)&lp_range,1,0,100,1);
-          sprintf (items[8].text, "Low-Pass Rate: %d %%", lp_range);
+          sprintf (items[10].text, "Low-Pass Rate: %d %%", lp_range);
           config.lp_range = (lp_range * 0x10000) / 100;
         }
         else
         {
           float lg = (float)config.lg/100.0;
           GUI_OptionBox(m,0,"Low Gain",(void *)&lg,0.01,0.0,2.0,0);
-          sprintf (items[8].text, "Low Gain: %1.2f", lg);
+          sprintf (items[10].text, "Low Gain: %1.2f", lg);
           config.lg = (int)(lg * 100.0);
           audio_set_equalizer();
         }
         break;
       }
 
-      case 9:
+      case 11:
       {
         float mg = (float)config.mg/100.0;
         GUI_OptionBox(m,0,"Middle Gain",(void *)&mg,0.01,0.0,2.0,0);
-        sprintf (items[9].text, "Middle Gain: %1.2f", mg);
+        sprintf (items[11].text, "Middle Gain: %1.2f", mg);
         config.mg = (int)(mg * 100.0);
-        audio_set_equalizer();
-        break;
-      }
-
-      case 10:
-      {
-        float hg = (float)config.hg/100.0;
-        GUI_OptionBox(m,0,"High Gain",(void *)&hg,0.01,0.0,2.0,0);
-        sprintf (items[10].text, "High Gain: %1.2f", hg);
-        config.hg = (int)(hg * 100.0);
-        audio_set_equalizer();
-        break;
-      }
-
-      case 11:
-      {
-        GUI_OptionBox(m,0,"Low Frequency",(void *)&config.low_freq,10,0,config.high_freq,1);
-        sprintf (items[11].text, "Low Freq: %d", config.low_freq);
         audio_set_equalizer();
         break;
       }
 
       case 12:
       {
+        float hg = (float)config.hg/100.0;
+        GUI_OptionBox(m,0,"High Gain",(void *)&hg,0.01,0.0,2.0,0);
+        sprintf (items[12].text, "High Gain: %1.2f", hg);
+        config.hg = (int)(hg * 100.0);
+        audio_set_equalizer();
+        break;
+      }
+
+      case 13:
+      {
+        GUI_OptionBox(m,0,"Low Frequency",(void *)&config.low_freq,10,0,config.high_freq,1);
+        sprintf (items[13].text, "Low Freq: %d", config.low_freq);
+        audio_set_equalizer();
+        break;
+      }
+
+      case 14:
+      {
         GUI_OptionBox(m,0,"High Frequency",(void *)&config.high_freq,100,config.low_freq,30000,1);
-        sprintf (items[12].text, "High Freq: %d", config.high_freq);
+        sprintf (items[14].text, "High Freq: %d", config.high_freq);
         audio_set_equalizer();
         break;
       }
@@ -1311,35 +1334,36 @@ static void systemmenu ()
   sprintf (items[4].text, "System Boot: %s", (config.bios & 1) ? ((config.bios & 2) ? "BIOS->CART" : "BIOS ONLY") : "CART");
   sprintf (items[5].text, "System Lockups: %s", config.force_dtack ? "OFF" : "ON");
   sprintf (items[6].text, "68k Address Error: %s", config.addr_error ? "ON" : "OFF");
+  sprintf (items[7].text, "CD Access Time: %s", config.cd_latency ? "ON" : "OFF");
 
   if (config.add_on == HW_ADDON_AUTO)
-    sprintf (items[7].text, "CD Add-on: AUTO");
+    sprintf (items[8].text, "CD Add-on: AUTO");
   else if (config.add_on == HW_ADDON_MEGACD)
-    sprintf (items[7].text, "CD Add-on: MEGA/SEGA CD");
+    sprintf (items[8].text, "CD Add-on: MEGA/SEGA CD");
   else if (config.add_on == HW_ADDON_MEGASD)
-    sprintf (items[7].text, "CD Add-on: MEGASD");
+    sprintf (items[8].text, "CD Add-on: MEGASD");
   else
-    sprintf (items[7].text, "CD Add-on: NONE");
+    sprintf (items[8].text, "CD Add-on: NONE");
 
   if (config.lock_on == TYPE_GG)
-    sprintf (items[8].text, "Lock-On: GAME GENIE");
+    sprintf (items[9].text, "Lock-On: GAME GENIE");
   else if (config.lock_on == TYPE_AR)
-    sprintf (items[8].text, "Lock-On: ACTION REPLAY");
+    sprintf (items[9].text, "Lock-On: ACTION REPLAY");
   else if (config.lock_on == TYPE_SK)
-    sprintf (items[8].text, "Lock-On: SONIC&KNUCKLES");
+    sprintf (items[9].text, "Lock-On: SONIC&KNUCKLES");
   else
-    sprintf (items[8].text, "Lock-On: OFF");
+    sprintf (items[9].text, "Lock-On: OFF");
 
-  sprintf (items[9].text, "Cartridge Swap: %s", (config.hot_swap & 1) ? "ON":"OFF");
+  sprintf (items[10].text, "Cartridge Swap: %s", (config.hot_swap & 1) ? "ON":"OFF");
 
   if (svp)
   {
-    sprintf (items[11].text, "SVP Cycles: %d", SVP_cycles);
-    m->max_items = 12;
+    sprintf (items[12].text, "SVP Cycles: %d", SVP_cycles);
+    m->max_items = 13;
   }
   else
   {
-    m->max_items = 11;
+    m->max_items = 12;
   }
 
   GUI_InitMenu(m);
@@ -1530,31 +1554,38 @@ static void systemmenu ()
         break;
       }
 
-      case 7:  /*** CD add-on ***/
+      case 7:  /*** CD Access Time ***/
       {
-        config.add_on = (config.add_on + 1) % (HW_ADDON_NONE + 1);
-        if (config.add_on == HW_ADDON_AUTO)
-          sprintf (items[7].text, "CD Add-on: AUTO");
-        else if (config.add_on == HW_ADDON_MEGACD)
-          sprintf (items[7].text, "CD Add-on: MEGA/SEGA CD");
-        else if (config.add_on == HW_ADDON_MEGASD)
-          sprintf (items[7].text, "CD Add-on: MEGASD");
-        else
-          sprintf (items[7].text, "CD Add-on: NONE");
+        config.cd_latency ^= 1;
+        sprintf (items[7].text, "CD Access Time: %s", config.cd_latency ? "ON" : "OFF");
         break;
       }
 
-      case 8:  /*** Cart Lock-On ***/
+      case 8:  /*** CD add-on ***/
+      {
+        config.add_on = (config.add_on + 1) % (HW_ADDON_NONE + 1);
+        if (config.add_on == HW_ADDON_AUTO)
+          sprintf (items[8].text, "CD Add-on: AUTO");
+        else if (config.add_on == HW_ADDON_MEGACD)
+          sprintf (items[8].text, "CD Add-on: MEGA/SEGA CD");
+        else if (config.add_on == HW_ADDON_MEGASD)
+          sprintf (items[8].text, "CD Add-on: MEGASD");
+        else
+          sprintf (items[8].text, "CD Add-on: NONE");
+        break;
+      }
+
+      case 9:  /*** Cart Lock-On ***/
       {
         config.lock_on = (config.lock_on + 1) % (TYPE_SK + 1);
         if (config.lock_on == TYPE_GG)
-          sprintf (items[8].text, "Lock-On: GAME GENIE");
+          sprintf (items[9].text, "Lock-On: GAME GENIE");
         else if (config.lock_on == TYPE_AR)
-          sprintf (items[8].text, "Lock-On: ACTION REPLAY");
+          sprintf (items[9].text, "Lock-On: ACTION REPLAY");
         else if (config.lock_on == TYPE_SK)
-          sprintf (items[8].text, "Lock-On: SONIC&KNUCKLES");
+          sprintf (items[9].text, "Lock-On: SONIC&KNUCKLES");
         else
-          sprintf (items[8].text, "Lock-On: OFF");
+          sprintf (items[9].text, "Lock-On: OFF");
 
         if ((system_hw == SYSTEM_MD) || (system_hw == SYSTEM_PICO))
         {
@@ -1588,14 +1619,14 @@ static void systemmenu ()
         break;
       }
 
-      case 9:  /*** Cartridge Hot Swap ***/
+      case 10:  /*** Cartridge Hot Swap ***/
       {
         config.hot_swap ^= 1;
-        sprintf (items[9].text, "Cartridge Swap: %s", (config.hot_swap & 1) ? "ON":"OFF");
+        sprintf (items[10].text, "Cartridge Swap: %s", (config.hot_swap & 1) ? "ON":"OFF");
         break;
       }
 
-      case 10:  /*** System ROM paths ***/
+      case 11:  /*** System ROM paths ***/
       {
         GUI_DeleteMenu(m);
         rompathmenu();
@@ -1603,10 +1634,10 @@ static void systemmenu ()
         break;
       }
 
-      case 11:  /*** SVP cycles per line ***/
+      case 12:  /*** SVP cycles per line ***/
       {
         GUI_OptionBox(m,0,"SVP Cycles",(void *)&SVP_cycles,1,1,1500,1);
-        sprintf (items[11].text, "SVP Cycles: %d", SVP_cycles);
+        sprintf (items[12].text, "SVP Cycles: %d", SVP_cycles);
         break;
       }
 

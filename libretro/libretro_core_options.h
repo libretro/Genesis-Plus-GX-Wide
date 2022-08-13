@@ -16,7 +16,7 @@
  * VERSION: 2.0
  ********************************
  *
- * - 2.0: Add support for core options v2 interface
+ * - 2.0: Add support for core options v2 interface 
  * - 1.3: Move translations to libretro_core_options_intl.h
  *        - libretro_core_options_intl.h includes BOM and utf-8
  *          fix for MSVC 2010-2013
@@ -63,32 +63,32 @@ struct retro_core_option_v2_category option_cats_us[] = {
    {
       "system",
       "System",
-      "Configure base hardware selection / region / BIOS / Sega CD save file parameters."
+      "Change base hardware selection, region, BIOS and Sega CD/Mega-CD save file settings."
    },
    {
       "video",
       "Video",
-      "Configure aspect ratio / display cropping / video filter / frame skipping parameters."
+      "Change aspect ratio, display cropping, video filter and frame skipping settings."
    },
    {
       "audio",
       "Audio",
-      "Configure emulated audio devices."
+      "Change audio device settings."
    },
    {
       "input",
       "Input",
-      "Configure light gun / mouse input."
+      "Change light gun and/or mouse input settings."
    },
    {
       "hacks",
       "Emulation Hacks",
-      "Configure processor overclocking and emulation accuracy parameters affecting low-level performance and compatibility."
+      "Change processor overclocking and emulation accuracy settings that affect low-level performance and compatibility."
    },
    {
       "channel_volume",
       "Advanced Channel Volume Settings",
-      "Configure the volume of individual hardware audio channels."
+      "Change the volume of individual hardware audio channels."
    },
    { NULL, NULL, NULL },
 };
@@ -118,7 +118,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_region_detect",
       "System Region",
       NULL,
-      "Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50hz while 'NTSC' is 60hz. Games may run faster or slower than normal if the incorrect region is selected.",
+      "Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected.",
       NULL,
       "system",
       {
@@ -148,7 +148,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_bram",
       "CD System BRAM",
       NULL,
-      "When running Sega CD content, specifies whether to share a single save file between all games from a specific region (Per-BIOS) or to create a separate save file for each game (Per-Game). Note that the Sega CD has limited internal storage, sufficient only for a handful of titles. To avoid running out of space, the 'Per-Game' setting is recommended.",
+      "When running Sega CD/Mega-CD content, specifies whether to share a single save file between all games from a specific region (Per-BIOS) or to create a separate save file for each game (Per-Game). Note that the Sega CD/Mega-CD has limited internal storage, sufficient only for a handful of titles. To avoid running out of space, the 'Per-Game' setting is recommended.",
       NULL,
       "system",
       {
@@ -162,7 +162,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_add_on",
       "CD add-on (MD mode) (Requires Restart)",
       NULL,
-      "Specify which add-on to use for CD audio playback.",
+      "Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games.",
       NULL,
       "system",
       {
@@ -178,7 +178,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_lock_on",
       "Cartridge Lock-On",
       NULL,
-      "Lock-On Technology is a Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A corresponding bios file must be present in RetroArch's system directory.",
+      "Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A corresponding bios file must be present in RetroArch's system directory.",
       NULL,
       "system",
       {
@@ -201,6 +201,8 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "auto",     "Auto" },
          { "NTSC PAR", NULL },
          { "PAL PAR",  NULL },
+         { "4:3",  NULL },
+         { "Uncorrected",  NULL },
       },
       "auto"
    },
@@ -278,7 +280,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_gg_extra",
       "Game Gear Extended Screen",
       NULL,
-      "Forces Game Gear titles to run in 'SMS' mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data.",
+      "Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data.",
       NULL,
       "video",
       {
@@ -309,7 +311,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_lcd_filter",
       "LCD Ghosting Filter",
       NULL,
-      "Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and 'Genesis Nomad' LCD panels.",
+      "Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels.",
       NULL,
       "video",
       {
@@ -323,7 +325,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_render",
       "Interlaced Mode 2 Output",
       NULL,
-      "Interlaced Mode 2 allows the Genesis to output a double height (high resolution) 320x448 image by drawing alternate scanlines each frame (this is used by 'Sonic the Hedgehog 2' and 'Combat Cars' multiplayer modes). 'Double Field' mimics original hardware, producing a sharp image with flickering/interlacing artefacts. 'Single Field' apples a de-interlacing filter, which stabilises the image but causes mild blurring.",
+      "Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics original hardware, producing a sharp image with flickering/interlacing artifacts. 'Single Field' applies a deinterlacing filter, which stabilizes the image but causes mild blurring.",
       NULL,
       "video",
       {
@@ -337,7 +339,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_frameskip",
       "Frameskip",
       NULL,
-      "Skip frames to avoid audio buffer under-run (crackling). Improves performance at the expense of visual smoothness. 'Auto' skips frames when advised by the frontend. 'Manual' utilises the 'Frameskip Threshold (%)' setting.",
+      "Skip frames to avoid audio buffer under-run (crackling). Improves performance at the expense of visual smoothness. 'Auto' skips frames when advised by the frontend. 'Manual' utilizes the 'Frameskip Threshold (%)' setting.",
       NULL,
       "video",
       {
@@ -409,12 +411,12 @@ struct retro_core_option_v2_definition option_defs_us[] = {
 #endif
    {
       CORE_NAME "_ym2612",
-      "Mega Drive / Genesis FM",
+      "Mega Drive/Genesis FM",
       NULL,
 #ifdef HAVE_YM3438_CORE
-      "Select method used to emulate the FM synthesizer (main sound generator) of the Mega Drive/Genesis. 'MAME' options are fast, and run full speed on most systems. 'Nuked' options are cycle accurate, very high quality, and have substantial CPU requirements. The 'YM2612' chip is used by the original Model 1 Genesis. The 'YM3438' is used in later Genesis revisions.",
+      "Select method used to emulate the FM synthesizer (main sound generator) of the Mega Drive/Genesis. 'MAME' options are fast, and run full speed on most systems. 'Nuked' options are cycle accurate, very high quality, and have substantial CPU requirements. The YM2612 chip is used by the original Model 1 Mega Drive/Genesis. The YM3438 is used in later Mega Drive/Genesis revisions.",
 #else
-      "Select method used to emulate the FM synthesizer (main sound generator) of the Mega Drive/Genesis. The 'YM2612' chip is used by the original Model 1 Genesis. The 'YM3438' is used in later Genesis revisions.",
+      "Select method used to emulate the FM synthesizer (main sound generator) of the Mega Drive/Genesis. The YM2612 chip is used by the original Model 1 Mega Drive/Genesis. The YM3438 is used in later Mega Drive/Genesis revisions.",
 #endif
       NULL,
       "audio",
@@ -434,7 +436,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_sound_output",
       "Sound Output",
       NULL,
-      "Select stereo or mono sound reproduction.",
+      "Select stereo or mono sound playback.",
       NULL,
       "audio",
       {
@@ -448,7 +450,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_audio_filter",
       "Audio Filter",
       NULL,
-      "Enable a low pass audio filter to better simulate the characteristic sound of a Model 1 Genesis.",
+      "Enable a low pass audio filter to better simulate the characteristic sound of a Model 1 Mega Drive/Genesis.",
       NULL,
       "audio",
       {
@@ -496,7 +498,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_psg_preamp",
       "PSG Preamp Level",
       NULL,
-      "Set the audio preamplifier level of the emulated SN76496 4-channel Programmable Sound Generator found in the Master System, Game Gear and Genesis.",
+      "Set the audio preamplifier level of the emulated SN76496 4-channel Programmable Sound Generator found in the SG-1000, Sega Mark III, Master System, Game Gear and Mega Drive/Genesis.",
       NULL,
       "audio",
       {
@@ -549,7 +551,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_fm_preamp",
       "FM Preamp Level",
       NULL,
-      "Set the audio preamplifier level of the emulated Sega Mark III/Master System FM Sound Unit.",
+      "Set the audio preamplifier level of the emulated Mega Drive/Genesis FM sound synthesizer or Sega Mark III/Master System FM Sound Unit.",
       NULL,
       "audio",
       {
@@ -598,12 +600,78 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       },
       "100"
    },
+   {
+      CORE_NAME "_cdda_volume",
+      "CD-DA Volume",
+      NULL,
+      "Adjust the mixing volume of the emulated CD audio playback output.",
+      NULL,
+      "audio",
+      {
+         { "0",   NULL },
+         { "5",   NULL },
+         { "10",  NULL },
+         { "15",  NULL },
+         { "20",  NULL },
+         { "25",  NULL },
+         { "30",  NULL },
+         { "35",  NULL },
+         { "40",  NULL },
+         { "45",  NULL },
+         { "50",  NULL },
+         { "55",  NULL },
+         { "60",  NULL },
+         { "65",  NULL },
+         { "70",  NULL },
+         { "75",  NULL },
+         { "80",  NULL },
+         { "85",  NULL },
+         { "90",  NULL },
+         { "95",  NULL },
+         { "100", NULL },
+         { NULL, NULL },
+      },
+      "100"
+   },
+   {
+      CORE_NAME "_pcm_volume",
+      "PCM Volume",
+      NULL,
+      "Adjust the mixing volume of the emulated Sega CD/Mega-CD RF5C164 PCM sound generator output.",
+      NULL,
+      "audio",
+      {
+         { "0",   NULL },
+         { "5",   NULL },
+         { "10",  NULL },
+         { "15",  NULL },
+         { "20",  NULL },
+         { "25",  NULL },
+         { "30",  NULL },
+         { "35",  NULL },
+         { "40",  NULL },
+         { "45",  NULL },
+         { "50",  NULL },
+         { "55",  NULL },
+         { "60",  NULL },
+         { "65",  NULL },
+         { "70",  NULL },
+         { "75",  NULL },
+         { "80",  NULL },
+         { "85",  NULL },
+         { "90",  NULL },
+         { "95",  NULL },
+         { "100", NULL },
+         { NULL, NULL },
+      },
+      "100"
+   },
 #ifdef HAVE_EQ
    {
       CORE_NAME "_audio_eq_low",
       "EQ Low",
       NULL,
-      "Adjust the low range band of the internal audio equaliser.",
+      "Adjust the low range band of the internal audio equalizer.",
       NULL,
       "audio",
       {
@@ -636,7 +704,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_audio_eq_mid",
       "EQ Mid",
       NULL,
-      "Adjust the middle range band of the internal audio equaliser.",
+      "Adjust the middle range band of the internal audio equalizer.",
       NULL,
       "audio",
       {
@@ -669,7 +737,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_audio_eq_high",
       "EQ High",
       NULL,
-      "Adjust the high range band of the internal audio equaliser.",
+      "Adjust the high range band of the internal audio equalizer.",
       NULL,
       "audio",
       {
@@ -717,7 +785,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_gun_cursor",
       "Show Light Gun Crosshair",
       NULL,
-      "Display light gun crosshairs when using the 'MD Menacer', 'MD Justifiers' and 'MS Light Phaser' input device types.",
+      "Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types.",
       NULL,
       "input",
       {
@@ -731,7 +799,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_invert_mouse",
       "Invert Mouse Y-Axis",
       NULL,
-      "Inverts the Y-axis of the 'MD Mouse' input device type.",
+      "Inverts the Y-axis of the MD Mouse input device type.",
       NULL,
       "input",
       {
@@ -745,7 +813,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_no_sprite_limit",
       "Remove Per-Line Sprite Limit",
       NULL,
-      "Removes the 8 (Master System) or 20 (Genesis) sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects.",
+      "Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects.",
       NULL,
       "hacks",
       {
@@ -819,7 +887,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_force_dtack",
       "System Lock-Ups",
       NULL,
-      "Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behaviour for correct operation.",
+      "Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation.",
       NULL,
       "hacks",
       {
@@ -833,7 +901,21 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_addr_error",
       "68K Address Error",
       NULL,
-      "The Genesis CPU (Motorola 68000) produces an Address Error (crash) when attempting to perform unaligned memory access. Enabling '68K Address Error' simulates this behaviour. It should only be disabled when playing ROM hacks, since these are typically developed using less accurate emulators and may rely on invalid RAM access for correct operation.",
+      "The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since these are typically developed using less accurate emulators and may rely on invalid RAM access for correct operation.",
+      NULL,
+      "hacks",
+      {
+         { "enabled",  NULL },
+         { "disabled", NULL },
+         { NULL, NULL },
+      },
+      "enabled"
+   },
+   {
+      CORE_NAME "_cd_latency",
+      "CD access time",
+      NULL,
+        "Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabling this can be useful with MSU-MD games as it makes CD audio tracks loops more seamless.",
       NULL,
       "hacks",
       {
@@ -952,9 +1034,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_0_volume",
-      "Mega Drive / Genesis FM Channel 0 Volume %",
+      "Mega Drive/Genesis FM Channel 0 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 0. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 0. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -975,9 +1057,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_1_volume",
-      "Mega Drive / Genesis FM Channel 1 Volume %",
+      "Mega Drive/Genesis FM Channel 1 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 1. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 1. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -998,9 +1080,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_2_volume",
-      "Mega Drive / Genesis FM Channel 2 Volume %",
+      "Mega Drive/Genesis FM Channel 2 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 2. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 2. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -1021,9 +1103,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_3_volume",
-      "Mega Drive / Genesis FM Channel 3 Volume %",
+      "Mega Drive/Genesis FM Channel 3 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 3. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 3. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -1044,9 +1126,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_4_volume",
-      "Mega Drive / Genesis FM Channel 4 Volume %",
+      "Mega Drive/Genesis FM Channel 4 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 4. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 4. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -1067,9 +1149,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_md_channel_5_volume",
-      "Mega Drive / Genesis FM Channel 5 Volume %",
+      "Mega Drive/Genesis FM Channel 5 Volume %",
       NULL,
-      "Reduce the volume of the Mega Drive / Genesis FM Channel 5. Only works with MAME FM emulators.",
+      "Reduce the volume of the Mega Drive/Genesis FM Channel 5. Only works with MAME FM emulators.",
       NULL,
       "channel_volume",
       {
@@ -1312,30 +1394,33 @@ struct retro_core_options_v2 options_us = {
 
 #ifndef HAVE_NO_LANGEXTRA
 struct retro_core_options_v2 *options_intl[RETRO_LANGUAGE_LAST] = {
-   &options_us,    /* RETRO_LANGUAGE_ENGLISH */
-   NULL,           /* RETRO_LANGUAGE_JAPANESE */
-   NULL,           /* RETRO_LANGUAGE_FRENCH */
-   NULL,           /* RETRO_LANGUAGE_SPANISH */
-   NULL,           /* RETRO_LANGUAGE_GERMAN */
-   NULL,           /* RETRO_LANGUAGE_ITALIAN */
-   NULL,           /* RETRO_LANGUAGE_DUTCH */
-   &options_pt_br, /* RETRO_LANGUAGE_PORTUGUESE_BRAZIL */
-   NULL,           /* RETRO_LANGUAGE_PORTUGUESE_PORTUGAL */
-   NULL,           /* RETRO_LANGUAGE_RUSSIAN */
-   NULL,           /* RETRO_LANGUAGE_KOREAN */
-   NULL,           /* RETRO_LANGUAGE_CHINESE_TRADITIONAL */
-   NULL,           /* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
-   NULL,           /* RETRO_LANGUAGE_ESPERANTO */
-   NULL,           /* RETRO_LANGUAGE_POLISH */
-   NULL,           /* RETRO_LANGUAGE_VIETNAMESE */
-   NULL,           /* RETRO_LANGUAGE_ARABIC */
-   NULL,           /* RETRO_LANGUAGE_GREEK */
-   &options_tr,    /* RETRO_LANGUAGE_TURKISH */
-   NULL,           /* RETRO_LANGUAGE_SLOVAK */
-   NULL,           /* RETRO_LANGUAGE_PERSIAN */
-   NULL,           /* RETRO_LANGUAGE_HEBREW */
-   NULL,           /* RETRO_LANGUAGE_ASTURIAN */
-   NULL,           /* RETRO_LANGUAGE_FINNISH */
+   &options_us,      /* RETRO_LANGUAGE_ENGLISH */
+   &options_ja,      /* RETRO_LANGUAGE_JAPANESE */
+   &options_fr,      /* RETRO_LANGUAGE_FRENCH */
+   &options_es,      /* RETRO_LANGUAGE_SPANISH */
+   &options_de,      /* RETRO_LANGUAGE_GERMAN */
+   &options_it,      /* RETRO_LANGUAGE_ITALIAN */
+   &options_nl,      /* RETRO_LANGUAGE_DUTCH */
+   &options_pt_br,   /* RETRO_LANGUAGE_PORTUGUESE_BRAZIL */
+   &options_pt_pt,   /* RETRO_LANGUAGE_PORTUGUESE_PORTUGAL */
+   &options_ru,      /* RETRO_LANGUAGE_RUSSIAN */
+   &options_ko,      /* RETRO_LANGUAGE_KOREAN */
+   &options_cht,     /* RETRO_LANGUAGE_CHINESE_TRADITIONAL */
+   &options_chs,     /* RETRO_LANGUAGE_CHINESE_SIMPLIFIED */
+   &options_eo,      /* RETRO_LANGUAGE_ESPERANTO */
+   &options_pl,      /* RETRO_LANGUAGE_POLISH */
+   &options_vn,      /* RETRO_LANGUAGE_VIETNAMESE */
+   &options_ar,      /* RETRO_LANGUAGE_ARABIC */
+   &options_el,      /* RETRO_LANGUAGE_GREEK */
+   &options_tr,      /* RETRO_LANGUAGE_TURKISH */
+   &options_sk,      /* RETRO_LANGUAGE_SLOVAK */
+   &options_fa,      /* RETRO_LANGUAGE_PERSIAN */
+   &options_he,      /* RETRO_LANGUAGE_HEBREW */
+   &options_ast,     /* RETRO_LANGUAGE_ASTURIAN */
+   &options_fi,      /* RETRO_LANGUAGE_FINNISH */
+   &options_id,      /* RETRO_LANGUAGE_INDONESIAN */
+   &options_sv,      /* RETRO_LANGUAGE_SWEDISH */
+   &options_uk,      /* RETRO_LANGUAGE_UKRAINIAN */
 };
 #endif
 

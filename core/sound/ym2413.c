@@ -39,6 +39,7 @@ to do:
 /** 2021/05/04: improved EG increment steps accuracy (verified on YM2413 real hardware, cf. https://www.smspower.org/Development/YM2413ReverseEngineeringNotes2015-03-20) **/
 /** 2021/05/08: improved EG transitions accuracy (verified against https://github.com/nukeykt/Nuked-OPLL/blob/master/opll.c) **/
 /** 2021/05/11: improved EG attack phase algorithm accuracy (verified on YM2413 real hardware, cf. https://www.smspower.org/Development/YM2413ReverseEngineeringNotes2017-01-26) **/
+/** 2022/08/07: fixed operator ouput when EG is off **/
 /************************************************/
 
 #include "shared.h"
@@ -103,7 +104,7 @@ typedef struct
   UINT8  eg_sh_dp;  /* (dump state)                   */
   UINT8  eg_sel_dp; /* (dump state)                   */
   UINT8  eg_sh_ar;  /* (attack state)                 */
-  UINT8  eg_sel_ar; /* (attack state)                 */
+  UINT16 eg_sel_ar; /* (attack state)                 */
   UINT8  eg_sh_dr;  /* (decay state)                  */
   UINT8  eg_sel_dr; /* (decay state)                  */
   UINT8  eg_sh_rr;  /* (release state for non-perc.)  */
@@ -855,7 +856,7 @@ INLINE signed int op_calc1(UINT32 phase, unsigned int env, signed int pm, unsign
   return tl_tab[p];
 }
 
-#define volume_calc(OP) ((OP)->TLL + ((UINT32)(OP)->volume) + (LFO_AM & (OP)->AMmask))
+#define volume_calc(OP) (((OP)-> state != EG_OFF) ? (OP)->TLL + ((UINT32)(OP)->volume) + (LFO_AM & (OP)->AMmask) : ENV_QUIET)
 
 /* calculate output */
 INLINE void chan_calc( YM2413_OPLL_CH *CH, unsigned int chan )
@@ -1244,9 +1245,8 @@ INLINE void KEY_OFF(YM2413_OPLL_SLOT *SLOT, UINT32 key_clr)
 
     if( !SLOT->key )
     {
-      /* phase -> Release */
-      if (SLOT->state>EG_REL)
-        SLOT->state = EG_REL;
+      /* phase -> Release (forced off if already at maximal attenuation level) */
+      SLOT->state = ( (SLOT->volume & ~3) == (MAX_ATT_INDEX & ~3) ) ? EG_OFF : EG_REL;
     }
   }
 }

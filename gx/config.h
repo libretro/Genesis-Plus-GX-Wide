@@ -3,7 +3,7 @@
  *
  *  Genesis Plus GX configuration file support
  *
- *  Copyright Eke-Eke (2007-2021)
+ *  Copyright Eke-Eke (2007-2022)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -40,7 +40,7 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
-#define CONFIG_VERSION "GENPLUS-GX 1.7.5"
+#define CONFIG_VERSION "GENPLUS-GX 1.7.6"
 
 /****************************************************************************
  * Config Option 
@@ -57,6 +57,8 @@ typedef struct
   uint8 mono;
   int16 psg_preamp;
   int16 fm_preamp;
+  int16 cdda_volume;
+  int16 pcm_volume;
   int16 low_freq;
   int16 high_freq;
   int16 lg;
@@ -81,10 +83,13 @@ typedef struct
   uint8 ntsc;
   uint8 vsync;
   uint8 render;
+  uint8 enhanced_vscroll;
+  uint8 enhanced_vscroll_limit;
   uint8 tv_mode;
   uint8 bilinear;
   uint8 vfilter;
   uint8 aspect;
+  uint8 cd_latency;
   int16 xshift;
   int16 yshift;
   int16 xscale;

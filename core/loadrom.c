@@ -3,7 +3,7 @@
  *  ROM Loading Support
  *
  *  Copyright (C) 1998-2003  Charles Mac Donald (original code)
- *  Copyright (C) 2007-2021  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2022  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -732,28 +732,31 @@ int load_rom(char *filename)
     scd.cartridge.boot = 0x00;
   }
 
-  /* CD BOOTROM */
-  else if (strstr(rominfo.ROMType, "BR") != NULL)
-  {
-    /* enable CD hardware */
-    system_hw = SYSTEM_MCD;
-
-    /* boot from CD hardware */
-    scd.cartridge.boot = 0x00;
-
-    /* copy ROM to BOOTROM area */
-    memcpy(scd.bootrom, cart.rom, sizeof(scd.bootrom));
-
-    /* mark CD BIOS as being loaded */
-    system_bios = system_bios | 0x10;
-
-    /* loaded CD BIOS region */
-    system_bios = (system_bios & 0xf0) | (region_code >> 4);
-  }
-
   /* 16-bit ROM cartridge (max. 8MB) with optional CD hardware add-on support enabled */
   else if ((system_hw == SYSTEM_MD) && (cart.romsize <= 0x800000) && (config.add_on != HW_ADDON_NONE))
   {
+    int len;
+    char fname[256];
+
+#if defined(USE_LIBCHDR)
+    /* automatically try to load associated .chd file if no .cue file CD image loaded yet */
+    if (!cdd.loaded)
+    {
+      len = strlen(filename);
+      while ((len && (filename[len] != '.')) || (len > 251)) len--;
+      strncpy(fname, filename, len);
+      strcpy(&fname[len], ".chd");
+      fname[len+4] = 0;
+      cdd_load(fname, (char *)cdc.ram);
+    }
+#endif
+
+    /* automatically enable CD hardware emulation (Mode 1) in case :             */
+    /*  - loaded ROM has known CD hardware support                               */
+    /*      or                                                                   */
+    /*  - CD hardware emulation is forced on                                     */
+    /*      or                                                                   */
+    /*  - MegaSD add-on emulation is disabled and normal CD image file is loaded */
     if ((rominfo.peripherals & PCDROM) || (strstr(rominfo.domestic,"FLUX") != NULL) ||
         (config.add_on == HW_ADDON_MEGACD) || ((config.add_on | cdd.loaded) == HW_ADDON_MEGACD))
     {
@@ -763,8 +766,7 @@ int load_rom(char *filename)
         /* automatically try to load associated .iso file if no CD image loaded yet */
         if (!cdd.loaded)
         {
-          char fname[256];
-          int len = strlen(filename);
+          len = strlen(filename);
           while ((len && (filename[len] != '.')) || (len > 251)) len--;
           strncpy(fname, filename, len);
           strcpy(&fname[len], ".iso");
@@ -783,6 +785,25 @@ int load_rom(char *filename)
         /* unmount any loaded CD image */
         cdd_unload();
       }
+    }
+
+    /* CD BOOTROM */
+    else if (strstr(rominfo.ROMType, "BR") != NULL)
+    {
+      /* enable CD hardware */
+      system_hw = SYSTEM_MCD;
+
+      /* boot from CD hardware */
+      scd.cartridge.boot = 0x00;
+
+      /* copy ROM to BOOTROM area */
+      memcpy(scd.bootrom, cart.rom, sizeof(scd.bootrom));
+
+      /* mark CD BIOS as being loaded */
+      system_bios = system_bios | 0x10;
+
+      /* loaded CD BIOS region */
+      system_bios = (system_bios & 0xf0) | (region_code >> 4);
     }
   }
 

@@ -1721,6 +1721,7 @@ void render_bg_m5_vs(int line)
   w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
+				
   end = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
@@ -1903,6 +1904,7 @@ void render_bg_m5_vs(int line)
   merge(&linebuf[1][0x20], &linebuf[0][0x20], &linebuf[0][0x20], lut[(reg[12] & 0x08) >> 2], bitmap.viewport.w);
 }
 
+/* Enhanced function that allows each cell to be vscrolled individually, instead of being limited to 2-cell */
 void render_bg_m5_vs_enhanced(int line) 
 {
   int column, v_offset;
@@ -1937,6 +1939,7 @@ void render_bg_m5_vs_enhanced(int line)
   w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
+				
   end = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
@@ -1996,6 +1999,7 @@ void render_bg_m5_vs_enhanced(int line)
     if (column >= (config.h40_extra_columns / 4) && column < (config.h40_extra_columns / 4) + 19)
     {
       /* The offset of the intermediary cell is an average of the offsets of the current 2-cell and the next 2-cell. */
+																		 
       v_offset = ((int)next_v_line - (int)v_line) / 2;
       v_offset = (abs(v_offset) >= config.enhanced_vscroll_limit) ? 0 : v_offset;
     }
@@ -2253,6 +2257,7 @@ void render_bg_m5_im2(int line)
   w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
+				
   end = bitmap.viewport.w >> 4;
 
   /* Plane B scroll */
@@ -2427,6 +2432,7 @@ void render_bg_m5_im2_vs(int line)
   w = (reg[18] >> 7) & 1;
 
   /* Plane B width */
+				
   end   = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
@@ -3001,7 +3007,7 @@ void render_bg_m5_vs(int line)
   }
 }
 
-void render_bg_m5_vs_enhanced(int line) 
+void render_bg_m5_vs_enhanced(int line)
 {
   int column, start, end, v_offset;
   uint32 atex, atbuf, *src, *dst;
@@ -3265,7 +3271,6 @@ void render_bg_m5_vs_enhanced(int line)
     else {
       v_offset = 0;
     }
-
     /* Plane B name table */
     nt = (uint32 *)&vram[ntbb + (((v_line >> 3) << pf_shift) & 0x1FC0)];
 
@@ -3273,7 +3278,7 @@ void render_bg_m5_vs_enhanced(int line)
     v_line = (v_line & 7) << 3;
 
     atbuf = nt[index & pf_col_mask];
-    #ifdef ALIGN_LONG
+#ifdef ALIGN_LONG
 #ifdef LSB_FIRST
   GET_LSB_TILE(atbuf, v_line)
   xscroll = READ_LONG((uint32 *)lb);

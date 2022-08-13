@@ -22,8 +22,11 @@ typedef struct
   uint8 ym2413;
   uint8 ym3438;
   uint8 opll;
+  uint8 cd_latency;
   int16 psg_preamp;
   int16 fm_preamp;
+  int16 cdda_volume;
+  int16 pcm_volume;
   uint32 lp_range;
   int16 low_freq;
   int16 high_freq;

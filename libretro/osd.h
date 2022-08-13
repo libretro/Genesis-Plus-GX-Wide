@@ -3,7 +3,7 @@
  *
  *  Genesis Plus GX libretro port
  *
- *  Copyright Eke-Eke (2007-2021)
+ *  Copyright Eke-Eke (2007-2022)
  *
  *  Copyright Daniel De Matteis (2012-2016)
  *
@@ -104,6 +104,8 @@ typedef struct
   uint8 mono;
   int16 psg_preamp;
   int16 fm_preamp;
+  int16 cdda_volume;
+  int16 pcm_volume;
   uint16 lp_range;
   int16 low_freq;
   int16 high_freq;
@@ -135,6 +137,7 @@ typedef struct
   uint8 no_sprite_limit;
   uint8 enhanced_vscroll;
   uint8 enhanced_vscroll_limit;
+  uint8 cd_latency;
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
   unsigned int psg_ch_volumes[4];
   int32 md_ch_volumes[6];

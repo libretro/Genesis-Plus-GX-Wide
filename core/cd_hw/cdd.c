@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  CD drive processor & CD-DA fader
  *
- *  Copyright (C) 2012-2021  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2012-2022  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -1534,6 +1534,12 @@ void cdd_read_audio(unsigned int samples)
         r = (((int16)((ptr[3] + ptr[2]*256)) * mul) / 1024);
         ptr+=4;
 #endif
+
+        /* CD-DA output mixing volume (0-100%) */
+        l = (l * config.cdda_volume) / 100;
+        r = (r * config.cdda_volume) / 100;
+
+        /* update blip buffer */
         blip_add_delta_fast(snd.blips[2], i, l-prev_l, r-prev_r);
         prev_l = l;
         prev_r = r;
@@ -1607,6 +1613,12 @@ void cdd_read_audio(unsigned int samples)
         /* left & right channels */
         l = ((ptr[0] * mul) / 1024);
         r = ((ptr[1] * mul) / 1024);
+
+        /* CD-DA output mixing volume (0-100%) */
+        l = (l * config.cdda_volume) / 100;
+        r = (r * config.cdda_volume) / 100;
+
+        /* update blip buffer */
         blip_add_delta_fast(snd.blips[2], i, l-prev_l, r-prev_r);
         prev_l = l;
         prev_r = r;
@@ -1657,6 +1669,12 @@ void cdd_read_audio(unsigned int samples)
         r = (((int16)((ptr[2] + ptr[3]*256)) * mul) / 1024);
         ptr+=4;
 #endif
+
+        /* CD-DA output mixing volume (0-100%) */
+        l = (l * config.cdda_volume) / 100;
+        r = (r * config.cdda_volume) / 100;
+
+        /* update blip buffer */
         blip_add_delta_fast(snd.blips[2], i, l-prev_l, r-prev_r);
         prev_l = l;
         prev_r = r;
@@ -1692,6 +1710,7 @@ void cdd_read_audio(unsigned int samples)
     /* no audio output */
     if (prev_l | prev_r)
     {
+      /* update blip buffer */
       blip_add_delta_fast(snd.blips[2], 0, -prev_l, -prev_r);
 
       /* save audio output for next frame */
@@ -1700,7 +1719,7 @@ void cdd_read_audio(unsigned int samples)
     }
   }
 
-  /* end of Blip Buffer timeframe */
+  /* end of blip buffer timeframe */
   blip_end_frame(snd.blips[2], samples);
 }
 
@@ -2095,7 +2114,8 @@ void cdd_process(void)
         /* Fixes a few games hanging because they expect data to be read with some delay */
         /* Wolf Team games (Annet Futatabi, Aisle Lord, Cobra Command, Earnest Evans, Road Avenger & Time Gal) need at least 11 interrupts delay  */
         /* Space Adventure Cobra (2nd morgue scene) needs at least 13 interrupts delay (incl. seek time, so 11 is OK) */
-        cdd.latency = 11;
+        /* By default, at least one interrupt latency is required by current emulation model (BIOS hangs otherwise) */
+        cdd.latency = 1 + 10*config.cd_latency;
       }
 
       /* CD drive seek time */
@@ -2105,11 +2125,11 @@ void cdd_process(void)
       /* be enough delayed to start in sync with intro sequence, as compared with real hardware recording).        */
       if (lba > cdd.lba)
       {
-        cdd.latency += (((lba - cdd.lba) * 120) / 270000);
+        cdd.latency += (((lba - cdd.lba) * 120 * config.cd_latency) / 270000);
       }
       else 
       {
-        cdd.latency += (((cdd.lba - lba) * 120) / 270000);
+        cdd.latency += (((cdd.lba - lba) * 120 * config.cd_latency) / 270000);
       }
 
       /* update current LBA */
@@ -2172,11 +2192,11 @@ void cdd_process(void)
       /* seeking from 00:05:63 to 24:03:19, Panic! when seeking from 00:05:60 to 24:06:07) */
       if (lba > cdd.lba)
       {
-        cdd.latency = ((lba - cdd.lba) * 120) / 270000;
+        cdd.latency = ((lba - cdd.lba) * 120 * config.cd_latency) / 270000;
       }
       else
       {
-        cdd.latency = ((cdd.lba - lba) * 120) / 270000;
+        cdd.latency = ((cdd.lba - lba) * 120 * config.cd_latency) / 270000;
       }
 
       /* update current LBA */

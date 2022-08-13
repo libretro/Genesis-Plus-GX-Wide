@@ -10,7 +10,7 @@ addons:
       - ubuntu-toolchain-r-test
 env:
   global:
-    - CORE=genesis_plus_gx
+    - CORE=genesis_plus_gx_wide
     - COMPILER_NAME=gcc CXX=g++-7 CC=gcc-7
   matrix:
     - PLATFORM=3ds

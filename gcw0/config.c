@@ -41,6 +41,8 @@ void set_config_defaults(void)
     /* sound options */
     config.psg_preamp     = 150;
     config.fm_preamp      = 100;
+    config.cdda_volume    = 100;
+    config.pcm_volume     = 100;
     config.hq_fm          = 1;
     config.hq_psg         = 1;
     config.filter         = 1;
@@ -49,7 +51,7 @@ void set_config_defaults(void)
     config.lg             = 100;
     config.mg             = 100;
     config.hg             = 100;
-    config.lp_range       = 0x7fff; /* 0.5 in 0.16 fixed point */
+    config.lp_range       = 0x9999; /* 0.6 in 0.16 fixed point */
     config.ym2612         = YM2612_DISCRETE;
     config.ym2413         = 1; /* = AUTO (0 = always OFF, 1 = always ON) */
     config.mono           = 0;
@@ -64,13 +66,14 @@ void set_config_defaults(void)
     config.bios           = 0;
     config.lock_on        = 0; /* = OFF (or TYPE_SK, TYPE_GG & TYPE_AR) */
     config.add_on         = 0; /* = HW_ADDON_AUTO (or HW_ADDON_MEGACD, HW_ADDON_MEGASD & HW_ADDON_NONE) */
-    config.ntsc           = 0;
-    config.lcd            = 0; /* 0.8 fixed point */
+    config.cd_latency     = 1;
 
     /* display options */
     config.overscan         = 0; /* 3 = all borders (0 = no borders , 1 = vertical borders only, 2 = horizontal borders only) */
     config.gg_extra         = 0; /* 1 = show extended Game Gear screen (256x192) */
     config.render           = 0; /* 1 = double resolution output (only when interlaced mode 2 is enabled) */
+    config.ntsc             = 0;
+    config.lcd              = 0; /* 0.8 fixed point */
     config.gcw0_fullscreen  = 1; /* 1 = use IPU scaling */
     config.keepaspectratio  = 1; /* 1 = aspect ratio correct with black bars, 0 = fullscreen without correct aspect ratio */
     config.gg_scanlines     = 1; /* 1 = use scanlines on Game Gear */
