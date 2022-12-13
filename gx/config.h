@@ -103,7 +103,7 @@ typedef struct
   t_input_config input[MAX_INPUTS];
   uint16 pad_keymap[4][MAX_KEYS+1];
 #ifdef HW_RVL
-  uint32 wpad_keymap[4*3+1][MAX_KEYS];
+  uint32 wpad_keymap[4*3+1][MAX_KEYS+1];
   uint8 autosleep;
   int32 calx;
   int32 caly;
@@ -126,6 +126,9 @@ typedef struct
   float ntsc_artifacts;
   float ntsc_fringing;
   float ntsc_bleed;
+  float m68k_overclock;
+  float s68k_overclock;
+  float z80_overclock;
   char sys_rom[12][256];
 } t_config;
 

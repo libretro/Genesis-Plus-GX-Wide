@@ -29,6 +29,8 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * improved CDD "play" command accuracy (fixes "Snatcher" Act 2 starting cutscene)
 * improved CDD status report accuracy (fixes track looping with Mode 1 patched games using MSU-MD driver)
 * improved Word-RAM byte access accuracy (verified on schematics)
+* improved GFX processing accuracy to halt it while Word RAM is allocated to Main CPU in 2M mode
+* improved GFX timing accuracy (fixes "Night Striker" crashing after completing a game)
 * disabled 68k and Z80 access to PRG-RAM when SUB-CPU is running (fixes "Dungeon Explorer")
 * disabled CD hardware reset on Soft-Reset (verified on real hardware)
 * fixed potential load issues with non-zero backup RAM cart
@@ -78,6 +80,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 ---------------
 * added new SMS Power dumps in internal database
 * added support for Korean XX-in-1 mappers (thanks to Bock from SMS Power)
+* added missing GG-MS games in internal game database
 * improved console hardware auto-detection
 * improved emulation accuracy of SG-1000 & Mark-III hardware
 * improved emulation accuracy of Japanese Master System I/O chip (315-5297)
@@ -94,6 +97,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 ---------------
 * added support for new SMS Power Korean dumps (Star Soldier & Pippols)
 * added support for SG-1000 II clone hardware (2KB RAM + integrated VDP/PSG chip 315-5066)
+* added support for SG-1000 II hardware with 8KB RAM extension adapter
 * fixed SG-1000 internal RAM size (1KB instead of 2KB)
 * fixed savestates for games using external RAM
 * restored SG-1000 Pause button support
@@ -125,6 +129,8 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 
 [Core/VDP]
 ---------------
+* added support for background color changes during HBLANK when display is disabled (fixes incorrect colored line in Yuu Yuu Hakusho)
+* added optional enhanced 2-cell vertical scroll rendering mode (credits to AlexKiri)
 * implemented proper FIFO ring-buffer & unused bits behavior on CRAM/VSRAM reads (verified on real hardware by Nemesis)
 * improved accuracy of DMA Copy/Fill & added support for CRAM/VSRAM Fill (verified on real hardware by Nemesis)
 * improved V28/V30 mode switching during active display (verified on real hardware)
@@ -133,6 +139,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * improved FIFO timings accuracy (fixes "Overdrive" Demo)
 * improved H-Counter accuracy in H32 mode
 * improved VDP status timing accuracy
+* improved HBLANK flag timing accuracy (verified on real hardware by Nemesis)
 * improved DMA timing accuracy during blanking (verified on real hardware by Mask of Destiny)
 * improved accuracy of Master System color palette brightness range (verified against real hardware)
 * fixed misaligned buffer writes in Mode 4 when -DALIGN_LONG option is used
@@ -168,8 +175,11 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * added configurable NTSC filter
 * added configurable FPS display & toggleable fast-forward key combo
   (HOME + MINUS with Wii controllers or R TRIGGER + START with Gamecube controller)
+* added configurable menu key combo
 * added 50hz progressive mode (576p) support for emulation
 * added WiiU GamePad Controller support on vWii (Fix94)
+* added support for Sega CD / Mega-CD PRG-RAM and Word-RAM cheat codes
+* added configurable overclock setting for M68K, S68K and Z80 CPUs
 * reduced SRAM files size
 * improved A/V Sync: when VSYNC is enabled, audio resampler output rate is now adjusted (+/-0,1 %)
   to always keep audio & video synchronized and input lag is reduced by one frame.
