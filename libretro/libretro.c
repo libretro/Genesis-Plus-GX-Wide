@@ -3217,6 +3217,7 @@ bool retro_load_game(const struct retro_game_info *info)
    content_path[0] = '\0';
    content_ext[0]  = '\0';
 
+   system_hw       = 0;
    g_rom_data      = NULL;
    g_rom_size      = 0;
 
@@ -3481,11 +3482,13 @@ bool retro_load_game(const struct retro_game_info *info)
 error:
    if (sms_ntsc)
       free(sms_ntsc);
-   sms_ntsc = NULL;
+   sms_ntsc  = NULL;
 
    if (md_ntsc)
       free(md_ntsc);
-   md_ntsc = NULL;
+   md_ntsc   = NULL;
+
+   system_hw = 0;
 
    return false;
 }
@@ -3520,11 +3523,12 @@ void retro_unload_game(void)
 
    if (md_ntsc)
       free(md_ntsc);
-   md_ntsc = NULL;
-
+   md_ntsc  = NULL;
    if (sms_ntsc)
       free(sms_ntsc);
-   sms_ntsc = NULL;
+   sms_ntsc  = NULL;
+
+   system_hw = 0;
 }
 
 unsigned retro_get_region(void) { return vdp_pal ? RETRO_REGION_PAL : RETRO_REGION_NTSC; }
