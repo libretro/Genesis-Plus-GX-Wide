@@ -1920,16 +1920,7 @@ static void check_variables(bool first_run)
   var.key = CORE_NAME "_overclock";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
-    if (!var.value || !strcmp(var.value, "100%"))
-      config.overclock = 100;
-    else if (var.value && !strcmp(var.value, "125%"))
-      config.overclock = 125;
-    else if (var.value && !strcmp(var.value, "150%"))
-      config.overclock = 150;
-    else if (var.value && !strcmp(var.value, "175%"))
-      config.overclock = 175;
-    else if (var.value && !strcmp(var.value, "200%"))
-      config.overclock = 200;
+    config.overclock = (!var.value) ? 100 : atoi(var.value);
 
     if (system_hw)
       update_overclock();
@@ -2902,7 +2893,7 @@ void retro_set_environment(retro_environment_t cb)
    cb(RETRO_ENVIRONMENT_SET_INPUT_DESCRIPTORS, (void*)desc);
    cb(RETRO_ENVIRONMENT_SET_CONTENT_INFO_OVERRIDE, (void*)content_overrides);
 
-   vfs_iface_info.required_interface_version = 1;
+   vfs_iface_info.required_interface_version = 2;
    vfs_iface_info.iface                      = NULL;
    if (environ_cb(RETRO_ENVIRONMENT_GET_VFS_INTERFACE, &vfs_iface_info))
 	   filestream_vfs_init(&vfs_iface_info);
