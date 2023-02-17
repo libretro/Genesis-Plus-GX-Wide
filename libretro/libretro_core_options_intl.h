@@ -175,6 +175,18 @@ extern "C" {
 #define OPTION_VAL_150_AR NULL
 #define OPTION_VAL_175_AR NULL
 #define OPTION_VAL_200_AR NULL
+#define OPTION_VAL_225_AR NULL
+#define OPTION_VAL_250_AR NULL
+#define OPTION_VAL_275_AR NULL
+#define OPTION_VAL_300_AR NULL
+#define OPTION_VAL_325_AR NULL
+#define OPTION_VAL_350_AR NULL
+#define OPTION_VAL_375_AR NULL
+#define OPTION_VAL_400_AR NULL
+#define OPTION_VAL_425_AR NULL
+#define OPTION_VAL_450_AR NULL
+#define OPTION_VAL_475_AR NULL
+#define OPTION_VAL_500_AR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_AR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_AR NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_AR NULL
@@ -997,11 +1009,23 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_AR },
-         { "125%", OPTION_VAL_125_AR },
-         { "150%", OPTION_VAL_150_AR },
-         { "175%", OPTION_VAL_175_AR },
-         { "200%", OPTION_VAL_200_AR },
+         { "100", OPTION_VAL_100_AR },
+         { "125", OPTION_VAL_125_AR },
+         { "150", OPTION_VAL_150_AR },
+         { "175", OPTION_VAL_175_AR },
+         { "200", OPTION_VAL_200_AR },
+         { "225", OPTION_VAL_225_AR },
+         { "250", OPTION_VAL_250_AR },
+         { "275", OPTION_VAL_275_AR },
+         { "300", OPTION_VAL_300_AR },
+         { "325", OPTION_VAL_325_AR },
+         { "350", OPTION_VAL_350_AR },
+         { "375", OPTION_VAL_375_AR },
+         { "400", OPTION_VAL_400_AR },
+         { "425", OPTION_VAL_425_AR },
+         { "450", OPTION_VAL_450_AR },
+         { "475", OPTION_VAL_475_AR },
+         { "500", OPTION_VAL_500_AR },
          { NULL, NULL },
       },
       "100%"
@@ -1648,6 +1672,18 @@ struct retro_core_options_v2 options_ar = {
 #define OPTION_VAL_150_AST NULL
 #define OPTION_VAL_175_AST NULL
 #define OPTION_VAL_200_AST NULL
+#define OPTION_VAL_225_AST NULL
+#define OPTION_VAL_250_AST NULL
+#define OPTION_VAL_275_AST NULL
+#define OPTION_VAL_300_AST NULL
+#define OPTION_VAL_325_AST NULL
+#define OPTION_VAL_350_AST NULL
+#define OPTION_VAL_375_AST NULL
+#define OPTION_VAL_400_AST NULL
+#define OPTION_VAL_425_AST NULL
+#define OPTION_VAL_450_AST NULL
+#define OPTION_VAL_475_AST NULL
+#define OPTION_VAL_500_AST NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_AST NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_AST NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_AST NULL
@@ -2470,11 +2506,23 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_AST },
-         { "125%", OPTION_VAL_125_AST },
-         { "150%", OPTION_VAL_150_AST },
-         { "175%", OPTION_VAL_175_AST },
-         { "200%", OPTION_VAL_200_AST },
+         { "100", OPTION_VAL_100_AST },
+         { "125", OPTION_VAL_125_AST },
+         { "150", OPTION_VAL_150_AST },
+         { "175", OPTION_VAL_175_AST },
+         { "200", OPTION_VAL_200_AST },
+         { "225", OPTION_VAL_225_AST },
+         { "250", OPTION_VAL_250_AST },
+         { "275", OPTION_VAL_275_AST },
+         { "300", OPTION_VAL_300_AST },
+         { "325", OPTION_VAL_325_AST },
+         { "350", OPTION_VAL_350_AST },
+         { "375", OPTION_VAL_375_AST },
+         { "400", OPTION_VAL_400_AST },
+         { "425", OPTION_VAL_425_AST },
+         { "450", OPTION_VAL_450_AST },
+         { "475", OPTION_VAL_475_AST },
+         { "500", OPTION_VAL_500_AST },
          { NULL, NULL },
       },
       "100%"
@@ -3121,6 +3169,18 @@ struct retro_core_options_v2 options_ast = {
 #define OPTION_VAL_150_CA NULL
 #define OPTION_VAL_175_CA NULL
 #define OPTION_VAL_200_CA NULL
+#define OPTION_VAL_225_CA NULL
+#define OPTION_VAL_250_CA NULL
+#define OPTION_VAL_275_CA NULL
+#define OPTION_VAL_300_CA NULL
+#define OPTION_VAL_325_CA NULL
+#define OPTION_VAL_350_CA NULL
+#define OPTION_VAL_375_CA NULL
+#define OPTION_VAL_400_CA NULL
+#define OPTION_VAL_425_CA NULL
+#define OPTION_VAL_450_CA NULL
+#define OPTION_VAL_475_CA NULL
+#define OPTION_VAL_500_CA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CA NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CA NULL
@@ -3943,11 +4003,23 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_CA },
-         { "125%", OPTION_VAL_125_CA },
-         { "150%", OPTION_VAL_150_CA },
-         { "175%", OPTION_VAL_175_CA },
-         { "200%", OPTION_VAL_200_CA },
+         { "100", OPTION_VAL_100_CA },
+         { "125", OPTION_VAL_125_CA },
+         { "150", OPTION_VAL_150_CA },
+         { "175", OPTION_VAL_175_CA },
+         { "200", OPTION_VAL_200_CA },
+         { "225", OPTION_VAL_225_CA },
+         { "250", OPTION_VAL_250_CA },
+         { "275", OPTION_VAL_275_CA },
+         { "300", OPTION_VAL_300_CA },
+         { "325", OPTION_VAL_325_CA },
+         { "350", OPTION_VAL_350_CA },
+         { "375", OPTION_VAL_375_CA },
+         { "400", OPTION_VAL_400_CA },
+         { "425", OPTION_VAL_425_CA },
+         { "450", OPTION_VAL_450_CA },
+         { "475", OPTION_VAL_475_CA },
+         { "500", OPTION_VAL_500_CA },
          { NULL, NULL },
       },
       "100%"
@@ -4594,6 +4666,18 @@ struct retro_core_options_v2 options_ca = {
 #define OPTION_VAL_150_CHS NULL
 #define OPTION_VAL_175_CHS NULL
 #define OPTION_VAL_200_CHS NULL
+#define OPTION_VAL_225_CHS NULL
+#define OPTION_VAL_250_CHS NULL
+#define OPTION_VAL_275_CHS NULL
+#define OPTION_VAL_300_CHS NULL
+#define OPTION_VAL_325_CHS NULL
+#define OPTION_VAL_350_CHS NULL
+#define OPTION_VAL_375_CHS NULL
+#define OPTION_VAL_400_CHS NULL
+#define OPTION_VAL_425_CHS NULL
+#define OPTION_VAL_450_CHS NULL
+#define OPTION_VAL_475_CHS NULL
+#define OPTION_VAL_500_CHS NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CHS NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CHS NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CHS "68K 地址错误"
@@ -5416,11 +5500,23 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_CHS },
-         { "125%", OPTION_VAL_125_CHS },
-         { "150%", OPTION_VAL_150_CHS },
-         { "175%", OPTION_VAL_175_CHS },
-         { "200%", OPTION_VAL_200_CHS },
+         { "100", OPTION_VAL_100_CHS },
+         { "125", OPTION_VAL_125_CHS },
+         { "150", OPTION_VAL_150_CHS },
+         { "175", OPTION_VAL_175_CHS },
+         { "200", OPTION_VAL_200_CHS },
+         { "225", OPTION_VAL_225_CHS },
+         { "250", OPTION_VAL_250_CHS },
+         { "275", OPTION_VAL_275_CHS },
+         { "300", OPTION_VAL_300_CHS },
+         { "325", OPTION_VAL_325_CHS },
+         { "350", OPTION_VAL_350_CHS },
+         { "375", OPTION_VAL_375_CHS },
+         { "400", OPTION_VAL_400_CHS },
+         { "425", OPTION_VAL_425_CHS },
+         { "450", OPTION_VAL_450_CHS },
+         { "475", OPTION_VAL_475_CHS },
+         { "500", OPTION_VAL_500_CHS },
          { NULL, NULL },
       },
       "100%"
@@ -6067,6 +6163,18 @@ struct retro_core_options_v2 options_chs = {
 #define OPTION_VAL_150_CHT NULL
 #define OPTION_VAL_175_CHT NULL
 #define OPTION_VAL_200_CHT NULL
+#define OPTION_VAL_225_CHT NULL
+#define OPTION_VAL_250_CHT NULL
+#define OPTION_VAL_275_CHT NULL
+#define OPTION_VAL_300_CHT NULL
+#define OPTION_VAL_325_CHT NULL
+#define OPTION_VAL_350_CHT NULL
+#define OPTION_VAL_375_CHT NULL
+#define OPTION_VAL_400_CHT NULL
+#define OPTION_VAL_425_CHT NULL
+#define OPTION_VAL_450_CHT NULL
+#define OPTION_VAL_475_CHT NULL
+#define OPTION_VAL_500_CHT NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CHT NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CHT NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CHT "68K 位置錯誤"
@@ -6889,11 +6997,23 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_CHT },
-         { "125%", OPTION_VAL_125_CHT },
-         { "150%", OPTION_VAL_150_CHT },
-         { "175%", OPTION_VAL_175_CHT },
-         { "200%", OPTION_VAL_200_CHT },
+         { "100", OPTION_VAL_100_CHT },
+         { "125", OPTION_VAL_125_CHT },
+         { "150", OPTION_VAL_150_CHT },
+         { "175", OPTION_VAL_175_CHT },
+         { "200", OPTION_VAL_200_CHT },
+         { "225", OPTION_VAL_225_CHT },
+         { "250", OPTION_VAL_250_CHT },
+         { "275", OPTION_VAL_275_CHT },
+         { "300", OPTION_VAL_300_CHT },
+         { "325", OPTION_VAL_325_CHT },
+         { "350", OPTION_VAL_350_CHT },
+         { "375", OPTION_VAL_375_CHT },
+         { "400", OPTION_VAL_400_CHT },
+         { "425", OPTION_VAL_425_CHT },
+         { "450", OPTION_VAL_450_CHT },
+         { "475", OPTION_VAL_475_CHT },
+         { "500", OPTION_VAL_500_CHT },
          { NULL, NULL },
       },
       "100%"
@@ -7540,6 +7660,18 @@ struct retro_core_options_v2 options_cht = {
 #define OPTION_VAL_150_CS NULL
 #define OPTION_VAL_175_CS NULL
 #define OPTION_VAL_200_CS NULL
+#define OPTION_VAL_225_CS NULL
+#define OPTION_VAL_250_CS NULL
+#define OPTION_VAL_275_CS NULL
+#define OPTION_VAL_300_CS NULL
+#define OPTION_VAL_325_CS NULL
+#define OPTION_VAL_350_CS NULL
+#define OPTION_VAL_375_CS NULL
+#define OPTION_VAL_400_CS NULL
+#define OPTION_VAL_425_CS NULL
+#define OPTION_VAL_450_CS NULL
+#define OPTION_VAL_475_CS NULL
+#define OPTION_VAL_500_CS NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CS "Uzamčení Systému"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CS "Emulace zablokování systému, ke kterému dochází na skutečném hardwaru při provádění nelegálního přístupu k adrese. Tato funkce by měla být vypnuta pouze při přehrávání některých dem a homebrew, které se spoléhají na nelegální chování pro správnou funkci."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CS "Chyba v Adrese 68K"
@@ -8362,11 +8494,23 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_CS },
-         { "125%", OPTION_VAL_125_CS },
-         { "150%", OPTION_VAL_150_CS },
-         { "175%", OPTION_VAL_175_CS },
-         { "200%", OPTION_VAL_200_CS },
+         { "100", OPTION_VAL_100_CS },
+         { "125", OPTION_VAL_125_CS },
+         { "150", OPTION_VAL_150_CS },
+         { "175", OPTION_VAL_175_CS },
+         { "200", OPTION_VAL_200_CS },
+         { "225", OPTION_VAL_225_CS },
+         { "250", OPTION_VAL_250_CS },
+         { "275", OPTION_VAL_275_CS },
+         { "300", OPTION_VAL_300_CS },
+         { "325", OPTION_VAL_325_CS },
+         { "350", OPTION_VAL_350_CS },
+         { "375", OPTION_VAL_375_CS },
+         { "400", OPTION_VAL_400_CS },
+         { "425", OPTION_VAL_425_CS },
+         { "450", OPTION_VAL_450_CS },
+         { "475", OPTION_VAL_475_CS },
+         { "500", OPTION_VAL_500_CS },
          { NULL, NULL },
       },
       "100%"
@@ -9013,6 +9157,18 @@ struct retro_core_options_v2 options_cs = {
 #define OPTION_VAL_150_CY NULL
 #define OPTION_VAL_175_CY NULL
 #define OPTION_VAL_200_CY NULL
+#define OPTION_VAL_225_CY NULL
+#define OPTION_VAL_250_CY NULL
+#define OPTION_VAL_275_CY NULL
+#define OPTION_VAL_300_CY NULL
+#define OPTION_VAL_325_CY NULL
+#define OPTION_VAL_350_CY NULL
+#define OPTION_VAL_375_CY NULL
+#define OPTION_VAL_400_CY NULL
+#define OPTION_VAL_425_CY NULL
+#define OPTION_VAL_450_CY NULL
+#define OPTION_VAL_475_CY NULL
+#define OPTION_VAL_500_CY NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CY NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CY NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CY NULL
@@ -9835,11 +9991,23 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_CY },
-         { "125%", OPTION_VAL_125_CY },
-         { "150%", OPTION_VAL_150_CY },
-         { "175%", OPTION_VAL_175_CY },
-         { "200%", OPTION_VAL_200_CY },
+         { "100", OPTION_VAL_100_CY },
+         { "125", OPTION_VAL_125_CY },
+         { "150", OPTION_VAL_150_CY },
+         { "175", OPTION_VAL_175_CY },
+         { "200", OPTION_VAL_200_CY },
+         { "225", OPTION_VAL_225_CY },
+         { "250", OPTION_VAL_250_CY },
+         { "275", OPTION_VAL_275_CY },
+         { "300", OPTION_VAL_300_CY },
+         { "325", OPTION_VAL_325_CY },
+         { "350", OPTION_VAL_350_CY },
+         { "375", OPTION_VAL_375_CY },
+         { "400", OPTION_VAL_400_CY },
+         { "425", OPTION_VAL_425_CY },
+         { "450", OPTION_VAL_450_CY },
+         { "475", OPTION_VAL_475_CY },
+         { "500", OPTION_VAL_500_CY },
          { NULL, NULL },
       },
       "100%"
@@ -10486,6 +10654,18 @@ struct retro_core_options_v2 options_cy = {
 #define OPTION_VAL_150_DA NULL
 #define OPTION_VAL_175_DA NULL
 #define OPTION_VAL_200_DA NULL
+#define OPTION_VAL_225_DA NULL
+#define OPTION_VAL_250_DA NULL
+#define OPTION_VAL_275_DA NULL
+#define OPTION_VAL_300_DA NULL
+#define OPTION_VAL_325_DA NULL
+#define OPTION_VAL_350_DA NULL
+#define OPTION_VAL_375_DA NULL
+#define OPTION_VAL_400_DA NULL
+#define OPTION_VAL_425_DA NULL
+#define OPTION_VAL_450_DA NULL
+#define OPTION_VAL_475_DA NULL
+#define OPTION_VAL_500_DA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_DA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_DA NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_DA NULL
@@ -11308,11 +11488,23 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_DA },
-         { "125%", OPTION_VAL_125_DA },
-         { "150%", OPTION_VAL_150_DA },
-         { "175%", OPTION_VAL_175_DA },
-         { "200%", OPTION_VAL_200_DA },
+         { "100", OPTION_VAL_100_DA },
+         { "125", OPTION_VAL_125_DA },
+         { "150", OPTION_VAL_150_DA },
+         { "175", OPTION_VAL_175_DA },
+         { "200", OPTION_VAL_200_DA },
+         { "225", OPTION_VAL_225_DA },
+         { "250", OPTION_VAL_250_DA },
+         { "275", OPTION_VAL_275_DA },
+         { "300", OPTION_VAL_300_DA },
+         { "325", OPTION_VAL_325_DA },
+         { "350", OPTION_VAL_350_DA },
+         { "375", OPTION_VAL_375_DA },
+         { "400", OPTION_VAL_400_DA },
+         { "425", OPTION_VAL_425_DA },
+         { "450", OPTION_VAL_450_DA },
+         { "475", OPTION_VAL_475_DA },
+         { "500", OPTION_VAL_500_DA },
          { NULL, NULL },
       },
       "100%"
@@ -11959,6 +12151,18 @@ struct retro_core_options_v2 options_da = {
 #define OPTION_VAL_150_DE "150 %"
 #define OPTION_VAL_175_DE "175 %"
 #define OPTION_VAL_200_DE "200 %"
+#define OPTION_VAL_225_DE "225 %"
+#define OPTION_VAL_250_DE "250 %"
+#define OPTION_VAL_275_DE "275 %"
+#define OPTION_VAL_300_DE "300 %"
+#define OPTION_VAL_325_DE "325 %"
+#define OPTION_VAL_350_DE "350 %"
+#define OPTION_VAL_375_DE "375 %"
+#define OPTION_VAL_400_DE "400 %"
+#define OPTION_VAL_425_DE "425 %"
+#define OPTION_VAL_450_DE "450 %"
+#define OPTION_VAL_475_DE "475 %"
+#define OPTION_VAL_500_DE "500 %"
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_DE "Systemsperren"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_DE "Emuliert Systemsperren, die auf echter Hardware auftreten, wenn illegale Adresszugriffe stattfinden. Dies sollte nur bei bestimmten Demos und Homebrew deaktiviert werden, die für den korrekten Betrieb auf illegales Verhalten angewiesen sind."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_DE "68K-Adressfehler"
@@ -12781,11 +12985,23 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_DE },
-         { "125%", OPTION_VAL_125_DE },
-         { "150%", OPTION_VAL_150_DE },
-         { "175%", OPTION_VAL_175_DE },
-         { "200%", OPTION_VAL_200_DE },
+         { "100", OPTION_VAL_100_DE },
+         { "125", OPTION_VAL_125_DE },
+         { "150", OPTION_VAL_150_DE },
+         { "175", OPTION_VAL_175_DE },
+         { "200", OPTION_VAL_200_DE },
+         { "225", OPTION_VAL_225_DE },
+         { "250", OPTION_VAL_250_DE },
+         { "275", OPTION_VAL_275_DE },
+         { "300", OPTION_VAL_300_DE },
+         { "325", OPTION_VAL_325_DE },
+         { "350", OPTION_VAL_350_DE },
+         { "375", OPTION_VAL_375_DE },
+         { "400", OPTION_VAL_400_DE },
+         { "425", OPTION_VAL_425_DE },
+         { "450", OPTION_VAL_450_DE },
+         { "475", OPTION_VAL_475_DE },
+         { "500", OPTION_VAL_500_DE },
          { NULL, NULL },
       },
       "100%"
@@ -13432,6 +13648,18 @@ struct retro_core_options_v2 options_de = {
 #define OPTION_VAL_150_EL NULL
 #define OPTION_VAL_175_EL NULL
 #define OPTION_VAL_200_EL NULL
+#define OPTION_VAL_225_EL NULL
+#define OPTION_VAL_250_EL NULL
+#define OPTION_VAL_275_EL NULL
+#define OPTION_VAL_300_EL NULL
+#define OPTION_VAL_325_EL NULL
+#define OPTION_VAL_350_EL NULL
+#define OPTION_VAL_375_EL NULL
+#define OPTION_VAL_400_EL NULL
+#define OPTION_VAL_425_EL NULL
+#define OPTION_VAL_450_EL NULL
+#define OPTION_VAL_475_EL NULL
+#define OPTION_VAL_500_EL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EL NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EL NULL
@@ -14254,11 +14482,23 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_EL },
-         { "125%", OPTION_VAL_125_EL },
-         { "150%", OPTION_VAL_150_EL },
-         { "175%", OPTION_VAL_175_EL },
-         { "200%", OPTION_VAL_200_EL },
+         { "100", OPTION_VAL_100_EL },
+         { "125", OPTION_VAL_125_EL },
+         { "150", OPTION_VAL_150_EL },
+         { "175", OPTION_VAL_175_EL },
+         { "200", OPTION_VAL_200_EL },
+         { "225", OPTION_VAL_225_EL },
+         { "250", OPTION_VAL_250_EL },
+         { "275", OPTION_VAL_275_EL },
+         { "300", OPTION_VAL_300_EL },
+         { "325", OPTION_VAL_325_EL },
+         { "350", OPTION_VAL_350_EL },
+         { "375", OPTION_VAL_375_EL },
+         { "400", OPTION_VAL_400_EL },
+         { "425", OPTION_VAL_425_EL },
+         { "450", OPTION_VAL_450_EL },
+         { "475", OPTION_VAL_475_EL },
+         { "500", OPTION_VAL_500_EL },
          { NULL, NULL },
       },
       "100%"
@@ -14905,6 +15145,18 @@ struct retro_core_options_v2 options_el = {
 #define OPTION_VAL_150_EN NULL
 #define OPTION_VAL_175_EN NULL
 #define OPTION_VAL_200_EN NULL
+#define OPTION_VAL_225_EN NULL
+#define OPTION_VAL_250_EN NULL
+#define OPTION_VAL_275_EN NULL
+#define OPTION_VAL_300_EN NULL
+#define OPTION_VAL_325_EN NULL
+#define OPTION_VAL_350_EN NULL
+#define OPTION_VAL_375_EN NULL
+#define OPTION_VAL_400_EN NULL
+#define OPTION_VAL_425_EN NULL
+#define OPTION_VAL_450_EN NULL
+#define OPTION_VAL_475_EN NULL
+#define OPTION_VAL_500_EN NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EN NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EN "Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and home-brew that rely on illegal behaviour for correct operation."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EN NULL
@@ -15727,11 +15979,23 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_EN },
-         { "125%", OPTION_VAL_125_EN },
-         { "150%", OPTION_VAL_150_EN },
-         { "175%", OPTION_VAL_175_EN },
-         { "200%", OPTION_VAL_200_EN },
+         { "100", OPTION_VAL_100_EN },
+         { "125", OPTION_VAL_125_EN },
+         { "150", OPTION_VAL_150_EN },
+         { "175", OPTION_VAL_175_EN },
+         { "200", OPTION_VAL_200_EN },
+         { "225", OPTION_VAL_225_EN },
+         { "250", OPTION_VAL_250_EN },
+         { "275", OPTION_VAL_275_EN },
+         { "300", OPTION_VAL_300_EN },
+         { "325", OPTION_VAL_325_EN },
+         { "350", OPTION_VAL_350_EN },
+         { "375", OPTION_VAL_375_EN },
+         { "400", OPTION_VAL_400_EN },
+         { "425", OPTION_VAL_425_EN },
+         { "450", OPTION_VAL_450_EN },
+         { "475", OPTION_VAL_475_EN },
+         { "500", OPTION_VAL_500_EN },
          { NULL, NULL },
       },
       "100%"
@@ -16378,6 +16642,18 @@ struct retro_core_options_v2 options_en = {
 #define OPTION_VAL_150_EO NULL
 #define OPTION_VAL_175_EO NULL
 #define OPTION_VAL_200_EO NULL
+#define OPTION_VAL_225_EO NULL
+#define OPTION_VAL_250_EO NULL
+#define OPTION_VAL_275_EO NULL
+#define OPTION_VAL_300_EO NULL
+#define OPTION_VAL_325_EO NULL
+#define OPTION_VAL_350_EO NULL
+#define OPTION_VAL_375_EO NULL
+#define OPTION_VAL_400_EO NULL
+#define OPTION_VAL_425_EO NULL
+#define OPTION_VAL_450_EO NULL
+#define OPTION_VAL_475_EO NULL
+#define OPTION_VAL_500_EO NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EO NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EO NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EO NULL
@@ -17200,11 +17476,23 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_EO },
-         { "125%", OPTION_VAL_125_EO },
-         { "150%", OPTION_VAL_150_EO },
-         { "175%", OPTION_VAL_175_EO },
-         { "200%", OPTION_VAL_200_EO },
+         { "100", OPTION_VAL_100_EO },
+         { "125", OPTION_VAL_125_EO },
+         { "150", OPTION_VAL_150_EO },
+         { "175", OPTION_VAL_175_EO },
+         { "200", OPTION_VAL_200_EO },
+         { "225", OPTION_VAL_225_EO },
+         { "250", OPTION_VAL_250_EO },
+         { "275", OPTION_VAL_275_EO },
+         { "300", OPTION_VAL_300_EO },
+         { "325", OPTION_VAL_325_EO },
+         { "350", OPTION_VAL_350_EO },
+         { "375", OPTION_VAL_375_EO },
+         { "400", OPTION_VAL_400_EO },
+         { "425", OPTION_VAL_425_EO },
+         { "450", OPTION_VAL_450_EO },
+         { "475", OPTION_VAL_475_EO },
+         { "500", OPTION_VAL_500_EO },
          { NULL, NULL },
       },
       "100%"
@@ -17851,6 +18139,18 @@ struct retro_core_options_v2 options_eo = {
 #define OPTION_VAL_150_ES "150 %"
 #define OPTION_VAL_175_ES "175 %"
 #define OPTION_VAL_200_ES "200 %"
+#define OPTION_VAL_225_ES "225 %"
+#define OPTION_VAL_250_ES "250 %"
+#define OPTION_VAL_275_ES "275 %"
+#define OPTION_VAL_300_ES "300 %"
+#define OPTION_VAL_325_ES "325 %"
+#define OPTION_VAL_350_ES "350 %"
+#define OPTION_VAL_375_ES "375 %"
+#define OPTION_VAL_400_ES "400 %"
+#define OPTION_VAL_425_ES "425 %"
+#define OPTION_VAL_450_ES "450 %"
+#define OPTION_VAL_475_ES "475 %"
+#define OPTION_VAL_500_ES "500 %"
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_ES "Bloqueos del sistema"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_ES "Emula los bloqueos del sistema que se producirían en el hardware real al realizar accesos ilegales a memoria. Solo se debe desactivar esta opción para jugar con demos y aplicaciones homebrew que necesiten este comportamiento ilegal para funcionar correctamente."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_ES "Error de dirección del 68K"
@@ -18673,11 +18973,23 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_ES },
-         { "125%", OPTION_VAL_125_ES },
-         { "150%", OPTION_VAL_150_ES },
-         { "175%", OPTION_VAL_175_ES },
-         { "200%", OPTION_VAL_200_ES },
+         { "100", OPTION_VAL_100_ES },
+         { "125", OPTION_VAL_125_ES },
+         { "150", OPTION_VAL_150_ES },
+         { "175", OPTION_VAL_175_ES },
+         { "200", OPTION_VAL_200_ES },
+         { "225", OPTION_VAL_225_ES },
+         { "250", OPTION_VAL_250_ES },
+         { "275", OPTION_VAL_275_ES },
+         { "300", OPTION_VAL_300_ES },
+         { "325", OPTION_VAL_325_ES },
+         { "350", OPTION_VAL_350_ES },
+         { "375", OPTION_VAL_375_ES },
+         { "400", OPTION_VAL_400_ES },
+         { "425", OPTION_VAL_425_ES },
+         { "450", OPTION_VAL_450_ES },
+         { "475", OPTION_VAL_475_ES },
+         { "500", OPTION_VAL_500_ES },
          { NULL, NULL },
       },
       "100%"
@@ -19324,6 +19636,18 @@ struct retro_core_options_v2 options_es = {
 #define OPTION_VAL_150_FA NULL
 #define OPTION_VAL_175_FA NULL
 #define OPTION_VAL_200_FA NULL
+#define OPTION_VAL_225_FA NULL
+#define OPTION_VAL_250_FA NULL
+#define OPTION_VAL_275_FA NULL
+#define OPTION_VAL_300_FA NULL
+#define OPTION_VAL_325_FA NULL
+#define OPTION_VAL_350_FA NULL
+#define OPTION_VAL_375_FA NULL
+#define OPTION_VAL_400_FA NULL
+#define OPTION_VAL_425_FA NULL
+#define OPTION_VAL_450_FA NULL
+#define OPTION_VAL_475_FA NULL
+#define OPTION_VAL_500_FA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FA NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FA NULL
@@ -20146,11 +20470,23 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_FA },
-         { "125%", OPTION_VAL_125_FA },
-         { "150%", OPTION_VAL_150_FA },
-         { "175%", OPTION_VAL_175_FA },
-         { "200%", OPTION_VAL_200_FA },
+         { "100", OPTION_VAL_100_FA },
+         { "125", OPTION_VAL_125_FA },
+         { "150", OPTION_VAL_150_FA },
+         { "175", OPTION_VAL_175_FA },
+         { "200", OPTION_VAL_200_FA },
+         { "225", OPTION_VAL_225_FA },
+         { "250", OPTION_VAL_250_FA },
+         { "275", OPTION_VAL_275_FA },
+         { "300", OPTION_VAL_300_FA },
+         { "325", OPTION_VAL_325_FA },
+         { "350", OPTION_VAL_350_FA },
+         { "375", OPTION_VAL_375_FA },
+         { "400", OPTION_VAL_400_FA },
+         { "425", OPTION_VAL_425_FA },
+         { "450", OPTION_VAL_450_FA },
+         { "475", OPTION_VAL_475_FA },
+         { "500", OPTION_VAL_500_FA },
          { NULL, NULL },
       },
       "100%"
@@ -20797,6 +21133,18 @@ struct retro_core_options_v2 options_fa = {
 #define OPTION_VAL_150_FI "150 %"
 #define OPTION_VAL_175_FI "175 %"
 #define OPTION_VAL_200_FI "200 %"
+#define OPTION_VAL_225_FI NULL
+#define OPTION_VAL_250_FI "250 %"
+#define OPTION_VAL_275_FI NULL
+#define OPTION_VAL_300_FI "300 %"
+#define OPTION_VAL_325_FI NULL
+#define OPTION_VAL_350_FI "350 %"
+#define OPTION_VAL_375_FI NULL
+#define OPTION_VAL_400_FI "400 %"
+#define OPTION_VAL_425_FI NULL
+#define OPTION_VAL_450_FI "450 %"
+#define OPTION_VAL_475_FI NULL
+#define OPTION_VAL_500_FI "500 %"
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FI NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FI NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FI "68K-osoitevirhe"
@@ -21619,11 +21967,23 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_FI },
-         { "125%", OPTION_VAL_125_FI },
-         { "150%", OPTION_VAL_150_FI },
-         { "175%", OPTION_VAL_175_FI },
-         { "200%", OPTION_VAL_200_FI },
+         { "100", OPTION_VAL_100_FI },
+         { "125", OPTION_VAL_125_FI },
+         { "150", OPTION_VAL_150_FI },
+         { "175", OPTION_VAL_175_FI },
+         { "200", OPTION_VAL_200_FI },
+         { "225", OPTION_VAL_225_FI },
+         { "250", OPTION_VAL_250_FI },
+         { "275", OPTION_VAL_275_FI },
+         { "300", OPTION_VAL_300_FI },
+         { "325", OPTION_VAL_325_FI },
+         { "350", OPTION_VAL_350_FI },
+         { "375", OPTION_VAL_375_FI },
+         { "400", OPTION_VAL_400_FI },
+         { "425", OPTION_VAL_425_FI },
+         { "450", OPTION_VAL_450_FI },
+         { "475", OPTION_VAL_475_FI },
+         { "500", OPTION_VAL_500_FI },
          { NULL, NULL },
       },
       "100%"
@@ -22270,6 +22630,18 @@ struct retro_core_options_v2 options_fi = {
 #define OPTION_VAL_150_FR NULL
 #define OPTION_VAL_175_FR NULL
 #define OPTION_VAL_200_FR NULL
+#define OPTION_VAL_225_FR NULL
+#define OPTION_VAL_250_FR NULL
+#define OPTION_VAL_275_FR NULL
+#define OPTION_VAL_300_FR NULL
+#define OPTION_VAL_325_FR NULL
+#define OPTION_VAL_350_FR NULL
+#define OPTION_VAL_375_FR NULL
+#define OPTION_VAL_400_FR NULL
+#define OPTION_VAL_425_FR NULL
+#define OPTION_VAL_450_FR NULL
+#define OPTION_VAL_475_FR NULL
+#define OPTION_VAL_500_FR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FR "Blocages du système"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FR "Émuler les blocages du système qui se produisent sur du vrai matériel lors d'un accès illégal aux adresses. Cela ne devrait être désactivé que lorsque vous jouez à certaines démos et homebrews qui dépendent d'un comportement illégal pour un fonctionnement correct."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FR "Erreur d'adresse 68K"
@@ -23092,11 +23464,23 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_FR },
-         { "125%", OPTION_VAL_125_FR },
-         { "150%", OPTION_VAL_150_FR },
-         { "175%", OPTION_VAL_175_FR },
-         { "200%", OPTION_VAL_200_FR },
+         { "100", OPTION_VAL_100_FR },
+         { "125", OPTION_VAL_125_FR },
+         { "150", OPTION_VAL_150_FR },
+         { "175", OPTION_VAL_175_FR },
+         { "200", OPTION_VAL_200_FR },
+         { "225", OPTION_VAL_225_FR },
+         { "250", OPTION_VAL_250_FR },
+         { "275", OPTION_VAL_275_FR },
+         { "300", OPTION_VAL_300_FR },
+         { "325", OPTION_VAL_325_FR },
+         { "350", OPTION_VAL_350_FR },
+         { "375", OPTION_VAL_375_FR },
+         { "400", OPTION_VAL_400_FR },
+         { "425", OPTION_VAL_425_FR },
+         { "450", OPTION_VAL_450_FR },
+         { "475", OPTION_VAL_475_FR },
+         { "500", OPTION_VAL_500_FR },
          { NULL, NULL },
       },
       "100%"
@@ -23743,6 +24127,18 @@ struct retro_core_options_v2 options_fr = {
 #define OPTION_VAL_150_GL NULL
 #define OPTION_VAL_175_GL NULL
 #define OPTION_VAL_200_GL NULL
+#define OPTION_VAL_225_GL NULL
+#define OPTION_VAL_250_GL NULL
+#define OPTION_VAL_275_GL NULL
+#define OPTION_VAL_300_GL NULL
+#define OPTION_VAL_325_GL NULL
+#define OPTION_VAL_350_GL NULL
+#define OPTION_VAL_375_GL NULL
+#define OPTION_VAL_400_GL NULL
+#define OPTION_VAL_425_GL NULL
+#define OPTION_VAL_450_GL NULL
+#define OPTION_VAL_475_GL NULL
+#define OPTION_VAL_500_GL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_GL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_GL NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_GL NULL
@@ -24565,11 +24961,23 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_GL },
-         { "125%", OPTION_VAL_125_GL },
-         { "150%", OPTION_VAL_150_GL },
-         { "175%", OPTION_VAL_175_GL },
-         { "200%", OPTION_VAL_200_GL },
+         { "100", OPTION_VAL_100_GL },
+         { "125", OPTION_VAL_125_GL },
+         { "150", OPTION_VAL_150_GL },
+         { "175", OPTION_VAL_175_GL },
+         { "200", OPTION_VAL_200_GL },
+         { "225", OPTION_VAL_225_GL },
+         { "250", OPTION_VAL_250_GL },
+         { "275", OPTION_VAL_275_GL },
+         { "300", OPTION_VAL_300_GL },
+         { "325", OPTION_VAL_325_GL },
+         { "350", OPTION_VAL_350_GL },
+         { "375", OPTION_VAL_375_GL },
+         { "400", OPTION_VAL_400_GL },
+         { "425", OPTION_VAL_425_GL },
+         { "450", OPTION_VAL_450_GL },
+         { "475", OPTION_VAL_475_GL },
+         { "500", OPTION_VAL_500_GL },
          { NULL, NULL },
       },
       "100%"
@@ -25216,6 +25624,18 @@ struct retro_core_options_v2 options_gl = {
 #define OPTION_VAL_150_HE NULL
 #define OPTION_VAL_175_HE NULL
 #define OPTION_VAL_200_HE NULL
+#define OPTION_VAL_225_HE NULL
+#define OPTION_VAL_250_HE NULL
+#define OPTION_VAL_275_HE NULL
+#define OPTION_VAL_300_HE NULL
+#define OPTION_VAL_325_HE NULL
+#define OPTION_VAL_350_HE NULL
+#define OPTION_VAL_375_HE NULL
+#define OPTION_VAL_400_HE NULL
+#define OPTION_VAL_425_HE NULL
+#define OPTION_VAL_450_HE NULL
+#define OPTION_VAL_475_HE NULL
+#define OPTION_VAL_500_HE NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HE NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HE NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HE NULL
@@ -26038,11 +26458,23 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_HE },
-         { "125%", OPTION_VAL_125_HE },
-         { "150%", OPTION_VAL_150_HE },
-         { "175%", OPTION_VAL_175_HE },
-         { "200%", OPTION_VAL_200_HE },
+         { "100", OPTION_VAL_100_HE },
+         { "125", OPTION_VAL_125_HE },
+         { "150", OPTION_VAL_150_HE },
+         { "175", OPTION_VAL_175_HE },
+         { "200", OPTION_VAL_200_HE },
+         { "225", OPTION_VAL_225_HE },
+         { "250", OPTION_VAL_250_HE },
+         { "275", OPTION_VAL_275_HE },
+         { "300", OPTION_VAL_300_HE },
+         { "325", OPTION_VAL_325_HE },
+         { "350", OPTION_VAL_350_HE },
+         { "375", OPTION_VAL_375_HE },
+         { "400", OPTION_VAL_400_HE },
+         { "425", OPTION_VAL_425_HE },
+         { "450", OPTION_VAL_450_HE },
+         { "475", OPTION_VAL_475_HE },
+         { "500", OPTION_VAL_500_HE },
          { NULL, NULL },
       },
       "100%"
@@ -26689,6 +27121,18 @@ struct retro_core_options_v2 options_he = {
 #define OPTION_VAL_150_HR NULL
 #define OPTION_VAL_175_HR NULL
 #define OPTION_VAL_200_HR NULL
+#define OPTION_VAL_225_HR NULL
+#define OPTION_VAL_250_HR NULL
+#define OPTION_VAL_275_HR NULL
+#define OPTION_VAL_300_HR NULL
+#define OPTION_VAL_325_HR NULL
+#define OPTION_VAL_350_HR NULL
+#define OPTION_VAL_375_HR NULL
+#define OPTION_VAL_400_HR NULL
+#define OPTION_VAL_425_HR NULL
+#define OPTION_VAL_450_HR NULL
+#define OPTION_VAL_475_HR NULL
+#define OPTION_VAL_500_HR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HR NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HR NULL
@@ -27511,11 +27955,23 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_HR },
-         { "125%", OPTION_VAL_125_HR },
-         { "150%", OPTION_VAL_150_HR },
-         { "175%", OPTION_VAL_175_HR },
-         { "200%", OPTION_VAL_200_HR },
+         { "100", OPTION_VAL_100_HR },
+         { "125", OPTION_VAL_125_HR },
+         { "150", OPTION_VAL_150_HR },
+         { "175", OPTION_VAL_175_HR },
+         { "200", OPTION_VAL_200_HR },
+         { "225", OPTION_VAL_225_HR },
+         { "250", OPTION_VAL_250_HR },
+         { "275", OPTION_VAL_275_HR },
+         { "300", OPTION_VAL_300_HR },
+         { "325", OPTION_VAL_325_HR },
+         { "350", OPTION_VAL_350_HR },
+         { "375", OPTION_VAL_375_HR },
+         { "400", OPTION_VAL_400_HR },
+         { "425", OPTION_VAL_425_HR },
+         { "450", OPTION_VAL_450_HR },
+         { "475", OPTION_VAL_475_HR },
+         { "500", OPTION_VAL_500_HR },
          { NULL, NULL },
       },
       "100%"
@@ -28162,6 +28618,18 @@ struct retro_core_options_v2 options_hr = {
 #define OPTION_VAL_150_HU NULL
 #define OPTION_VAL_175_HU NULL
 #define OPTION_VAL_200_HU NULL
+#define OPTION_VAL_225_HU NULL
+#define OPTION_VAL_250_HU NULL
+#define OPTION_VAL_275_HU NULL
+#define OPTION_VAL_300_HU NULL
+#define OPTION_VAL_325_HU NULL
+#define OPTION_VAL_350_HU NULL
+#define OPTION_VAL_375_HU NULL
+#define OPTION_VAL_400_HU NULL
+#define OPTION_VAL_425_HU NULL
+#define OPTION_VAL_450_HU NULL
+#define OPTION_VAL_475_HU NULL
+#define OPTION_VAL_500_HU NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HU "Rendszerlefagyás"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HU "Az eredeti gépen illegális címhez hozzáféréskor bekövetkező lefagyás emulálása. Csak olyan demók és homebrew programok lejátszásakor kapcsoljuk ki, amik csak ezzel a helytelen viselkedéssel működnek jól."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HU NULL
@@ -28984,11 +29452,23 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_HU },
-         { "125%", OPTION_VAL_125_HU },
-         { "150%", OPTION_VAL_150_HU },
-         { "175%", OPTION_VAL_175_HU },
-         { "200%", OPTION_VAL_200_HU },
+         { "100", OPTION_VAL_100_HU },
+         { "125", OPTION_VAL_125_HU },
+         { "150", OPTION_VAL_150_HU },
+         { "175", OPTION_VAL_175_HU },
+         { "200", OPTION_VAL_200_HU },
+         { "225", OPTION_VAL_225_HU },
+         { "250", OPTION_VAL_250_HU },
+         { "275", OPTION_VAL_275_HU },
+         { "300", OPTION_VAL_300_HU },
+         { "325", OPTION_VAL_325_HU },
+         { "350", OPTION_VAL_350_HU },
+         { "375", OPTION_VAL_375_HU },
+         { "400", OPTION_VAL_400_HU },
+         { "425", OPTION_VAL_425_HU },
+         { "450", OPTION_VAL_450_HU },
+         { "475", OPTION_VAL_475_HU },
+         { "500", OPTION_VAL_500_HU },
          { NULL, NULL },
       },
       "100%"
@@ -29635,6 +30115,18 @@ struct retro_core_options_v2 options_hu = {
 #define OPTION_VAL_150_ID NULL
 #define OPTION_VAL_175_ID NULL
 #define OPTION_VAL_200_ID NULL
+#define OPTION_VAL_225_ID NULL
+#define OPTION_VAL_250_ID NULL
+#define OPTION_VAL_275_ID NULL
+#define OPTION_VAL_300_ID NULL
+#define OPTION_VAL_325_ID NULL
+#define OPTION_VAL_350_ID NULL
+#define OPTION_VAL_375_ID NULL
+#define OPTION_VAL_400_ID NULL
+#define OPTION_VAL_425_ID NULL
+#define OPTION_VAL_450_ID NULL
+#define OPTION_VAL_475_ID NULL
+#define OPTION_VAL_500_ID NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_ID NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_ID NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_ID NULL
@@ -30457,11 +30949,23 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_ID },
-         { "125%", OPTION_VAL_125_ID },
-         { "150%", OPTION_VAL_150_ID },
-         { "175%", OPTION_VAL_175_ID },
-         { "200%", OPTION_VAL_200_ID },
+         { "100", OPTION_VAL_100_ID },
+         { "125", OPTION_VAL_125_ID },
+         { "150", OPTION_VAL_150_ID },
+         { "175", OPTION_VAL_175_ID },
+         { "200", OPTION_VAL_200_ID },
+         { "225", OPTION_VAL_225_ID },
+         { "250", OPTION_VAL_250_ID },
+         { "275", OPTION_VAL_275_ID },
+         { "300", OPTION_VAL_300_ID },
+         { "325", OPTION_VAL_325_ID },
+         { "350", OPTION_VAL_350_ID },
+         { "375", OPTION_VAL_375_ID },
+         { "400", OPTION_VAL_400_ID },
+         { "425", OPTION_VAL_425_ID },
+         { "450", OPTION_VAL_450_ID },
+         { "475", OPTION_VAL_475_ID },
+         { "500", OPTION_VAL_500_ID },
          { NULL, NULL },
       },
       "100%"
@@ -31108,6 +31612,18 @@ struct retro_core_options_v2 options_id = {
 #define OPTION_VAL_150_IT NULL
 #define OPTION_VAL_175_IT NULL
 #define OPTION_VAL_200_IT NULL
+#define OPTION_VAL_225_IT NULL
+#define OPTION_VAL_250_IT NULL
+#define OPTION_VAL_275_IT NULL
+#define OPTION_VAL_300_IT NULL
+#define OPTION_VAL_325_IT NULL
+#define OPTION_VAL_350_IT NULL
+#define OPTION_VAL_375_IT NULL
+#define OPTION_VAL_400_IT NULL
+#define OPTION_VAL_425_IT NULL
+#define OPTION_VAL_450_IT NULL
+#define OPTION_VAL_475_IT NULL
+#define OPTION_VAL_500_IT NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_IT "Blocchi Di Sistema"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_IT "Emulare i blocchi di sistema che si verificano sull'hardware reale quando si esegue l'accesso illegale agli indirizzi. Questo dovrebbe essere disabilitato solo durante la riproduzione di alcune demo e homebrew che si basano su comportamenti illegali per il corretto funzionamento."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_IT "Errore Indirizzo 68K"
@@ -31930,11 +32446,23 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_IT },
-         { "125%", OPTION_VAL_125_IT },
-         { "150%", OPTION_VAL_150_IT },
-         { "175%", OPTION_VAL_175_IT },
-         { "200%", OPTION_VAL_200_IT },
+         { "100", OPTION_VAL_100_IT },
+         { "125", OPTION_VAL_125_IT },
+         { "150", OPTION_VAL_150_IT },
+         { "175", OPTION_VAL_175_IT },
+         { "200", OPTION_VAL_200_IT },
+         { "225", OPTION_VAL_225_IT },
+         { "250", OPTION_VAL_250_IT },
+         { "275", OPTION_VAL_275_IT },
+         { "300", OPTION_VAL_300_IT },
+         { "325", OPTION_VAL_325_IT },
+         { "350", OPTION_VAL_350_IT },
+         { "375", OPTION_VAL_375_IT },
+         { "400", OPTION_VAL_400_IT },
+         { "425", OPTION_VAL_425_IT },
+         { "450", OPTION_VAL_450_IT },
+         { "475", OPTION_VAL_475_IT },
+         { "500", OPTION_VAL_500_IT },
          { NULL, NULL },
       },
       "100%"
@@ -32581,6 +33109,18 @@ struct retro_core_options_v2 options_it = {
 #define OPTION_VAL_150_JA NULL
 #define OPTION_VAL_175_JA NULL
 #define OPTION_VAL_200_JA NULL
+#define OPTION_VAL_225_JA NULL
+#define OPTION_VAL_250_JA NULL
+#define OPTION_VAL_275_JA NULL
+#define OPTION_VAL_300_JA NULL
+#define OPTION_VAL_325_JA NULL
+#define OPTION_VAL_350_JA NULL
+#define OPTION_VAL_375_JA NULL
+#define OPTION_VAL_400_JA NULL
+#define OPTION_VAL_425_JA NULL
+#define OPTION_VAL_450_JA NULL
+#define OPTION_VAL_475_JA NULL
+#define OPTION_VAL_500_JA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_JA NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_JA NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_JA NULL
@@ -33403,11 +33943,23 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_JA },
-         { "125%", OPTION_VAL_125_JA },
-         { "150%", OPTION_VAL_150_JA },
-         { "175%", OPTION_VAL_175_JA },
-         { "200%", OPTION_VAL_200_JA },
+         { "100", OPTION_VAL_100_JA },
+         { "125", OPTION_VAL_125_JA },
+         { "150", OPTION_VAL_150_JA },
+         { "175", OPTION_VAL_175_JA },
+         { "200", OPTION_VAL_200_JA },
+         { "225", OPTION_VAL_225_JA },
+         { "250", OPTION_VAL_250_JA },
+         { "275", OPTION_VAL_275_JA },
+         { "300", OPTION_VAL_300_JA },
+         { "325", OPTION_VAL_325_JA },
+         { "350", OPTION_VAL_350_JA },
+         { "375", OPTION_VAL_375_JA },
+         { "400", OPTION_VAL_400_JA },
+         { "425", OPTION_VAL_425_JA },
+         { "450", OPTION_VAL_450_JA },
+         { "475", OPTION_VAL_475_JA },
+         { "500", OPTION_VAL_500_JA },
          { NULL, NULL },
       },
       "100%"
@@ -34054,6 +34606,18 @@ struct retro_core_options_v2 options_ja = {
 #define OPTION_VAL_150_KO NULL
 #define OPTION_VAL_175_KO NULL
 #define OPTION_VAL_200_KO NULL
+#define OPTION_VAL_225_KO NULL
+#define OPTION_VAL_250_KO NULL
+#define OPTION_VAL_275_KO NULL
+#define OPTION_VAL_300_KO NULL
+#define OPTION_VAL_325_KO NULL
+#define OPTION_VAL_350_KO NULL
+#define OPTION_VAL_375_KO NULL
+#define OPTION_VAL_400_KO NULL
+#define OPTION_VAL_425_KO NULL
+#define OPTION_VAL_450_KO NULL
+#define OPTION_VAL_475_KO NULL
+#define OPTION_VAL_500_KO NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_KO "시스템 중단"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_KO "실제 하드웨어에서 잘못된 주소에 접근 시 발생하는 시스템 중단을 구현합니다. 이러한 미정의 행동을 올바르게 활용하는 일부 데모 또는 홈브루를 구동할 때만 비활성화되어야 합니다."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_KO "68K 주소 오류"
@@ -34876,11 +35440,23 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_KO },
-         { "125%", OPTION_VAL_125_KO },
-         { "150%", OPTION_VAL_150_KO },
-         { "175%", OPTION_VAL_175_KO },
-         { "200%", OPTION_VAL_200_KO },
+         { "100", OPTION_VAL_100_KO },
+         { "125", OPTION_VAL_125_KO },
+         { "150", OPTION_VAL_150_KO },
+         { "175", OPTION_VAL_175_KO },
+         { "200", OPTION_VAL_200_KO },
+         { "225", OPTION_VAL_225_KO },
+         { "250", OPTION_VAL_250_KO },
+         { "275", OPTION_VAL_275_KO },
+         { "300", OPTION_VAL_300_KO },
+         { "325", OPTION_VAL_325_KO },
+         { "350", OPTION_VAL_350_KO },
+         { "375", OPTION_VAL_375_KO },
+         { "400", OPTION_VAL_400_KO },
+         { "425", OPTION_VAL_425_KO },
+         { "450", OPTION_VAL_450_KO },
+         { "475", OPTION_VAL_475_KO },
+         { "500", OPTION_VAL_500_KO },
          { NULL, NULL },
       },
       "100%"
@@ -35527,6 +36103,18 @@ struct retro_core_options_v2 options_ko = {
 #define OPTION_VAL_150_NL NULL
 #define OPTION_VAL_175_NL NULL
 #define OPTION_VAL_200_NL NULL
+#define OPTION_VAL_225_NL NULL
+#define OPTION_VAL_250_NL NULL
+#define OPTION_VAL_275_NL NULL
+#define OPTION_VAL_300_NL NULL
+#define OPTION_VAL_325_NL NULL
+#define OPTION_VAL_350_NL NULL
+#define OPTION_VAL_375_NL NULL
+#define OPTION_VAL_400_NL NULL
+#define OPTION_VAL_425_NL NULL
+#define OPTION_VAL_450_NL NULL
+#define OPTION_VAL_475_NL NULL
+#define OPTION_VAL_500_NL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_NL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_NL NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_NL NULL
@@ -36349,11 +36937,23 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_NL },
-         { "125%", OPTION_VAL_125_NL },
-         { "150%", OPTION_VAL_150_NL },
-         { "175%", OPTION_VAL_175_NL },
-         { "200%", OPTION_VAL_200_NL },
+         { "100", OPTION_VAL_100_NL },
+         { "125", OPTION_VAL_125_NL },
+         { "150", OPTION_VAL_150_NL },
+         { "175", OPTION_VAL_175_NL },
+         { "200", OPTION_VAL_200_NL },
+         { "225", OPTION_VAL_225_NL },
+         { "250", OPTION_VAL_250_NL },
+         { "275", OPTION_VAL_275_NL },
+         { "300", OPTION_VAL_300_NL },
+         { "325", OPTION_VAL_325_NL },
+         { "350", OPTION_VAL_350_NL },
+         { "375", OPTION_VAL_375_NL },
+         { "400", OPTION_VAL_400_NL },
+         { "425", OPTION_VAL_425_NL },
+         { "450", OPTION_VAL_450_NL },
+         { "475", OPTION_VAL_475_NL },
+         { "500", OPTION_VAL_500_NL },
          { NULL, NULL },
       },
       "100%"
@@ -37000,6 +37600,18 @@ struct retro_core_options_v2 options_nl = {
 #define OPTION_VAL_150_NO NULL
 #define OPTION_VAL_175_NO NULL
 #define OPTION_VAL_200_NO NULL
+#define OPTION_VAL_225_NO NULL
+#define OPTION_VAL_250_NO NULL
+#define OPTION_VAL_275_NO NULL
+#define OPTION_VAL_300_NO NULL
+#define OPTION_VAL_325_NO NULL
+#define OPTION_VAL_350_NO NULL
+#define OPTION_VAL_375_NO NULL
+#define OPTION_VAL_400_NO NULL
+#define OPTION_VAL_425_NO NULL
+#define OPTION_VAL_450_NO NULL
+#define OPTION_VAL_475_NO NULL
+#define OPTION_VAL_500_NO NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_NO NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_NO NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_NO NULL
@@ -37822,11 +38434,23 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_NO },
-         { "125%", OPTION_VAL_125_NO },
-         { "150%", OPTION_VAL_150_NO },
-         { "175%", OPTION_VAL_175_NO },
-         { "200%", OPTION_VAL_200_NO },
+         { "100", OPTION_VAL_100_NO },
+         { "125", OPTION_VAL_125_NO },
+         { "150", OPTION_VAL_150_NO },
+         { "175", OPTION_VAL_175_NO },
+         { "200", OPTION_VAL_200_NO },
+         { "225", OPTION_VAL_225_NO },
+         { "250", OPTION_VAL_250_NO },
+         { "275", OPTION_VAL_275_NO },
+         { "300", OPTION_VAL_300_NO },
+         { "325", OPTION_VAL_325_NO },
+         { "350", OPTION_VAL_350_NO },
+         { "375", OPTION_VAL_375_NO },
+         { "400", OPTION_VAL_400_NO },
+         { "425", OPTION_VAL_425_NO },
+         { "450", OPTION_VAL_450_NO },
+         { "475", OPTION_VAL_475_NO },
+         { "500", OPTION_VAL_500_NO },
          { NULL, NULL },
       },
       "100%"
@@ -38473,6 +39097,18 @@ struct retro_core_options_v2 options_no = {
 #define OPTION_VAL_150_PL NULL
 #define OPTION_VAL_175_PL NULL
 #define OPTION_VAL_200_PL NULL
+#define OPTION_VAL_225_PL NULL
+#define OPTION_VAL_250_PL NULL
+#define OPTION_VAL_275_PL NULL
+#define OPTION_VAL_300_PL NULL
+#define OPTION_VAL_325_PL NULL
+#define OPTION_VAL_350_PL NULL
+#define OPTION_VAL_375_PL NULL
+#define OPTION_VAL_400_PL NULL
+#define OPTION_VAL_425_PL NULL
+#define OPTION_VAL_450_PL NULL
+#define OPTION_VAL_475_PL NULL
+#define OPTION_VAL_500_PL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PL "Blokada systemu"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PL NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PL "Błąd adresu 68K"
@@ -39295,11 +39931,23 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_PL },
-         { "125%", OPTION_VAL_125_PL },
-         { "150%", OPTION_VAL_150_PL },
-         { "175%", OPTION_VAL_175_PL },
-         { "200%", OPTION_VAL_200_PL },
+         { "100", OPTION_VAL_100_PL },
+         { "125", OPTION_VAL_125_PL },
+         { "150", OPTION_VAL_150_PL },
+         { "175", OPTION_VAL_175_PL },
+         { "200", OPTION_VAL_200_PL },
+         { "225", OPTION_VAL_225_PL },
+         { "250", OPTION_VAL_250_PL },
+         { "275", OPTION_VAL_275_PL },
+         { "300", OPTION_VAL_300_PL },
+         { "325", OPTION_VAL_325_PL },
+         { "350", OPTION_VAL_350_PL },
+         { "375", OPTION_VAL_375_PL },
+         { "400", OPTION_VAL_400_PL },
+         { "425", OPTION_VAL_425_PL },
+         { "450", OPTION_VAL_450_PL },
+         { "475", OPTION_VAL_475_PL },
+         { "500", OPTION_VAL_500_PL },
          { NULL, NULL },
       },
       "100%"
@@ -39946,6 +40594,18 @@ struct retro_core_options_v2 options_pl = {
 #define OPTION_VAL_150_PT_BR NULL
 #define OPTION_VAL_175_PT_BR NULL
 #define OPTION_VAL_200_PT_BR NULL
+#define OPTION_VAL_225_PT_BR NULL
+#define OPTION_VAL_250_PT_BR NULL
+#define OPTION_VAL_275_PT_BR NULL
+#define OPTION_VAL_300_PT_BR NULL
+#define OPTION_VAL_325_PT_BR NULL
+#define OPTION_VAL_350_PT_BR NULL
+#define OPTION_VAL_375_PT_BR NULL
+#define OPTION_VAL_400_PT_BR NULL
+#define OPTION_VAL_425_PT_BR NULL
+#define OPTION_VAL_450_PT_BR NULL
+#define OPTION_VAL_475_PT_BR NULL
+#define OPTION_VAL_500_PT_BR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PT_BR "Bloqueios do sistema"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PT_BR "Emula os travamentos originais do sistema que ocorrem num hardware real ao executar um acesso ilegal aos endereços. Isso só deve ser desativado ao reproduzir certas demos e homebrews que dependem do comportamento ilegal para a correta operação."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PT_BR "Erro de endereçamento do 68K"
@@ -40768,11 +41428,23 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_PT_BR },
-         { "125%", OPTION_VAL_125_PT_BR },
-         { "150%", OPTION_VAL_150_PT_BR },
-         { "175%", OPTION_VAL_175_PT_BR },
-         { "200%", OPTION_VAL_200_PT_BR },
+         { "100", OPTION_VAL_100_PT_BR },
+         { "125", OPTION_VAL_125_PT_BR },
+         { "150", OPTION_VAL_150_PT_BR },
+         { "175", OPTION_VAL_175_PT_BR },
+         { "200", OPTION_VAL_200_PT_BR },
+         { "225", OPTION_VAL_225_PT_BR },
+         { "250", OPTION_VAL_250_PT_BR },
+         { "275", OPTION_VAL_275_PT_BR },
+         { "300", OPTION_VAL_300_PT_BR },
+         { "325", OPTION_VAL_325_PT_BR },
+         { "350", OPTION_VAL_350_PT_BR },
+         { "375", OPTION_VAL_375_PT_BR },
+         { "400", OPTION_VAL_400_PT_BR },
+         { "425", OPTION_VAL_425_PT_BR },
+         { "450", OPTION_VAL_450_PT_BR },
+         { "475", OPTION_VAL_475_PT_BR },
+         { "500", OPTION_VAL_500_PT_BR },
          { NULL, NULL },
       },
       "100%"
@@ -41419,6 +42091,18 @@ struct retro_core_options_v2 options_pt_br = {
 #define OPTION_VAL_150_PT_PT NULL
 #define OPTION_VAL_175_PT_PT NULL
 #define OPTION_VAL_200_PT_PT NULL
+#define OPTION_VAL_225_PT_PT NULL
+#define OPTION_VAL_250_PT_PT NULL
+#define OPTION_VAL_275_PT_PT NULL
+#define OPTION_VAL_300_PT_PT NULL
+#define OPTION_VAL_325_PT_PT NULL
+#define OPTION_VAL_350_PT_PT NULL
+#define OPTION_VAL_375_PT_PT NULL
+#define OPTION_VAL_400_PT_PT NULL
+#define OPTION_VAL_425_PT_PT NULL
+#define OPTION_VAL_450_PT_PT NULL
+#define OPTION_VAL_475_PT_PT NULL
+#define OPTION_VAL_500_PT_PT NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PT_PT NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PT_PT NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PT_PT NULL
@@ -42241,11 +42925,23 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_PT_PT },
-         { "125%", OPTION_VAL_125_PT_PT },
-         { "150%", OPTION_VAL_150_PT_PT },
-         { "175%", OPTION_VAL_175_PT_PT },
-         { "200%", OPTION_VAL_200_PT_PT },
+         { "100", OPTION_VAL_100_PT_PT },
+         { "125", OPTION_VAL_125_PT_PT },
+         { "150", OPTION_VAL_150_PT_PT },
+         { "175", OPTION_VAL_175_PT_PT },
+         { "200", OPTION_VAL_200_PT_PT },
+         { "225", OPTION_VAL_225_PT_PT },
+         { "250", OPTION_VAL_250_PT_PT },
+         { "275", OPTION_VAL_275_PT_PT },
+         { "300", OPTION_VAL_300_PT_PT },
+         { "325", OPTION_VAL_325_PT_PT },
+         { "350", OPTION_VAL_350_PT_PT },
+         { "375", OPTION_VAL_375_PT_PT },
+         { "400", OPTION_VAL_400_PT_PT },
+         { "425", OPTION_VAL_425_PT_PT },
+         { "450", OPTION_VAL_450_PT_PT },
+         { "475", OPTION_VAL_475_PT_PT },
+         { "500", OPTION_VAL_500_PT_PT },
          { NULL, NULL },
       },
       "100%"
@@ -42892,6 +43588,18 @@ struct retro_core_options_v2 options_pt_pt = {
 #define OPTION_VAL_150_RU NULL
 #define OPTION_VAL_175_RU NULL
 #define OPTION_VAL_200_RU NULL
+#define OPTION_VAL_225_RU NULL
+#define OPTION_VAL_250_RU NULL
+#define OPTION_VAL_275_RU NULL
+#define OPTION_VAL_300_RU NULL
+#define OPTION_VAL_325_RU NULL
+#define OPTION_VAL_350_RU NULL
+#define OPTION_VAL_375_RU NULL
+#define OPTION_VAL_400_RU NULL
+#define OPTION_VAL_425_RU NULL
+#define OPTION_VAL_450_RU NULL
+#define OPTION_VAL_475_RU NULL
+#define OPTION_VAL_500_RU NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_RU "Подвисания системы"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_RU "Эмуляция подвисаний системы на оригинальной консоли при доступе к недопустимому адресу. Следует выключать только при запуске некоторых демо или homebrew, которые используют неправильные режимы для корректной работы."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_RU "Ошибка адресации 68K"
@@ -43714,11 +44422,23 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_RU },
-         { "125%", OPTION_VAL_125_RU },
-         { "150%", OPTION_VAL_150_RU },
-         { "175%", OPTION_VAL_175_RU },
-         { "200%", OPTION_VAL_200_RU },
+         { "100", OPTION_VAL_100_RU },
+         { "125", OPTION_VAL_125_RU },
+         { "150", OPTION_VAL_150_RU },
+         { "175", OPTION_VAL_175_RU },
+         { "200", OPTION_VAL_200_RU },
+         { "225", OPTION_VAL_225_RU },
+         { "250", OPTION_VAL_250_RU },
+         { "275", OPTION_VAL_275_RU },
+         { "300", OPTION_VAL_300_RU },
+         { "325", OPTION_VAL_325_RU },
+         { "350", OPTION_VAL_350_RU },
+         { "375", OPTION_VAL_375_RU },
+         { "400", OPTION_VAL_400_RU },
+         { "425", OPTION_VAL_425_RU },
+         { "450", OPTION_VAL_450_RU },
+         { "475", OPTION_VAL_475_RU },
+         { "500", OPTION_VAL_500_RU },
          { NULL, NULL },
       },
       "100%"
@@ -44365,6 +45085,18 @@ struct retro_core_options_v2 options_ru = {
 #define OPTION_VAL_150_SK NULL
 #define OPTION_VAL_175_SK NULL
 #define OPTION_VAL_200_SK NULL
+#define OPTION_VAL_225_SK NULL
+#define OPTION_VAL_250_SK NULL
+#define OPTION_VAL_275_SK NULL
+#define OPTION_VAL_300_SK NULL
+#define OPTION_VAL_325_SK NULL
+#define OPTION_VAL_350_SK NULL
+#define OPTION_VAL_375_SK NULL
+#define OPTION_VAL_400_SK NULL
+#define OPTION_VAL_425_SK NULL
+#define OPTION_VAL_450_SK NULL
+#define OPTION_VAL_475_SK NULL
+#define OPTION_VAL_500_SK NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SK NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SK NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SK "Chyba adresy 68K"
@@ -45187,11 +45919,23 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_SK },
-         { "125%", OPTION_VAL_125_SK },
-         { "150%", OPTION_VAL_150_SK },
-         { "175%", OPTION_VAL_175_SK },
-         { "200%", OPTION_VAL_200_SK },
+         { "100", OPTION_VAL_100_SK },
+         { "125", OPTION_VAL_125_SK },
+         { "150", OPTION_VAL_150_SK },
+         { "175", OPTION_VAL_175_SK },
+         { "200", OPTION_VAL_200_SK },
+         { "225", OPTION_VAL_225_SK },
+         { "250", OPTION_VAL_250_SK },
+         { "275", OPTION_VAL_275_SK },
+         { "300", OPTION_VAL_300_SK },
+         { "325", OPTION_VAL_325_SK },
+         { "350", OPTION_VAL_350_SK },
+         { "375", OPTION_VAL_375_SK },
+         { "400", OPTION_VAL_400_SK },
+         { "425", OPTION_VAL_425_SK },
+         { "450", OPTION_VAL_450_SK },
+         { "475", OPTION_VAL_475_SK },
+         { "500", OPTION_VAL_500_SK },
          { NULL, NULL },
       },
       "100%"
@@ -45838,6 +46582,18 @@ struct retro_core_options_v2 options_sk = {
 #define OPTION_VAL_150_SR NULL
 #define OPTION_VAL_175_SR NULL
 #define OPTION_VAL_200_SR NULL
+#define OPTION_VAL_225_SR NULL
+#define OPTION_VAL_250_SR NULL
+#define OPTION_VAL_275_SR NULL
+#define OPTION_VAL_300_SR NULL
+#define OPTION_VAL_325_SR NULL
+#define OPTION_VAL_350_SR NULL
+#define OPTION_VAL_375_SR NULL
+#define OPTION_VAL_400_SR NULL
+#define OPTION_VAL_425_SR NULL
+#define OPTION_VAL_450_SR NULL
+#define OPTION_VAL_475_SR NULL
+#define OPTION_VAL_500_SR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SR NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SR NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SR NULL
@@ -46660,11 +47416,23 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_SR },
-         { "125%", OPTION_VAL_125_SR },
-         { "150%", OPTION_VAL_150_SR },
-         { "175%", OPTION_VAL_175_SR },
-         { "200%", OPTION_VAL_200_SR },
+         { "100", OPTION_VAL_100_SR },
+         { "125", OPTION_VAL_125_SR },
+         { "150", OPTION_VAL_150_SR },
+         { "175", OPTION_VAL_175_SR },
+         { "200", OPTION_VAL_200_SR },
+         { "225", OPTION_VAL_225_SR },
+         { "250", OPTION_VAL_250_SR },
+         { "275", OPTION_VAL_275_SR },
+         { "300", OPTION_VAL_300_SR },
+         { "325", OPTION_VAL_325_SR },
+         { "350", OPTION_VAL_350_SR },
+         { "375", OPTION_VAL_375_SR },
+         { "400", OPTION_VAL_400_SR },
+         { "425", OPTION_VAL_425_SR },
+         { "450", OPTION_VAL_450_SR },
+         { "475", OPTION_VAL_475_SR },
+         { "500", OPTION_VAL_500_SR },
          { NULL, NULL },
       },
       "100%"
@@ -47311,6 +48079,18 @@ struct retro_core_options_v2 options_sr = {
 #define OPTION_VAL_150_SV "150 %"
 #define OPTION_VAL_175_SV "175 %"
 #define OPTION_VAL_200_SV "200 %"
+#define OPTION_VAL_225_SV NULL
+#define OPTION_VAL_250_SV "250 %"
+#define OPTION_VAL_275_SV NULL
+#define OPTION_VAL_300_SV "300 %"
+#define OPTION_VAL_325_SV NULL
+#define OPTION_VAL_350_SV "350 %"
+#define OPTION_VAL_375_SV NULL
+#define OPTION_VAL_400_SV "400 %"
+#define OPTION_VAL_425_SV NULL
+#define OPTION_VAL_450_SV "450 %"
+#define OPTION_VAL_475_SV NULL
+#define OPTION_VAL_500_SV "500 %"
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SV NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SV NULL
@@ -48133,11 +48913,23 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_SV },
-         { "125%", OPTION_VAL_125_SV },
-         { "150%", OPTION_VAL_150_SV },
-         { "175%", OPTION_VAL_175_SV },
-         { "200%", OPTION_VAL_200_SV },
+         { "100", OPTION_VAL_100_SV },
+         { "125", OPTION_VAL_125_SV },
+         { "150", OPTION_VAL_150_SV },
+         { "175", OPTION_VAL_175_SV },
+         { "200", OPTION_VAL_200_SV },
+         { "225", OPTION_VAL_225_SV },
+         { "250", OPTION_VAL_250_SV },
+         { "275", OPTION_VAL_275_SV },
+         { "300", OPTION_VAL_300_SV },
+         { "325", OPTION_VAL_325_SV },
+         { "350", OPTION_VAL_350_SV },
+         { "375", OPTION_VAL_375_SV },
+         { "400", OPTION_VAL_400_SV },
+         { "425", OPTION_VAL_425_SV },
+         { "450", OPTION_VAL_450_SV },
+         { "475", OPTION_VAL_475_SV },
+         { "500", OPTION_VAL_500_SV },
          { NULL, NULL },
       },
       "100%"
@@ -48784,6 +49576,18 @@ struct retro_core_options_v2 options_sv = {
 #define OPTION_VAL_150_TR "%150"
 #define OPTION_VAL_175_TR "%175"
 #define OPTION_VAL_200_TR "%200"
+#define OPTION_VAL_225_TR NULL
+#define OPTION_VAL_250_TR "%250"
+#define OPTION_VAL_275_TR NULL
+#define OPTION_VAL_300_TR "%300"
+#define OPTION_VAL_325_TR NULL
+#define OPTION_VAL_350_TR "%350"
+#define OPTION_VAL_375_TR NULL
+#define OPTION_VAL_400_TR "%400"
+#define OPTION_VAL_425_TR NULL
+#define OPTION_VAL_450_TR "%450"
+#define OPTION_VAL_475_TR NULL
+#define OPTION_VAL_500_TR "%500"
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_TR "Sistem Kilidi"
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_TR "Geçersiz adres erişimi gerçekleştirirken gerçek donanımda oluşan sistem kilitlenmelerini taklit edin. Bu, yalnızca doğru işlem için uygun olmayan belirli demolar ve homebrew oynarken devre dışı bırakılmalıdır."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_TR "68K Adres Hatası"
@@ -49606,11 +50410,23 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_TR },
-         { "125%", OPTION_VAL_125_TR },
-         { "150%", OPTION_VAL_150_TR },
-         { "175%", OPTION_VAL_175_TR },
-         { "200%", OPTION_VAL_200_TR },
+         { "100", OPTION_VAL_100_TR },
+         { "125", OPTION_VAL_125_TR },
+         { "150", OPTION_VAL_150_TR },
+         { "175", OPTION_VAL_175_TR },
+         { "200", OPTION_VAL_200_TR },
+         { "225", OPTION_VAL_225_TR },
+         { "250", OPTION_VAL_250_TR },
+         { "275", OPTION_VAL_275_TR },
+         { "300", OPTION_VAL_300_TR },
+         { "325", OPTION_VAL_325_TR },
+         { "350", OPTION_VAL_350_TR },
+         { "375", OPTION_VAL_375_TR },
+         { "400", OPTION_VAL_400_TR },
+         { "425", OPTION_VAL_425_TR },
+         { "450", OPTION_VAL_450_TR },
+         { "475", OPTION_VAL_475_TR },
+         { "500", OPTION_VAL_500_TR },
          { NULL, NULL },
       },
       "100%"
@@ -50121,13 +50937,13 @@ struct retro_core_options_v2 options_tr = {
 /* RETRO_LANGUAGE_UK */
 
 #define CATEGORY_SYSTEM_LABEL_UK "Система"
-#define CATEGORY_SYSTEM_INFO_0_UK NULL
+#define CATEGORY_SYSTEM_INFO_0_UK "Змінити вибір базового обладнання, регіону, налаштувань BIOS та файлів збереження Sega CD/Mega-CD."
 #define CATEGORY_VIDEO_LABEL_UK "Відео"
 #define CATEGORY_VIDEO_INFO_0_UK "Налаштування співвідношення сторін / кадрування / відеофільтрів / пропуску кадрів."
 #define CATEGORY_AUDIO_LABEL_UK "Звук"
-#define CATEGORY_AUDIO_INFO_0_UK NULL
+#define CATEGORY_AUDIO_INFO_0_UK "Зміна налаштувань аудіопристрою."
 #define CATEGORY_INPUT_LABEL_UK "Керування"
-#define CATEGORY_INPUT_INFO_0_UK NULL
+#define CATEGORY_INPUT_INFO_0_UK "Зміна налаштування світлового пістолета та/або миші."
 #define CATEGORY_HACKS_LABEL_UK "Гаки емуляції"
 #define CATEGORY_HACKS_INFO_0_UK NULL
 #define CATEGORY_CHANNEL_VOLUME_LABEL_UK "Розширені налаштування гучності"
@@ -50257,6 +51073,18 @@ struct retro_core_options_v2 options_tr = {
 #define OPTION_VAL_150_UK NULL
 #define OPTION_VAL_175_UK NULL
 #define OPTION_VAL_200_UK NULL
+#define OPTION_VAL_225_UK NULL
+#define OPTION_VAL_250_UK NULL
+#define OPTION_VAL_275_UK NULL
+#define OPTION_VAL_300_UK NULL
+#define OPTION_VAL_325_UK NULL
+#define OPTION_VAL_350_UK NULL
+#define OPTION_VAL_375_UK NULL
+#define OPTION_VAL_400_UK NULL
+#define OPTION_VAL_425_UK NULL
+#define OPTION_VAL_450_UK NULL
+#define OPTION_VAL_475_UK NULL
+#define OPTION_VAL_500_UK NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_UK NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_UK "Емулювати системне блокування, що є на оригінальному пристрої, коли відбувається некоректний запит до адреси пам'яті. Це налаштування потрібно вимикати лише для запуску певних демо чи неофіційних програм, що використовують некоректні запити у своїй роботі."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_UK "Адресна помилка 68К"
@@ -51079,11 +51907,23 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_UK },
-         { "125%", OPTION_VAL_125_UK },
-         { "150%", OPTION_VAL_150_UK },
-         { "175%", OPTION_VAL_175_UK },
-         { "200%", OPTION_VAL_200_UK },
+         { "100", OPTION_VAL_100_UK },
+         { "125", OPTION_VAL_125_UK },
+         { "150", OPTION_VAL_150_UK },
+         { "175", OPTION_VAL_175_UK },
+         { "200", OPTION_VAL_200_UK },
+         { "225", OPTION_VAL_225_UK },
+         { "250", OPTION_VAL_250_UK },
+         { "275", OPTION_VAL_275_UK },
+         { "300", OPTION_VAL_300_UK },
+         { "325", OPTION_VAL_325_UK },
+         { "350", OPTION_VAL_350_UK },
+         { "375", OPTION_VAL_375_UK },
+         { "400", OPTION_VAL_400_UK },
+         { "425", OPTION_VAL_425_UK },
+         { "450", OPTION_VAL_450_UK },
+         { "475", OPTION_VAL_475_UK },
+         { "500", OPTION_VAL_500_UK },
          { NULL, NULL },
       },
       "100%"
@@ -51730,6 +52570,18 @@ struct retro_core_options_v2 options_uk = {
 #define OPTION_VAL_150_VAL NULL
 #define OPTION_VAL_175_VAL NULL
 #define OPTION_VAL_200_VAL NULL
+#define OPTION_VAL_225_VAL NULL
+#define OPTION_VAL_250_VAL NULL
+#define OPTION_VAL_275_VAL NULL
+#define OPTION_VAL_300_VAL NULL
+#define OPTION_VAL_325_VAL NULL
+#define OPTION_VAL_350_VAL NULL
+#define OPTION_VAL_375_VAL NULL
+#define OPTION_VAL_400_VAL NULL
+#define OPTION_VAL_425_VAL NULL
+#define OPTION_VAL_450_VAL NULL
+#define OPTION_VAL_475_VAL NULL
+#define OPTION_VAL_500_VAL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_VAL NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_VAL NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_VAL NULL
@@ -52552,11 +53404,23 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_VAL },
-         { "125%", OPTION_VAL_125_VAL },
-         { "150%", OPTION_VAL_150_VAL },
-         { "175%", OPTION_VAL_175_VAL },
-         { "200%", OPTION_VAL_200_VAL },
+         { "100", OPTION_VAL_100_VAL },
+         { "125", OPTION_VAL_125_VAL },
+         { "150", OPTION_VAL_150_VAL },
+         { "175", OPTION_VAL_175_VAL },
+         { "200", OPTION_VAL_200_VAL },
+         { "225", OPTION_VAL_225_VAL },
+         { "250", OPTION_VAL_250_VAL },
+         { "275", OPTION_VAL_275_VAL },
+         { "300", OPTION_VAL_300_VAL },
+         { "325", OPTION_VAL_325_VAL },
+         { "350", OPTION_VAL_350_VAL },
+         { "375", OPTION_VAL_375_VAL },
+         { "400", OPTION_VAL_400_VAL },
+         { "425", OPTION_VAL_425_VAL },
+         { "450", OPTION_VAL_450_VAL },
+         { "475", OPTION_VAL_475_VAL },
+         { "500", OPTION_VAL_500_VAL },
          { NULL, NULL },
       },
       "100%"
@@ -53203,6 +54067,18 @@ struct retro_core_options_v2 options_val = {
 #define OPTION_VAL_150_VN NULL
 #define OPTION_VAL_175_VN NULL
 #define OPTION_VAL_200_VN NULL
+#define OPTION_VAL_225_VN NULL
+#define OPTION_VAL_250_VN NULL
+#define OPTION_VAL_275_VN NULL
+#define OPTION_VAL_300_VN NULL
+#define OPTION_VAL_325_VN NULL
+#define OPTION_VAL_350_VN NULL
+#define OPTION_VAL_375_VN NULL
+#define OPTION_VAL_400_VN NULL
+#define OPTION_VAL_425_VN NULL
+#define OPTION_VAL_450_VN NULL
+#define OPTION_VAL_475_VN NULL
+#define OPTION_VAL_500_VN NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_VN NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_VN NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_VN NULL
@@ -54025,11 +54901,23 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       NULL,
       "hacks",
       {
-         { "100%", OPTION_VAL_100_VN },
-         { "125%", OPTION_VAL_125_VN },
-         { "150%", OPTION_VAL_150_VN },
-         { "175%", OPTION_VAL_175_VN },
-         { "200%", OPTION_VAL_200_VN },
+         { "100", OPTION_VAL_100_VN },
+         { "125", OPTION_VAL_125_VN },
+         { "150", OPTION_VAL_150_VN },
+         { "175", OPTION_VAL_175_VN },
+         { "200", OPTION_VAL_200_VN },
+         { "225", OPTION_VAL_225_VN },
+         { "250", OPTION_VAL_250_VN },
+         { "275", OPTION_VAL_275_VN },
+         { "300", OPTION_VAL_300_VN },
+         { "325", OPTION_VAL_325_VN },
+         { "350", OPTION_VAL_350_VN },
+         { "375", OPTION_VAL_375_VN },
+         { "400", OPTION_VAL_400_VN },
+         { "425", OPTION_VAL_425_VN },
+         { "450", OPTION_VAL_450_VN },
+         { "475", OPTION_VAL_475_VN },
+         { "500", OPTION_VAL_500_VN },
          { NULL, NULL },
       },
       "100%"
