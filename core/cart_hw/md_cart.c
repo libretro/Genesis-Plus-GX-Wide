@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  Mega Drive cartridge hardware support
  *
- *  Copyright (C) 2007-2021  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2023  Eke-Eke (Genesis Plus GX)
  *
  *  Many cartridge protections were initially documented by Haze
  *  (http://haze.mameworld.info/)
@@ -71,6 +71,7 @@ static uint32 mapper_flashkit_r(uint32 address);
 static uint32 mapper_smw_64_r(uint32 address);
 static void mapper_smw_64_w(uint32 address, uint32 data);
 static void mapper_realtec_w(uint32 address, uint32 data);
+static uint32 mapper_realtec_r(uint32 address);
 static void mapper_seganet_w(uint32 address, uint32 data);
 static void mapper_32k_w(uint32 data);
 static void mapper_64k_w(uint32 data);
@@ -377,20 +378,20 @@ void md_cart_init(void)
     zbank_memory_map[i].write   = zbank_unused_w;
   }
 
-  /* support for Quackshot REV 01 (real) dump */
-  if (strstr(rominfo.product,"00004054-01") && (cart.romsize == 0x80000))
+  /* support for Quackshot REV A original ROM dump (512KB) */
+  if (strstr(rominfo.product,"00004054-01") && (cart.romsize == 0x80000) && (rominfo.checksum == 0xa4b3))
   {
-    /* $000000-$0fffff: first 256K mirrored (A18 not connected to ROM chip, A19 not decoded) */
+    /* $000000-$0fffff: lower 256KB mirrored (VA18 and VA19 not connected to ROM chip) */
     for (i=0x00; i<0x10; i++)
     {
-      /* $200000-$3fffff: mirror of $000000-$1fffff (A21 not decoded) */
+      /* $200000-$3fffff: mirror of $000000-$1fffff (VA21 not connected to ROM chip) */
       m68k.memory_map[i].base = m68k.memory_map[i + 0x20].base = cart.rom + ((i & 0x03) << 16);
     }
 
-    /* $100000-$1fffff: second 256K mirrored (A20 connected to ROM chip A18) */
+    /* $100000-$1fffff: upper 256KB mirrored (VA20 connected to ROM chip A19) */
     for (i=0x10; i<0x20; i++)
     {
-      /* $200000-$3fffff: mirror of $000000-$1fffff (A21 not decoded) */
+      /* $200000-$3fffff: mirror of $000000-$1fffff (VA21 not connected to ROM chip) */
       m68k.memory_map[i].base = m68k.memory_map[i + 0x20].base = cart.rom + 0x40000 + ((i & 0x03) << 16);
     }
   }
@@ -503,15 +504,12 @@ void md_cart_init(void)
       memcpy(cart.rom + 0x400000 + i*0x2000, cart.rom + 0x7e000, 0x2000);
     }
 
-    /* Boot ROM (8KB mirrored) is mapped to $000000-$3FFFFF */
-    for (i=0x00; i<0x40; i++)
-    {
-      m68k.memory_map[i].base = cart.rom + 0x400000;
-    }
+    /* specific read handler for ROM header area */
+    m68k.memory_map[0].read16 = mapper_realtec_r;
   }
 
   /* detect specific mappers */
-  if (strstr(rominfo.consoletype,"SEGA SSF"))
+  else if (strstr(rominfo.consoletype,"SEGA SSF"))
   {
     /* Everdrive extended SSF mapper */
     cart.hw.time_w = mapper_512k_w;
@@ -803,8 +801,23 @@ void md_cart_reset(int hard_reset)
 {
   int i;
 
+  /* Realtec mapper */
+  if (cart.hw.realtec)
+  {
+    /* Boot ROM (8KB mirrored) is mapped to $000000-$3FFFFF */
+    for (i=0x00; i<0x40; i++)
+    {
+      m68k.memory_map[i].base = cart.rom + 0x400000;
+    }
+
+    /* Reset mapper */
+    cart.hw.regs[0] = 0;
+    cart.hw.regs[1] = 0;
+    cart.hw.regs[2] = 0;
+  }
+
   /* reset cartridge mapping */
-  if (cart.hw.bankshift)
+  else if (cart.hw.bankshift)
   {
     for (i=0x00; i<0x40; i++)
     {
@@ -1615,48 +1628,74 @@ static uint32 mapper_smw_64_r(uint32 address)
 }
 
 /* 
-  Realtec ROM bankswitch (Earth Defend, Balloon Boy & Funny World, Whac-A-Critter)
-  (Note: register usage is inverted in TascoDlx documentation)
+  Realtec ROM bankswitch (Earth Defend, Balloon Boy & Funny World, Whac-A-Critter, Tom Clown)
+  Verified with real cartridge hardware (slightly different from behavior described in TascoDlx documentation)
 */
 static void mapper_realtec_w(uint32 address, uint32 data)
 {
   switch (address)
   {
-    case 0x402000:  
+    case 0x402000: 
     {
-      /* number of mapped 64k blocks (the written value is a number of 128k blocks) */
-      cart.hw.regs[2] = data << 1;
+      /* fixed ROM bank size */
+      /* when bit 0 is set, ROM A16 pin is forced to value configured in register below (connected to VA17 otherwise) */
+      /* when bit 1 is set, ROM A17 pin is forced to value configured in register below (connected to VA18 otherwise) */
+      /* other bits have no effect */
+      cart.hw.regs[1] = (data & 3) << 1;
       return;
     }
 
-    case 0x404000:
+    case 0x404000: 
     {
-      /* 00000xxx */
-      cart.hw.regs[0] = data & 7;
+      /* fixed ROM bank selection (4 x 128KB banks) */
+      /* bit 0 corresponds to ROM A16 pin value when forced */
+      /* bit 1 corresponds to ROM A17 pin value when forced */
+      /* other bits have no effect */
+      cart.hw.regs[2] = (data & 3) << 1;
       return;
     }
 
     case 0x400000:  
     {
-      /* 00000yy1 */
-      cart.hw.regs[1] = data & 6;
-
-      /* ensure mapped size is not null */
-      if (cart.hw.regs[2])
+      /* ROM access enable */
+      /* when bit 0 is set, ROM A17/A16 pins are set according to above registers and ROM A15/A12 pins are connected to VA16-VA13 (forced to 1 on reset) */
+      /* other bits habe no effect */
+      if (data & 0x01)
       {
-        /* mapped start address is 00yy xxx0 0000 0000 0000 0000 */
-        uint32 base = (cart.hw.regs[0] << 1) | (cart.hw.regs[1] << 3);
-
-        /* selected blocks are mirrored into the whole cartridge area */
-        int i;
-        for (i=0x00; i<0x40; i++)
+        /* once ROM access is enabled, ROM mapping can not be modified until next reset */
+        if (!cart.hw.regs[0])
         {
-          m68k.memory_map[i].base = &cart.rom[(base + (i % cart.hw.regs[2])) << 16];
+          int i;
+          for (i=0x00; i<0x40; i++)
+          {
+            /* 0x000000-0x07ffff mapped area is mirrored in 4MB cartridge range (VA21-VA19 not connected) */
+            uint32 base = i & 7;
+
+            /* adjust 64k mapped area ROM base address according to fixed ROM bank configuration (see above) */
+            base = (base & ~cart.hw.regs[1]) | (cart.hw.regs[2] & cart.hw.regs[1]);
+
+            m68k.memory_map[i].base = &cart.rom[base << 16];
+          }
+
+          cart.hw.regs[0] = data;
         }
       }
       return;
     }
   }
+}
+
+static uint32 mapper_realtec_r(uint32 address)
+{
+  /* /VRES is asserted to bypass TMSS licensing screen when first read access to cartridge ROM header is detected */
+  if ((address == 0x100) && (m68k.memory_map[0].base = cart.base))
+  {
+    /* asserting /VRES from cartridge should only reset 68k CPU (TODO: confirm this on real hardware) */
+    m68k_pulse_reset();
+  }
+
+  /* default ROM area read handler */
+  return *(uint16 *)(m68k.memory_map[0].base + (address & 0xfffe));
 }
 
 /* Game no Kanzume Otokuyou ROM Mapper */
@@ -1959,23 +1998,24 @@ static uint32 mapper_128k_radica_r(uint32 address)
 
 
 /*
-  Custom logic (ST 16S25HB1 PAL) used in Micro Machines US cartridge (SR16V1.1 board)
-  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   /VRES is asserted after write access to 0xA14101 (TMSS bank-shift register)
-   with D0=1 (cartridge ROM access enabled instead of TMSS Boot ROM) being detected 
+  Custom logic (ST 16S25HB1 PAL) used in Micro Machines USA cartridge (SR16V1.1 board)
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   /VRES is asserted to bypass TMSS security checks when write access to 0xA141xx 
+   with D0=1 is detected (access to cartridge ROM enabled instead of TMSS Boot ROM)
 */
 static void mapper_sr16v1_w(uint32 address, uint32 data)
 {
-  /* 0xA10000-0xA1FFFF address range is mapped to I/O and Control registers */
+  /* default I/O and Control registers write handler */
   ctrl_io_write_byte(address, data);
 
-  /* cartridge uses /LWR, /AS and VA1-VA18 (only VA8-VA17 required to decode access to TMSS bank-shift register) */
+  /* cartridge uses /LWR, /AS and VA1-VA18 (only VA8-VA17 are required to decode access to TMSS bankswitch register) */
   if ((address & 0xff01) == 0x4101)
   {
-    /* cartridge ROM is enabled when D0=1 */
+    /* check if cartridge ROM is enabled (D0=1) */
     if (data & 0x01)
     {
-      gen_reset(0);
+      /* asserting /VRES from cartridge should only reset 68k CPU (TODO: confirm this on real hardware) */
+       m68k_pulse_reset();
     }
   }
 }

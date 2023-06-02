@@ -49,7 +49,8 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * fixed byte access to font data registers
 * fixed pending level 1 interrupts when GFX interrupt is disabled (fixes random freezes when exiting "Batman Returns" option menu)
 * fixed CDD seek command again (Final Fight CD freeze with model 2 BIOS)
-* fixed CDD status reported during seek/access time (sound effect synchronization issue in Bari Arm)
+* fixed CDD status reported during seek/access time (fixes sound effect synchronization issue in Bari Arm)
+* fixed CDD position reset when disc is stopped (fixes random freezes in Spiderman vs Kingpin when switching between audio tracks)
 * fixed word access to CDD control register (fixes spurious audio track playback on startup with Mode 1 patched games using MSU-MD driver)
 * fixed CD communication registers state on peripheral reset (fixes SUB-CPU side initialization in MSU-MD sample demo and some Mode 1 patched games using MSU-MD driver)
 * fixed 32x32 pixels stamp index masking during GFX operation (fixes graphics rotation/scaling effects in "Chuck Rock II - Son of Chuck")
@@ -68,6 +69,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * improved console region auto-detection for a few PAL-only games (The Smurfs Travel the World & Williams Arcade's Greatest Hits)
 * improved I2C EEPROM boards emulation accuracy
 * improved SVP memory handlers accuracy (fixes Virtua Racing debug mode)
+* fixed Realtec mapper behavior on soft-reset and with TMSS hardware
 * fixed Game Genie / Pro Action Replay lock-on support when Mega CD hardware is enabled 
 * fixed Game Genie / Pro Action Replay lock-on support with games larger than 8MB
 * fixed SRAM support in Triple Play 96 & Triple Play - Gold Edition
@@ -109,6 +111,8 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * fixed 68k undocumented behaviors for ABCD/SBCD/NBCD instructions (thanks to Flamewing for his test ROM)
 * fixed 68k timing of BTST Dn,#Imm instruction (verified by Flamewing in original microcode)
 * fixed 68k timings of ANDI.L #Imm,Dn, ADDQ.W #Imm,An and TAS instructions (cf. Yacht.txt)
+* fixed 68k timings of BCHG, BCLR, BTST Dn,#Imm and Dn,Dm instructions when bit number is less than 16 (cf. Yacht.txt)
+* fixed 68k timings of CHK, TRAP, TRAPV, LINEA and LINEF exceptions (cf. Yacht.txt)
 * fixed 68K DIVU instruction timings for SUB-CPU
 * fixed Z80 interrupt duration (Bomb on Basic City music running too fast)
 * fixed Z80 SP register initialization on power-on for Master System & Game Gear 
@@ -149,6 +153,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * fixed Master System II extended video modes sprite parsing (fixes Mega Man 2 demo)
 * fixed Game Gear display rendering regression when left/right borders were disabled
 * fixed 68k cycles delay on invalid VRAM writes (fixes "Microcosm" intro loop)
+* fixed address/code potential corruption by one-instruction execution delay after HV interrupts activation (fixes Pugsy's Pyramids stage boss) 
 * optimized tile caching
 
 [Core/Sound]
@@ -168,6 +173,7 @@ Genesis Plus GX 1.7.5 (xx/xx/xxxx) (Eke-Eke)
 * fixed YM2612 potential issue with SSG-EG inverted attenuation level on Key OFF
 * fixed YM2413 carrier/modulator phase reset after channel Key ON (fixes Japanese Master System BIOS music)
 * fixed YM2413 intruments ROM (verified on YM2413B die)
+* disabled PSG output on Mark III hardware when FM output is enabled (verified with real FM sound unit hardware)
 
 [Gamecube/Wii]
 ---------------

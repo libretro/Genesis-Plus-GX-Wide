@@ -711,6 +711,7 @@ void vdp_dma_update(unsigned int cycles)
     /* Check if DMA is finished */
     if (!dma_length)
     {
+      /* DMA source address registers are incremented during DMA (even DMA Fill) */
       if (config.vdp_fix_dma_boundary_bug) {
         /* 
          * NOTICE: VDP has a hardware bug where DMA transfer source address is not incremented properly,

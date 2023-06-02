@@ -65,6 +65,7 @@ extern uint8 zram[0x2000];
 extern uint32 zbank;
 extern uint8 zstate;
 extern uint8 pico_current;
+extern uint8_t cart_size;
 
 /* Function prototypes */
 extern void gen_init(void);
