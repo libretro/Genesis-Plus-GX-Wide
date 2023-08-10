@@ -2167,9 +2167,9 @@ void render_bg_m5_vs_enhanced(int line)
 #endif
 
 #ifdef LSB_FIRST
-      v_line = (line + v_offset + vs[column]) & pf_row_mask;
+      v_line = (line + v_offset + vs[column_capped]) & pf_row_mask;
 #else
-      v_line = (line + v_offset + (vs[column] >> 16)) & pf_row_mask;
+      v_line = (line + v_offset + (vs[column_capped] >> 16)) & pf_row_mask;
 #endif
 
       nt = (uint32 *)&vram[ntab + (((v_line >> 3) << pf_shift) & 0x1FC0)];
