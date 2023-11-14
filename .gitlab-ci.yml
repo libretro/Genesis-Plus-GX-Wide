@@ -43,8 +43,8 @@ include:
     file: '/linux-i686.yml'
 
   # MacOS PowerPC 32-bit
-  - project: 'libretro-infrastructure/ci-templates'
-    file: '/osx-ppc.yml'
+#  - project: 'libretro-infrastructure/ci-templates'
+#    file: '/osx-ppc.yml'
 
   # MacOS 64-bit
   - project: 'libretro-infrastructure/ci-templates'
@@ -179,10 +179,10 @@ libretro-build-osx-arm64:
     - .core-defs
 
 # MacOS PowerPC 32-bit
-libretro-build-osx-ppc:
-  extends:
-    - .libretro-osx-ppc-make-default
-    - .core-defs
+#libretro-build-osx-ppc:
+#  extends:
+#    - .libretro-osx-ppc-make-default
+#    - .core-defs
 
 ################################### CELLULAR #################################
 # Android ARMv7a
