@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  CD data controller (LC8951x compatible)
  *
- *  Copyright (C) 2012-2019  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2012-2023  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -68,6 +68,18 @@
 void cdc_init(void)
 {
   memset(&cdc, 0, sizeof(cdc_t));
+
+  /* autodetect CDC configuration */
+  if ((scd.type == CD_TYPE_WONDERMEGA_M2) || (scd.type == CD_TYPE_CDX))
+  {
+    /* LC89513K chip (Wondermega M2 / X'Eye / CDX / Multi-Mega) */
+    cdc.ar_mask = 0x1f;
+  }
+  else 
+  {
+    /* LC8951 or LC89515 chip (default)*/
+    cdc.ar_mask = 0x0f;
+  }
 }
 
 void cdc_reset(void)
@@ -140,7 +152,19 @@ int cdc_context_save(uint8 *state)
     tmp8 = 0;
   }
 
-  save_param(&cdc, sizeof(cdc));
+
+  save_param(&cdc.ifstat, sizeof(cdc.ifstat));
+  save_param(&cdc.ifctrl, sizeof(cdc.ifctrl));
+  save_param(&cdc.dbc, sizeof(cdc.dbc));
+  save_param(&cdc.dac, sizeof(cdc.dac));
+  save_param(&cdc.pt, sizeof(cdc.pt));
+  save_param(&cdc.wa, sizeof(cdc.wa));
+  save_param(&cdc.ctrl, sizeof(cdc.ctrl));
+  save_param(&cdc.head, sizeof(cdc.head));
+  save_param(&cdc.stat, sizeof(cdc.stat));
+  save_param(&cdc.cycles, sizeof(cdc.cycles));
+  save_param(&cdc.dma_w, sizeof(cdc.dma_w));
+  save_param(&cdc.ram, sizeof(cdc.ram));
   save_param(&tmp8, 1);
 
   return bufferptr;
@@ -151,7 +175,19 @@ int cdc_context_load(uint8 *state)
   uint8 tmp8;
   int bufferptr = 0;
 
-  load_param(&cdc, sizeof(cdc));
+  load_param(&cdc.ifstat, sizeof(cdc.ifstat));
+  load_param(&cdc.ifctrl, sizeof(cdc.ifctrl));
+  load_param(&cdc.dbc, sizeof(cdc.dbc));
+  load_param(&cdc.dac, sizeof(cdc.dac));
+  load_param(&cdc.pt, sizeof(cdc.pt));
+  load_param(&cdc.wa, sizeof(cdc.wa));
+  load_param(&cdc.ctrl, sizeof(cdc.ctrl));
+  load_param(&cdc.head, sizeof(cdc.head));
+  load_param(&cdc.stat, sizeof(cdc.stat));
+  load_param(&cdc.cycles, sizeof(cdc.cycles));
+  load_param(&cdc.dma_w, sizeof(cdc.dma_w));
+  load_param(&cdc.ram, sizeof(cdc.ram));
+
   load_param(&tmp8, 1);
 
   switch (tmp8)
@@ -181,17 +217,14 @@ int cdc_context_load(uint8 *state)
 
 void cdc_dma_update(void)
 {
-  /* maximal transfer length */
-  int length = DMA_BYTES_PER_LINE;
-
   /* end of DMA transfer ? */
   if (cdc.dbc.w < DMA_BYTES_PER_LINE)
   {
-    /* transfer remaining words using 16-bit DMA */
-    cdc.dma_w((cdc.dbc.w + 1) >> 1);
+    /* transfer remaining bytes using DMA */
+    cdc.dma_w(cdc.dbc.w + 1);
 
-    /* reset data byte counter (DBCH bits 4-7 should be set to 1) */
-    cdc.dbc.w = 0xf000;
+    /* reset data byte counter (DBCH bits 4-7 should also be set to 1) */
+    cdc.dbc.w = 0xffff;
 
     /* clear !DTEN and !DTBSY */
     cdc.ifstat |= (BIT_DTBSY | BIT_DTEN);
@@ -234,11 +267,11 @@ void cdc_dma_update(void)
   }
   else
   {
-    /* transfer all words using 16-bit DMA */
-    cdc.dma_w(DMA_BYTES_PER_LINE >> 1);
+    /* transfer limited amount of bytes using DMA */
+    cdc.dma_w(DMA_BYTES_PER_LINE);
 
     /* decrement data byte counter */
-    cdc.dbc.w -= length;
+    cdc.dbc.w -= DMA_BYTES_PER_LINE;
   }
 }
 
@@ -336,9 +369,9 @@ void cdc_decoder_update(uint32 header)
 void cdc_reg_w(unsigned char data)
 {
 #ifdef LOG_CDC
-  error("CDC register %X write 0x%04x (%X)\n", scd.regs[0x04>>1].byte.l & 0x0F, data, s68k.pc);
+  error("CDC register %d write 0x%04x (%X)\n", scd.regs[0x04>>1].byte.l, data, s68k.pc);
 #endif
-  switch (scd.regs[0x04>>1].byte.l & 0x0F)
+  switch (scd.regs[0x04>>1].byte.l)
   {
     case 0x01:  /* IFCTRL */
     {
@@ -373,28 +406,23 @@ void cdc_reg_w(unsigned char data)
       }
 
       cdc.ifctrl = data;
-      scd.regs[0x04>>1].byte.l = 0x02;
       break;
     }
 
     case 0x02:  /* DBCL */
       cdc.dbc.byte.l = data;
-      scd.regs[0x04>>1].byte.l = 0x03;
       break;
 
     case 0x03:  /* DBCH */
-      cdc.dbc.byte.h = data;
-      scd.regs[0x04>>1].byte.l = 0x04;
+      cdc.dbc.byte.h = data & 0x0f;
       break;
 
     case 0x04:  /* DACL */
       cdc.dac.byte.l = data;
-      scd.regs[0x04>>1].byte.l = 0x05;
       break;
 
     case 0x05:  /* DACH */
       cdc.dac.byte.h = data;
-      scd.regs[0x04>>1].byte.l = 0x06;
       break;
 
     case 0x06:  /* DTRG */
@@ -405,10 +433,7 @@ void cdc_reg_w(unsigned char data)
         /* set !DTBSY and !DTEN */
         cdc.ifstat &= ~(BIT_DTBSY | BIT_DTEN);
 
-        /* clear DBCH bits 4-7 */
-        cdc.dbc.byte.h &= 0x0f;
-
-        /* clear EDT & DSR bits (SCD register $04) */
+        /* clear EDT & DSR bits (gate-array register $04) */
         scd.regs[0x04>>1].byte.h &= 0x07;
 
         /* setup data transfer destination */
@@ -417,8 +442,52 @@ void cdc_reg_w(unsigned char data)
           case 2: /* MAIN-CPU host read */
           case 3: /* SUB-CPU host read */
           {
-            /* set DSR bit (SCD register $04) */
+            /* read 16-bit word from CDC RAM buffer (big-endian format) into gate-array register $08 */
+            /* Note: on real-hardware, 16-bit word is not immediately available, cf. https://github.com/MiSTer-devel/MegaCD_MiSTer/blob/master/docs/mcd%20logs/dma_sub_read.jpg for transfer timings */
+            scd.regs[0x08>>1].w = READ_WORD(cdc.ram, cdc.dac.w & 0x3ffe);
+#ifdef LOG_CDC
+            error("CDC host read 0x%04x -> 0x%04x (dbc=0x%x) (%X)\n", cdc.dac.w, scd.regs[0x08>>1].w, cdc.dbc.w, s68k.pc);
+#endif
+
+            /* set DSR bit (gate-array register $04) */
             scd.regs[0x04>>1].byte.h |= 0x40;
+
+            /* increment data address counter */
+            cdc.dac.w += 2;
+
+            /* decrement data byte counter */
+            cdc.dbc.w -= 2;
+
+            /* end of transfer ? */
+            if ((int16)cdc.dbc.w < 0)
+            {
+              /* reset data byte counter (DBCH bits 4-7 should also be set to 1) */
+              cdc.dbc.w = 0xffff;
+
+              /* clear !DTEN and !DTBSY */
+              cdc.ifstat |= (BIT_DTBSY | BIT_DTEN);
+
+              /* pending Data Transfer End interrupt */
+              cdc.ifstat &= ~BIT_DTEI;
+
+              /* Data Transfer End interrupt enabled ? */
+              if (cdc.ifctrl & BIT_DTEIEN)
+              {
+                /* pending level 5 interrupt */
+                scd.pending |= (1 << 5);
+
+                /* level 5 interrupt enabled ? */
+                if (scd.regs[0x32>>1].byte.l & 0x20)
+                {
+                  /* update IRQ level */
+                  s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
+                }
+              }
+
+              /* set EDT bit (gate-array register $04) */
+              scd.regs[0x04>>1].byte.h |= 0x80;
+            }
+
             break;
           }
 
@@ -466,14 +535,13 @@ void cdc_reg_w(unsigned char data)
           default: /* invalid */
           {
     #ifdef LOG_CDC
-            error("invalid CDC tranfer destination (%d)\n", scd.regs[0x04>>1].byte.h & 0x07);
+            error("invalid CDC transfer destination (%d)\n", scd.regs[0x04>>1].byte.h & 0x07);
     #endif
             break;
           }
         }
       }
 
-      scd.regs[0x04>>1].byte.l = 0x07;
       break;
     }
 
@@ -481,9 +549,6 @@ void cdc_reg_w(unsigned char data)
     {
       /* clear pending data transfer end interrupt */
       cdc.ifstat |= BIT_DTEI;
-
-      /* clear DBCH bits 4-7 */
-      cdc.dbc.byte.h &= 0x0f;
 
 #if 0
       /* no pending decoder interrupt ? */
@@ -496,18 +561,15 @@ void cdc_reg_w(unsigned char data)
         s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
       }
 #endif
-      scd.regs[0x04>>1].byte.l = 0x08;
       break;
     }
 
     case 0x08:  /* WAL */
       cdc.wa.byte.l = data;
-      scd.regs[0x04>>1].byte.l = 0x09;
       break;
 
     case 0x09:  /* WAH */
       cdc.wa.byte.h = data;
-      scd.regs[0x04>>1].byte.l = 0x0a;
       break;
 
     case 0x0a:  /* CTRL0 */
@@ -528,7 +590,6 @@ void cdc_reg_w(unsigned char data)
       }
 
       cdc.ctrl[0] = data;
-      scd.regs[0x04>>1].byte.l = 0x0b;
       break;
     }
 
@@ -547,96 +608,125 @@ void cdc_reg_w(unsigned char data)
       }
 
       cdc.ctrl[1] = data;
-      scd.regs[0x04>>1].byte.l = 0x0c;
       break;
     }
 
     case 0x0c:  /* PTL */
       cdc.pt.byte.l = data;
-      scd.regs[0x04>>1].byte.l = 0x0d;
       break;
   
     case 0x0d:  /* PTH */
       cdc.pt.byte.h = data;
-      scd.regs[0x04>>1].byte.l = 0x0e;
-      break;
-
-    case 0x0e:  /* CTRL2 (unused) */
-      scd.regs[0x04>>1].byte.l = 0x0f;
       break;
 
     case 0x0f:  /* RESET */
       cdc_reset();
       break;
 
-    default:  /* by default, SBOUT is not used */
+    default:  /* unemulated registers*/
       break;
+  }
+
+  /* increment address register (except when register #0 is selected) */
+  if (scd.regs[0x04>>1].byte.l)
+  {
+    scd.regs[0x04>>1].byte.l = (scd.regs[0x04>>1].byte.l + 1) & cdc.ar_mask;
   }
 }
 
 unsigned char cdc_reg_r(void)
 {
-  switch (scd.regs[0x04>>1].byte.l & 0x0F)
+  uint8 data;
+
+  switch (scd.regs[0x04>>1].byte.l)
   {
     case 0x01:  /* IFSTAT */
-      scd.regs[0x04>>1].byte.l = 0x02;
-      return cdc.ifstat;
+    {
+      data = cdc.ifstat;
+      break;
+    }
 
     case 0x02:  /* DBCL */
-      scd.regs[0x04>>1].byte.l = 0x03;
-      return cdc.dbc.byte.l;
+    {
+      data = cdc.dbc.byte.l;
+      break;
+    }
 
     case 0x03:  /* DBCH */
-      scd.regs[0x04>>1].byte.l = 0x04;
-      return cdc.dbc.byte.h;
+    {
+      data = cdc.dbc.byte.h;
+      break;
+    }
 
     case 0x04:  /* HEAD0 */
-      scd.regs[0x04>>1].byte.l = 0x05;
-      return cdc.head[cdc.ctrl[1] & BIT_SHDREN][0];
+    {
+      data = cdc.head[cdc.ctrl[1] & BIT_SHDREN][0];
+      break;
+    }
 
     case 0x05:  /* HEAD1 */
-      scd.regs[0x04>>1].byte.l = 0x06;
-      return cdc.head[cdc.ctrl[1] & BIT_SHDREN][1];
+    {
+      data = cdc.head[cdc.ctrl[1] & BIT_SHDREN][1];
+      break;
+    }
 
     case 0x06:  /* HEAD2 */
-      scd.regs[0x04>>1].byte.l = 0x07;
-      return cdc.head[cdc.ctrl[1] & BIT_SHDREN][2];
+    {
+      data = cdc.head[cdc.ctrl[1] & BIT_SHDREN][2];
+      break;
+    }
 
     case 0x07:  /* HEAD3 */
-      scd.regs[0x04>>1].byte.l = 0x08;
-      return cdc.head[cdc.ctrl[1] & BIT_SHDREN][3];
+    {
+      data = cdc.head[cdc.ctrl[1] & BIT_SHDREN][3];
+      break;
+    }
 
     case 0x08:  /* PTL */
-      scd.regs[0x04>>1].byte.l = 0x09;
-      return cdc.pt.byte.l;
+    {
+      data = cdc.pt.byte.l;
+      break;
+    }
 
     case 0x09:  /* PTH */
-      scd.regs[0x04>>1].byte.l = 0x0a;
-      return cdc.pt.byte.h;
+    {
+      data = cdc.pt.byte.h;
+      break;
+    }
 
     case 0x0a:  /* WAL */
-      scd.regs[0x04>>1].byte.l = 0x0b;
-      return cdc.wa.byte.l;
+    {
+      data = cdc.wa.byte.l;
+      break;
+    }
 
     case 0x0b:  /* WAH */
-      scd.regs[0x04>>1].byte.l = 0x0c;
-      return cdc.wa.byte.h;
+    {
+      data = cdc.wa.byte.h;
+      break;
+    }
 
     case 0x0c: /* STAT0 */
-      scd.regs[0x04>>1].byte.l = 0x0d;
-      return cdc.stat[0];
+    {
+      data = cdc.stat[0];
+      break;
+    }
 
     case 0x0d: /* STAT1 (always return 0) */
-      scd.regs[0x04>>1].byte.l = 0x0e;
-      return 0x00;
+    {
+      data = 0x00;
+      break;
+    }
 
     case 0x0e:  /* STAT2 */
-      scd.regs[0x04>>1].byte.l = 0x0f;
-      return cdc.stat[2];
+    {
+      data = cdc.stat[2];
+      break;
+    }
 
     case 0x0f:  /* STAT3 */
     {
-      uint8 data = cdc.stat[3];
+      data = cdc.stat[3];
 
       /* clear !VALST (note: this is not 100% correct but BIOS do not seem to care) */
       cdc.stat[3] = BIT_VALST;
@@ -656,68 +746,89 @@ unsigned char cdc_reg_r(void)
       }
 #endif
 
-      scd.regs[0x04>>1].byte.l = 0x00;
-      return data;
+      break;
     }
 
-    default:  /* by default, COMIN is always empty */
-      return 0xff;
+    default:  /* unemulated registers */
+    {
+      data = 0xff;
+      break;
+    }
   }
+
+#ifdef LOG_CDC
+    error("CDC register %d read 0x%02X (%X)\n", scd.regs[0x04>>1].byte.l, data, s68k.pc);
+#endif
+
+  /* increment address register (except when register #0 is selected) */
+  if (scd.regs[0x04>>1].byte.l)
+  {
+    scd.regs[0x04>>1].byte.l = (scd.regs[0x04>>1].byte.l + 1) & cdc.ar_mask;
+  }
+  
+  return data;
 }
 
 unsigned short cdc_host_r(void)
 {
-  /* check if data is available */
+  /* read CDC buffered data (gate-array register $08) */
+  uint16 data = scd.regs[0x08>>1].w;
+
+  /* check if host data transfer is enabled */
   if (scd.regs[0x04>>1].byte.h & 0x40)
   {
-    /* read 16-bit word from CDC RAM buffer (big-endian format) */
-    uint16 data = READ_WORD(cdc.ram, cdc.dac.w & 0x3ffe);
-
-#ifdef LOG_CDC
-    error("CDC host read 0x%04x -> 0x%04x (dbc=0x%x) (%X)\n", cdc.dac.w, data, cdc.dbc.w, s68k.pc);
-#endif
- 
-    /* increment data address counter */
-    cdc.dac.w += 2;
-
-    /* decrement data byte counter */
-    cdc.dbc.w -= 2;
-
-    /* end of transfer ? */
-    if ((int16)cdc.dbc.w <= 0)
+    /* check if EDT bit (gate-array register $04) is set (host data transfer is finished) */
+    if (scd.regs[0x04>>1].byte.h & 0x80)
     {
-      /* reset data byte counter (DBCH bits 4-7 should be set to 1) */
-      cdc.dbc.w = 0xf000;
-
-      /* clear !DTEN and !DTBSY */
-      cdc.ifstat |= (BIT_DTBSY | BIT_DTEN);
-
-      /* pending Data Transfer End interrupt */
-      cdc.ifstat &= ~BIT_DTEI;
-
-      /* Data Transfer End interrupt enabled ? */
-      if (cdc.ifctrl & BIT_DTEIEN)
-      {
-        /* pending level 5 interrupt */
-        scd.pending |= (1 << 5);
-
-        /* level 5 interrupt enabled ? */
-        if (scd.regs[0x32>>1].byte.l & 0x20)
-        {
-          /* update IRQ level */
-          s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
-        }
-      }
-
-      /* clear DSR bit & set EDT bit (SCD register $04) */
-      scd.regs[0x04>>1].byte.h = (scd.regs[0x04>>1].byte.h & 0x07) | 0x80;
+      /* clear DSR bit (gate-array register $04) */
+      scd.regs[0x04>>1].byte.h &= ~0x40;
     }
+    else
+    {
+      /* read next 16-bit word from CDC RAM buffer (big-endian format) into gate-array register $08 */
+      /* Note: on real-hardware, 16-bit word is not immediately available, cf. https://github.com/MiSTer-devel/MegaCD_MiSTer/blob/master/docs/mcd%20logs/dma_sub_read.jpg for transfer timings */
+      scd.regs[0x08>>1].w = READ_WORD(cdc.ram, cdc.dac.w & 0x3ffe);
+#ifdef LOG_CDC
+      error("CDC host read 0x%04x -> 0x%04x (dbc=0x%x) (%X)\n", cdc.dac.w, scd.regs[0x08>>1].w, cdc.dbc.w, s68k.pc);
+#endif
 
-    return data;
+      /* increment data address counter */
+      cdc.dac.w += 2;
+
+      /* decrement data byte counter */
+      cdc.dbc.w -= 2;
+
+      /* end of transfer ? */
+      if ((int16)cdc.dbc.w < 0)
+      {
+        /* reset data byte counter (DBCH bits 4-7 should also be set to 1) */
+        cdc.dbc.w = 0xffff;
+
+        /* clear !DTEN and !DTBSY */
+        cdc.ifstat |= (BIT_DTBSY | BIT_DTEN);
+
+        /* pending Data Transfer End interrupt */
+        cdc.ifstat &= ~BIT_DTEI;
+
+        /* Data Transfer End interrupt enabled ? */
+        if (cdc.ifctrl & BIT_DTEIEN)
+        {
+          /* pending level 5 interrupt */
+          scd.pending |= (1 << 5);
+
+          /* level 5 interrupt enabled ? */
+          if (scd.regs[0x32>>1].byte.l & 0x20)
+          {
+            /* update IRQ level */
+            s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
+          }
+        }
+
+        /* set EDT bit (gate-array register $04) */
+        scd.regs[0x04>>1].byte.h |= 0x80;
+      }
+    }
   }
 
-#ifdef LOG_CDC
-  error("error reading CDC host (data transfer disabled)\n");
-#endif
-  return 0xffff;
+  return data;
 }

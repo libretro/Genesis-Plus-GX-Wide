@@ -38,7 +38,7 @@ extern "C" {
 */
 /* RETRO_LANGUAGE_AR */
 
-#define CATEGORY_SYSTEM_LABEL_AR NULL
+#define CATEGORY_SYSTEM_LABEL_AR "نظام"
 #define CATEGORY_SYSTEM_INFO_0_AR NULL
 #define CATEGORY_VIDEO_LABEL_AR "الفيديو"
 #define CATEGORY_VIDEO_INFO_0_AR NULL
@@ -280,7 +280,7 @@ struct retro_core_option_v2_category option_cats_ar[] = {
 };
 struct retro_core_option_v2_definition option_defs_ar[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_AR,
@@ -301,7 +301,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_AR,
@@ -317,7 +317,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_AR,
@@ -331,7 +331,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_AR,
@@ -345,7 +345,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_AR,
@@ -359,7 +359,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_AR,
@@ -378,7 +378,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_AR,
@@ -394,7 +394,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_AR,
@@ -410,7 +410,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_AR,
@@ -426,7 +426,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_AR,
@@ -442,7 +442,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_AR,
@@ -457,7 +457,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_AR,
@@ -471,7 +471,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_AR,
@@ -488,7 +488,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_AR,
@@ -502,7 +502,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_AR,
@@ -516,7 +516,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_AR,
@@ -531,7 +531,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_AR,
@@ -559,7 +559,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_AR,
@@ -575,7 +575,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_AR,
@@ -590,7 +590,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_AR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -613,7 +613,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_AR,
@@ -627,7 +627,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_AR,
@@ -644,7 +644,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_AR,
@@ -675,7 +675,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_AR,
@@ -728,7 +728,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_AR,
@@ -781,7 +781,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_AR,
@@ -814,7 +814,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_AR,
@@ -848,7 +848,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_AR,
@@ -881,7 +881,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_AR,
@@ -914,7 +914,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_AR,
@@ -948,7 +948,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_AR,
@@ -962,7 +962,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_AR,
@@ -976,7 +976,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_AR,
@@ -990,7 +990,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_AR,
@@ -1004,7 +1004,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_AR,
@@ -1018,7 +1018,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_AR,
@@ -1046,7 +1046,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_AR,
@@ -1076,7 +1076,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_AR,
@@ -1090,7 +1090,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_AR,
@@ -1104,7 +1104,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_AR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_AR,
@@ -1119,7 +1119,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_AR,
@@ -1133,7 +1133,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_AR,
@@ -1156,7 +1156,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_AR,
@@ -1179,7 +1179,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_AR,
@@ -1202,7 +1202,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_AR,
@@ -1225,7 +1225,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_AR,
@@ -1248,7 +1248,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_AR,
@@ -1271,7 +1271,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_AR,
@@ -1294,7 +1294,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_AR,
@@ -1317,7 +1317,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_AR,
@@ -1340,7 +1340,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_AR,
@@ -1363,7 +1363,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_AR,
@@ -1386,7 +1386,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_AR,
@@ -1409,7 +1409,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_AR,
@@ -1432,7 +1432,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_AR,
@@ -1455,7 +1455,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_AR,
@@ -1478,7 +1478,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_AR,
@@ -1501,7 +1501,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_AR,
@@ -1524,7 +1524,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_AR,
@@ -1547,7 +1547,7 @@ struct retro_core_option_v2_definition option_defs_ar[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_AR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_AR,
@@ -1589,7 +1589,7 @@ struct retro_core_options_v2 options_ar = {
 #define CATEGORY_INPUT_INFO_0_AST NULL
 #define CATEGORY_HACKS_LABEL_AST "Hacks de la emulación"
 #define CATEGORY_HACKS_INFO_0_AST NULL
-#define CATEGORY_CHANNEL_VOLUME_LABEL_AST "Axustes avanzaos del volume de les canales"
+#define CATEGORY_CHANNEL_VOLUME_LABEL_AST "Configuración avanzada del volume de les canales"
 #define CATEGORY_CHANNEL_VOLUME_INFO_0_AST NULL
 #define GENESIS_PLUS_GX_SYSTEM_HW_LABEL_AST "Hardware del sistema"
 #define GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_AST NULL
@@ -1821,7 +1821,7 @@ struct retro_core_option_v2_category option_cats_ast[] = {
 };
 struct retro_core_option_v2_definition option_defs_ast[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_AST,
@@ -1842,7 +1842,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_AST,
@@ -1858,7 +1858,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_AST,
@@ -1872,7 +1872,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_AST,
@@ -1886,7 +1886,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_AST,
@@ -1900,7 +1900,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_AST,
@@ -1919,7 +1919,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_AST,
@@ -1935,7 +1935,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_AST,
@@ -1951,7 +1951,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_AST,
@@ -1967,7 +1967,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_AST,
@@ -1983,7 +1983,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_AST,
@@ -1998,7 +1998,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_AST,
@@ -2012,7 +2012,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_AST,
@@ -2029,7 +2029,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_AST,
@@ -2043,7 +2043,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_AST,
@@ -2057,7 +2057,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_AST,
@@ -2072,7 +2072,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_AST,
@@ -2100,7 +2100,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_AST,
@@ -2116,7 +2116,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_AST,
@@ -2131,7 +2131,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_AST,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -2154,7 +2154,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_AST,
@@ -2168,7 +2168,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_AST,
@@ -2185,7 +2185,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_AST,
@@ -2216,7 +2216,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_AST,
@@ -2269,7 +2269,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_AST,
@@ -2322,7 +2322,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_AST,
@@ -2355,7 +2355,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_AST,
@@ -2389,7 +2389,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_AST,
@@ -2422,7 +2422,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_AST,
@@ -2455,7 +2455,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_AST,
@@ -2489,7 +2489,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_AST,
@@ -2503,7 +2503,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_AST,
@@ -2517,7 +2517,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_AST,
@@ -2531,7 +2531,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_AST,
@@ -2545,7 +2545,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_AST,
@@ -2559,7 +2559,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_AST,
@@ -2587,7 +2587,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_AST,
@@ -2617,7 +2617,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_AST,
@@ -2631,7 +2631,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_AST,
@@ -2645,7 +2645,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_AST,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_AST,
@@ -2660,7 +2660,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_AST,
@@ -2674,7 +2674,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_AST,
@@ -2697,7 +2697,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_AST,
@@ -2720,7 +2720,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_AST,
@@ -2743,7 +2743,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_AST,
@@ -2766,7 +2766,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_AST,
@@ -2789,7 +2789,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_AST,
@@ -2812,7 +2812,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_AST,
@@ -2835,7 +2835,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_AST,
@@ -2858,7 +2858,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_AST,
@@ -2881,7 +2881,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_AST,
@@ -2904,7 +2904,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_AST,
@@ -2927,7 +2927,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_AST,
@@ -2950,7 +2950,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_AST,
@@ -2973,7 +2973,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_AST,
@@ -2996,7 +2996,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_AST,
@@ -3019,7 +3019,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_AST,
@@ -3042,7 +3042,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_AST,
@@ -3065,7 +3065,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_AST,
@@ -3088,7 +3088,7 @@ struct retro_core_option_v2_definition option_defs_ast[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_AST,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_AST,
@@ -3124,8 +3124,8 @@ struct retro_core_options_v2 options_ast = {
 #define CATEGORY_SYSTEM_INFO_0_BE NULL
 #define CATEGORY_VIDEO_LABEL_BE "Відэа"
 #define CATEGORY_VIDEO_INFO_0_BE NULL
-#define CATEGORY_AUDIO_LABEL_BE "Аўдыё"
-#define CATEGORY_AUDIO_INFO_0_BE "Змяніць налады прылад аўдыё."
+#define CATEGORY_AUDIO_LABEL_BE "Аўдыя"
+#define CATEGORY_AUDIO_INFO_0_BE "Змяніць налады аўдыяпрылады."
 #define CATEGORY_INPUT_LABEL_BE "Увод"
 #define CATEGORY_INPUT_INFO_0_BE NULL
 #define CATEGORY_HACKS_LABEL_BE NULL
@@ -3227,7 +3227,7 @@ struct retro_core_options_v2 options_ast = {
 #define GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_BE "Выбраць стэрэа або мона прайграванне гуку."
 #define OPTION_VAL_STEREO_BE "Стэрэа"
 #define OPTION_VAL_MONO_BE "Мона"
-#define GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_BE "Аўдыёфільтр"
+#define GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_BE "Аўдыяфільтр"
 #define GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_BE NULL
 #define OPTION_VAL_LOW_PASS_BE NULL
 #define OPTION_VAL_EQ_BE NULL
@@ -3362,7 +3362,7 @@ struct retro_core_option_v2_category option_cats_be[] = {
 };
 struct retro_core_option_v2_definition option_defs_be[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_BE,
@@ -3383,7 +3383,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_BE,
@@ -3399,7 +3399,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_BE,
@@ -3413,7 +3413,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_BE,
@@ -3427,7 +3427,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_BE,
@@ -3441,7 +3441,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_BE,
@@ -3460,7 +3460,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_BE,
@@ -3476,7 +3476,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_BE,
@@ -3492,7 +3492,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_BE,
@@ -3508,7 +3508,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_BE,
@@ -3524,7 +3524,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_BE,
@@ -3539,7 +3539,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_BE,
@@ -3553,7 +3553,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_BE,
@@ -3570,7 +3570,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_BE,
@@ -3584,7 +3584,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_BE,
@@ -3598,7 +3598,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_BE,
@@ -3613,7 +3613,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_BE,
@@ -3641,7 +3641,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_BE,
@@ -3657,7 +3657,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_BE,
@@ -3672,7 +3672,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_BE,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -3695,7 +3695,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_BE,
@@ -3709,7 +3709,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_BE,
@@ -3726,7 +3726,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_BE,
@@ -3757,7 +3757,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_BE,
@@ -3810,7 +3810,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_BE,
@@ -3863,7 +3863,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_BE,
@@ -3896,7 +3896,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_BE,
@@ -3930,7 +3930,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_BE,
@@ -3963,7 +3963,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_BE,
@@ -3996,7 +3996,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_BE,
@@ -4030,7 +4030,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_BE,
@@ -4044,7 +4044,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_BE,
@@ -4058,7 +4058,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_BE,
@@ -4072,7 +4072,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_BE,
@@ -4086,7 +4086,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_BE,
@@ -4100,7 +4100,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_BE,
@@ -4128,7 +4128,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_BE,
@@ -4158,7 +4158,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_BE,
@@ -4172,7 +4172,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_BE,
@@ -4186,7 +4186,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_BE,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_BE,
@@ -4201,7 +4201,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_BE,
@@ -4215,7 +4215,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_BE,
@@ -4238,7 +4238,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_BE,
@@ -4261,7 +4261,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_BE,
@@ -4284,7 +4284,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_BE,
@@ -4307,7 +4307,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_BE,
@@ -4330,7 +4330,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_BE,
@@ -4353,7 +4353,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_BE,
@@ -4376,7 +4376,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_BE,
@@ -4399,7 +4399,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_BE,
@@ -4422,7 +4422,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_BE,
@@ -4445,7 +4445,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_BE,
@@ -4468,7 +4468,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_BE,
@@ -4491,7 +4491,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_BE,
@@ -4514,7 +4514,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_BE,
@@ -4537,7 +4537,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_BE,
@@ -4560,7 +4560,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_BE,
@@ -4583,7 +4583,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_BE,
@@ -4606,7 +4606,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_BE,
@@ -4629,7 +4629,7 @@ struct retro_core_option_v2_definition option_defs_be[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_BE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_BE,
@@ -4903,7 +4903,7 @@ struct retro_core_option_v2_category option_cats_ca[] = {
 };
 struct retro_core_option_v2_definition option_defs_ca[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CA,
@@ -4924,7 +4924,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_CA,
@@ -4940,7 +4940,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_CA,
@@ -4954,7 +4954,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_CA,
@@ -4968,7 +4968,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_CA,
@@ -4982,7 +4982,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_CA,
@@ -5001,7 +5001,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_CA,
@@ -5017,7 +5017,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_CA,
@@ -5033,7 +5033,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CA,
@@ -5049,7 +5049,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_CA,
@@ -5065,7 +5065,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_CA,
@@ -5080,7 +5080,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CA,
@@ -5094,7 +5094,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CA,
@@ -5111,7 +5111,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_CA,
@@ -5125,7 +5125,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_CA,
@@ -5139,7 +5139,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CA,
@@ -5154,7 +5154,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CA,
@@ -5182,7 +5182,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_CA,
@@ -5198,7 +5198,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_CA,
@@ -5213,7 +5213,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_CA,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -5236,7 +5236,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CA,
@@ -5250,7 +5250,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CA,
@@ -5267,7 +5267,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_CA,
@@ -5298,7 +5298,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_CA,
@@ -5351,7 +5351,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_CA,
@@ -5404,7 +5404,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_CA,
@@ -5437,7 +5437,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_CA,
@@ -5471,7 +5471,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_CA,
@@ -5504,7 +5504,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_CA,
@@ -5537,7 +5537,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_CA,
@@ -5571,7 +5571,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_CA,
@@ -5585,7 +5585,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_CA,
@@ -5599,7 +5599,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_CA,
@@ -5613,7 +5613,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_CA,
@@ -5627,7 +5627,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CA,
@@ -5641,7 +5641,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CA,
@@ -5669,7 +5669,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CA,
@@ -5699,7 +5699,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CA,
@@ -5713,7 +5713,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_CA,
@@ -5727,7 +5727,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_CA,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_CA,
@@ -5742,7 +5742,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_CA,
@@ -5756,7 +5756,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_CA,
@@ -5779,7 +5779,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_CA,
@@ -5802,7 +5802,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_CA,
@@ -5825,7 +5825,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_CA,
@@ -5848,7 +5848,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_CA,
@@ -5871,7 +5871,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_CA,
@@ -5894,7 +5894,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_CA,
@@ -5917,7 +5917,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_CA,
@@ -5940,7 +5940,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_CA,
@@ -5963,7 +5963,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_CA,
@@ -5986,7 +5986,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_CA,
@@ -6009,7 +6009,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_CA,
@@ -6032,7 +6032,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_CA,
@@ -6055,7 +6055,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_CA,
@@ -6078,7 +6078,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_CA,
@@ -6101,7 +6101,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_CA,
@@ -6124,7 +6124,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_CA,
@@ -6147,7 +6147,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_CA,
@@ -6170,7 +6170,7 @@ struct retro_core_option_v2_definition option_defs_ca[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_CA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_CA,
@@ -6444,7 +6444,7 @@ struct retro_core_option_v2_category option_cats_chs[] = {
 };
 struct retro_core_option_v2_definition option_defs_chs[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CHS,
@@ -6465,7 +6465,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_CHS,
@@ -6481,7 +6481,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_CHS,
@@ -6495,7 +6495,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_CHS,
@@ -6509,7 +6509,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_CHS,
@@ -6523,7 +6523,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_CHS,
@@ -6542,7 +6542,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_CHS,
@@ -6558,7 +6558,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_CHS,
@@ -6574,7 +6574,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CHS,
@@ -6590,7 +6590,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_CHS,
@@ -6606,7 +6606,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_CHS,
@@ -6621,7 +6621,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CHS,
@@ -6635,7 +6635,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CHS,
@@ -6652,7 +6652,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_CHS,
@@ -6666,7 +6666,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_CHS,
@@ -6680,7 +6680,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CHS,
@@ -6695,7 +6695,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CHS,
@@ -6723,7 +6723,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_CHS,
@@ -6739,7 +6739,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_CHS,
@@ -6754,7 +6754,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_CHS,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -6777,7 +6777,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CHS,
@@ -6791,7 +6791,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CHS,
@@ -6808,7 +6808,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_CHS,
@@ -6839,7 +6839,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_CHS,
@@ -6892,7 +6892,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_CHS,
@@ -6945,7 +6945,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_CHS,
@@ -6978,7 +6978,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_CHS,
@@ -7012,7 +7012,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_CHS,
@@ -7045,7 +7045,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_CHS,
@@ -7078,7 +7078,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_CHS,
@@ -7112,7 +7112,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_CHS,
@@ -7126,7 +7126,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_CHS,
@@ -7140,7 +7140,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_CHS,
@@ -7154,7 +7154,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_CHS,
@@ -7168,7 +7168,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CHS,
@@ -7182,7 +7182,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CHS,
@@ -7210,7 +7210,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CHS,
@@ -7240,7 +7240,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CHS,
@@ -7254,7 +7254,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_CHS,
@@ -7268,7 +7268,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_CHS,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_CHS,
@@ -7283,7 +7283,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_CHS,
@@ -7297,7 +7297,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_CHS,
@@ -7320,7 +7320,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_CHS,
@@ -7343,7 +7343,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_CHS,
@@ -7366,7 +7366,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_CHS,
@@ -7389,7 +7389,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_CHS,
@@ -7412,7 +7412,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_CHS,
@@ -7435,7 +7435,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_CHS,
@@ -7458,7 +7458,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_CHS,
@@ -7481,7 +7481,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_CHS,
@@ -7504,7 +7504,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_CHS,
@@ -7527,7 +7527,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_CHS,
@@ -7550,7 +7550,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_CHS,
@@ -7573,7 +7573,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_CHS,
@@ -7596,7 +7596,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_CHS,
@@ -7619,7 +7619,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_CHS,
@@ -7642,7 +7642,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_CHS,
@@ -7665,7 +7665,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_CHS,
@@ -7688,7 +7688,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_CHS,
@@ -7711,7 +7711,7 @@ struct retro_core_option_v2_definition option_defs_chs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_CHS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_CHS,
@@ -7985,7 +7985,7 @@ struct retro_core_option_v2_category option_cats_cht[] = {
 };
 struct retro_core_option_v2_definition option_defs_cht[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CHT,
@@ -8006,7 +8006,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_CHT,
@@ -8022,7 +8022,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_CHT,
@@ -8036,7 +8036,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_CHT,
@@ -8050,7 +8050,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_CHT,
@@ -8064,7 +8064,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_CHT,
@@ -8083,7 +8083,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_CHT,
@@ -8099,7 +8099,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_CHT,
@@ -8115,7 +8115,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CHT,
@@ -8131,7 +8131,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_CHT,
@@ -8147,7 +8147,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_CHT,
@@ -8162,7 +8162,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CHT,
@@ -8176,7 +8176,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CHT,
@@ -8193,7 +8193,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_CHT,
@@ -8207,7 +8207,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_CHT,
@@ -8221,7 +8221,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CHT,
@@ -8236,7 +8236,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CHT,
@@ -8264,7 +8264,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_CHT,
@@ -8280,7 +8280,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_CHT,
@@ -8295,7 +8295,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_CHT,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -8318,7 +8318,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CHT,
@@ -8332,7 +8332,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CHT,
@@ -8349,7 +8349,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_CHT,
@@ -8380,7 +8380,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_CHT,
@@ -8433,7 +8433,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_CHT,
@@ -8486,7 +8486,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_CHT,
@@ -8519,7 +8519,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_CHT,
@@ -8553,7 +8553,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_CHT,
@@ -8586,7 +8586,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_CHT,
@@ -8619,7 +8619,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_CHT,
@@ -8653,7 +8653,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_CHT,
@@ -8667,7 +8667,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_CHT,
@@ -8681,7 +8681,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_CHT,
@@ -8695,7 +8695,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_CHT,
@@ -8709,7 +8709,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CHT,
@@ -8723,7 +8723,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CHT,
@@ -8751,7 +8751,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CHT,
@@ -8781,7 +8781,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CHT,
@@ -8795,7 +8795,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_CHT,
@@ -8809,7 +8809,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_CHT,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_CHT,
@@ -8824,7 +8824,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_CHT,
@@ -8838,7 +8838,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_CHT,
@@ -8861,7 +8861,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_CHT,
@@ -8884,7 +8884,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_CHT,
@@ -8907,7 +8907,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_CHT,
@@ -8930,7 +8930,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_CHT,
@@ -8953,7 +8953,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_CHT,
@@ -8976,7 +8976,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_CHT,
@@ -8999,7 +8999,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_CHT,
@@ -9022,7 +9022,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_CHT,
@@ -9045,7 +9045,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_CHT,
@@ -9068,7 +9068,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_CHT,
@@ -9091,7 +9091,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_CHT,
@@ -9114,7 +9114,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_CHT,
@@ -9137,7 +9137,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_CHT,
@@ -9160,7 +9160,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_CHT,
@@ -9183,7 +9183,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_CHT,
@@ -9206,7 +9206,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_CHT,
@@ -9229,7 +9229,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_CHT,
@@ -9252,7 +9252,7 @@ struct retro_core_option_v2_definition option_defs_cht[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_CHT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_CHT,
@@ -9294,7 +9294,7 @@ struct retro_core_options_v2 options_cht = {
 #define CATEGORY_INPUT_INFO_0_CS "Změna nastavení světelné pistole a/nebo vstupu myši."
 #define CATEGORY_HACKS_LABEL_CS NULL
 #define CATEGORY_HACKS_INFO_0_CS "Změna nastavení přetaktování procesoru a přesnosti emulace, které ovlivňují výkon a kompatibilitu na nízké úrovni."
-#define CATEGORY_CHANNEL_VOLUME_LABEL_CS "Rozšířené Nastavení Hlasitosti Kanálů"
+#define CATEGORY_CHANNEL_VOLUME_LABEL_CS "Rozšířené nastavení hlasitosti kanálů"
 #define CATEGORY_CHANNEL_VOLUME_INFO_0_CS "Změna hlasitosti jednotlivých hardwarových zvukových kanálů."
 #define GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CS "Systémový Hardware"
 #define GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CS "Spustí načtený obsah s konkrétní emulovanou konzolí. 'Auto' vybere nejvhodnější systém pro aktuální hru."
@@ -9339,7 +9339,7 @@ struct retro_core_options_v2 options_cht = {
 #define OPTION_VAL_GAME_GENIE_CS NULL
 #define OPTION_VAL_ACTION_REPLAY_PRO_CS "Přehrávání Akce (Pro)"
 #define OPTION_VAL_SONIC_KNUCKLES_CS NULL
-#define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CS "Poměr Stran Poskytnuté-Jádro"
+#define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CS "Poměr stran poskytovaný jádrem"
 #define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CS "Zvolte preferovaný poměr stran obsahu. To se použije pouze v případě, že je poměr stran aplikace RetroArch v nastavení videa nastaven na hodnotu 'Poskytnuté Jádro'."
 #define OPTION_VAL_NTSC_PAR_CS NULL
 #define OPTION_VAL_PAL_PAR_CS NULL
@@ -9358,7 +9358,7 @@ struct retro_core_options_v2 options_cht = {
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CS "Vynutí spuštění titulů pro Game Gear v režimu SMS se zvýšeným rozlišením 256x192. Může zobrazit další obsah, ale obvykle zobrazí okraj poškozených/nežádoucích obrazových dat."
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CS "Blargg NTSC Filtr"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CS "Použijte video filtr pro napodobení různých televizních signálů NTSC."
-#define OPTION_VAL_MONOCHROME_CS NULL
+#define OPTION_VAL_MONOCHROME_CS "Jednobarevné"
 #define OPTION_VAL_COMPOSITE_CS "Kompozitní"
 #define OPTION_VAL_SVIDEO_CS NULL
 #define OPTION_VAL_RGB_CS NULL
@@ -9371,7 +9371,7 @@ struct retro_core_options_v2 options_cht = {
 #define GENESIS_PLUS_GX_FRAMESKIP_LABEL_CS NULL
 #define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CS "Přeskočení snímků, aby se zabránilo nedostatečnému využití vyrovnávací paměti zvuku (praskání). Zlepšuje výkon na úkor vizuální plynulosti. Funkce 'Auto' přeskakuje snímky, pokud to doporučí frontend. 'Ruční' využívá nastavení 'Práh přeskakování snímků (%)'."
 #define OPTION_VAL_MANUAL_CS "Ruční"
-#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CS "Hraniční Hodnota Frameskip (%)"
+#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CS "Prahová hodnota Frameskip (%)"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CS "Pokud je položka 'Frameskip' nastavena na hodnotu 'Ruční', určuje práh obsazení vyrovnávací paměti zvuku (v procentech), pod kterým budou snímky přeskočeny. Vyšší hodnoty snižují riziko praskání tím, že způsobují častější vynechávání snímků."
 #define GENESIS_PLUS_GX_YM2413_LABEL_CS NULL
 #define GENESIS_PLUS_GX_YM2413_INFO_0_CS "Umožňuje emulaci zvukové jednotky FM používané v některých hrách Sega Mark III/Master System pro lepší zvukový výstup."
@@ -9391,7 +9391,7 @@ struct retro_core_options_v2 options_cht = {
 #define GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CS "Vyberte stereofonní nebo monofonní přehrávání zvuku."
 #define OPTION_VAL_STEREO_CS NULL
 #define OPTION_VAL_MONO_CS NULL
-#define GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CS "Audio Filtr"
+#define GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CS "Filtr zvuku"
 #define GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CS "Povolte dolní propust zvukového filtru pro lepší simulaci charakteristického zvuku modelu 1 Mega Drive/Genesis."
 #define OPTION_VAL_LOW_PASS_CS "Nízko-Propustný"
 #define OPTION_VAL_EQ_CS NULL
@@ -9424,7 +9424,7 @@ struct retro_core_options_v2 options_cht = {
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CS "Vylepšené vertikální posouvání po dlaždici"
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CS "Umožňuje posouvat každou jednotlivou buňku svisle místo 16px dvoubuněk zprůměrováním s hodnotou vertikálního posouvání sousední buňky. Tento hack platí pouze pro několik her, které používají režim vertikálního posouvání po 2 buňkách."
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CS "Vylepšený limit vertikálního posouvání na dlaždici"
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CS NULL
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CS "Pouze když je povoleno vylepšené vertikální posouvání po dlaždicích. Upravuje limit vylepšení vertikálního posouvání. Pokud je rozdíl vscroll mezi sousedními dlaždicemi větší než tento limit, je vylepšení zakázáno."
 #define GENESIS_PLUS_GX_OVERCLOCK_LABEL_CS "Rychlost CPU"
 #define GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CS "Přetaktování emulovaného procesoru. Může snížit zpomalení, ale může způsobit závady."
 #define OPTION_VAL_100_CS NULL
@@ -9526,7 +9526,7 @@ struct retro_core_option_v2_category option_cats_cs[] = {
 };
 struct retro_core_option_v2_definition option_defs_cs[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CS,
@@ -9547,7 +9547,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_CS,
@@ -9563,7 +9563,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_CS,
@@ -9577,7 +9577,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_CS,
@@ -9591,7 +9591,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_CS,
@@ -9605,7 +9605,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_CS,
@@ -9624,7 +9624,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_CS,
@@ -9640,7 +9640,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_CS,
@@ -9656,7 +9656,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CS,
@@ -9672,7 +9672,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_CS,
@@ -9688,7 +9688,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_CS,
@@ -9703,7 +9703,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CS,
@@ -9717,7 +9717,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CS,
@@ -9734,7 +9734,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_CS,
@@ -9748,7 +9748,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_CS,
@@ -9762,7 +9762,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CS,
@@ -9777,7 +9777,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CS,
@@ -9805,7 +9805,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_CS,
@@ -9821,7 +9821,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_CS,
@@ -9836,7 +9836,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_CS,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -9859,7 +9859,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CS,
@@ -9873,7 +9873,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CS,
@@ -9890,7 +9890,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_CS,
@@ -9921,7 +9921,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_CS,
@@ -9974,7 +9974,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_CS,
@@ -10027,7 +10027,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_CS,
@@ -10060,7 +10060,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_CS,
@@ -10094,7 +10094,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_CS,
@@ -10127,7 +10127,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_CS,
@@ -10160,7 +10160,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_CS,
@@ -10194,7 +10194,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_CS,
@@ -10208,7 +10208,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_CS,
@@ -10222,7 +10222,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_CS,
@@ -10236,7 +10236,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_CS,
@@ -10250,7 +10250,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CS,
@@ -10264,7 +10264,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CS,
@@ -10292,7 +10292,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CS,
@@ -10322,7 +10322,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CS,
@@ -10336,7 +10336,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_CS,
@@ -10350,7 +10350,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_CS,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_CS,
@@ -10365,7 +10365,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_CS,
@@ -10379,7 +10379,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_CS,
@@ -10402,7 +10402,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_CS,
@@ -10425,7 +10425,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_CS,
@@ -10448,7 +10448,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_CS,
@@ -10471,7 +10471,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_CS,
@@ -10494,7 +10494,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_CS,
@@ -10517,7 +10517,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_CS,
@@ -10540,7 +10540,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_CS,
@@ -10563,7 +10563,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_CS,
@@ -10586,7 +10586,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_CS,
@@ -10609,7 +10609,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_CS,
@@ -10632,7 +10632,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_CS,
@@ -10655,7 +10655,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_CS,
@@ -10678,7 +10678,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_CS,
@@ -10701,7 +10701,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_CS,
@@ -10724,7 +10724,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_CS,
@@ -10747,7 +10747,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_CS,
@@ -10770,7 +10770,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_CS,
@@ -10793,7 +10793,7 @@ struct retro_core_option_v2_definition option_defs_cs[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_CS,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_CS,
@@ -11067,7 +11067,7 @@ struct retro_core_option_v2_category option_cats_cy[] = {
 };
 struct retro_core_option_v2_definition option_defs_cy[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_CY,
@@ -11088,7 +11088,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_CY,
@@ -11104,7 +11104,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_CY,
@@ -11118,7 +11118,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_CY,
@@ -11132,7 +11132,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_CY,
@@ -11146,7 +11146,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_CY,
@@ -11165,7 +11165,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_CY,
@@ -11181,7 +11181,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_CY,
@@ -11197,7 +11197,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_CY,
@@ -11213,7 +11213,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_CY,
@@ -11229,7 +11229,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_CY,
@@ -11244,7 +11244,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_CY,
@@ -11258,7 +11258,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_CY,
@@ -11275,7 +11275,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_CY,
@@ -11289,7 +11289,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_CY,
@@ -11303,7 +11303,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_CY,
@@ -11318,7 +11318,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_CY,
@@ -11346,7 +11346,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_CY,
@@ -11362,7 +11362,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_CY,
@@ -11377,7 +11377,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_CY,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -11400,7 +11400,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_CY,
@@ -11414,7 +11414,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_CY,
@@ -11431,7 +11431,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_CY,
@@ -11462,7 +11462,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_CY,
@@ -11515,7 +11515,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_CY,
@@ -11568,7 +11568,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_CY,
@@ -11601,7 +11601,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_CY,
@@ -11635,7 +11635,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_CY,
@@ -11668,7 +11668,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_CY,
@@ -11701,7 +11701,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_CY,
@@ -11735,7 +11735,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_CY,
@@ -11749,7 +11749,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_CY,
@@ -11763,7 +11763,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_CY,
@@ -11777,7 +11777,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_CY,
@@ -11791,7 +11791,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_CY,
@@ -11805,7 +11805,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_CY,
@@ -11833,7 +11833,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_CY,
@@ -11863,7 +11863,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_CY,
@@ -11877,7 +11877,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_CY,
@@ -11891,7 +11891,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_CY,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_CY,
@@ -11906,7 +11906,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_CY,
@@ -11920,7 +11920,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_CY,
@@ -11943,7 +11943,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_CY,
@@ -11966,7 +11966,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_CY,
@@ -11989,7 +11989,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_CY,
@@ -12012,7 +12012,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_CY,
@@ -12035,7 +12035,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_CY,
@@ -12058,7 +12058,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_CY,
@@ -12081,7 +12081,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_CY,
@@ -12104,7 +12104,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_CY,
@@ -12127,7 +12127,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_CY,
@@ -12150,7 +12150,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_CY,
@@ -12173,7 +12173,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_CY,
@@ -12196,7 +12196,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_CY,
@@ -12219,7 +12219,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_CY,
@@ -12242,7 +12242,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_CY,
@@ -12265,7 +12265,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_CY,
@@ -12288,7 +12288,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_CY,
@@ -12311,7 +12311,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_CY,
@@ -12334,7 +12334,7 @@ struct retro_core_option_v2_definition option_defs_cy[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_CY,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_CY,
@@ -12608,7 +12608,7 @@ struct retro_core_option_v2_category option_cats_da[] = {
 };
 struct retro_core_option_v2_definition option_defs_da[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_DA,
@@ -12629,7 +12629,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_DA,
@@ -12645,7 +12645,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_DA,
@@ -12659,7 +12659,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_DA,
@@ -12673,7 +12673,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_DA,
@@ -12687,7 +12687,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_DA,
@@ -12706,7 +12706,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_DA,
@@ -12722,7 +12722,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_DA,
@@ -12738,7 +12738,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_DA,
@@ -12754,7 +12754,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_DA,
@@ -12770,7 +12770,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_DA,
@@ -12785,7 +12785,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_DA,
@@ -12799,7 +12799,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_DA,
@@ -12816,7 +12816,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_DA,
@@ -12830,7 +12830,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_DA,
@@ -12844,7 +12844,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_DA,
@@ -12859,7 +12859,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_DA,
@@ -12887,7 +12887,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_DA,
@@ -12903,7 +12903,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_DA,
@@ -12918,7 +12918,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_DA,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -12941,7 +12941,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_DA,
@@ -12955,7 +12955,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_DA,
@@ -12972,7 +12972,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_DA,
@@ -13003,7 +13003,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_DA,
@@ -13056,7 +13056,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_DA,
@@ -13109,7 +13109,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_DA,
@@ -13142,7 +13142,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_DA,
@@ -13176,7 +13176,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_DA,
@@ -13209,7 +13209,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_DA,
@@ -13242,7 +13242,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_DA,
@@ -13276,7 +13276,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_DA,
@@ -13290,7 +13290,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_DA,
@@ -13304,7 +13304,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_DA,
@@ -13318,7 +13318,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_DA,
@@ -13332,7 +13332,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_DA,
@@ -13346,7 +13346,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_DA,
@@ -13374,7 +13374,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_DA,
@@ -13404,7 +13404,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_DA,
@@ -13418,7 +13418,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_DA,
@@ -13432,7 +13432,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_DA,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_DA,
@@ -13447,7 +13447,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_DA,
@@ -13461,7 +13461,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_DA,
@@ -13484,7 +13484,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_DA,
@@ -13507,7 +13507,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_DA,
@@ -13530,7 +13530,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_DA,
@@ -13553,7 +13553,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_DA,
@@ -13576,7 +13576,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_DA,
@@ -13599,7 +13599,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_DA,
@@ -13622,7 +13622,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_DA,
@@ -13645,7 +13645,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_DA,
@@ -13668,7 +13668,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_DA,
@@ -13691,7 +13691,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_DA,
@@ -13714,7 +13714,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_DA,
@@ -13737,7 +13737,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_DA,
@@ -13760,7 +13760,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_DA,
@@ -13783,7 +13783,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_DA,
@@ -13806,7 +13806,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_DA,
@@ -13829,7 +13829,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_DA,
@@ -13852,7 +13852,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_DA,
@@ -13875,7 +13875,7 @@ struct retro_core_option_v2_definition option_defs_da[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_DA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_DA,
@@ -13956,14 +13956,14 @@ struct retro_core_options_v2 options_da = {
 #define GENESIS_PLUS_GX_ADD_ON_INFO_0_DE "Festlegen, welches Add-on zur CD-Audiowiedergabe für unterstützte Mega Drive-/Genesis-Spiele verwendet werden soll."
 #define OPTION_VAL_SEGA_MEGA_CD_DE NULL
 #define OPTION_VAL_MEGASD_DE NULL
-#define OPTION_VAL_NONE_DE "Nein"
+#define OPTION_VAL_NONE_DE "Keins"
 #define GENESIS_PLUS_GX_LOCK_ON_LABEL_DE "Modul Kombination"
 #define GENESIS_PLUS_GX_LOCK_ON_INFO_0_DE "Kombinations-Technologie ist eine Mega Drive/Genesis-Funktion, die es einem älteren Spiel erlaubt, sich mit dem Durchschleifen eines speziellen Moduls für ein erweitertes oder verändertes Gameplay zu vereinen. Diese Option legt fest, welcher Typ eines speziellen 'Kombinations-Moduls' emuliert werden soll. Eine entsprechende Biosdatei muss im Systemverzeichnis von RetroArch vorhanden sein."
 #define OPTION_VAL_GAME_GENIE_DE NULL
 #define OPTION_VAL_ACTION_REPLAY_PRO_DE NULL
 #define OPTION_VAL_SONIC_KNUCKLES_DE NULL
 #define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_DE "Core-bestimmtes Seitenverhältnis"
-#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_DE "Das bevorzugte Seitenverhältnis des Inhalts auswählen. Dies wird nur angewendet, wenn das Seitenverhältnis von RetroArch in den Videoeinstellungen auf \"Core-bestimmtes Seitenverhältnis\" eingestellt ist."
+#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_DE "Das bevorzugte Seitenverhältnis des Inhalts auswählen. Dies wird nur angewendet, wenn das Seitenverhältnis von RetroArch in den Videoeinstellungen auf \"Wie von Core vorgesehen\" eingestellt ist."
 #define OPTION_VAL_NTSC_PAR_DE NULL
 #define OPTION_VAL_PAL_PAR_DE NULL
 #define OPTION_VAL_4_3_DE NULL
@@ -13981,7 +13981,7 @@ struct retro_core_options_v2 options_da = {
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_DE "Erzwingt Game Gear Titel im SMS-Modus mit einer erhöhten Auflösung von 256x192 auszuführen. Kann zusätzliche Inhalte anzeigen, zeigt aber typischerweise Ränder von beschädigten/unerwünschten Bilddaten an."
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_DE "NTSC-Filter Blargg"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_DE "Einen Videofilter anwenden, um verschiedene NTSC-TV-Signale zu imitieren."
-#define OPTION_VAL_MONOCHROME_DE "Einfarbig"
+#define OPTION_VAL_MONOCHROME_DE "Schwarz-weiß"
 #define OPTION_VAL_COMPOSITE_DE NULL
 #define OPTION_VAL_SVIDEO_DE NULL
 #define OPTION_VAL_RGB_DE NULL
@@ -13992,7 +13992,7 @@ struct retro_core_options_v2 options_da = {
 #define OPTION_VAL_SINGLE_FIELD_DE "Einzelfeld"
 #define OPTION_VAL_DOUBLE_FIELD_DE "Doppelfeld"
 #define GENESIS_PLUS_GX_FRAMESKIP_LABEL_DE NULL
-#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_DE "Überspringen Sie Frames um zu vermeiden, dass Audio-Puffer unterlaufen (Knistern). Verbessert die Leistung auf Kosten der visuellen Glätte. 'Auto' überspringt Frames wenn vom Frontend empfohlen wird. 'Manuell' verwendet die Einstellung 'Frameskip Grenzwert (%)'."
+#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_DE "Überspringt Frames, um zu vermeiden, dass Audio-Puffer unterlaufen (Knistern). Verbessert die Leistung auf Kosten der visuellen Glätte. 'Automatisch' überspringt Frames wenn vom Frontend empfohlen. 'Manuell' verwendet die Einstellung 'Frameskip Grenzwert (%)'."
 #define OPTION_VAL_MANUAL_DE "Manuell"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_DE "Frameskip-Grenzwert (%)"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_DE "Gibt den Audiopuffer-Belegungsschwellenwert (Prozent) an, unter dem Frames übersprungen werden, wenn „Frameskip“ auf „Manuell“ eingestellt ist. Höhere Werte verringern das Risiko von Knistern, da Frames häufiger weggelassen werden."
@@ -14149,7 +14149,7 @@ struct retro_core_option_v2_category option_cats_de[] = {
 };
 struct retro_core_option_v2_definition option_defs_de[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_DE,
@@ -14170,7 +14170,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_DE,
@@ -14186,7 +14186,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_DE,
@@ -14200,7 +14200,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_DE,
@@ -14214,7 +14214,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_DE,
@@ -14228,7 +14228,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_DE,
@@ -14247,7 +14247,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_DE,
@@ -14263,7 +14263,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_DE,
@@ -14279,7 +14279,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_DE,
@@ -14295,7 +14295,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_DE,
@@ -14311,7 +14311,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_DE,
@@ -14326,7 +14326,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_DE,
@@ -14340,7 +14340,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_DE,
@@ -14357,7 +14357,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_DE,
@@ -14371,7 +14371,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_DE,
@@ -14385,7 +14385,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_DE,
@@ -14400,7 +14400,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_DE,
@@ -14428,7 +14428,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_DE,
@@ -14444,7 +14444,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_DE,
@@ -14459,7 +14459,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_DE,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -14482,7 +14482,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_DE,
@@ -14496,7 +14496,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_DE,
@@ -14513,7 +14513,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_DE,
@@ -14544,7 +14544,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_DE,
@@ -14597,7 +14597,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_DE,
@@ -14650,7 +14650,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_DE,
@@ -14683,7 +14683,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_DE,
@@ -14717,7 +14717,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_DE,
@@ -14750,7 +14750,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_DE,
@@ -14783,7 +14783,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_DE,
@@ -14817,7 +14817,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_DE,
@@ -14831,7 +14831,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_DE,
@@ -14845,7 +14845,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_DE,
@@ -14859,7 +14859,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_DE,
@@ -14873,7 +14873,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_DE,
@@ -14887,7 +14887,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_DE,
@@ -14915,7 +14915,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_DE,
@@ -14945,7 +14945,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_DE,
@@ -14959,7 +14959,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_DE,
@@ -14973,7 +14973,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_DE,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_DE,
@@ -14988,7 +14988,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_DE,
@@ -15002,7 +15002,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_DE,
@@ -15025,7 +15025,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_DE,
@@ -15048,7 +15048,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_DE,
@@ -15071,7 +15071,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_DE,
@@ -15094,7 +15094,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_DE,
@@ -15117,7 +15117,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_DE,
@@ -15140,7 +15140,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_DE,
@@ -15163,7 +15163,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_DE,
@@ -15186,7 +15186,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_DE,
@@ -15209,7 +15209,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_DE,
@@ -15232,7 +15232,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_DE,
@@ -15255,7 +15255,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_DE,
@@ -15278,7 +15278,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_DE,
@@ -15301,7 +15301,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_DE,
@@ -15324,7 +15324,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_DE,
@@ -15347,7 +15347,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_DE,
@@ -15370,7 +15370,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_DE,
@@ -15393,7 +15393,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_DE,
@@ -15416,7 +15416,7 @@ struct retro_core_option_v2_definition option_defs_de[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_DE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_DE,
@@ -15690,7 +15690,7 @@ struct retro_core_option_v2_category option_cats_el[] = {
 };
 struct retro_core_option_v2_definition option_defs_el[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_EL,
@@ -15711,7 +15711,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_EL,
@@ -15727,7 +15727,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_EL,
@@ -15741,7 +15741,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_EL,
@@ -15755,7 +15755,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_EL,
@@ -15769,7 +15769,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_EL,
@@ -15788,7 +15788,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_EL,
@@ -15804,7 +15804,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_EL,
@@ -15820,7 +15820,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_EL,
@@ -15836,7 +15836,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_EL,
@@ -15852,7 +15852,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_EL,
@@ -15867,7 +15867,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_EL,
@@ -15881,7 +15881,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_EL,
@@ -15898,7 +15898,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_EL,
@@ -15912,7 +15912,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_EL,
@@ -15926,7 +15926,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_EL,
@@ -15941,7 +15941,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_EL,
@@ -15969,7 +15969,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_EL,
@@ -15985,7 +15985,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_EL,
@@ -16000,7 +16000,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_EL,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -16023,7 +16023,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_EL,
@@ -16037,7 +16037,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_EL,
@@ -16054,7 +16054,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_EL,
@@ -16085,7 +16085,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_EL,
@@ -16138,7 +16138,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_EL,
@@ -16191,7 +16191,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_EL,
@@ -16224,7 +16224,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_EL,
@@ -16258,7 +16258,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_EL,
@@ -16291,7 +16291,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_EL,
@@ -16324,7 +16324,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_EL,
@@ -16358,7 +16358,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_EL,
@@ -16372,7 +16372,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_EL,
@@ -16386,7 +16386,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_EL,
@@ -16400,7 +16400,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_EL,
@@ -16414,7 +16414,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_EL,
@@ -16428,7 +16428,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_EL,
@@ -16456,7 +16456,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_EL,
@@ -16486,7 +16486,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EL,
@@ -16500,7 +16500,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_EL,
@@ -16514,7 +16514,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_EL,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_EL,
@@ -16529,7 +16529,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_EL,
@@ -16543,7 +16543,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_EL,
@@ -16566,7 +16566,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_EL,
@@ -16589,7 +16589,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_EL,
@@ -16612,7 +16612,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_EL,
@@ -16635,7 +16635,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_EL,
@@ -16658,7 +16658,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_EL,
@@ -16681,7 +16681,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_EL,
@@ -16704,7 +16704,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_EL,
@@ -16727,7 +16727,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_EL,
@@ -16750,7 +16750,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_EL,
@@ -16773,7 +16773,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_EL,
@@ -16796,7 +16796,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_EL,
@@ -16819,7 +16819,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_EL,
@@ -16842,7 +16842,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_EL,
@@ -16865,7 +16865,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_EL,
@@ -16888,7 +16888,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_EL,
@@ -16911,7 +16911,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_EL,
@@ -16934,7 +16934,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_EL,
@@ -16957,7 +16957,7 @@ struct retro_core_option_v2_definition option_defs_el[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_EL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_EL,
@@ -17231,7 +17231,7 @@ struct retro_core_option_v2_category option_cats_en[] = {
 };
 struct retro_core_option_v2_definition option_defs_en[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_EN,
@@ -17252,7 +17252,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_EN,
@@ -17268,7 +17268,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_EN,
@@ -17282,7 +17282,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_EN,
@@ -17296,7 +17296,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_EN,
@@ -17310,7 +17310,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_EN,
@@ -17329,7 +17329,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_EN,
@@ -17345,7 +17345,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_EN,
@@ -17361,7 +17361,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_EN,
@@ -17377,7 +17377,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_EN,
@@ -17393,7 +17393,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_EN,
@@ -17408,7 +17408,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_EN,
@@ -17422,7 +17422,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_EN,
@@ -17439,7 +17439,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_EN,
@@ -17453,7 +17453,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_EN,
@@ -17467,7 +17467,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_EN,
@@ -17482,7 +17482,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_EN,
@@ -17510,7 +17510,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_EN,
@@ -17526,7 +17526,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_EN,
@@ -17541,7 +17541,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_EN,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -17564,7 +17564,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_EN,
@@ -17578,7 +17578,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_EN,
@@ -17595,7 +17595,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_EN,
@@ -17626,7 +17626,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_EN,
@@ -17679,7 +17679,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_EN,
@@ -17732,7 +17732,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_EN,
@@ -17765,7 +17765,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_EN,
@@ -17799,7 +17799,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_EN,
@@ -17832,7 +17832,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_EN,
@@ -17865,7 +17865,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_EN,
@@ -17899,7 +17899,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_EN,
@@ -17913,7 +17913,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_EN,
@@ -17927,7 +17927,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_EN,
@@ -17941,7 +17941,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_EN,
@@ -17955,7 +17955,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_EN,
@@ -17969,7 +17969,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_EN,
@@ -17997,7 +17997,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_EN,
@@ -18027,7 +18027,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EN,
@@ -18041,7 +18041,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_EN,
@@ -18055,7 +18055,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_EN,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_EN,
@@ -18070,7 +18070,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_EN,
@@ -18084,7 +18084,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_EN,
@@ -18107,7 +18107,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_EN,
@@ -18130,7 +18130,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_EN,
@@ -18153,7 +18153,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_EN,
@@ -18176,7 +18176,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_EN,
@@ -18199,7 +18199,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_EN,
@@ -18222,7 +18222,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_EN,
@@ -18245,7 +18245,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_EN,
@@ -18268,7 +18268,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_EN,
@@ -18291,7 +18291,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_EN,
@@ -18314,7 +18314,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_EN,
@@ -18337,7 +18337,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_EN,
@@ -18360,7 +18360,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_EN,
@@ -18383,7 +18383,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_EN,
@@ -18406,7 +18406,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_EN,
@@ -18429,7 +18429,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_EN,
@@ -18452,7 +18452,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_EN,
@@ -18475,7 +18475,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_EN,
@@ -18498,7 +18498,7 @@ struct retro_core_option_v2_definition option_defs_en[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_EN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_EN,
@@ -18772,7 +18772,7 @@ struct retro_core_option_v2_category option_cats_eo[] = {
 };
 struct retro_core_option_v2_definition option_defs_eo[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_EO,
@@ -18793,7 +18793,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_EO,
@@ -18809,7 +18809,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_EO,
@@ -18823,7 +18823,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_EO,
@@ -18837,7 +18837,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_EO,
@@ -18851,7 +18851,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_EO,
@@ -18870,7 +18870,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_EO,
@@ -18886,7 +18886,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_EO,
@@ -18902,7 +18902,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_EO,
@@ -18918,7 +18918,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_EO,
@@ -18934,7 +18934,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_EO,
@@ -18949,7 +18949,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_EO,
@@ -18963,7 +18963,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_EO,
@@ -18980,7 +18980,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_EO,
@@ -18994,7 +18994,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_EO,
@@ -19008,7 +19008,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_EO,
@@ -19023,7 +19023,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_EO,
@@ -19051,7 +19051,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_EO,
@@ -19067,7 +19067,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_EO,
@@ -19082,7 +19082,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_EO,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -19105,7 +19105,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_EO,
@@ -19119,7 +19119,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_EO,
@@ -19136,7 +19136,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_EO,
@@ -19167,7 +19167,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_EO,
@@ -19220,7 +19220,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_EO,
@@ -19273,7 +19273,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_EO,
@@ -19306,7 +19306,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_EO,
@@ -19340,7 +19340,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_EO,
@@ -19373,7 +19373,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_EO,
@@ -19406,7 +19406,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_EO,
@@ -19440,7 +19440,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_EO,
@@ -19454,7 +19454,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_EO,
@@ -19468,7 +19468,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_EO,
@@ -19482,7 +19482,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_EO,
@@ -19496,7 +19496,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_EO,
@@ -19510,7 +19510,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_EO,
@@ -19538,7 +19538,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_EO,
@@ -19568,7 +19568,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_EO,
@@ -19582,7 +19582,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_EO,
@@ -19596,7 +19596,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_EO,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_EO,
@@ -19611,7 +19611,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_EO,
@@ -19625,7 +19625,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_EO,
@@ -19648,7 +19648,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_EO,
@@ -19671,7 +19671,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_EO,
@@ -19694,7 +19694,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_EO,
@@ -19717,7 +19717,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_EO,
@@ -19740,7 +19740,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_EO,
@@ -19763,7 +19763,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_EO,
@@ -19786,7 +19786,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_EO,
@@ -19809,7 +19809,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_EO,
@@ -19832,7 +19832,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_EO,
@@ -19855,7 +19855,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_EO,
@@ -19878,7 +19878,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_EO,
@@ -19901,7 +19901,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_EO,
@@ -19924,7 +19924,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_EO,
@@ -19947,7 +19947,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_EO,
@@ -19970,7 +19970,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_EO,
@@ -19993,7 +19993,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_EO,
@@ -20016,7 +20016,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_EO,
@@ -20039,7 +20039,7 @@ struct retro_core_option_v2_definition option_defs_eo[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_EO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_EO,
@@ -20313,7 +20313,7 @@ struct retro_core_option_v2_category option_cats_es[] = {
 };
 struct retro_core_option_v2_definition option_defs_es[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_ES,
@@ -20334,7 +20334,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_ES,
@@ -20350,7 +20350,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_ES,
@@ -20364,7 +20364,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_ES,
@@ -20378,7 +20378,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_ES,
@@ -20392,7 +20392,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_ES,
@@ -20411,7 +20411,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_ES,
@@ -20427,7 +20427,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_ES,
@@ -20443,7 +20443,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_ES,
@@ -20459,7 +20459,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_ES,
@@ -20475,7 +20475,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_ES,
@@ -20490,7 +20490,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_ES,
@@ -20504,7 +20504,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_ES,
@@ -20521,7 +20521,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_ES,
@@ -20535,7 +20535,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_ES,
@@ -20549,7 +20549,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_ES,
@@ -20564,7 +20564,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_ES,
@@ -20592,7 +20592,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_ES,
@@ -20608,7 +20608,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_ES,
@@ -20623,7 +20623,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_ES,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -20646,7 +20646,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_ES,
@@ -20660,7 +20660,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_ES,
@@ -20677,7 +20677,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_ES,
@@ -20708,7 +20708,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_ES,
@@ -20761,7 +20761,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_ES,
@@ -20814,7 +20814,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_ES,
@@ -20847,7 +20847,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_ES,
@@ -20881,7 +20881,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_ES,
@@ -20914,7 +20914,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_ES,
@@ -20947,7 +20947,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_ES,
@@ -20981,7 +20981,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_ES,
@@ -20995,7 +20995,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_ES,
@@ -21009,7 +21009,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_ES,
@@ -21023,7 +21023,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_ES,
@@ -21037,7 +21037,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_ES,
@@ -21051,7 +21051,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_ES,
@@ -21079,7 +21079,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_ES,
@@ -21109,7 +21109,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_ES,
@@ -21123,7 +21123,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_ES,
@@ -21137,7 +21137,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_ES,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_ES,
@@ -21152,7 +21152,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_ES,
@@ -21166,7 +21166,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_ES,
@@ -21189,7 +21189,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_ES,
@@ -21212,7 +21212,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_ES,
@@ -21235,7 +21235,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_ES,
@@ -21258,7 +21258,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_ES,
@@ -21281,7 +21281,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_ES,
@@ -21304,7 +21304,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_ES,
@@ -21327,7 +21327,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_ES,
@@ -21350,7 +21350,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_ES,
@@ -21373,7 +21373,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_ES,
@@ -21396,7 +21396,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_ES,
@@ -21419,7 +21419,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_ES,
@@ -21442,7 +21442,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_ES,
@@ -21465,7 +21465,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_ES,
@@ -21488,7 +21488,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_ES,
@@ -21511,7 +21511,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_ES,
@@ -21534,7 +21534,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_ES,
@@ -21557,7 +21557,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_ES,
@@ -21580,7 +21580,7 @@ struct retro_core_option_v2_definition option_defs_es[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_ES,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_ES,
@@ -21854,7 +21854,7 @@ struct retro_core_option_v2_category option_cats_fa[] = {
 };
 struct retro_core_option_v2_definition option_defs_fa[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_FA,
@@ -21875,7 +21875,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_FA,
@@ -21891,7 +21891,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_FA,
@@ -21905,7 +21905,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_FA,
@@ -21919,7 +21919,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_FA,
@@ -21933,7 +21933,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_FA,
@@ -21952,7 +21952,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_FA,
@@ -21968,7 +21968,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_FA,
@@ -21984,7 +21984,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_FA,
@@ -22000,7 +22000,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_FA,
@@ -22016,7 +22016,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_FA,
@@ -22031,7 +22031,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_FA,
@@ -22045,7 +22045,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_FA,
@@ -22062,7 +22062,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_FA,
@@ -22076,7 +22076,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_FA,
@@ -22090,7 +22090,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_FA,
@@ -22105,7 +22105,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_FA,
@@ -22133,7 +22133,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_FA,
@@ -22149,7 +22149,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_FA,
@@ -22164,7 +22164,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_FA,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -22187,7 +22187,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_FA,
@@ -22201,7 +22201,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_FA,
@@ -22218,7 +22218,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_FA,
@@ -22249,7 +22249,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_FA,
@@ -22302,7 +22302,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_FA,
@@ -22355,7 +22355,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_FA,
@@ -22388,7 +22388,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_FA,
@@ -22422,7 +22422,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_FA,
@@ -22455,7 +22455,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_FA,
@@ -22488,7 +22488,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_FA,
@@ -22522,7 +22522,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_FA,
@@ -22536,7 +22536,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_FA,
@@ -22550,7 +22550,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_FA,
@@ -22564,7 +22564,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_FA,
@@ -22578,7 +22578,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_FA,
@@ -22592,7 +22592,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_FA,
@@ -22620,7 +22620,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_FA,
@@ -22650,7 +22650,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FA,
@@ -22664,7 +22664,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_FA,
@@ -22678,7 +22678,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_FA,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_FA,
@@ -22693,7 +22693,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_FA,
@@ -22707,7 +22707,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_FA,
@@ -22730,7 +22730,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_FA,
@@ -22753,7 +22753,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_FA,
@@ -22776,7 +22776,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_FA,
@@ -22799,7 +22799,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_FA,
@@ -22822,7 +22822,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_FA,
@@ -22845,7 +22845,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_FA,
@@ -22868,7 +22868,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_FA,
@@ -22891,7 +22891,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_FA,
@@ -22914,7 +22914,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_FA,
@@ -22937,7 +22937,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_FA,
@@ -22960,7 +22960,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_FA,
@@ -22983,7 +22983,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_FA,
@@ -23006,7 +23006,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_FA,
@@ -23029,7 +23029,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_FA,
@@ -23052,7 +23052,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_FA,
@@ -23075,7 +23075,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_FA,
@@ -23098,7 +23098,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_FA,
@@ -23121,7 +23121,7 @@ struct retro_core_option_v2_definition option_defs_fa[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_FA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_FA,
@@ -23190,8 +23190,8 @@ struct retro_core_options_v2 options_fa = {
 #define GENESIS_PLUS_GX_CART_BRAM_LABEL_FI "CD-järjestelmän varmuuskopio kasetin BRAM (uudelleenkäynnistys vaaditaan)"
 #define GENESIS_PLUS_GX_CART_BRAM_INFO_0_FI "Määrittelee Sega CD- ja Mega-CD-sisältöä ajettaessa, jaetaanko yksi varmuuskopio RAM-kasetti kaikille peleille (Kasettikohtainen) vai luodaanko erillinen varmuuskopio RAM-kasetti jokaiselle pelille (Pelikohtainen)."
 #define OPTION_VAL_PER_CART_FI "Kasettikohtainen"
-#define GENESIS_PLUS_GX_CART_SIZE_LABEL_FI NULL
-#define GENESIS_PLUS_GX_CART_SIZE_INFO_0_FI NULL
+#define GENESIS_PLUS_GX_CART_SIZE_LABEL_FI "CD-varmuuskopiokasetin BRAM-koko (Uudelleenkäynnistys vaaditaan)"
+#define GENESIS_PLUS_GX_CART_SIZE_INFO_0_FI "Valitse varmuuskopiokasetin koko, kun ajetaan Sega CD/Mega-CD sisältöä. Hyödyllinen, kun asetetaan varmuuskopiokasetti pelikohtaiseksi, jolloin voidaan välttää useita suuria kasetteja."
 #define OPTION_VAL_128K_FI "128 kbit"
 #define OPTION_VAL_256K_FI "256 kbit"
 #define OPTION_VAL_512K_FI "512 kbit"
@@ -23243,7 +23243,7 @@ struct retro_core_options_v2 options_fa = {
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_FI "Kuvienohituksen arvo (%)"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_FI "Kun \"kehyksen ohitus\" on asetettu \"manuaaliksi\", määrittää äänipuskuri käyttökynnyksen (prosentteina), jonka alapuolella kehykset ohitetaan. Korkeammat arvot vähentävät särkymisen riskiä siten, että kehykset putoavat useammin."
 #define GENESIS_PLUS_GX_YM2413_LABEL_FI NULL
-#define GENESIS_PLUS_GX_YM2413_INFO_0_FI NULL
+#define GENESIS_PLUS_GX_YM2413_INFO_0_FI "Ota käyttöön tiettyjen Sega Mark III/Master System -pelien käyttämä FM-äänimoduulin emulointi äänen ulostulon ehostamista varten."
 #define GENESIS_PLUS_GX_YM2413_CORE_LABEL_FI "Master System FM (YM2413) ydin"
 #define GENESIS_PLUS_GX_YM2413_CORE_INFO_0_FI NULL
 #define OPTION_VAL_MAME_FI NULL
@@ -23317,9 +23317,9 @@ struct retro_core_options_v2 options_fa = {
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FI NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FI "68K-osoitevirhe"
 #define GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_CD_LATENCY_LABEL_FI NULL
-#define GENESIS_PLUS_GX_CD_LATENCY_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_FI NULL
+#define GENESIS_PLUS_GX_CD_LATENCY_LABEL_FI "CD:n lukunopeus"
+#define GENESIS_PLUS_GX_CD_LATENCY_INFO_0_FI "Simuloi alkuperäinen CD-laitteiston lukunopeutta etsiessä tiettyä sijaintia levyltä. Tätä tarvitaan muutamia CD-pelejä varten, jotka kaatuvat, jos CD:n tiedot ovat saatavilla liian pian ja myös korjaa CD:n äänen ajoitusongelmia joissakin peleissä. Tämän poistaminen käytöstä voi olla hyödyllistä MSU-MD-peleissä, koska se tekee CD-ääniraitojen silmukoista saumattomampia."
+#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_FI "Näytä äänenvoimakkuuden lisäasetukset (Avaa valikko uudestaan)"
 #define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_FI "Ota käyttöön alhaisen tason äänikanavan parametrien asetukset. HUOM.: Pikavalikko pitää ottaa käyttöön tämän asetuksen käyttöönottamiseksi."
 #define GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_FI NULL
 #define GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_FI NULL
@@ -23329,36 +23329,36 @@ struct retro_core_options_v2 options_fa = {
 #define GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_FI NULL
 #define GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_FI NULL
 #define GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_FI NULL
+#define GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_FI "Mega Drive/Genesis FM-kanavan 0 äänenvoimakkuus %"
 #define GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_FI NULL
+#define GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_FI "Mega Drive/Genesis FM-kanavan 1 äänenvoimakkuus %"
 #define GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_FI NULL
+#define GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_FI "Mega Drive/Genesis FM-kanavan 2 äänenvoimakkuus %"
 #define GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_FI NULL
+#define GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_FI "Mega Drive/Genesis FM-kanavan 3 äänenvoimakkuus %"
 #define GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_FI NULL
 #define GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_FI NULL
 #define GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_FI NULL
 #define GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_FI NULL
 #define GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_FI NULL
-#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_FI NULL
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 0 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 0 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 1 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 1 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_FI "Master System FM (YM2413) Kanava 2 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 2 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 3 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 3 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 4 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 4 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 5 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 5 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 6 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 6 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 7 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 7 äänenvoimakkuutta."
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_FI "Master System FM (YM2413) kanavan 8 äänenvoimakkuus %"
+#define GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_FI "Vähennä Master System FM-kanavan 8 äänenvoimakkuutta."
 
 struct retro_core_option_v2_category option_cats_fi[] = {
    {
@@ -23395,7 +23395,7 @@ struct retro_core_option_v2_category option_cats_fi[] = {
 };
 struct retro_core_option_v2_definition option_defs_fi[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_FI,
@@ -23416,7 +23416,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_FI,
@@ -23432,7 +23432,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_FI,
@@ -23446,7 +23446,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_FI,
@@ -23460,7 +23460,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_FI,
@@ -23474,7 +23474,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_FI,
@@ -23493,7 +23493,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_FI,
@@ -23509,7 +23509,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_FI,
@@ -23525,7 +23525,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_FI,
@@ -23541,7 +23541,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_FI,
@@ -23557,7 +23557,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_FI,
@@ -23572,7 +23572,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_FI,
@@ -23586,7 +23586,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_FI,
@@ -23603,7 +23603,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_FI,
@@ -23617,7 +23617,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_FI,
@@ -23631,7 +23631,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_FI,
@@ -23646,7 +23646,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_FI,
@@ -23674,7 +23674,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_FI,
@@ -23690,7 +23690,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_FI,
@@ -23705,7 +23705,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_FI,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -23728,7 +23728,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_FI,
@@ -23742,7 +23742,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_FI,
@@ -23759,7 +23759,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_FI,
@@ -23790,7 +23790,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_FI,
@@ -23843,7 +23843,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_FI,
@@ -23896,7 +23896,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_FI,
@@ -23929,7 +23929,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_FI,
@@ -23963,7 +23963,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_FI,
@@ -23996,7 +23996,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_FI,
@@ -24029,7 +24029,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_FI,
@@ -24063,7 +24063,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_FI,
@@ -24077,7 +24077,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_FI,
@@ -24091,7 +24091,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_FI,
@@ -24105,7 +24105,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_FI,
@@ -24119,7 +24119,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_FI,
@@ -24133,7 +24133,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_FI,
@@ -24161,7 +24161,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_FI,
@@ -24191,7 +24191,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FI,
@@ -24205,7 +24205,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_FI,
@@ -24219,7 +24219,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_FI,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_FI,
@@ -24234,7 +24234,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_FI,
@@ -24248,7 +24248,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_FI,
@@ -24271,7 +24271,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_FI,
@@ -24294,7 +24294,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_FI,
@@ -24317,7 +24317,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_FI,
@@ -24340,7 +24340,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_FI,
@@ -24363,7 +24363,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_FI,
@@ -24386,7 +24386,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_FI,
@@ -24409,7 +24409,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_FI,
@@ -24432,7 +24432,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_FI,
@@ -24455,7 +24455,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_FI,
@@ -24478,7 +24478,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_FI,
@@ -24501,7 +24501,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_FI,
@@ -24524,7 +24524,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_FI,
@@ -24547,7 +24547,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_FI,
@@ -24570,7 +24570,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_FI,
@@ -24593,7 +24593,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_FI,
@@ -24616,7 +24616,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_FI,
@@ -24639,7 +24639,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_FI,
@@ -24662,7 +24662,7 @@ struct retro_core_option_v2_definition option_defs_fi[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_FI,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_FI,
@@ -24936,7 +24936,7 @@ struct retro_core_option_v2_category option_cats_fr[] = {
 };
 struct retro_core_option_v2_definition option_defs_fr[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_FR,
@@ -24957,7 +24957,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_FR,
@@ -24973,7 +24973,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_FR,
@@ -24987,7 +24987,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_FR,
@@ -25001,7 +25001,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_FR,
@@ -25015,7 +25015,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_FR,
@@ -25034,7 +25034,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_FR,
@@ -25050,7 +25050,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_FR,
@@ -25066,7 +25066,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_FR,
@@ -25082,7 +25082,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_FR,
@@ -25098,7 +25098,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_FR,
@@ -25113,7 +25113,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_FR,
@@ -25127,7 +25127,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_FR,
@@ -25144,7 +25144,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_FR,
@@ -25158,7 +25158,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_FR,
@@ -25172,7 +25172,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_FR,
@@ -25187,7 +25187,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_FR,
@@ -25215,7 +25215,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_FR,
@@ -25231,7 +25231,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_FR,
@@ -25246,7 +25246,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_FR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -25269,7 +25269,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_FR,
@@ -25283,7 +25283,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_FR,
@@ -25300,7 +25300,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_FR,
@@ -25331,7 +25331,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_FR,
@@ -25384,7 +25384,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_FR,
@@ -25437,7 +25437,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_FR,
@@ -25470,7 +25470,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_FR,
@@ -25504,7 +25504,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_FR,
@@ -25537,7 +25537,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_FR,
@@ -25570,7 +25570,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_FR,
@@ -25604,7 +25604,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_FR,
@@ -25618,7 +25618,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_FR,
@@ -25632,7 +25632,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_FR,
@@ -25646,7 +25646,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_FR,
@@ -25660,7 +25660,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_FR,
@@ -25674,7 +25674,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_FR,
@@ -25702,7 +25702,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_FR,
@@ -25732,7 +25732,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_FR,
@@ -25746,7 +25746,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_FR,
@@ -25760,7 +25760,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_FR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_FR,
@@ -25775,7 +25775,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_FR,
@@ -25789,7 +25789,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_FR,
@@ -25812,7 +25812,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_FR,
@@ -25835,7 +25835,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_FR,
@@ -25858,7 +25858,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_FR,
@@ -25881,7 +25881,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_FR,
@@ -25904,7 +25904,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_FR,
@@ -25927,7 +25927,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_FR,
@@ -25950,7 +25950,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_FR,
@@ -25973,7 +25973,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_FR,
@@ -25996,7 +25996,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_FR,
@@ -26019,7 +26019,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_FR,
@@ -26042,7 +26042,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_FR,
@@ -26065,7 +26065,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_FR,
@@ -26088,7 +26088,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_FR,
@@ -26111,7 +26111,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_FR,
@@ -26134,7 +26134,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_FR,
@@ -26157,7 +26157,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_FR,
@@ -26180,7 +26180,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_FR,
@@ -26203,7 +26203,7 @@ struct retro_core_option_v2_definition option_defs_fr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_FR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_FR,
@@ -26477,7 +26477,7 @@ struct retro_core_option_v2_category option_cats_gl[] = {
 };
 struct retro_core_option_v2_definition option_defs_gl[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_GL,
@@ -26498,7 +26498,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_GL,
@@ -26514,7 +26514,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_GL,
@@ -26528,7 +26528,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_GL,
@@ -26542,7 +26542,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_GL,
@@ -26556,7 +26556,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_GL,
@@ -26575,7 +26575,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_GL,
@@ -26591,7 +26591,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_GL,
@@ -26607,7 +26607,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_GL,
@@ -26623,7 +26623,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_GL,
@@ -26639,7 +26639,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_GL,
@@ -26654,7 +26654,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_GL,
@@ -26668,7 +26668,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_GL,
@@ -26685,7 +26685,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_GL,
@@ -26699,7 +26699,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_GL,
@@ -26713,7 +26713,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_GL,
@@ -26728,7 +26728,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_GL,
@@ -26756,7 +26756,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_GL,
@@ -26772,7 +26772,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_GL,
@@ -26787,7 +26787,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_GL,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -26810,7 +26810,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_GL,
@@ -26824,7 +26824,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_GL,
@@ -26841,7 +26841,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_GL,
@@ -26872,7 +26872,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_GL,
@@ -26925,7 +26925,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_GL,
@@ -26978,7 +26978,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_GL,
@@ -27011,7 +27011,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_GL,
@@ -27045,7 +27045,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_GL,
@@ -27078,7 +27078,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_GL,
@@ -27111,7 +27111,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_GL,
@@ -27145,7 +27145,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_GL,
@@ -27159,7 +27159,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_GL,
@@ -27173,7 +27173,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_GL,
@@ -27187,7 +27187,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_GL,
@@ -27201,7 +27201,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_GL,
@@ -27215,7 +27215,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_GL,
@@ -27243,7 +27243,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_GL,
@@ -27273,7 +27273,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_GL,
@@ -27287,7 +27287,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_GL,
@@ -27301,7 +27301,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_GL,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_GL,
@@ -27316,7 +27316,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_GL,
@@ -27330,7 +27330,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_GL,
@@ -27353,7 +27353,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_GL,
@@ -27376,7 +27376,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_GL,
@@ -27399,7 +27399,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_GL,
@@ -27422,7 +27422,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_GL,
@@ -27445,7 +27445,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_GL,
@@ -27468,7 +27468,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_GL,
@@ -27491,7 +27491,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_GL,
@@ -27514,7 +27514,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_GL,
@@ -27537,7 +27537,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_GL,
@@ -27560,7 +27560,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_GL,
@@ -27583,7 +27583,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_GL,
@@ -27606,7 +27606,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_GL,
@@ -27629,7 +27629,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_GL,
@@ -27652,7 +27652,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_GL,
@@ -27675,7 +27675,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_GL,
@@ -27698,7 +27698,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_GL,
@@ -27721,7 +27721,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_GL,
@@ -27744,7 +27744,7 @@ struct retro_core_option_v2_definition option_defs_gl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_GL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_GL,
@@ -28018,7 +28018,7 @@ struct retro_core_option_v2_category option_cats_he[] = {
 };
 struct retro_core_option_v2_definition option_defs_he[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_HE,
@@ -28039,7 +28039,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_HE,
@@ -28055,7 +28055,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_HE,
@@ -28069,7 +28069,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_HE,
@@ -28083,7 +28083,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_HE,
@@ -28097,7 +28097,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_HE,
@@ -28116,7 +28116,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_HE,
@@ -28132,7 +28132,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_HE,
@@ -28148,7 +28148,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_HE,
@@ -28164,7 +28164,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_HE,
@@ -28180,7 +28180,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_HE,
@@ -28195,7 +28195,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_HE,
@@ -28209,7 +28209,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_HE,
@@ -28226,7 +28226,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_HE,
@@ -28240,7 +28240,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_HE,
@@ -28254,7 +28254,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_HE,
@@ -28269,7 +28269,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_HE,
@@ -28297,7 +28297,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_HE,
@@ -28313,7 +28313,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_HE,
@@ -28328,7 +28328,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_HE,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -28351,7 +28351,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_HE,
@@ -28365,7 +28365,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_HE,
@@ -28382,7 +28382,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_HE,
@@ -28413,7 +28413,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_HE,
@@ -28466,7 +28466,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_HE,
@@ -28519,7 +28519,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_HE,
@@ -28552,7 +28552,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_HE,
@@ -28586,7 +28586,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_HE,
@@ -28619,7 +28619,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_HE,
@@ -28652,7 +28652,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_HE,
@@ -28686,7 +28686,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_HE,
@@ -28700,7 +28700,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_HE,
@@ -28714,7 +28714,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_HE,
@@ -28728,7 +28728,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_HE,
@@ -28742,7 +28742,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_HE,
@@ -28756,7 +28756,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_HE,
@@ -28784,7 +28784,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_HE,
@@ -28814,7 +28814,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HE,
@@ -28828,7 +28828,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_HE,
@@ -28842,7 +28842,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_HE,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_HE,
@@ -28857,7 +28857,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_HE,
@@ -28871,7 +28871,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_HE,
@@ -28894,7 +28894,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_HE,
@@ -28917,7 +28917,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_HE,
@@ -28940,7 +28940,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_HE,
@@ -28963,7 +28963,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_HE,
@@ -28986,7 +28986,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_HE,
@@ -29009,7 +29009,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_HE,
@@ -29032,7 +29032,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_HE,
@@ -29055,7 +29055,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_HE,
@@ -29078,7 +29078,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_HE,
@@ -29101,7 +29101,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_HE,
@@ -29124,7 +29124,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_HE,
@@ -29147,7 +29147,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_HE,
@@ -29170,7 +29170,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_HE,
@@ -29193,7 +29193,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_HE,
@@ -29216,7 +29216,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_HE,
@@ -29239,7 +29239,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_HE,
@@ -29262,7 +29262,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_HE,
@@ -29285,7 +29285,7 @@ struct retro_core_option_v2_definition option_defs_he[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_HE,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_HE,
@@ -29321,7 +29321,7 @@ struct retro_core_options_v2 options_he = {
 #define CATEGORY_SYSTEM_INFO_0_HR NULL
 #define CATEGORY_VIDEO_LABEL_HR NULL
 #define CATEGORY_VIDEO_INFO_0_HR NULL
-#define CATEGORY_AUDIO_LABEL_HR NULL
+#define CATEGORY_AUDIO_LABEL_HR "Zvuk"
 #define CATEGORY_AUDIO_INFO_0_HR NULL
 #define CATEGORY_INPUT_LABEL_HR NULL
 #define CATEGORY_INPUT_INFO_0_HR NULL
@@ -29559,7 +29559,7 @@ struct retro_core_option_v2_category option_cats_hr[] = {
 };
 struct retro_core_option_v2_definition option_defs_hr[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_HR,
@@ -29580,7 +29580,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_HR,
@@ -29596,7 +29596,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_HR,
@@ -29610,7 +29610,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_HR,
@@ -29624,7 +29624,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_HR,
@@ -29638,7 +29638,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_HR,
@@ -29657,7 +29657,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_HR,
@@ -29673,7 +29673,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_HR,
@@ -29689,7 +29689,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_HR,
@@ -29705,7 +29705,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_HR,
@@ -29721,7 +29721,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_HR,
@@ -29736,7 +29736,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_HR,
@@ -29750,7 +29750,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_HR,
@@ -29767,7 +29767,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_HR,
@@ -29781,7 +29781,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_HR,
@@ -29795,7 +29795,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_HR,
@@ -29810,7 +29810,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_HR,
@@ -29838,7 +29838,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_HR,
@@ -29854,7 +29854,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_HR,
@@ -29869,7 +29869,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_HR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -29892,7 +29892,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_HR,
@@ -29906,7 +29906,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_HR,
@@ -29923,7 +29923,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_HR,
@@ -29954,7 +29954,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_HR,
@@ -30007,7 +30007,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_HR,
@@ -30060,7 +30060,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_HR,
@@ -30093,7 +30093,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_HR,
@@ -30127,7 +30127,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_HR,
@@ -30160,7 +30160,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_HR,
@@ -30193,7 +30193,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_HR,
@@ -30227,7 +30227,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_HR,
@@ -30241,7 +30241,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_HR,
@@ -30255,7 +30255,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_HR,
@@ -30269,7 +30269,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_HR,
@@ -30283,7 +30283,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_HR,
@@ -30297,7 +30297,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_HR,
@@ -30325,7 +30325,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_HR,
@@ -30355,7 +30355,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HR,
@@ -30369,7 +30369,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_HR,
@@ -30383,7 +30383,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_HR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_HR,
@@ -30398,7 +30398,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_HR,
@@ -30412,7 +30412,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_HR,
@@ -30435,7 +30435,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_HR,
@@ -30458,7 +30458,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_HR,
@@ -30481,7 +30481,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_HR,
@@ -30504,7 +30504,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_HR,
@@ -30527,7 +30527,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_HR,
@@ -30550,7 +30550,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_HR,
@@ -30573,7 +30573,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_HR,
@@ -30596,7 +30596,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_HR,
@@ -30619,7 +30619,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_HR,
@@ -30642,7 +30642,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_HR,
@@ -30665,7 +30665,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_HR,
@@ -30688,7 +30688,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_HR,
@@ -30711,7 +30711,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_HR,
@@ -30734,7 +30734,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_HR,
@@ -30757,7 +30757,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_HR,
@@ -30780,7 +30780,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_HR,
@@ -30803,7 +30803,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_HR,
@@ -30826,7 +30826,7 @@ struct retro_core_option_v2_definition option_defs_hr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_HR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_HR,
@@ -31100,7 +31100,7 @@ struct retro_core_option_v2_category option_cats_hu[] = {
 };
 struct retro_core_option_v2_definition option_defs_hu[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_HU,
@@ -31121,7 +31121,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_HU,
@@ -31137,7 +31137,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_HU,
@@ -31151,7 +31151,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_HU,
@@ -31165,7 +31165,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_HU,
@@ -31179,7 +31179,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_HU,
@@ -31198,7 +31198,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_HU,
@@ -31214,7 +31214,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_HU,
@@ -31230,7 +31230,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_HU,
@@ -31246,7 +31246,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_HU,
@@ -31262,7 +31262,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_HU,
@@ -31277,7 +31277,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_HU,
@@ -31291,7 +31291,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_HU,
@@ -31308,7 +31308,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_HU,
@@ -31322,7 +31322,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_HU,
@@ -31336,7 +31336,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_HU,
@@ -31351,7 +31351,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_HU,
@@ -31379,7 +31379,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_HU,
@@ -31395,7 +31395,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_HU,
@@ -31410,7 +31410,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_HU,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -31433,7 +31433,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_HU,
@@ -31447,7 +31447,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_HU,
@@ -31464,7 +31464,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_HU,
@@ -31495,7 +31495,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_HU,
@@ -31548,7 +31548,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_HU,
@@ -31601,7 +31601,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_HU,
@@ -31634,7 +31634,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_HU,
@@ -31668,7 +31668,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_HU,
@@ -31701,7 +31701,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_HU,
@@ -31734,7 +31734,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_HU,
@@ -31768,7 +31768,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_HU,
@@ -31782,7 +31782,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_HU,
@@ -31796,7 +31796,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_HU,
@@ -31810,7 +31810,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_HU,
@@ -31824,7 +31824,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_HU,
@@ -31838,7 +31838,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_HU,
@@ -31866,7 +31866,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_HU,
@@ -31896,7 +31896,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_HU,
@@ -31910,7 +31910,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_HU,
@@ -31924,7 +31924,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_HU,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_HU,
@@ -31939,7 +31939,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_HU,
@@ -31953,7 +31953,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_HU,
@@ -31976,7 +31976,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_HU,
@@ -31999,7 +31999,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_HU,
@@ -32022,7 +32022,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_HU,
@@ -32045,7 +32045,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_HU,
@@ -32068,7 +32068,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_HU,
@@ -32091,7 +32091,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_HU,
@@ -32114,7 +32114,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_HU,
@@ -32137,7 +32137,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_HU,
@@ -32160,7 +32160,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_HU,
@@ -32183,7 +32183,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_HU,
@@ -32206,7 +32206,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_HU,
@@ -32229,7 +32229,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_HU,
@@ -32252,7 +32252,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_HU,
@@ -32275,7 +32275,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_HU,
@@ -32298,7 +32298,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_HU,
@@ -32321,7 +32321,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_HU,
@@ -32344,7 +32344,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_HU,
@@ -32367,7 +32367,7 @@ struct retro_core_option_v2_definition option_defs_hu[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_HU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_HU,
@@ -32641,7 +32641,7 @@ struct retro_core_option_v2_category option_cats_id[] = {
 };
 struct retro_core_option_v2_definition option_defs_id[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_ID,
@@ -32662,7 +32662,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_ID,
@@ -32678,7 +32678,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_ID,
@@ -32692,7 +32692,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_ID,
@@ -32706,7 +32706,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_ID,
@@ -32720,7 +32720,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_ID,
@@ -32739,7 +32739,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_ID,
@@ -32755,7 +32755,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_ID,
@@ -32771,7 +32771,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_ID,
@@ -32787,7 +32787,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_ID,
@@ -32803,7 +32803,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_ID,
@@ -32818,7 +32818,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_ID,
@@ -32832,7 +32832,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_ID,
@@ -32849,7 +32849,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_ID,
@@ -32863,7 +32863,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_ID,
@@ -32877,7 +32877,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_ID,
@@ -32892,7 +32892,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_ID,
@@ -32920,7 +32920,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_ID,
@@ -32936,7 +32936,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_ID,
@@ -32951,7 +32951,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_ID,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -32974,7 +32974,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_ID,
@@ -32988,7 +32988,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_ID,
@@ -33005,7 +33005,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_ID,
@@ -33036,7 +33036,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_ID,
@@ -33089,7 +33089,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_ID,
@@ -33142,7 +33142,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_ID,
@@ -33175,7 +33175,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_ID,
@@ -33209,7 +33209,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_ID,
@@ -33242,7 +33242,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_ID,
@@ -33275,7 +33275,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_ID,
@@ -33309,7 +33309,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_ID,
@@ -33323,7 +33323,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_ID,
@@ -33337,7 +33337,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_ID,
@@ -33351,7 +33351,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_ID,
@@ -33365,7 +33365,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_ID,
@@ -33379,7 +33379,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_ID,
@@ -33407,7 +33407,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_ID,
@@ -33437,7 +33437,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_ID,
@@ -33451,7 +33451,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_ID,
@@ -33465,7 +33465,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_ID,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_ID,
@@ -33480,7 +33480,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_ID,
@@ -33494,7 +33494,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_ID,
@@ -33517,7 +33517,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_ID,
@@ -33540,7 +33540,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_ID,
@@ -33563,7 +33563,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_ID,
@@ -33586,7 +33586,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_ID,
@@ -33609,7 +33609,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_ID,
@@ -33632,7 +33632,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_ID,
@@ -33655,7 +33655,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_ID,
@@ -33678,7 +33678,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_ID,
@@ -33701,7 +33701,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_ID,
@@ -33724,7 +33724,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_ID,
@@ -33747,7 +33747,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_ID,
@@ -33770,7 +33770,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_ID,
@@ -33793,7 +33793,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_ID,
@@ -33816,7 +33816,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_ID,
@@ -33839,7 +33839,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_ID,
@@ -33862,7 +33862,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_ID,
@@ -33885,7 +33885,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_ID,
@@ -33908,7 +33908,7 @@ struct retro_core_option_v2_definition option_defs_id[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_ID,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_ID,
@@ -34182,7 +34182,7 @@ struct retro_core_option_v2_category option_cats_it[] = {
 };
 struct retro_core_option_v2_definition option_defs_it[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_IT,
@@ -34203,7 +34203,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_IT,
@@ -34219,7 +34219,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_IT,
@@ -34233,7 +34233,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_IT,
@@ -34247,7 +34247,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_IT,
@@ -34261,7 +34261,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_IT,
@@ -34280,7 +34280,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_IT,
@@ -34296,7 +34296,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_IT,
@@ -34312,7 +34312,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_IT,
@@ -34328,7 +34328,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_IT,
@@ -34344,7 +34344,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_IT,
@@ -34359,7 +34359,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_IT,
@@ -34373,7 +34373,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_IT,
@@ -34390,7 +34390,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_IT,
@@ -34404,7 +34404,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_IT,
@@ -34418,7 +34418,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_IT,
@@ -34433,7 +34433,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_IT,
@@ -34461,7 +34461,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_IT,
@@ -34477,7 +34477,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_IT,
@@ -34492,7 +34492,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_IT,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -34515,7 +34515,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_IT,
@@ -34529,7 +34529,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_IT,
@@ -34546,7 +34546,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_IT,
@@ -34577,7 +34577,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_IT,
@@ -34630,7 +34630,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_IT,
@@ -34683,7 +34683,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_IT,
@@ -34716,7 +34716,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_IT,
@@ -34750,7 +34750,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_IT,
@@ -34783,7 +34783,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_IT,
@@ -34816,7 +34816,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_IT,
@@ -34850,7 +34850,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_IT,
@@ -34864,7 +34864,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_IT,
@@ -34878,7 +34878,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_IT,
@@ -34892,7 +34892,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_IT,
@@ -34906,7 +34906,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_IT,
@@ -34920,7 +34920,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_IT,
@@ -34948,7 +34948,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_IT,
@@ -34978,7 +34978,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_IT,
@@ -34992,7 +34992,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_IT,
@@ -35006,7 +35006,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_IT,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_IT,
@@ -35021,7 +35021,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_IT,
@@ -35035,7 +35035,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_IT,
@@ -35058,7 +35058,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_IT,
@@ -35081,7 +35081,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_IT,
@@ -35104,7 +35104,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_IT,
@@ -35127,7 +35127,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_IT,
@@ -35150,7 +35150,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_IT,
@@ -35173,7 +35173,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_IT,
@@ -35196,7 +35196,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_IT,
@@ -35219,7 +35219,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_IT,
@@ -35242,7 +35242,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_IT,
@@ -35265,7 +35265,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_IT,
@@ -35288,7 +35288,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_IT,
@@ -35311,7 +35311,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_IT,
@@ -35334,7 +35334,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_IT,
@@ -35357,7 +35357,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_IT,
@@ -35380,7 +35380,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_IT,
@@ -35403,7 +35403,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_IT,
@@ -35426,7 +35426,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_IT,
@@ -35449,7 +35449,7 @@ struct retro_core_option_v2_definition option_defs_it[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_IT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_IT,
@@ -35486,7 +35486,7 @@ struct retro_core_options_v2 options_it = {
 #define CATEGORY_VIDEO_LABEL_JA "ビデオ"
 #define CATEGORY_VIDEO_INFO_0_JA "アスペクト比、表示トリミング、ビデオフィルター、フレームスキップの設定を変更します。"
 #define CATEGORY_AUDIO_LABEL_JA "オーディオ"
-#define CATEGORY_AUDIO_INFO_0_JA "オーディオデバイスの設定を変更する。"
+#define CATEGORY_AUDIO_INFO_0_JA "オーディオデバイスの設定を変更します。"
 #define CATEGORY_INPUT_LABEL_JA "入力"
 #define CATEGORY_INPUT_INFO_0_JA "ライトガンやマウスの入力設定を変更します。"
 #define CATEGORY_HACKS_LABEL_JA "エミュレーションハック"
@@ -35553,11 +35553,11 @@ struct retro_core_options_v2 options_it = {
 #define OPTION_VAL_LEFT_RIGHT_BORDERS_JA NULL
 #define GENESIS_PLUS_GX_GG_EXTRA_LABEL_JA NULL
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_JA NULL
-#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_JA NULL
+#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_JA "Blragg NTSC フィルター"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_JA NULL
 #define OPTION_VAL_MONOCHROME_JA "モノクローム"
 #define OPTION_VAL_COMPOSITE_JA "コンポジット"
-#define OPTION_VAL_SVIDEO_JA NULL
+#define OPTION_VAL_SVIDEO_JA "S端子"
 #define OPTION_VAL_RGB_JA NULL
 #define GENESIS_PLUS_GX_LCD_FILTER_LABEL_JA NULL
 #define GENESIS_PLUS_GX_LCD_FILTER_INFO_0_JA NULL
@@ -35590,9 +35590,9 @@ struct retro_core_options_v2 options_it = {
 #define OPTION_VAL_MONO_JA "モノラル"
 #define GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_JA "オーディオフィルタ"
 #define GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_JA NULL
-#define OPTION_VAL_LOW_PASS_JA NULL
+#define OPTION_VAL_LOW_PASS_JA "ローパス"
 #define OPTION_VAL_EQ_JA NULL
-#define GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_JA NULL
+#define GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_JA "ローパスフィルター %"
 #define GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_JA NULL
 #define GENESIS_PLUS_GX_PSG_PREAMP_LABEL_JA "PSG プリアンプレベル"
 #define GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_JA NULL
@@ -35602,16 +35602,16 @@ struct retro_core_options_v2 options_it = {
 #define GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_JA NULL
 #define GENESIS_PLUS_GX_PCM_VOLUME_LABEL_JA "PCM音量"
 #define GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_JA NULL
-#define GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_JA NULL
+#define GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_JA "EQ 低"
 #define GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_JA NULL
-#define GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_JA NULL
+#define GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_JA "EQ 中"
 #define GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_JA NULL
-#define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_JA NULL
+#define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_JA "EQ 高"
 #define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_JA NULL
-#define GENESIS_PLUS_GX_GUN_INPUT_LABEL_JA NULL
+#define GENESIS_PLUS_GX_GUN_INPUT_LABEL_JA "ライトガン入力"
 #define GENESIS_PLUS_GX_GUN_INPUT_INFO_0_JA NULL
 #define OPTION_VAL_LIGHTGUN_JA "ライトガン"
-#define OPTION_VAL_TOUCHSCREEN_JA NULL
+#define OPTION_VAL_TOUCHSCREEN_JA "タッチスクリーン"
 #define GENESIS_PLUS_GX_GUN_CURSOR_LABEL_JA NULL
 #define GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_JA NULL
 #define GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_JA NULL
@@ -35723,7 +35723,7 @@ struct retro_core_option_v2_category option_cats_ja[] = {
 };
 struct retro_core_option_v2_definition option_defs_ja[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_JA,
@@ -35744,7 +35744,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_JA,
@@ -35760,7 +35760,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_JA,
@@ -35774,7 +35774,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_JA,
@@ -35788,7 +35788,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_JA,
@@ -35802,7 +35802,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_JA,
@@ -35821,7 +35821,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_JA,
@@ -35837,7 +35837,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_JA,
@@ -35853,7 +35853,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_JA,
@@ -35869,7 +35869,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_JA,
@@ -35885,7 +35885,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_JA,
@@ -35900,7 +35900,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_JA,
@@ -35914,7 +35914,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_JA,
@@ -35931,7 +35931,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_JA,
@@ -35945,7 +35945,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_JA,
@@ -35959,7 +35959,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_JA,
@@ -35974,7 +35974,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_JA,
@@ -36002,7 +36002,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_JA,
@@ -36018,7 +36018,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_JA,
@@ -36033,7 +36033,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_JA,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -36056,7 +36056,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_JA,
@@ -36070,7 +36070,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_JA,
@@ -36087,7 +36087,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_JA,
@@ -36118,7 +36118,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_JA,
@@ -36171,7 +36171,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_JA,
@@ -36224,7 +36224,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_JA,
@@ -36257,7 +36257,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_JA,
@@ -36291,7 +36291,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_JA,
@@ -36324,7 +36324,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_JA,
@@ -36357,7 +36357,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_JA,
@@ -36391,7 +36391,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_JA,
@@ -36405,7 +36405,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_JA,
@@ -36419,7 +36419,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_JA,
@@ -36433,7 +36433,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_JA,
@@ -36447,7 +36447,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_JA,
@@ -36461,7 +36461,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_JA,
@@ -36489,7 +36489,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_JA,
@@ -36519,7 +36519,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_JA,
@@ -36533,7 +36533,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_JA,
@@ -36547,7 +36547,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_JA,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_JA,
@@ -36562,7 +36562,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_JA,
@@ -36576,7 +36576,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_JA,
@@ -36599,7 +36599,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_JA,
@@ -36622,7 +36622,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_JA,
@@ -36645,7 +36645,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_JA,
@@ -36668,7 +36668,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_JA,
@@ -36691,7 +36691,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_JA,
@@ -36714,7 +36714,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_JA,
@@ -36737,7 +36737,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_JA,
@@ -36760,7 +36760,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_JA,
@@ -36783,7 +36783,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_JA,
@@ -36806,7 +36806,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_JA,
@@ -36829,7 +36829,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_JA,
@@ -36852,7 +36852,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_JA,
@@ -36875,7 +36875,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_JA,
@@ -36898,7 +36898,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_JA,
@@ -36921,7 +36921,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_JA,
@@ -36944,7 +36944,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_JA,
@@ -36967,7 +36967,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_JA,
@@ -36990,7 +36990,7 @@ struct retro_core_option_v2_definition option_defs_ja[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_JA,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_JA,
@@ -37162,7 +37162,7 @@ struct retro_core_options_v2 options_ja = {
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_KO "타일 수직 스크롤 향상"
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_KO "16픽셀 2셀 대신 인접한 셀의 세로 스크롤 값을 평균내어 각각의 개별 셀이 수직 스크롤 되도록 해줍니다. 이 핵은 2셀 세로 스크롤 모드를 사용하는 소수의 게임에만 적용됩니다."
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_KO "타일 수직 스크롤 향상 제한"
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_KO NULL
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_KO "타일별 세로 스크롤 향상을 활성화한 경우에만 해당합니다. 세로 스크롤 향상 한도를 조정합니다. 인접한 타일 간의 세로 스크롤 차이가 이 제한보다 크면 향상 기능이 비활성화됩니다."
 #define GENESIS_PLUS_GX_OVERCLOCK_LABEL_KO "CPU 속도"
 #define GENESIS_PLUS_GX_OVERCLOCK_INFO_0_KO "에뮬레이트되는 CPU를 오버클럭합니다. 느려지는 현상을 줄일 수 있지만 버그가 발생할 수 있습니다."
 #define OPTION_VAL_100_KO NULL
@@ -37264,7 +37264,7 @@ struct retro_core_option_v2_category option_cats_ko[] = {
 };
 struct retro_core_option_v2_definition option_defs_ko[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_KO,
@@ -37285,7 +37285,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_KO,
@@ -37301,7 +37301,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_KO,
@@ -37315,7 +37315,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_KO,
@@ -37329,7 +37329,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_KO,
@@ -37343,7 +37343,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_KO,
@@ -37362,7 +37362,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_KO,
@@ -37378,7 +37378,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_KO,
@@ -37394,7 +37394,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_KO,
@@ -37410,7 +37410,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_KO,
@@ -37426,7 +37426,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_KO,
@@ -37441,7 +37441,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_KO,
@@ -37455,7 +37455,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_KO,
@@ -37472,7 +37472,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_KO,
@@ -37486,7 +37486,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_KO,
@@ -37500,7 +37500,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_KO,
@@ -37515,7 +37515,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_KO,
@@ -37543,7 +37543,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_KO,
@@ -37559,7 +37559,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_KO,
@@ -37574,7 +37574,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_KO,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -37597,7 +37597,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_KO,
@@ -37611,7 +37611,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_KO,
@@ -37628,7 +37628,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_KO,
@@ -37659,7 +37659,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_KO,
@@ -37712,7 +37712,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_KO,
@@ -37765,7 +37765,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_KO,
@@ -37798,7 +37798,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_KO,
@@ -37832,7 +37832,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_KO,
@@ -37865,7 +37865,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_KO,
@@ -37898,7 +37898,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_KO,
@@ -37932,7 +37932,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_KO,
@@ -37946,7 +37946,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_KO,
@@ -37960,7 +37960,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_KO,
@@ -37974,7 +37974,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_KO,
@@ -37988,7 +37988,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_KO,
@@ -38002,7 +38002,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_KO,
@@ -38030,7 +38030,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_KO,
@@ -38060,7 +38060,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_KO,
@@ -38074,7 +38074,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_KO,
@@ -38088,7 +38088,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_KO,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_KO,
@@ -38103,7 +38103,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_KO,
@@ -38117,7 +38117,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_KO,
@@ -38140,7 +38140,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_KO,
@@ -38163,7 +38163,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_KO,
@@ -38186,7 +38186,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_KO,
@@ -38209,7 +38209,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_KO,
@@ -38232,7 +38232,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_KO,
@@ -38255,7 +38255,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_KO,
@@ -38278,7 +38278,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_KO,
@@ -38301,7 +38301,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_KO,
@@ -38324,7 +38324,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_KO,
@@ -38347,7 +38347,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_KO,
@@ -38370,7 +38370,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_KO,
@@ -38393,7 +38393,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_KO,
@@ -38416,7 +38416,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_KO,
@@ -38439,7 +38439,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_KO,
@@ -38462,7 +38462,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_KO,
@@ -38485,7 +38485,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_KO,
@@ -38508,7 +38508,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_KO,
@@ -38531,7 +38531,7 @@ struct retro_core_option_v2_definition option_defs_ko[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_KO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_KO,
@@ -38805,7 +38805,7 @@ struct retro_core_option_v2_category option_cats_nl[] = {
 };
 struct retro_core_option_v2_definition option_defs_nl[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_NL,
@@ -38826,7 +38826,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_NL,
@@ -38842,7 +38842,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_NL,
@@ -38856,7 +38856,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_NL,
@@ -38870,7 +38870,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_NL,
@@ -38884,7 +38884,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_NL,
@@ -38903,7 +38903,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_NL,
@@ -38919,7 +38919,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_NL,
@@ -38935,7 +38935,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_NL,
@@ -38951,7 +38951,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_NL,
@@ -38967,7 +38967,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_NL,
@@ -38982,7 +38982,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_NL,
@@ -38996,7 +38996,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_NL,
@@ -39013,7 +39013,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_NL,
@@ -39027,7 +39027,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_NL,
@@ -39041,7 +39041,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_NL,
@@ -39056,7 +39056,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_NL,
@@ -39084,7 +39084,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_NL,
@@ -39100,7 +39100,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_NL,
@@ -39115,7 +39115,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_NL,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -39138,7 +39138,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_NL,
@@ -39152,7 +39152,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_NL,
@@ -39169,7 +39169,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_NL,
@@ -39200,7 +39200,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_NL,
@@ -39253,7 +39253,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_NL,
@@ -39306,7 +39306,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_NL,
@@ -39339,7 +39339,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_NL,
@@ -39373,7 +39373,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_NL,
@@ -39406,7 +39406,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_NL,
@@ -39439,7 +39439,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_NL,
@@ -39473,7 +39473,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_NL,
@@ -39487,7 +39487,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_NL,
@@ -39501,7 +39501,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_NL,
@@ -39515,7 +39515,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_NL,
@@ -39529,7 +39529,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_NL,
@@ -39543,7 +39543,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_NL,
@@ -39571,7 +39571,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_NL,
@@ -39601,7 +39601,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_NL,
@@ -39615,7 +39615,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_NL,
@@ -39629,7 +39629,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_NL,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_NL,
@@ -39644,7 +39644,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_NL,
@@ -39658,7 +39658,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_NL,
@@ -39681,7 +39681,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_NL,
@@ -39704,7 +39704,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_NL,
@@ -39727,7 +39727,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_NL,
@@ -39750,7 +39750,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_NL,
@@ -39773,7 +39773,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_NL,
@@ -39796,7 +39796,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_NL,
@@ -39819,7 +39819,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_NL,
@@ -39842,7 +39842,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_NL,
@@ -39865,7 +39865,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_NL,
@@ -39888,7 +39888,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_NL,
@@ -39911,7 +39911,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_NL,
@@ -39934,7 +39934,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_NL,
@@ -39957,7 +39957,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_NL,
@@ -39980,7 +39980,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_NL,
@@ -40003,7 +40003,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_NL,
@@ -40026,7 +40026,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_NL,
@@ -40049,7 +40049,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_NL,
@@ -40072,7 +40072,7 @@ struct retro_core_option_v2_definition option_defs_nl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_NL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_NL,
@@ -40346,7 +40346,7 @@ struct retro_core_option_v2_category option_cats_no[] = {
 };
 struct retro_core_option_v2_definition option_defs_no[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_NO,
@@ -40367,7 +40367,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_NO,
@@ -40383,7 +40383,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_NO,
@@ -40397,7 +40397,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_NO,
@@ -40411,7 +40411,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_NO,
@@ -40425,7 +40425,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_NO,
@@ -40444,7 +40444,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_NO,
@@ -40460,7 +40460,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_NO,
@@ -40476,7 +40476,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_NO,
@@ -40492,7 +40492,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_NO,
@@ -40508,7 +40508,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_NO,
@@ -40523,7 +40523,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_NO,
@@ -40537,7 +40537,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_NO,
@@ -40554,7 +40554,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_NO,
@@ -40568,7 +40568,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_NO,
@@ -40582,7 +40582,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_NO,
@@ -40597,7 +40597,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_NO,
@@ -40625,7 +40625,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_NO,
@@ -40641,7 +40641,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_NO,
@@ -40656,7 +40656,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_NO,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -40679,7 +40679,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_NO,
@@ -40693,7 +40693,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_NO,
@@ -40710,7 +40710,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_NO,
@@ -40741,7 +40741,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_NO,
@@ -40794,7 +40794,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_NO,
@@ -40847,7 +40847,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_NO,
@@ -40880,7 +40880,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_NO,
@@ -40914,7 +40914,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_NO,
@@ -40947,7 +40947,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_NO,
@@ -40980,7 +40980,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_NO,
@@ -41014,7 +41014,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_NO,
@@ -41028,7 +41028,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_NO,
@@ -41042,7 +41042,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_NO,
@@ -41056,7 +41056,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_NO,
@@ -41070,7 +41070,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_NO,
@@ -41084,7 +41084,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_NO,
@@ -41112,7 +41112,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_NO,
@@ -41142,7 +41142,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_NO,
@@ -41156,7 +41156,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_NO,
@@ -41170,7 +41170,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_NO,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_NO,
@@ -41185,7 +41185,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_NO,
@@ -41199,7 +41199,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_NO,
@@ -41222,7 +41222,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_NO,
@@ -41245,7 +41245,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_NO,
@@ -41268,7 +41268,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_NO,
@@ -41291,7 +41291,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_NO,
@@ -41314,7 +41314,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_NO,
@@ -41337,7 +41337,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_NO,
@@ -41360,7 +41360,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_NO,
@@ -41383,7 +41383,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_NO,
@@ -41406,7 +41406,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_NO,
@@ -41429,7 +41429,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_NO,
@@ -41452,7 +41452,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_NO,
@@ -41475,7 +41475,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_NO,
@@ -41498,7 +41498,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_NO,
@@ -41521,7 +41521,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_NO,
@@ -41544,7 +41544,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_NO,
@@ -41567,7 +41567,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_NO,
@@ -41590,7 +41590,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_NO,
@@ -41613,7 +41613,7 @@ struct retro_core_option_v2_definition option_defs_no[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_NO,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_NO,
@@ -41887,7 +41887,7 @@ struct retro_core_option_v2_category option_cats_or[] = {
 };
 struct retro_core_option_v2_definition option_defs_or[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_OR,
@@ -41908,7 +41908,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_OR,
@@ -41924,7 +41924,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_OR,
@@ -41938,7 +41938,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_OR,
@@ -41952,7 +41952,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_OR,
@@ -41966,7 +41966,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_OR,
@@ -41985,7 +41985,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_OR,
@@ -42001,7 +42001,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_OR,
@@ -42017,7 +42017,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_OR,
@@ -42033,7 +42033,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_OR,
@@ -42049,7 +42049,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_OR,
@@ -42064,7 +42064,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_OR,
@@ -42078,7 +42078,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_OR,
@@ -42095,7 +42095,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_OR,
@@ -42109,7 +42109,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_OR,
@@ -42123,7 +42123,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_OR,
@@ -42138,7 +42138,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_OR,
@@ -42166,7 +42166,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_OR,
@@ -42182,7 +42182,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_OR,
@@ -42197,7 +42197,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_OR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -42220,7 +42220,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_OR,
@@ -42234,7 +42234,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_OR,
@@ -42251,7 +42251,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_OR,
@@ -42282,7 +42282,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_OR,
@@ -42335,7 +42335,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_OR,
@@ -42388,7 +42388,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_OR,
@@ -42421,7 +42421,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_OR,
@@ -42455,7 +42455,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_OR,
@@ -42488,7 +42488,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_OR,
@@ -42521,7 +42521,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_OR,
@@ -42555,7 +42555,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_OR,
@@ -42569,7 +42569,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_OR,
@@ -42583,7 +42583,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_OR,
@@ -42597,7 +42597,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_OR,
@@ -42611,7 +42611,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_OR,
@@ -42625,7 +42625,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_OR,
@@ -42653,7 +42653,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_OR,
@@ -42683,7 +42683,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_OR,
@@ -42697,7 +42697,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_OR,
@@ -42711,7 +42711,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_OR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_OR,
@@ -42726,7 +42726,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_OR,
@@ -42740,7 +42740,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_OR,
@@ -42763,7 +42763,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_OR,
@@ -42786,7 +42786,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_OR,
@@ -42809,7 +42809,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_OR,
@@ -42832,7 +42832,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_OR,
@@ -42855,7 +42855,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_OR,
@@ -42878,7 +42878,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_OR,
@@ -42901,7 +42901,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_OR,
@@ -42924,7 +42924,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_OR,
@@ -42947,7 +42947,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_OR,
@@ -42970,7 +42970,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_OR,
@@ -42993,7 +42993,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_OR,
@@ -43016,7 +43016,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_OR,
@@ -43039,7 +43039,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_OR,
@@ -43062,7 +43062,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_OR,
@@ -43085,7 +43085,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_OR,
@@ -43108,7 +43108,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_OR,
@@ -43131,7 +43131,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_OR,
@@ -43154,7 +43154,7 @@ struct retro_core_option_v2_definition option_defs_or[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_OR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_OR,
@@ -43428,7 +43428,7 @@ struct retro_core_option_v2_category option_cats_pl[] = {
 };
 struct retro_core_option_v2_definition option_defs_pl[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_PL,
@@ -43449,7 +43449,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_PL,
@@ -43465,7 +43465,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_PL,
@@ -43479,7 +43479,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_PL,
@@ -43493,7 +43493,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_PL,
@@ -43507,7 +43507,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_PL,
@@ -43526,7 +43526,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_PL,
@@ -43542,7 +43542,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_PL,
@@ -43558,7 +43558,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_PL,
@@ -43574,7 +43574,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_PL,
@@ -43590,7 +43590,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_PL,
@@ -43605,7 +43605,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_PL,
@@ -43619,7 +43619,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_PL,
@@ -43636,7 +43636,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_PL,
@@ -43650,7 +43650,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_PL,
@@ -43664,7 +43664,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_PL,
@@ -43679,7 +43679,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_PL,
@@ -43707,7 +43707,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_PL,
@@ -43723,7 +43723,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_PL,
@@ -43738,7 +43738,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_PL,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -43761,7 +43761,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_PL,
@@ -43775,7 +43775,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_PL,
@@ -43792,7 +43792,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_PL,
@@ -43823,7 +43823,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_PL,
@@ -43876,7 +43876,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_PL,
@@ -43929,7 +43929,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_PL,
@@ -43962,7 +43962,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_PL,
@@ -43996,7 +43996,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_PL,
@@ -44029,7 +44029,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_PL,
@@ -44062,7 +44062,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_PL,
@@ -44096,7 +44096,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_PL,
@@ -44110,7 +44110,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_PL,
@@ -44124,7 +44124,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_PL,
@@ -44138,7 +44138,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_PL,
@@ -44152,7 +44152,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_PL,
@@ -44166,7 +44166,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_PL,
@@ -44194,7 +44194,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_PL,
@@ -44224,7 +44224,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PL,
@@ -44238,7 +44238,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_PL,
@@ -44252,7 +44252,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_PL,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_PL,
@@ -44267,7 +44267,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_PL,
@@ -44281,7 +44281,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_PL,
@@ -44304,7 +44304,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_PL,
@@ -44327,7 +44327,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_PL,
@@ -44350,7 +44350,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_PL,
@@ -44373,7 +44373,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_PL,
@@ -44396,7 +44396,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_PL,
@@ -44419,7 +44419,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_PL,
@@ -44442,7 +44442,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_PL,
@@ -44465,7 +44465,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_PL,
@@ -44488,7 +44488,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_PL,
@@ -44511,7 +44511,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_PL,
@@ -44534,7 +44534,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_PL,
@@ -44557,7 +44557,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_PL,
@@ -44580,7 +44580,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_PL,
@@ -44603,7 +44603,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_PL,
@@ -44626,7 +44626,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_PL,
@@ -44649,7 +44649,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_PL,
@@ -44672,7 +44672,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_PL,
@@ -44695,7 +44695,7 @@ struct retro_core_option_v2_definition option_defs_pl[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_PL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_PL,
@@ -44799,7 +44799,7 @@ struct retro_core_options_v2 options_pl = {
 #define OPTION_VAL_LEFT_RIGHT_BORDERS_PT_BR "Bordas esquerda e direita"
 #define GENESIS_PLUS_GX_GG_EXTRA_LABEL_PT_BR "Tela estendida do Game Gear"
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_PT_BR "Força os títulos do Game Gear rodarem no modo 'SMS' com uma resolução aumentada de 256x192. Pode mostrar conteúdo adicional, mas geralmente exibe uma borda com dados corrompidos ou indesejados na imagem."
-#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_PT_BR "Filtro Blargg NTSC"
+#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_PT_BR "Filtro NTSC do Blargg"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_PT_BR "Aplica um filtro de vídeo para imitar vários sinais de TV NTSC."
 #define OPTION_VAL_MONOCHROME_PT_BR "Monocromático"
 #define OPTION_VAL_COMPOSITE_PT_BR "Composto"
@@ -44969,7 +44969,7 @@ struct retro_core_option_v2_category option_cats_pt_br[] = {
 };
 struct retro_core_option_v2_definition option_defs_pt_br[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_PT_BR,
@@ -44990,7 +44990,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_PT_BR,
@@ -45006,7 +45006,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_PT_BR,
@@ -45020,7 +45020,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_PT_BR,
@@ -45034,7 +45034,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_PT_BR,
@@ -45048,7 +45048,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_PT_BR,
@@ -45067,7 +45067,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_PT_BR,
@@ -45083,7 +45083,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_PT_BR,
@@ -45099,7 +45099,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_PT_BR,
@@ -45115,7 +45115,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_PT_BR,
@@ -45131,7 +45131,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_PT_BR,
@@ -45146,7 +45146,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_PT_BR,
@@ -45160,7 +45160,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_PT_BR,
@@ -45177,7 +45177,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_PT_BR,
@@ -45191,7 +45191,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_PT_BR,
@@ -45205,7 +45205,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_PT_BR,
@@ -45220,7 +45220,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_PT_BR,
@@ -45248,7 +45248,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_PT_BR,
@@ -45264,7 +45264,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_PT_BR,
@@ -45279,7 +45279,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_PT_BR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -45302,7 +45302,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_PT_BR,
@@ -45316,7 +45316,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_PT_BR,
@@ -45333,7 +45333,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_PT_BR,
@@ -45364,7 +45364,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_PT_BR,
@@ -45417,7 +45417,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_PT_BR,
@@ -45470,7 +45470,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_PT_BR,
@@ -45503,7 +45503,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_PT_BR,
@@ -45537,7 +45537,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_PT_BR,
@@ -45570,7 +45570,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_PT_BR,
@@ -45603,7 +45603,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_PT_BR,
@@ -45637,7 +45637,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_PT_BR,
@@ -45651,7 +45651,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_PT_BR,
@@ -45665,7 +45665,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_PT_BR,
@@ -45679,7 +45679,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_PT_BR,
@@ -45693,7 +45693,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_PT_BR,
@@ -45707,7 +45707,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_PT_BR,
@@ -45735,7 +45735,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_PT_BR,
@@ -45765,7 +45765,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PT_BR,
@@ -45779,7 +45779,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_PT_BR,
@@ -45793,7 +45793,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_PT_BR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_PT_BR,
@@ -45808,7 +45808,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_PT_BR,
@@ -45822,7 +45822,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_PT_BR,
@@ -45845,7 +45845,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_PT_BR,
@@ -45868,7 +45868,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_PT_BR,
@@ -45891,7 +45891,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_PT_BR,
@@ -45914,7 +45914,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_PT_BR,
@@ -45937,7 +45937,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_PT_BR,
@@ -45960,7 +45960,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_PT_BR,
@@ -45983,7 +45983,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_PT_BR,
@@ -46006,7 +46006,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_PT_BR,
@@ -46029,7 +46029,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_PT_BR,
@@ -46052,7 +46052,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_PT_BR,
@@ -46075,7 +46075,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_PT_BR,
@@ -46098,7 +46098,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_PT_BR,
@@ -46121,7 +46121,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_PT_BR,
@@ -46144,7 +46144,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_PT_BR,
@@ -46167,7 +46167,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_PT_BR,
@@ -46190,7 +46190,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_PT_BR,
@@ -46213,7 +46213,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_PT_BR,
@@ -46236,7 +46236,7 @@ struct retro_core_option_v2_definition option_defs_pt_br[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_PT_BR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_PT_BR,
@@ -46510,7 +46510,7 @@ struct retro_core_option_v2_category option_cats_pt_pt[] = {
 };
 struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_PT_PT,
@@ -46531,7 +46531,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_PT_PT,
@@ -46547,7 +46547,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_PT_PT,
@@ -46561,7 +46561,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_PT_PT,
@@ -46575,7 +46575,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_PT_PT,
@@ -46589,7 +46589,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_PT_PT,
@@ -46608,7 +46608,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_PT_PT,
@@ -46624,7 +46624,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_PT_PT,
@@ -46640,7 +46640,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_PT_PT,
@@ -46656,7 +46656,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_PT_PT,
@@ -46672,7 +46672,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_PT_PT,
@@ -46687,7 +46687,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_PT_PT,
@@ -46701,7 +46701,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_PT_PT,
@@ -46718,7 +46718,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_PT_PT,
@@ -46732,7 +46732,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_PT_PT,
@@ -46746,7 +46746,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_PT_PT,
@@ -46761,7 +46761,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_PT_PT,
@@ -46789,7 +46789,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_PT_PT,
@@ -46805,7 +46805,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_PT_PT,
@@ -46820,7 +46820,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_PT_PT,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -46843,7 +46843,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_PT_PT,
@@ -46857,7 +46857,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_PT_PT,
@@ -46874,7 +46874,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_PT_PT,
@@ -46905,7 +46905,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_PT_PT,
@@ -46958,7 +46958,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_PT_PT,
@@ -47011,7 +47011,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_PT_PT,
@@ -47044,7 +47044,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_PT_PT,
@@ -47078,7 +47078,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_PT_PT,
@@ -47111,7 +47111,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_PT_PT,
@@ -47144,7 +47144,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_PT_PT,
@@ -47178,7 +47178,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_PT_PT,
@@ -47192,7 +47192,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_PT_PT,
@@ -47206,7 +47206,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_PT_PT,
@@ -47220,7 +47220,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_PT_PT,
@@ -47234,7 +47234,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_PT_PT,
@@ -47248,7 +47248,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_PT_PT,
@@ -47276,7 +47276,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_PT_PT,
@@ -47306,7 +47306,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_PT_PT,
@@ -47320,7 +47320,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_PT_PT,
@@ -47334,7 +47334,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_PT_PT,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_PT_PT,
@@ -47349,7 +47349,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_PT_PT,
@@ -47363,7 +47363,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_PT_PT,
@@ -47386,7 +47386,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_PT_PT,
@@ -47409,7 +47409,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_PT_PT,
@@ -47432,7 +47432,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_PT_PT,
@@ -47455,7 +47455,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_PT_PT,
@@ -47478,7 +47478,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_PT_PT,
@@ -47501,7 +47501,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_PT_PT,
@@ -47524,7 +47524,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_PT_PT,
@@ -47547,7 +47547,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_PT_PT,
@@ -47570,7 +47570,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_PT_PT,
@@ -47593,7 +47593,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_PT_PT,
@@ -47616,7 +47616,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_PT_PT,
@@ -47639,7 +47639,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_PT_PT,
@@ -47662,7 +47662,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_PT_PT,
@@ -47685,7 +47685,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_PT_PT,
@@ -47708,7 +47708,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_PT_PT,
@@ -47731,7 +47731,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_PT_PT,
@@ -47754,7 +47754,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_PT_PT,
@@ -47777,7 +47777,7 @@ struct retro_core_option_v2_definition option_defs_pt_pt[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_PT_PT,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_PT_PT,
@@ -47819,14 +47819,14 @@ struct retro_core_options_v2 options_pt_pt = {
 #define CATEGORY_INPUT_INFO_0_RU "Настройки ввода для мыши и/или светового пистолета."
 #define CATEGORY_HACKS_LABEL_RU "Хаки эмуляции"
 #define CATEGORY_HACKS_INFO_0_RU "Настройка разгона процессора и параметров точности эмуляции, влияющих на производительность и совместимость."
-#define CATEGORY_CHANNEL_VOLUME_LABEL_RU "Расширенные настройки громкости"
+#define CATEGORY_CHANNEL_VOLUME_LABEL_RU "Расширенные настройки громкости каналов"
 #define CATEGORY_CHANNEL_VOLUME_INFO_0_RU "Индивидуальная настройка громкости аудиоканалов."
 #define GENESIS_PLUS_GX_SYSTEM_HW_LABEL_RU "Модель системы"
-#define GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_RU "Запускает загружаемый контент на определённой модели эмулируемой консоли. Режим 'Авто' устанавливает наиболее подходящую систему для текущей игры."
-#define OPTION_VAL_AUTO_RU "Авто"
+#define GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_RU "Запуск контента на эмулируемой консоли определённой модели. Режим 'Авто' выбирает наиболее подходящую систему для текущей игры."
+#define OPTION_VAL_AUTO_RU "Автоматически"
 #define OPTION_VAL_SG_1000_RU NULL
 #define OPTION_VAL_SG_1000_II_RU NULL
-#define OPTION_VAL_SG_1000_II_RAM_EXT_RU NULL
+#define OPTION_VAL_SG_1000_II_RAM_EXT_RU "SG-1000 II + Расширение ОЗУ"
 #define OPTION_VAL_MARK_III_RU NULL
 #define OPTION_VAL_MASTER_SYSTEM_RU NULL
 #define OPTION_VAL_MASTER_SYSTEM_II_RU NULL
@@ -47837,17 +47837,17 @@ struct retro_core_options_v2 options_pt_pt = {
 #define OPTION_VAL_NTSC_U_RU NULL
 #define OPTION_VAL_PAL_RU NULL
 #define OPTION_VAL_NTSC_J_RU NULL
-#define GENESIS_PLUS_GX_BIOS_LABEL_RU "Загрузочный ROM системы"
-#define GENESIS_PLUS_GX_BIOS_INFO_0_RU "Использовать для эмулируемой системы официальный BIOS/загрузчик, при наличии файла в системном каталоге RetroArch. Отображает перед запуском контента начальную заставку/анимацию загрузки консоли."
-#define GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_RU NULL
-#define GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_RU NULL
-#define OPTION_VAL_PER_BIOS_RU "Для BIOS"
-#define OPTION_VAL_PER_GAME_RU "Для игры"
-#define GENESIS_PLUS_GX_CART_BRAM_LABEL_RU NULL
-#define GENESIS_PLUS_GX_CART_BRAM_INFO_0_RU NULL
-#define OPTION_VAL_PER_CART_RU NULL
-#define GENESIS_PLUS_GX_CART_SIZE_LABEL_RU NULL
-#define GENESIS_PLUS_GX_CART_SIZE_INFO_0_RU NULL
+#define GENESIS_PLUS_GX_BIOS_LABEL_RU "Загрузочный образ системы"
+#define GENESIS_PLUS_GX_BIOS_INFO_0_RU "Использовать официальный BIOS/загрузчик эмулируемой консоли при наличии файла в системном каталоге RetroArch. Отображает стартовую анимацию загрузки консоли перед запуском контента."
+#define GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_RU "Сист. резервная память Sega CD (требуется перезапуск)"
+#define GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_RU "Определяет, использовать для игр Sega CD/Mega-CD одного региона единый файл сохранения (значение 'Общая по BIOS') или создавать отдельные файлы сохранения (значение 'Индивидуально для игры'). Учитывайте, что объём внутренней памяти Sega CD/Mega-CD достаточен лишь для нескольких игр. Чтобы избежать нехватки места используйте режим 'Для игры'."
+#define OPTION_VAL_PER_BIOS_RU "Общая по BIOS"
+#define OPTION_VAL_PER_GAME_RU "Индивидуально для игры"
+#define GENESIS_PLUS_GX_CART_BRAM_LABEL_RU "Картридж резервной памяти Sega CD (требуется перезапуск)"
+#define GENESIS_PLUS_GX_CART_BRAM_INFO_0_RU "При запуске контента Sega CD/Mega-CD указывает, следует ли использовать для всех игр единый картридж резервной памяти (значение 'Общий для всех игр') или создавать отдельные файлы резервной памяти (значение 'Индивидуально для игры')."
+#define OPTION_VAL_PER_CART_RU "Общий для всех игр"
+#define GENESIS_PLUS_GX_CART_SIZE_LABEL_RU "Размер картриджа резервной памяти Sega CD (требуется перезапуск)"
+#define GENESIS_PLUS_GX_CART_SIZE_INFO_0_RU "Устанавливает размер картриджа резервной памяти для контента Sega CD/Mega-CD. Полезно в режиме резервной памяти 'Индивидуально для игры', чтобы избежать создания файлов большого размера."
 #define OPTION_VAL_128K_RU "128 кбит"
 #define OPTION_VAL_256K_RU "256 кбит"
 #define OPTION_VAL_512K_RU "512 кбит"
@@ -47865,11 +47865,11 @@ struct retro_core_options_v2 options_pt_pt = {
 #define OPTION_VAL_ACTION_REPLAY_PRO_RU NULL
 #define OPTION_VAL_SONIC_KNUCKLES_RU NULL
 #define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_RU "Соотношение сторон ядра"
-#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_RU "Выбор предпочтительного соотношения сторон контента. Учитывается только при установке соотношения сторон RetroArch на 'Core Provided' в настройках видео."
+#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_RU "Выбор предпочтительного соотношения сторон контента. Учитывается, только если в настройках видео RetroArch для соотношения сторон задано значение 'По выбору ядра'."
 #define OPTION_VAL_NTSC_PAR_RU NULL
 #define OPTION_VAL_PAL_PAR_RU NULL
 #define OPTION_VAL_4_3_RU NULL
-#define OPTION_VAL_UNCORRECTED_RU "Нескорректированное"
+#define OPTION_VAL_UNCORRECTED_RU "Без коррекции"
 #define GENESIS_PLUS_GX_OVERSCAN_LABEL_RU "Границы"
 #define GENESIS_PLUS_GX_OVERSCAN_INFO_0_RU "Включите для отображения вылетов развёртки сверху/снизу и/или слева/справа. В телевизорах стандартной чёткости эти области обычно скрыты рамкой по краю экрана."
 #define OPTION_VAL_TOP_BOTTOM_RU "Сверху/снизу"
@@ -47881,23 +47881,23 @@ struct retro_core_options_v2 options_pt_pt = {
 #define OPTION_VAL_LEFT_RIGHT_BORDERS_RU "Границы слева и справа"
 #define GENESIS_PLUS_GX_GG_EXTRA_LABEL_RU "Расширение экрана Game Gear"
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_RU "Принудительный запуск игр Game Gear в режиме SMS в повышенном разрешении 256x192. Может расширять область изображения, но чаще приводит к появлению артефактов вокруг экрана."
-#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_RU "NTSC-фильтр Blargg'а"
+#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_RU "NTSC-фильтры Blargg'а"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_RU "Применяет видеофильтр для имитации различных сигналов NTSC ТВ."
 #define OPTION_VAL_MONOCHROME_RU "Монохромный"
 #define OPTION_VAL_COMPOSITE_RU "Композит"
 #define OPTION_VAL_SVIDEO_RU NULL
 #define OPTION_VAL_RGB_RU NULL
 #define GENESIS_PLUS_GX_LCD_FILTER_LABEL_RU "Ghosting-фильтр LCD"
-#define GENESIS_PLUS_GX_LCD_FILTER_INFO_0_RU "Включает фильтр 'двоения' изображения для имитации особенностей LCD-дисплеев Game Gear и Genesis Nomad."
+#define GENESIS_PLUS_GX_LCD_FILTER_INFO_0_RU "Применяет к изображению фильтр 'двоения' для имитации особенностей ЖК-дисплеев Game Gear и Genesis Nomad."
 #define GENESIS_PLUS_GX_RENDER_LABEL_RU "Режим Interlaced Mode 2"
 #define GENESIS_PLUS_GX_RENDER_INFO_0_RU "Interlaced Mode 2 позволяет Mega Drive/Genesis выводить изображение с удвоенной высотой (в высоком разрешении) 320x448 путём дорисовки в каждом кадре дополнительных строк развёртки (как в режиме мультиплеера в 'Sonic The Hedgehog 2' и 'Combat Cars'). Режим 'Два поля' имитирует оригинальную консоль, выдавая чёткую картинку с артефактами мерцания/чересстрочности. В режиме 'Одно поле' применяется фильтр деинтерлейсинга, который стабилизирует изображение, но добавляет небольшое размытие."
 #define OPTION_VAL_SINGLE_FIELD_RU "Одно поле"
 #define OPTION_VAL_DOUBLE_FIELD_RU "Два поля"
 #define GENESIS_PLUS_GX_FRAMESKIP_LABEL_RU "Пропуск кадров"
-#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_RU "Пропускать кадры, чтобы избежать опустошения аудиобуфера (треск). Улучшает производительность, но снижает плавность изображения. В режиме 'Авто' пропуск кадров регулируется фронтендом. В режиме 'Вручную' используется настройка 'Граница пропуска кадров (%)'."
-#define OPTION_VAL_MANUAL_RU "Ручной"
+#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_RU "Пропускать кадры, чтобы избежать появления треска при опустошении аудиобуфера. Улучшает производительность, но снижает плавность изображения. В режиме 'Авто' пропуск кадров регулируется фронтендом. В режиме 'Вручную' используется значение опции 'Граница пропуска кадров (%)'."
+#define OPTION_VAL_MANUAL_RU "Вручную"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_RU "Граница пропуска кадров (%)"
-#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_RU "Устанавливает порог заполнения аудиобуфера (в процентах), ниже которого будет включаться пропуск кадров при установке опции 'Пропуск кадров' в режим 'Вручную'. Большие значения снижают вероятность появления треска за счёт более частого пропуска кадров."
+#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_RU "Устанавливает порог заполнения аудиобуфера ниже которого будет включаться пропуск кадров, если для опции 'Пропуск кадров' выбрано значение 'Вручную'. Большие значения снижают вероятность появления треска за счёт более частого пропуска кадров."
 #define GENESIS_PLUS_GX_YM2413_LABEL_RU NULL
 #define GENESIS_PLUS_GX_YM2413_INFO_0_RU "Включает эмуляцию FM Sound Unit, используемого для улучшения звука в некоторых играх Sega Mark III/Master System."
 #define GENESIS_PLUS_GX_YM2413_CORE_LABEL_RU "Ядро Master System FM (YM2413)"
@@ -47936,8 +47936,8 @@ struct retro_core_options_v2 options_pt_pt = {
 #define GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_RU "Регулировка среднечастотного диапазона встроенного эквалайзера звука."
 #define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_RU "EQ верх"
 #define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_RU "Регулировка верхнечастотного диапазона встроенного эквалайзера звука."
-#define GENESIS_PLUS_GX_GUN_INPUT_LABEL_RU "Источник свет. пистолета"
-#define GENESIS_PLUS_GX_GUN_INPUT_INFO_0_RU "Использовать для светового пистолета мышь или сенсорный экран."
+#define GENESIS_PLUS_GX_GUN_INPUT_LABEL_RU "Источник светового пистолета"
+#define GENESIS_PLUS_GX_GUN_INPUT_INFO_0_RU "Использовать для светового пистолета мышь или ввод с сенсорного экрана."
 #define OPTION_VAL_LIGHTGUN_RU "Световой пистолет"
 #define OPTION_VAL_TOUCHSCREEN_RU "Сенсорный экран"
 #define GENESIS_PLUS_GX_GUN_CURSOR_LABEL_RU "Показывать прицел светового пистолета"
@@ -47945,11 +47945,11 @@ struct retro_core_options_v2 options_pt_pt = {
 #define GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_RU "Инверсия мыши по оси Y"
 #define GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_RU "Инвертирует ось Y для устройства ввода типа MD Mouse."
 #define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_RU "Отключить лимит спрайтов в линии"
-#define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_RU "Убирает ограничение реальной консоли по количеству спрайтов на линии развёртки. Уменьшает мерцание, но может вызывать сбои графики, т.к. в ряде игр аппаратное ограничение используется для создания определённых эффектов."
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_RU NULL
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_RU NULL
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_RU NULL
-#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_RU NULL
+#define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_RU "Убирает ограничение оригинальной консоли по количеству спрайтов на линию развёртки. Уменьшает мерцание, но может вызывать сбои графики, т.к. в ряде игр данное аппаратное ограничение используется для определённых эффектов."
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_RU "Улучшенный верт. скроллинг тайлов"
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_RU "Разрешает верт. скроллинг каждой отдельной ячейки, вместо 16 пикселей по 2 ячейкам, путём усреднения значения vscroll соседней ячейки. Данный хак применяется только для ряда игр, использующих режим верт. скроллинга по 2 ячейкам."
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_RU "Предел улучшения верт. скроллинга тайлов"
+#define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_RU "Только при вкл. \"Улучшенный верт. скроллинг тайлов\". Регулирует предел улучшения верт. скроллинга. Если значение vscroll между соседними тайлами превышает установленное ограничение, улучшение отключается."
 #define GENESIS_PLUS_GX_OVERCLOCK_LABEL_RU "Скорость CPU"
 #define GENESIS_PLUS_GX_OVERCLOCK_INFO_0_RU "Разгон эмулируемого CPU. Может уменьшать подтормаживания, но вызывать ошибки."
 #define OPTION_VAL_100_RU NULL
@@ -47973,10 +47973,10 @@ struct retro_core_options_v2 options_pt_pt = {
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_RU "Эмуляция подвисаний системы на оригинальной консоли при доступе к недопустимому адресу. Следует выключать только при запуске некоторых демо или homebrew, которые используют неправильные режимы для корректной работы."
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_RU "Ошибка адресации 68K"
 #define GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_RU "При попытке невыровненного доступа к памяти центральный процессор Mega Drive/Genesis (Motorola 68000) генерирует прерывание (сбой) по ошибке адресации. Включение опции 'Ошибка адресации 68K' имитирует данное поведение. Опцию необходимо отключать только для запуска хаков, т.к. они обычно разрабатываются на менее точных эмуляторах и могут использовать ошибки доступа к памяти для корректной работы."
-#define GENESIS_PLUS_GX_CD_LATENCY_LABEL_RU NULL
-#define GENESIS_PLUS_GX_CD_LATENCY_INFO_0_RU NULL
-#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_RU "Показывать доп. настройки громкости (перезайти в меню)"
-#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_RU "Включить настройку низкоуровневых параметров звуковых каналов. Для применения изменений необходимо переключить быстрое меню."
+#define GENESIS_PLUS_GX_CD_LATENCY_LABEL_RU "Время доступа к CD"
+#define GENESIS_PLUS_GX_CD_LATENCY_INFO_0_RU "Имитация задержки оригинального оборудования CD при чтении или поиске определенного места загруженного диска. Требуется для некоторых игр на CD, зависающих при слишком быстром доступе к данным, а также устраняет рассинхронизацию CD-аудио. Рекомендуется отключать c играми MSU-MD, т.к. обеспечивает более плавный повтор аудиодорожек."
+#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_RU "Показывать доп. настройки громкости (при повт. вызове меню)"
+#define GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_RU "Включает настройку низкоуровневых параметров звуковых каналов. Для применения изменений требуется перезайти в быстрое меню."
 #define GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_RU "Громкость PSG канала тона 0 (%)"
 #define GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_RU "Уменьшение громкости PSG канала тона 0."
 #define GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_RU "Громкость PSG канала тона 1 (%)"
@@ -48051,7 +48051,7 @@ struct retro_core_option_v2_category option_cats_ru[] = {
 };
 struct retro_core_option_v2_definition option_defs_ru[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_RU,
@@ -48072,7 +48072,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_RU,
@@ -48088,7 +48088,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_RU,
@@ -48102,7 +48102,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_RU,
@@ -48116,7 +48116,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_RU,
@@ -48130,7 +48130,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_RU,
@@ -48149,7 +48149,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_RU,
@@ -48165,7 +48165,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_RU,
@@ -48181,7 +48181,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_RU,
@@ -48197,7 +48197,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_RU,
@@ -48213,7 +48213,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_RU,
@@ -48228,7 +48228,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_RU,
@@ -48242,7 +48242,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_RU,
@@ -48259,7 +48259,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_RU,
@@ -48273,7 +48273,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_RU,
@@ -48287,7 +48287,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_RU,
@@ -48302,7 +48302,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_RU,
@@ -48330,7 +48330,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_RU,
@@ -48346,7 +48346,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_RU,
@@ -48361,7 +48361,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_RU,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -48384,7 +48384,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_RU,
@@ -48398,7 +48398,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_RU,
@@ -48415,7 +48415,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_RU,
@@ -48446,7 +48446,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_RU,
@@ -48499,7 +48499,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_RU,
@@ -48552,7 +48552,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_RU,
@@ -48585,7 +48585,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_RU,
@@ -48619,7 +48619,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_RU,
@@ -48652,7 +48652,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_RU,
@@ -48685,7 +48685,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_RU,
@@ -48719,7 +48719,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_RU,
@@ -48733,7 +48733,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_RU,
@@ -48747,7 +48747,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_RU,
@@ -48761,7 +48761,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_RU,
@@ -48775,7 +48775,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_RU,
@@ -48789,7 +48789,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_RU,
@@ -48817,7 +48817,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_RU,
@@ -48847,7 +48847,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_RU,
@@ -48861,7 +48861,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_RU,
@@ -48875,7 +48875,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_RU,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_RU,
@@ -48890,7 +48890,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_RU,
@@ -48904,7 +48904,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_RU,
@@ -48927,7 +48927,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_RU,
@@ -48950,7 +48950,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_RU,
@@ -48973,7 +48973,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_RU,
@@ -48996,7 +48996,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_RU,
@@ -49019,7 +49019,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_RU,
@@ -49042,7 +49042,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_RU,
@@ -49065,7 +49065,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_RU,
@@ -49088,7 +49088,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_RU,
@@ -49111,7 +49111,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_RU,
@@ -49134,7 +49134,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_RU,
@@ -49157,7 +49157,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_RU,
@@ -49180,7 +49180,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_RU,
@@ -49203,7 +49203,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_RU,
@@ -49226,7 +49226,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_RU,
@@ -49249,7 +49249,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_RU,
@@ -49272,7 +49272,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_RU,
@@ -49295,7 +49295,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_RU,
@@ -49318,7 +49318,7 @@ struct retro_core_option_v2_definition option_defs_ru[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_RU,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_RU,
@@ -49389,12 +49389,12 @@ struct retro_core_options_v2 options_ru = {
 #define OPTION_VAL_PER_CART_SK NULL
 #define GENESIS_PLUS_GX_CART_SIZE_LABEL_SK NULL
 #define GENESIS_PLUS_GX_CART_SIZE_INFO_0_SK NULL
-#define OPTION_VAL_128K_SK NULL
-#define OPTION_VAL_256K_SK NULL
-#define OPTION_VAL_512K_SK NULL
-#define OPTION_VAL_1MEG_SK NULL
-#define OPTION_VAL_2MEG_SK NULL
-#define OPTION_VAL_4MEG_SK NULL
+#define OPTION_VAL_128K_SK "128 Kbit"
+#define OPTION_VAL_256K_SK "256 Kbit"
+#define OPTION_VAL_512K_SK "512 Kbit"
+#define OPTION_VAL_1MEG_SK "1 Mbit"
+#define OPTION_VAL_2MEG_SK "2 Mbit"
+#define OPTION_VAL_4MEG_SK "4 Mbit"
 #define GENESIS_PLUS_GX_ADD_ON_LABEL_SK NULL
 #define GENESIS_PLUS_GX_ADD_ON_INFO_0_SK NULL
 #define OPTION_VAL_SEGA_MEGA_CD_SK NULL
@@ -49469,11 +49469,11 @@ struct retro_core_options_v2 options_ru = {
 #define GENESIS_PLUS_GX_FM_PREAMP_INFO_0_SK NULL
 #define GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_SK "CD-DA hlasitosť"
 #define GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_SK NULL
-#define GENESIS_PLUS_GX_PCM_VOLUME_LABEL_SK NULL
+#define GENESIS_PLUS_GX_PCM_VOLUME_LABEL_SK "PCM hlasitosť"
 #define GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_SK NULL
-#define GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_SK NULL
+#define GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_SK "EQ nízke"
 #define GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_SK NULL
-#define GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_SK NULL
+#define GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_SK "EQ stredné"
 #define GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_SK NULL
 #define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_SK NULL
 #define GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_SK NULL
@@ -49592,7 +49592,7 @@ struct retro_core_option_v2_category option_cats_sk[] = {
 };
 struct retro_core_option_v2_definition option_defs_sk[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_SK,
@@ -49613,7 +49613,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_SK,
@@ -49629,7 +49629,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_SK,
@@ -49643,7 +49643,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_SK,
@@ -49657,7 +49657,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_SK,
@@ -49671,7 +49671,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_SK,
@@ -49690,7 +49690,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_SK,
@@ -49706,7 +49706,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_SK,
@@ -49722,7 +49722,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_SK,
@@ -49738,7 +49738,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_SK,
@@ -49754,7 +49754,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_SK,
@@ -49769,7 +49769,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_SK,
@@ -49783,7 +49783,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_SK,
@@ -49800,7 +49800,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_SK,
@@ -49814,7 +49814,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_SK,
@@ -49828,7 +49828,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_SK,
@@ -49843,7 +49843,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_SK,
@@ -49871,7 +49871,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_SK,
@@ -49887,7 +49887,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_SK,
@@ -49902,7 +49902,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_SK,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -49925,7 +49925,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_SK,
@@ -49939,7 +49939,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_SK,
@@ -49956,7 +49956,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_SK,
@@ -49987,7 +49987,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_SK,
@@ -50040,7 +50040,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_SK,
@@ -50093,7 +50093,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_SK,
@@ -50126,7 +50126,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_SK,
@@ -50160,7 +50160,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_SK,
@@ -50193,7 +50193,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_SK,
@@ -50226,7 +50226,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_SK,
@@ -50260,7 +50260,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_SK,
@@ -50274,7 +50274,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_SK,
@@ -50288,7 +50288,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_SK,
@@ -50302,7 +50302,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_SK,
@@ -50316,7 +50316,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_SK,
@@ -50330,7 +50330,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_SK,
@@ -50358,7 +50358,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_SK,
@@ -50388,7 +50388,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SK,
@@ -50402,7 +50402,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_SK,
@@ -50416,7 +50416,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_SK,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_SK,
@@ -50431,7 +50431,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_SK,
@@ -50445,7 +50445,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_SK,
@@ -50468,7 +50468,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_SK,
@@ -50491,7 +50491,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_SK,
@@ -50514,7 +50514,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_SK,
@@ -50537,7 +50537,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_SK,
@@ -50560,7 +50560,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_SK,
@@ -50583,7 +50583,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_SK,
@@ -50606,7 +50606,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_SK,
@@ -50629,7 +50629,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_SK,
@@ -50652,7 +50652,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_SK,
@@ -50675,7 +50675,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_SK,
@@ -50698,7 +50698,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_SK,
@@ -50721,7 +50721,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_SK,
@@ -50744,7 +50744,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_SK,
@@ -50767,7 +50767,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_SK,
@@ -50790,7 +50790,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_SK,
@@ -50813,7 +50813,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_SK,
@@ -50836,7 +50836,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_SK,
@@ -50859,7 +50859,7 @@ struct retro_core_option_v2_definition option_defs_sk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_SK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_SK,
@@ -51133,7 +51133,7 @@ struct retro_core_option_v2_category option_cats_sr[] = {
 };
 struct retro_core_option_v2_definition option_defs_sr[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_SR,
@@ -51154,7 +51154,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_SR,
@@ -51170,7 +51170,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_SR,
@@ -51184,7 +51184,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_SR,
@@ -51198,7 +51198,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_SR,
@@ -51212,7 +51212,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_SR,
@@ -51231,7 +51231,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_SR,
@@ -51247,7 +51247,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_SR,
@@ -51263,7 +51263,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_SR,
@@ -51279,7 +51279,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_SR,
@@ -51295,7 +51295,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_SR,
@@ -51310,7 +51310,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_SR,
@@ -51324,7 +51324,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_SR,
@@ -51341,7 +51341,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_SR,
@@ -51355,7 +51355,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_SR,
@@ -51369,7 +51369,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_SR,
@@ -51384,7 +51384,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_SR,
@@ -51412,7 +51412,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_SR,
@@ -51428,7 +51428,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_SR,
@@ -51443,7 +51443,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_SR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -51466,7 +51466,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_SR,
@@ -51480,7 +51480,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_SR,
@@ -51497,7 +51497,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_SR,
@@ -51528,7 +51528,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_SR,
@@ -51581,7 +51581,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_SR,
@@ -51634,7 +51634,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_SR,
@@ -51667,7 +51667,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_SR,
@@ -51701,7 +51701,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_SR,
@@ -51734,7 +51734,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_SR,
@@ -51767,7 +51767,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_SR,
@@ -51801,7 +51801,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_SR,
@@ -51815,7 +51815,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_SR,
@@ -51829,7 +51829,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_SR,
@@ -51843,7 +51843,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_SR,
@@ -51857,7 +51857,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_SR,
@@ -51871,7 +51871,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_SR,
@@ -51899,7 +51899,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_SR,
@@ -51929,7 +51929,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SR,
@@ -51943,7 +51943,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_SR,
@@ -51957,7 +51957,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_SR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_SR,
@@ -51972,7 +51972,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_SR,
@@ -51986,7 +51986,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_SR,
@@ -52009,7 +52009,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_SR,
@@ -52032,7 +52032,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_SR,
@@ -52055,7 +52055,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_SR,
@@ -52078,7 +52078,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_SR,
@@ -52101,7 +52101,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_SR,
@@ -52124,7 +52124,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_SR,
@@ -52147,7 +52147,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_SR,
@@ -52170,7 +52170,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_SR,
@@ -52193,7 +52193,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_SR,
@@ -52216,7 +52216,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_SR,
@@ -52239,7 +52239,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_SR,
@@ -52262,7 +52262,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_SR,
@@ -52285,7 +52285,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_SR,
@@ -52308,7 +52308,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_SR,
@@ -52331,7 +52331,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_SR,
@@ -52354,7 +52354,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_SR,
@@ -52377,7 +52377,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_SR,
@@ -52400,7 +52400,7 @@ struct retro_core_option_v2_definition option_defs_sr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_SR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_SR,
@@ -52434,19 +52434,19 @@ struct retro_core_options_v2 options_sr = {
 
 #define CATEGORY_SYSTEM_LABEL_SV NULL
 #define CATEGORY_SYSTEM_INFO_0_SV NULL
-#define CATEGORY_VIDEO_LABEL_SV "Bild"
-#define CATEGORY_VIDEO_INFO_0_SV NULL
+#define CATEGORY_VIDEO_LABEL_SV NULL
+#define CATEGORY_VIDEO_INFO_0_SV "Ändra bildformat, beskärning, videofilter och inställningar för bildruteskippning."
 #define CATEGORY_AUDIO_LABEL_SV "Ljud"
 #define CATEGORY_AUDIO_INFO_0_SV NULL
 #define CATEGORY_INPUT_LABEL_SV "Inmatning"
 #define CATEGORY_INPUT_INFO_0_SV NULL
-#define CATEGORY_HACKS_LABEL_SV NULL
+#define CATEGORY_HACKS_LABEL_SV "Emulator Hacks"
 #define CATEGORY_HACKS_INFO_0_SV NULL
-#define CATEGORY_CHANNEL_VOLUME_LABEL_SV NULL
+#define CATEGORY_CHANNEL_VOLUME_LABEL_SV "Avancerade inställningar för kanalvolym"
 #define CATEGORY_CHANNEL_VOLUME_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_SYSTEM_HW_LABEL_SV NULL
 #define GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_SV NULL
-#define OPTION_VAL_AUTO_SV "Automatiskt"
+#define OPTION_VAL_AUTO_SV NULL
 #define OPTION_VAL_SG_1000_SV NULL
 #define OPTION_VAL_SG_1000_II_SV NULL
 #define OPTION_VAL_SG_1000_II_RAM_EXT_SV NULL
@@ -52487,16 +52487,16 @@ struct retro_core_options_v2 options_sr = {
 #define OPTION_VAL_GAME_GENIE_SV NULL
 #define OPTION_VAL_ACTION_REPLAY_PRO_SV NULL
 #define OPTION_VAL_SONIC_KNUCKLES_SV NULL
-#define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_SV NULL
-#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_SV NULL
+#define GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_SV "Kärnspecifikt bildformat"
+#define GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_SV "Välj det föredragna bildformatet för Innehållet. Detta kommer endast att tillämpas när RetroArchs bildformat är inställt på \"Kärnspecifikt\" i Video-inställningarna."
 #define OPTION_VAL_NTSC_PAR_SV NULL
 #define OPTION_VAL_PAL_PAR_SV NULL
 #define OPTION_VAL_4_3_SV NULL
-#define OPTION_VAL_UNCORRECTED_SV NULL
+#define OPTION_VAL_UNCORRECTED_SV "Okorrigerad"
 #define GENESIS_PLUS_GX_OVERSCAN_LABEL_SV "Ramar"
 #define GENESIS_PLUS_GX_OVERSCAN_INFO_0_SV NULL
 #define OPTION_VAL_TOP_BOTTOM_SV NULL
-#define OPTION_VAL_LEFT_RIGHT_SV "Vänster/höger"
+#define OPTION_VAL_LEFT_RIGHT_SV "Vänster/Höger"
 #define OPTION_VAL_FULL_SV NULL
 #define GENESIS_PLUS_GX_LEFT_BORDER_LABEL_SV NULL
 #define GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_SV NULL
@@ -52504,22 +52504,22 @@ struct retro_core_options_v2 options_sr = {
 #define OPTION_VAL_LEFT_RIGHT_BORDERS_SV NULL
 #define GENESIS_PLUS_GX_GG_EXTRA_LABEL_SV NULL
 #define GENESIS_PLUS_GX_GG_EXTRA_INFO_0_SV NULL
-#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_SV NULL
+#define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_SV "Blargg NTSC-filter"
 #define GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_SV NULL
 #define OPTION_VAL_MONOCHROME_SV "Monokrom"
 #define OPTION_VAL_COMPOSITE_SV "Komposit"
 #define OPTION_VAL_SVIDEO_SV NULL
 #define OPTION_VAL_RGB_SV NULL
-#define GENESIS_PLUS_GX_LCD_FILTER_LABEL_SV NULL
+#define GENESIS_PLUS_GX_LCD_FILTER_LABEL_SV "LCD-spökfilter"
 #define GENESIS_PLUS_GX_LCD_FILTER_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_RENDER_LABEL_SV NULL
 #define GENESIS_PLUS_GX_RENDER_INFO_0_SV NULL
 #define OPTION_VAL_SINGLE_FIELD_SV NULL
 #define OPTION_VAL_DOUBLE_FIELD_SV NULL
 #define GENESIS_PLUS_GX_FRAMESKIP_LABEL_SV NULL
-#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_SV NULL
-#define OPTION_VAL_MANUAL_SV NULL
-#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_SV NULL
+#define GENESIS_PLUS_GX_FRAMESKIP_INFO_0_SV "Hoppa över bildrutor för att undvika ljudbuffert-underkörning (sprakande). Förbättrar prestanda på bekostnad av visuell jämnhet. \"Automatiskt\" hoppar över bildrutor när det rekommenderas av gränssnittet. \"Manuell\" använder inställningen \"Bildrutetröskel (%)\" för att hoppa över bildrutor."
+#define OPTION_VAL_MANUAL_SV "Manuell"
+#define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_SV "Frameskip Tröskelvärde (%)"
 #define GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_SV "När 'Frameskip' är satt till 'Manuell', ange ljudbuffertens tröskel (i procent) under vilka ramar som kommer att hoppas över. Högre värden minskar risken för hackigt ljud genom att bildrutor tappas oftare."
 #define GENESIS_PLUS_GX_YM2413_LABEL_SV NULL
 #define GENESIS_PLUS_GX_YM2413_INFO_0_SV NULL
@@ -52567,7 +52567,7 @@ struct retro_core_options_v2 options_sr = {
 #define GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_SV NULL
 #define GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_SV NULL
-#define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_SV NULL
+#define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_SV "Ta bort blockfigursgräns per rad"
 #define GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_SV NULL
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_SV NULL
@@ -52575,23 +52575,23 @@ struct retro_core_options_v2 options_sr = {
 #define GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_OVERCLOCK_LABEL_SV "CPU-hastighet"
 #define GENESIS_PLUS_GX_OVERCLOCK_INFO_0_SV NULL
-#define OPTION_VAL_100_SV "100 %"
-#define OPTION_VAL_125_SV "125 %"
-#define OPTION_VAL_150_SV "150 %"
-#define OPTION_VAL_175_SV "175 %"
-#define OPTION_VAL_200_SV "200 %"
+#define OPTION_VAL_100_SV NULL
+#define OPTION_VAL_125_SV NULL
+#define OPTION_VAL_150_SV NULL
+#define OPTION_VAL_175_SV NULL
+#define OPTION_VAL_200_SV NULL
 #define OPTION_VAL_225_SV NULL
-#define OPTION_VAL_250_SV "250 %"
+#define OPTION_VAL_250_SV NULL
 #define OPTION_VAL_275_SV NULL
-#define OPTION_VAL_300_SV "300 %"
+#define OPTION_VAL_300_SV NULL
 #define OPTION_VAL_325_SV NULL
-#define OPTION_VAL_350_SV "350 %"
+#define OPTION_VAL_350_SV NULL
 #define OPTION_VAL_375_SV NULL
-#define OPTION_VAL_400_SV "400 %"
+#define OPTION_VAL_400_SV NULL
 #define OPTION_VAL_425_SV NULL
-#define OPTION_VAL_450_SV "450 %"
+#define OPTION_VAL_450_SV NULL
 #define OPTION_VAL_475_SV NULL
-#define OPTION_VAL_500_SV "500 %"
+#define OPTION_VAL_500_SV NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SV NULL
 #define GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SV NULL
 #define GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SV NULL
@@ -52674,7 +52674,7 @@ struct retro_core_option_v2_category option_cats_sv[] = {
 };
 struct retro_core_option_v2_definition option_defs_sv[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_SV,
@@ -52695,7 +52695,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_SV,
@@ -52711,7 +52711,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_SV,
@@ -52725,7 +52725,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_SV,
@@ -52739,7 +52739,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_SV,
@@ -52753,7 +52753,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_SV,
@@ -52772,7 +52772,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_SV,
@@ -52788,7 +52788,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_SV,
@@ -52804,7 +52804,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_SV,
@@ -52820,7 +52820,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_SV,
@@ -52836,7 +52836,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_SV,
@@ -52851,7 +52851,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_SV,
@@ -52865,7 +52865,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_SV,
@@ -52882,7 +52882,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_SV,
@@ -52896,7 +52896,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_SV,
@@ -52910,7 +52910,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_SV,
@@ -52925,7 +52925,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_SV,
@@ -52953,7 +52953,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_SV,
@@ -52969,7 +52969,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_SV,
@@ -52984,7 +52984,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_SV,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -53007,7 +53007,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_SV,
@@ -53021,7 +53021,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_SV,
@@ -53038,7 +53038,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_SV,
@@ -53069,7 +53069,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_SV,
@@ -53122,7 +53122,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_SV,
@@ -53175,7 +53175,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_SV,
@@ -53208,7 +53208,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_SV,
@@ -53242,7 +53242,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_SV,
@@ -53275,7 +53275,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_SV,
@@ -53308,7 +53308,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_SV,
@@ -53342,7 +53342,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_SV,
@@ -53356,7 +53356,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_SV,
@@ -53370,7 +53370,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_SV,
@@ -53384,7 +53384,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_SV,
@@ -53398,7 +53398,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_SV,
@@ -53412,7 +53412,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_SV,
@@ -53440,7 +53440,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_SV,
@@ -53470,7 +53470,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_SV,
@@ -53484,7 +53484,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_SV,
@@ -53498,7 +53498,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_SV,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_SV,
@@ -53513,7 +53513,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_SV,
@@ -53527,7 +53527,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_SV,
@@ -53550,7 +53550,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_SV,
@@ -53573,7 +53573,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_SV,
@@ -53596,7 +53596,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_SV,
@@ -53619,7 +53619,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_SV,
@@ -53642,7 +53642,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_SV,
@@ -53665,7 +53665,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_SV,
@@ -53688,7 +53688,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_SV,
@@ -53711,7 +53711,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_SV,
@@ -53734,7 +53734,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_SV,
@@ -53757,7 +53757,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_SV,
@@ -53780,7 +53780,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_SV,
@@ -53803,7 +53803,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_SV,
@@ -53826,7 +53826,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_SV,
@@ -53849,7 +53849,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_SV,
@@ -53872,7 +53872,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_SV,
@@ -53895,7 +53895,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_SV,
@@ -53918,7 +53918,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_SV,
@@ -53941,7 +53941,7 @@ struct retro_core_option_v2_definition option_defs_sv[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_SV,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_SV,
@@ -54215,7 +54215,7 @@ struct retro_core_option_v2_category option_cats_tr[] = {
 };
 struct retro_core_option_v2_definition option_defs_tr[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_TR,
@@ -54236,7 +54236,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_TR,
@@ -54252,7 +54252,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_TR,
@@ -54266,7 +54266,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_TR,
@@ -54280,7 +54280,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_TR,
@@ -54294,7 +54294,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_TR,
@@ -54313,7 +54313,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_TR,
@@ -54329,7 +54329,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_TR,
@@ -54345,7 +54345,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_TR,
@@ -54361,7 +54361,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_TR,
@@ -54377,7 +54377,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_TR,
@@ -54392,7 +54392,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_TR,
@@ -54406,7 +54406,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_TR,
@@ -54423,7 +54423,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_TR,
@@ -54437,7 +54437,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_TR,
@@ -54451,7 +54451,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_TR,
@@ -54466,7 +54466,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_TR,
@@ -54494,7 +54494,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_TR,
@@ -54510,7 +54510,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_TR,
@@ -54525,7 +54525,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_TR,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -54548,7 +54548,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_TR,
@@ -54562,7 +54562,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_TR,
@@ -54579,7 +54579,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_TR,
@@ -54610,7 +54610,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_TR,
@@ -54663,7 +54663,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_TR,
@@ -54716,7 +54716,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_TR,
@@ -54749,7 +54749,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_TR,
@@ -54783,7 +54783,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_TR,
@@ -54816,7 +54816,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_TR,
@@ -54849,7 +54849,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_TR,
@@ -54883,7 +54883,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_TR,
@@ -54897,7 +54897,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_TR,
@@ -54911,7 +54911,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_TR,
@@ -54925,7 +54925,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_TR,
@@ -54939,7 +54939,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_TR,
@@ -54953,7 +54953,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_TR,
@@ -54981,7 +54981,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_TR,
@@ -55011,7 +55011,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_TR,
@@ -55025,7 +55025,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_TR,
@@ -55039,7 +55039,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_TR,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_TR,
@@ -55054,7 +55054,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_TR,
@@ -55068,7 +55068,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_TR,
@@ -55091,7 +55091,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_TR,
@@ -55114,7 +55114,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_TR,
@@ -55137,7 +55137,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_TR,
@@ -55160,7 +55160,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_TR,
@@ -55183,7 +55183,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_TR,
@@ -55206,7 +55206,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_TR,
@@ -55229,7 +55229,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_TR,
@@ -55252,7 +55252,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_TR,
@@ -55275,7 +55275,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_TR,
@@ -55298,7 +55298,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_TR,
@@ -55321,7 +55321,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_TR,
@@ -55344,7 +55344,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_TR,
@@ -55367,7 +55367,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_TR,
@@ -55390,7 +55390,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_TR,
@@ -55413,7 +55413,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_TR,
@@ -55436,7 +55436,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_TR,
@@ -55459,7 +55459,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_TR,
@@ -55482,7 +55482,7 @@ struct retro_core_option_v2_definition option_defs_tr[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_TR,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_TR,
@@ -55756,7 +55756,7 @@ struct retro_core_option_v2_category option_cats_uk[] = {
 };
 struct retro_core_option_v2_definition option_defs_uk[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_UK,
@@ -55777,7 +55777,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_UK,
@@ -55793,7 +55793,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_UK,
@@ -55807,7 +55807,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_UK,
@@ -55821,7 +55821,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_UK,
@@ -55835,7 +55835,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_UK,
@@ -55854,7 +55854,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_UK,
@@ -55870,7 +55870,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_UK,
@@ -55886,7 +55886,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_UK,
@@ -55902,7 +55902,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_UK,
@@ -55918,7 +55918,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_UK,
@@ -55933,7 +55933,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_UK,
@@ -55947,7 +55947,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_UK,
@@ -55964,7 +55964,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_UK,
@@ -55978,7 +55978,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_UK,
@@ -55992,7 +55992,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_UK,
@@ -56007,7 +56007,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_UK,
@@ -56035,7 +56035,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_UK,
@@ -56051,7 +56051,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_UK,
@@ -56066,7 +56066,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_UK,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -56089,7 +56089,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_UK,
@@ -56103,7 +56103,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_UK,
@@ -56120,7 +56120,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_UK,
@@ -56151,7 +56151,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_UK,
@@ -56204,7 +56204,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_UK,
@@ -56257,7 +56257,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_UK,
@@ -56290,7 +56290,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_UK,
@@ -56324,7 +56324,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_UK,
@@ -56357,7 +56357,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_UK,
@@ -56390,7 +56390,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_UK,
@@ -56424,7 +56424,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_UK,
@@ -56438,7 +56438,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_UK,
@@ -56452,7 +56452,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_UK,
@@ -56466,7 +56466,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_UK,
@@ -56480,7 +56480,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_UK,
@@ -56494,7 +56494,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_UK,
@@ -56522,7 +56522,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_UK,
@@ -56552,7 +56552,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_UK,
@@ -56566,7 +56566,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_UK,
@@ -56580,7 +56580,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_UK,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_UK,
@@ -56595,7 +56595,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_UK,
@@ -56609,7 +56609,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_UK,
@@ -56632,7 +56632,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_UK,
@@ -56655,7 +56655,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_UK,
@@ -56678,7 +56678,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_UK,
@@ -56701,7 +56701,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_UK,
@@ -56724,7 +56724,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_UK,
@@ -56747,7 +56747,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_UK,
@@ -56770,7 +56770,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_UK,
@@ -56793,7 +56793,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_UK,
@@ -56816,7 +56816,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_UK,
@@ -56839,7 +56839,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_UK,
@@ -56862,7 +56862,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_UK,
@@ -56885,7 +56885,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_UK,
@@ -56908,7 +56908,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_UK,
@@ -56931,7 +56931,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_UK,
@@ -56954,7 +56954,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_UK,
@@ -56977,7 +56977,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_UK,
@@ -57000,7 +57000,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_UK,
@@ -57023,7 +57023,7 @@ struct retro_core_option_v2_definition option_defs_uk[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_UK,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_UK,
@@ -57297,7 +57297,7 @@ struct retro_core_option_v2_category option_cats_val[] = {
 };
 struct retro_core_option_v2_definition option_defs_val[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_VAL,
@@ -57318,7 +57318,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_VAL,
@@ -57334,7 +57334,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_VAL,
@@ -57348,7 +57348,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_VAL,
@@ -57362,7 +57362,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_VAL,
@@ -57376,7 +57376,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_VAL,
@@ -57395,7 +57395,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_VAL,
@@ -57411,7 +57411,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_VAL,
@@ -57427,7 +57427,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_VAL,
@@ -57443,7 +57443,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_VAL,
@@ -57459,7 +57459,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_VAL,
@@ -57474,7 +57474,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_VAL,
@@ -57488,7 +57488,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_VAL,
@@ -57505,7 +57505,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_VAL,
@@ -57519,7 +57519,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_VAL,
@@ -57533,7 +57533,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_VAL,
@@ -57548,7 +57548,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_VAL,
@@ -57576,7 +57576,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_VAL,
@@ -57592,7 +57592,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_VAL,
@@ -57607,7 +57607,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_VAL,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -57630,7 +57630,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_VAL,
@@ -57644,7 +57644,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_VAL,
@@ -57661,7 +57661,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_VAL,
@@ -57692,7 +57692,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_VAL,
@@ -57745,7 +57745,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_VAL,
@@ -57798,7 +57798,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_VAL,
@@ -57831,7 +57831,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_VAL,
@@ -57865,7 +57865,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_VAL,
@@ -57898,7 +57898,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_VAL,
@@ -57931,7 +57931,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_VAL,
@@ -57965,7 +57965,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_VAL,
@@ -57979,7 +57979,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_VAL,
@@ -57993,7 +57993,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_VAL,
@@ -58007,7 +58007,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_VAL,
@@ -58021,7 +58021,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_VAL,
@@ -58035,7 +58035,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_VAL,
@@ -58063,7 +58063,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_VAL,
@@ -58093,7 +58093,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_VAL,
@@ -58107,7 +58107,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_VAL,
@@ -58121,7 +58121,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_VAL,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_VAL,
@@ -58136,7 +58136,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_VAL,
@@ -58150,7 +58150,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_VAL,
@@ -58173,7 +58173,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_VAL,
@@ -58196,7 +58196,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_VAL,
@@ -58219,7 +58219,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_VAL,
@@ -58242,7 +58242,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_VAL,
@@ -58265,7 +58265,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_VAL,
@@ -58288,7 +58288,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_VAL,
@@ -58311,7 +58311,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_VAL,
@@ -58334,7 +58334,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_VAL,
@@ -58357,7 +58357,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_VAL,
@@ -58380,7 +58380,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_VAL,
@@ -58403,7 +58403,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_VAL,
@@ -58426,7 +58426,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_VAL,
@@ -58449,7 +58449,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_VAL,
@@ -58472,7 +58472,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_VAL,
@@ -58495,7 +58495,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_VAL,
@@ -58518,7 +58518,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_VAL,
@@ -58541,7 +58541,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_VAL,
@@ -58564,7 +58564,7 @@ struct retro_core_option_v2_definition option_defs_val[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_VAL,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_VAL,
@@ -58838,7 +58838,7 @@ struct retro_core_option_v2_category option_cats_vn[] = {
 };
 struct retro_core_option_v2_definition option_defs_vn[] = {
    {
-      CORE_NAME "_system_hw",
+      "genesis_plus_gx_system_hw",
       GENESIS_PLUS_GX_SYSTEM_HW_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_HW_INFO_0_VN,
@@ -58859,7 +58859,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "auto"
    },
    {
-      CORE_NAME "_region_detect",
+      "genesis_plus_gx_region_detect",
       GENESIS_PLUS_GX_REGION_DETECT_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_REGION_DETECT_INFO_0_VN,
@@ -58875,7 +58875,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "auto"
    },
    {
-      CORE_NAME "_bios",
+      "genesis_plus_gx_bios",
       GENESIS_PLUS_GX_BIOS_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_BIOS_INFO_0_VN,
@@ -58889,7 +58889,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_system_bram",
+      "genesis_plus_gx_system_bram",
       GENESIS_PLUS_GX_SYSTEM_BRAM_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SYSTEM_BRAM_INFO_0_VN,
@@ -58903,7 +58903,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "per bios"
    },
    {
-      CORE_NAME "_cart_bram",
+      "genesis_plus_gx_cart_bram",
       GENESIS_PLUS_GX_CART_BRAM_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_CART_BRAM_INFO_0_VN,
@@ -58917,7 +58917,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "per cart"
    },
    {
-      CORE_NAME "_cart_size",
+      "genesis_plus_gx_cart_size",
       GENESIS_PLUS_GX_CART_SIZE_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_CART_SIZE_INFO_0_VN,
@@ -58936,7 +58936,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "4meg"
    },
    {
-      CORE_NAME "_add_on",
+      "genesis_plus_gx_add_on",
       GENESIS_PLUS_GX_ADD_ON_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_ADD_ON_INFO_0_VN,
@@ -58952,7 +58952,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lock_on",
+      "genesis_plus_gx_lock_on",
       GENESIS_PLUS_GX_LOCK_ON_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_LOCK_ON_INFO_0_VN,
@@ -58968,7 +58968,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_aspect_ratio",
+      "genesis_plus_gx_aspect_ratio",
       GENESIS_PLUS_GX_ASPECT_RATIO_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_ASPECT_RATIO_INFO_0_VN,
@@ -58984,7 +58984,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "auto"
    },
    {
-      CORE_NAME "_overscan",
+      "genesis_plus_gx_overscan",
       GENESIS_PLUS_GX_OVERSCAN_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_OVERSCAN_INFO_0_VN,
@@ -59000,7 +59000,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_left_border",
+      "genesis_plus_gx_left_border",
       GENESIS_PLUS_GX_LEFT_BORDER_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_LEFT_BORDER_INFO_0_VN,
@@ -59015,7 +59015,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_gg_extra",
+      "genesis_plus_gx_gg_extra",
       GENESIS_PLUS_GX_GG_EXTRA_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_GG_EXTRA_INFO_0_VN,
@@ -59029,7 +59029,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_blargg_ntsc_filter",
+      "genesis_plus_gx_blargg_ntsc_filter",
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_BLARGG_NTSC_FILTER_INFO_0_VN,
@@ -59046,7 +59046,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lcd_filter",
+      "genesis_plus_gx_lcd_filter",
       GENESIS_PLUS_GX_LCD_FILTER_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_LCD_FILTER_INFO_0_VN,
@@ -59060,7 +59060,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_render",
+      "genesis_plus_gx_render",
       GENESIS_PLUS_GX_RENDER_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_RENDER_INFO_0_VN,
@@ -59074,7 +59074,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "single field"
    },
    {
-      CORE_NAME "_frameskip",
+      "genesis_plus_gx_frameskip",
       GENESIS_PLUS_GX_FRAMESKIP_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_INFO_0_VN,
@@ -59089,7 +59089,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_frameskip_threshold",
+      "genesis_plus_gx_frameskip_threshold",
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_FRAMESKIP_THRESHOLD_INFO_0_VN,
@@ -59117,7 +59117,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "33"
    },
    {
-      CORE_NAME "_ym2413",
+      "genesis_plus_gx_ym2413",
       GENESIS_PLUS_GX_YM2413_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_YM2413_INFO_0_VN,
@@ -59133,7 +59133,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #ifdef HAVE_OPLL_CORE
    {
-      CORE_NAME "_ym2413_core",
+      "genesis_plus_gx_ym2413_core",
       GENESIS_PLUS_GX_YM2413_CORE_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_YM2413_CORE_INFO_0_VN,
@@ -59148,7 +59148,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #endif
    {
-      CORE_NAME "_ym2612",
+      "genesis_plus_gx_ym2612",
       GENESIS_PLUS_GX_YM2612_LABEL_VN,
       NULL,
 #ifdef HAVE_YM3438_CORE
@@ -59171,7 +59171,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "mame (ym2612)"
    },
    {
-      CORE_NAME "_sound_output",
+      "genesis_plus_gx_sound_output",
       GENESIS_PLUS_GX_SOUND_OUTPUT_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SOUND_OUTPUT_INFO_0_VN,
@@ -59185,7 +59185,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "stereo"
    },
    {
-      CORE_NAME "_audio_filter",
+      "genesis_plus_gx_audio_filter",
       GENESIS_PLUS_GX_AUDIO_FILTER_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_FILTER_INFO_0_VN,
@@ -59202,7 +59202,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_lowpass_range",
+      "genesis_plus_gx_lowpass_range",
       GENESIS_PLUS_GX_LOWPASS_RANGE_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_LOWPASS_RANGE_INFO_0_VN,
@@ -59233,7 +59233,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "60"
    },
    {
-      CORE_NAME "_psg_preamp",
+      "genesis_plus_gx_psg_preamp",
       GENESIS_PLUS_GX_PSG_PREAMP_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PSG_PREAMP_INFO_0_VN,
@@ -59286,7 +59286,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "150"
    },
    {
-      CORE_NAME "_fm_preamp",
+      "genesis_plus_gx_fm_preamp",
       GENESIS_PLUS_GX_FM_PREAMP_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_FM_PREAMP_INFO_0_VN,
@@ -59339,7 +59339,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_cdda_volume",
+      "genesis_plus_gx_cdda_volume",
       GENESIS_PLUS_GX_CDDA_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_CDDA_VOLUME_INFO_0_VN,
@@ -59372,7 +59372,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_pcm_volume",
+      "genesis_plus_gx_pcm_volume",
       GENESIS_PLUS_GX_PCM_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PCM_VOLUME_INFO_0_VN,
@@ -59406,7 +59406,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #ifdef HAVE_EQ
    {
-      CORE_NAME "_audio_eq_low",
+      "genesis_plus_gx_audio_eq_low",
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_LOW_INFO_0_VN,
@@ -59439,7 +59439,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_mid",
+      "genesis_plus_gx_audio_eq_mid",
       GENESIS_PLUS_GX_AUDIO_EQ_MID_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_MID_INFO_0_VN,
@@ -59472,7 +59472,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_audio_eq_high",
+      "genesis_plus_gx_audio_eq_high",
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_AUDIO_EQ_HIGH_INFO_0_VN,
@@ -59506,7 +59506,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #endif
    {
-      CORE_NAME "_gun_input",
+      "genesis_plus_gx_gun_input",
       GENESIS_PLUS_GX_GUN_INPUT_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_GUN_INPUT_INFO_0_VN,
@@ -59520,7 +59520,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "lightgun"
    },
    {
-      CORE_NAME "_gun_cursor",
+      "genesis_plus_gx_gun_cursor",
       GENESIS_PLUS_GX_GUN_CURSOR_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_GUN_CURSOR_INFO_0_VN,
@@ -59534,7 +59534,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_invert_mouse",
+      "genesis_plus_gx_invert_mouse",
       GENESIS_PLUS_GX_INVERT_MOUSE_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_INVERT_MOUSE_INFO_0_VN,
@@ -59548,7 +59548,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_no_sprite_limit",
+      "genesis_plus_gx_no_sprite_limit",
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_NO_SPRITE_LIMIT_INFO_0_VN,
@@ -59562,7 +59562,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll",
+      "genesis_plus_gx_enhanced_vscroll",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_INFO_0_VN,
@@ -59576,7 +59576,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_enhanced_vscroll_limit",
+      "genesis_plus_gx_enhanced_vscroll_limit",
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_ENHANCED_VSCROLL_LIMIT_INFO_0_VN,
@@ -59604,7 +59604,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #ifdef HAVE_OVERCLOCK
    {
-      CORE_NAME "_overclock",
+      "genesis_plus_gx_overclock",
       GENESIS_PLUS_GX_OVERCLOCK_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_OVERCLOCK_INFO_0_VN,
@@ -59634,7 +59634,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #endif
    {
-      CORE_NAME "_force_dtack",
+      "genesis_plus_gx_force_dtack",
       GENESIS_PLUS_GX_FORCE_DTACK_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_FORCE_DTACK_INFO_0_VN,
@@ -59648,7 +59648,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "enabled"
    },
    {
-      CORE_NAME "_addr_error",
+      "genesis_plus_gx_addr_error",
       GENESIS_PLUS_GX_ADDR_ERROR_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_ADDR_ERROR_INFO_0_VN,
@@ -59662,7 +59662,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "enabled"
    },
    {
-      CORE_NAME "_cd_latency",
+      "genesis_plus_gx_cd_latency",
       GENESIS_PLUS_GX_CD_LATENCY_LABEL_VN,
       NULL,
         GENESIS_PLUS_GX_CD_LATENCY_INFO_0_VN,
@@ -59677,7 +59677,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {
-      CORE_NAME "_show_advanced_audio_settings",
+      "genesis_plus_gx_show_advanced_audio_settings",
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SHOW_ADVANCED_AUDIO_SETTINGS_INFO_0_VN,
@@ -59691,7 +59691,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "disabled"
    },
    {
-      CORE_NAME "_psg_channel_0_volume",
+      "genesis_plus_gx_psg_channel_0_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_0_VOLUME_INFO_0_VN,
@@ -59714,7 +59714,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_1_volume",
+      "genesis_plus_gx_psg_channel_1_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_1_VOLUME_INFO_0_VN,
@@ -59737,7 +59737,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_2_volume",
+      "genesis_plus_gx_psg_channel_2_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_2_VOLUME_INFO_0_VN,
@@ -59760,7 +59760,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_psg_channel_3_volume",
+      "genesis_plus_gx_psg_channel_3_volume",
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_PSG_CHANNEL_3_VOLUME_INFO_0_VN,
@@ -59783,7 +59783,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_0_volume",
+      "genesis_plus_gx_md_channel_0_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_0_VOLUME_INFO_0_VN,
@@ -59806,7 +59806,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_1_volume",
+      "genesis_plus_gx_md_channel_1_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_1_VOLUME_INFO_0_VN,
@@ -59829,7 +59829,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_2_volume",
+      "genesis_plus_gx_md_channel_2_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_2_VOLUME_INFO_0_VN,
@@ -59852,7 +59852,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_3_volume",
+      "genesis_plus_gx_md_channel_3_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_3_VOLUME_INFO_0_VN,
@@ -59875,7 +59875,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_4_volume",
+      "genesis_plus_gx_md_channel_4_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_4_VOLUME_INFO_0_VN,
@@ -59898,7 +59898,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_md_channel_5_volume",
+      "genesis_plus_gx_md_channel_5_volume",
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_MD_CHANNEL_5_VOLUME_INFO_0_VN,
@@ -59921,7 +59921,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_0_volume",
+      "genesis_plus_gx_sms_fm_channel_0_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_0_VOLUME_INFO_0_VN,
@@ -59944,7 +59944,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_1_volume",
+      "genesis_plus_gx_sms_fm_channel_1_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_1_VOLUME_INFO_0_VN,
@@ -59967,7 +59967,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_2_volume",
+      "genesis_plus_gx_sms_fm_channel_2_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_2_VOLUME_INFO_0_VN,
@@ -59990,7 +59990,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_3_volume",
+      "genesis_plus_gx_sms_fm_channel_3_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_3_VOLUME_INFO_0_VN,
@@ -60013,7 +60013,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_4_volume",
+      "genesis_plus_gx_sms_fm_channel_4_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_4_VOLUME_INFO_0_VN,
@@ -60036,7 +60036,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_5_volume",
+      "genesis_plus_gx_sms_fm_channel_5_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_5_VOLUME_INFO_0_VN,
@@ -60059,7 +60059,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_6_volume",
+      "genesis_plus_gx_sms_fm_channel_6_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_6_VOLUME_INFO_0_VN,
@@ -60082,7 +60082,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_7_volume",
+      "genesis_plus_gx_sms_fm_channel_7_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_7_VOLUME_INFO_0_VN,
@@ -60105,7 +60105,7 @@ struct retro_core_option_v2_definition option_defs_vn[] = {
       "100"
    },
    {
-      CORE_NAME "_sms_fm_channel_8_volume",
+      "genesis_plus_gx_sms_fm_channel_8_volume",
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_LABEL_VN,
       NULL,
       GENESIS_PLUS_GX_SMS_FM_CHANNEL_8_VOLUME_INFO_0_VN,
