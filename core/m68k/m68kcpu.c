@@ -296,11 +296,15 @@ void m68k_run(unsigned int cycles)
       cpu_hook(HOOK_M68K_E, 0, REG_PC, 0);
 #endif
 
-    /* Save current instruction PC */
-    m68k.prev_pc = REG_PC;
-
     /* Decode next instruction */
     REG_IR = m68ki_read_imm_16();
+
+    /* 68K bus access refresh delay (Mega Drive / Genesis specific) */
+    if (m68k.cycles >= (m68k.refresh_cycles + (128*7)))
+    {
+      m68k.refresh_cycles = (m68k.cycles / (128*7)) * (128*7);
+      m68k.cycles += (2*7);
+    }
 
     /* Execute instruction */
     m68ki_instruction_jump_table[REG_IR]();
@@ -385,6 +389,9 @@ void m68k_pulse_reset(void)
 #endif
 
   USE_CYCLES(CYC_EXCEPTION[EXCEPTION_RESET]);
+
+  /* Synchronize 68k bus refresh mechanism (Mega Drive / Genesis specific) */
+  m68k.refresh_cycles = (m68k.cycles / (128*7)) * (128*7);
 }
 
 void m68k_pulse_halt(void)
@@ -397,24 +404,6 @@ void m68k_clear_halt(void)
 {
   /* Clear the HALT line on the CPU */
   CPU_STOPPED &= ~STOP_LEVEL_HALT;
-}
-
-void m68k_pulse_wait(void)
-{
-  /* Hold the DTACK line on the CPU */
-  CPU_STOPPED |= STOP_LEVEL_WAIT;
-
-  /* End CPU execution */
-  m68k.cycles = m68k.cycle_end - m68k_cycles();
-
-  /* Rollback current instruction (memory access will be executed once /DTACK is asserted) */
-  m68k.pc = m68k.prev_pc;
-}
-
-void m68k_clear_wait(void)
-{
-  /* Assert the DTACK line on the CPU */
-  CPU_STOPPED &= ~STOP_LEVEL_WAIT;
 }
 
 /* ======================================================================== */

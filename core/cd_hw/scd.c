@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  Mega CD / Sega CD hardware
  *
- *  Copyright (C) 2012-2023  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2012-2024  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -84,7 +84,7 @@ static void s68k_lockup_w_8 (unsigned int address, unsigned int data)
 #ifdef LOGERROR
   error ("[SUB 68k] Lockup write8 %08X = %02X (%08X)\n", address, data, s68k.pc);
 #endif
-  s68k_pulse_wait();
+  s68k_pulse_wait(address, 1);
 }
 
 static void s68k_lockup_w_16 (unsigned int address, unsigned int data)
@@ -92,7 +92,7 @@ static void s68k_lockup_w_16 (unsigned int address, unsigned int data)
 #ifdef LOGERROR
   error ("[SUB 68k] Lockup write16 %08X = %04X (%08X)\n", address, data, s68k.pc);
 #endif
-  s68k_pulse_wait();
+  s68k_pulse_wait(address, 1);
 }
 
 static unsigned int s68k_lockup_r_8 (unsigned int address)
@@ -100,7 +100,7 @@ static unsigned int s68k_lockup_r_8 (unsigned int address)
 #ifdef LOGERROR
   error ("[SUB 68k] Lockup read8 %08X.b (%08X)\n", address, s68k.pc);
 #endif
-  s68k_pulse_wait();
+  s68k_pulse_wait(address, 0);
   return 0xff;
 }
 
@@ -109,7 +109,7 @@ static unsigned int s68k_lockup_r_16 (unsigned int address)
 #ifdef LOGERROR
   error ("[SUB 68k] Lockup read16 %08X.w (%08X)\n", address, s68k.pc);
 #endif
-  s68k_pulse_wait();
+  s68k_pulse_wait(address, 0);
   return 0xffff;
 }
 
@@ -134,12 +134,6 @@ void prg_ram_dma_w(unsigned int length)
 
   /* update DMA source address */
   cdc.dac.w += (words << 1);
-
-  /* check PRG-RAM write protected area */
-  if (dst_index < (scd.regs[0x02>>1].byte.h << 9))
-  {
-    return;
-  }
 
   /* DMA transfer */
   while (words--)
@@ -682,7 +676,7 @@ static unsigned int scd_read_word(unsigned int address)
   /* CDC host data (word access only ?) */
   if (address == 0x08)
   {
-    return cdc_host_r();
+    return cdc_host_r(CDC_SUB_CPU_ACCESS);
   }
 
   /* LED & RESET status */
@@ -809,6 +803,8 @@ INLINE void word_ram_switch(uint8 mode)
     }
   }
 }
+
+static void scd_write_word(unsigned int address, unsigned int data);
 
 static void scd_write_byte(unsigned int address, unsigned int data)
 {
@@ -1005,6 +1001,17 @@ static void scd_write_byte(unsigned int address, unsigned int data)
               gfx_update(s68k.cycles);
             }
 
+            /* check if CDC DMA to 2M Word-RAM is running */
+            if (cdc.dma_w == word_ram_2M_dma_w)
+            {
+              /* synchronize CDC DMA with SUB-CPU */
+              cdc_dma_update(s68k.cycles);
+
+              /* halt CDC DMA to 2M Word-RAM (if still running) */
+              cdc.halted_dma_w = cdc.dma_w;
+              cdc.dma_w = 0;
+            }
+
             /* Word-RAM is returned to MAIN-CPU */
             scd.dmna = 0;
 
@@ -1037,6 +1044,24 @@ static void scd_write_byte(unsigned int address, unsigned int data)
 
       /* update PM0-1 & MODE bits */
       scd.regs[0x02 >> 1].byte.l = (scd.regs[0x02 >> 1].byte.l & ~0x1c) | (data & 0x1c);
+      return;
+    }
+
+    case 0x04: /* CDC mode */
+    {
+      scd.regs[0x04 >> 1].byte.h = data & 0x07;
+
+      /* synchronize CDC DMA (if running) with SUB-CPU */
+      if (cdc.dma_w)
+      {
+        cdc_dma_update(s68k.cycles);
+      }
+
+      /* reinitialize CDC data transfer destination (verified on real hardware, cf. Krikzz's mcd-verificator) */
+      cdc_dma_init();
+
+      /* reset CDC DMA address (verified on real hardware, cf. Krikzz's mcd-verificator) */
+      scd.regs[0x0a >> 1].w = 0;
       return;
     }
 
@@ -1102,16 +1127,27 @@ static void scd_write_byte(unsigned int address, unsigned int data)
 
     default:
     {
+      uint16 reg_16 = address & 0x1fe;
+
       /* SUB-CPU communication words */
-      if ((address & 0x1f0) == 0x20)
+      if ((reg_16 >= 0x20) && (reg_16 <= 0x2f))
       {
         s68k_poll_sync(1 << ((address - 0x10) & 0x1f));
       }
 
       /* MAIN-CPU communication words */
-      else if ((address & 0x1f0) == 0x10)
+      else if ((reg_16 >= 0x10) && (reg_16 <= 0x1f))
       {
         /* read-only (Sega Classic Arcade Collection) */
+        return;
+      }
+
+      /* word-only registers */
+      else if (((reg_16 >= 0x08) && (reg_16 <= 0x0d)) ||
+               ((reg_16 >= 0x34) && (reg_16 <= 0x35)) ||
+               ((reg_16 >= 0x5a) && (reg_16 <= 0x67)))
+      {
+        scd_write_word(address, (data << 8) | (data & 0xff));
         return;
       }
 
@@ -1119,12 +1155,12 @@ static void scd_write_byte(unsigned int address, unsigned int data)
       if (address & 1)
       {
         /* register LSB */
-        scd.regs[(address >> 1) & 0xff].byte.l = data;
+        scd.regs[reg_16 >> 1].byte.l = data;
         return;
       }
 
       /* register MSB */
-      scd.regs[(address >> 1) & 0xff].byte.h = data;
+      scd.regs[reg_16 >> 1].byte.h = data;
       return;
     }
   }
@@ -1314,6 +1350,17 @@ static void scd_write_word(unsigned int address, unsigned int data)
               gfx_update(s68k.cycles);
             }
 
+            /* check if CDC DMA to 2M Word-RAM is running */
+            if (cdc.dma_w == word_ram_2M_dma_w)
+            {
+              /* synchronize CDC DMA with SUB-CPU */
+              cdc_dma_update(s68k.cycles);
+
+              /* halt CDC DMA to 2M Word-RAM (if still running) */
+              cdc.halted_dma_w = cdc.dma_w;
+              cdc.dma_w = 0;
+            }
+
             /* Word-RAM is returned to MAIN-CPU */
             scd.dmna = 0;
 
@@ -1352,6 +1399,18 @@ static void scd_write_word(unsigned int address, unsigned int data)
     case 0x04: /* CDC mode & register address */
     {
       scd.regs[0x04 >> 1].w = data & (0x0700 | cdc.ar_mask);
+
+      /* synchronize CDC DMA (if running) with SUB-CPU */
+      if (cdc.dma_w)
+      {
+        cdc_dma_update(s68k.cycles);
+      }
+
+      /* reinitialize CDC data transfer destination (verified on real hardware, cf. Krikzz's mcd-verificator) */
+      cdc_dma_init();
+
+      /* reset CDC DMA address (verified on real hardware, cf. Krikzz's mcd-verificator) */
+      scd.regs[0x0a >> 1].w = 0;
       return;
     }
 
@@ -1361,7 +1420,14 @@ static void scd_write_word(unsigned int address, unsigned int data)
       return;
     }
 
-    case 0x0c: /* Stopwatch (word access only) */
+    case 0x08: /* CDC host data */
+    {
+      /* CDC data is also read (although unused) on write access (verified on real hardware, cf. Krikzz's mcd-verificator) */
+      cdc_host_r(CDC_SUB_CPU_ACCESS);
+      return;
+    }
+
+    case 0x0c: /* Stopwatch */
     {
       /* synchronize the counter with SUB-CPU */
       int ticks = (s68k.cycles - scd.stopwatch) / TIMERS_SCYCLES_RATIO;
@@ -1838,16 +1904,6 @@ void scd_update(unsigned int cycles)
   int s68k_run_cycles;
   int s68k_end_cycles = scd.cycles + SCYCLES_PER_LINE;
 
-  /* update CDC DMA transfer */
-  if (cdc.dma_w)
-  {
-    /* check if Word-RAM is returned to SUB-CPU in 2M mode */
-    if ((cdc.dma_w != word_ram_2M_dma_w) || scd.dmna)
-    {
-      cdc_dma_update();
-    }
-  }
-
   /* run both CPU in sync until end of line */
   do
   {
@@ -1923,10 +1979,15 @@ void scd_update(unsigned int cycles)
   }
   while ((m68k.cycles < cycles) || (s68k.cycles < s68k_end_cycles));
 
-  /* GFX processing */
+  /* update CDC DMA processing (if running) */
+  if (cdc.dma_w)
+  {
+    cdc_dma_update(scd.cycles);
+  }
+
+  /* update GFX processing (if started) */
   if (scd.regs[0x58>>1].byte.h & 0x80)
   {
-    /* update graphics operation if running */
     gfx_update(scd.cycles);
   }
 }
@@ -1940,9 +2001,11 @@ void scd_end_frame(unsigned int cycles)
   /* adjust Stopwatch counter for next frame (can be negative) */
   scd.stopwatch += (ticks * TIMERS_SCYCLES_RATIO) - cycles;
 
-  /* adjust SUB-CPU & GPU cycle counters for next frame */
-  s68k.cycles -= cycles;
-  gfx.cycles  -= cycles;
+  /* adjust SUB-CPU, GPU and CDC cycle counters for next frame */
+  s68k.cycles   -= cycles;
+  gfx.cycles    -= cycles;
+  cdc.cycles[0] -= cycles;
+  cdc.cycles[1] -= cycles;
 
   /* reset CPU registers polling */
   m68k.poll.cycle = 0;
@@ -2300,24 +2363,18 @@ int scd_68k_irq_ack(int level)
   error("INT ack level %d  (%X)\n", level, s68k.pc);
 #endif
 
-#if 0
-  /* level 5 interrupt is normally acknowledged by CDC */
-  if (level != 5)
-#endif
+  /* clear pending interrupt flag */
+  scd.pending &= ~(1 << level);
+
+  /* level 2 interrupt acknowledge */
+  if (level == 2)
   {
-    /* clear pending interrupt flag */
-    scd.pending &= ~(1 << level);
-
-    /* level 2 interrupt acknowledge */
-    if (level == 2)
-    {
-      /* clear IFL2 flag */
-      scd.regs[0x00].byte.h &= ~0x01;
-    }
-
-    /* update IRQ level */
-    s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
+    /* clear IFL2 flag */
+    scd.regs[0x00].byte.h &= ~0x01;
   }
+
+  /* update IRQ level */
+  s68k_update_irq((scd.pending & scd.regs[0x32>>1].byte.l) >> 1);
 
   return M68K_INT_ACK_AUTOVECTOR;
 }
