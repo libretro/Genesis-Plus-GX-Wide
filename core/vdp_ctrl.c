@@ -743,9 +743,7 @@ void vdp_dma_update(unsigned int cycles)
       /* DMA source address registers are incremented during DMA (even DMA Fill) */
 
       if (config.vdp_fix_dma_boundary_bug) {
-      reg[21] = end & 0xff;
         /* 
-      reg[22] = end >> 8;
          * NOTICE: VDP has a hardware bug where DMA transfer source address is not incremented properly,
          * causing the transfer to wrap around 128kb memory boundaries.
          *
