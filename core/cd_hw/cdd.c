@@ -2,7 +2,7 @@
  *  Genesis Plus
  *  CD drive processor & CD-DA fader
  *
- *  Copyright (C) 2012-2022  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2012-2024  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -1855,9 +1855,14 @@ void cdd_update(void)
       scd.regs[0x36>>1].byte.h = 0x01;
     }
   }
+  else
+  {
+    /* CDC decoder is still running while disc is not being read (fixes MCD-verificator CDC Flags Test #30) */
+    cdc_decoder_update(0);
+  }
 
   /* scanning disc */
-  else if (cdd.status == CD_SCAN)
+  if (cdd.status == CD_SCAN)
   {
     /* current track index */
     int index = cdd.index;
@@ -1948,6 +1953,10 @@ void cdd_process(void)
         /* update reported drive status */
         scd.regs[0x38>>1].byte.h = cdd.status;
 
+        /* do not update RS1-RS8 if disc is stopped */
+        if ((cdd.status == CD_STOP) || (cdd.status > CD_PAUSE))
+          break;
+
         /* check if RS1 indicated invalid track infos (during seeking) */
         if (scd.regs[0x38>>1].byte.l == 0x0f)
         {
@@ -1997,11 +2006,14 @@ void cdd_process(void)
       scd.regs[0x36>>1].byte.h = 0x01;
 
       /* RS1-RS8 ignored, expects 0x0 (CD_STOP) in RS0 once */
-      scd.regs[0x38>>1].w = CD_STOP << 8;
+      scd.regs[0x38>>1].w = (CD_STOP << 8) | 0x0f;
       scd.regs[0x3a>>1].w = 0x0000;
       scd.regs[0x3c>>1].w = 0x0000;
       scd.regs[0x3e>>1].w = 0x0000;
-      scd.regs[0x40>>1].w = ~CD_STOP & 0x0f;
+      scd.regs[0x40>>1].w = ~(CD_STOP + 0x0f) & 0x0f;
+
+      /* reset drive position */
+      cdd.index = cdd.lba = 0;
       return;
     }
 
@@ -2114,8 +2126,8 @@ void cdd_process(void)
         /* Fixes a few games hanging because they expect data to be read with some delay */
         /* Wolf Team games (Annet Futatabi, Aisle Lord, Cobra Command, Earnest Evans, Road Avenger & Time Gal) need at least 11 interrupts delay  */
         /* Space Adventure Cobra (2nd morgue scene) needs at least 13 interrupts delay (incl. seek time, so 11 is OK) */
-        /* By default, at least one interrupt latency is required by current emulation model (BIOS hangs otherwise) */
-        cdd.latency = 1 + 10*config.cd_latency;
+        /* By default, at least two interrupts latency is required by current emulation model (BIOS hangs otherwise) */
+        cdd.latency = 2 + 9*config.cd_latency;
       }
 
       /* CD drive seek time */
@@ -2172,7 +2184,7 @@ void cdd_process(void)
       scd.regs[0x3a>>1].w = 0x0000;
       scd.regs[0x3c>>1].w = 0x0000;
       scd.regs[0x3e>>1].w = 0x0000;
-      scd.regs[0x40>>1].w = ~(CD_SEEK + 0xf) & 0x0f;
+      scd.regs[0x40>>1].w = ~(CD_SEEK + 0x0f) & 0x0f;
       return;
     }
 
@@ -2238,7 +2250,7 @@ void cdd_process(void)
       scd.regs[0x3a>>1].w = 0x0000;
       scd.regs[0x3c>>1].w = 0x0000;
       scd.regs[0x3e>>1].w = 0x0000;
-      scd.regs[0x40>>1].w = ~(CD_SEEK + 0xf) & 0x0f;
+      scd.regs[0x40>>1].w = ~(CD_SEEK + 0x0f) & 0x0f;
       return;
     }
 
@@ -2303,11 +2315,14 @@ void cdd_process(void)
       cdd.status = cdd.loaded ? CD_TOC : NO_DISC;
 
       /* RS1-RS8 ignored, expects CD_STOP in RS0 once */
-      scd.regs[0x38>>1].w = CD_STOP << 8;
+      scd.regs[0x38>>1].w = (CD_STOP << 8) | 0x0f;
       scd.regs[0x3a>>1].w = 0x0000;
       scd.regs[0x3c>>1].w = 0x0000;
       scd.regs[0x3e>>1].w = 0x0000;
-      scd.regs[0x40>>1].w = ~CD_STOP & 0x0f;
+      scd.regs[0x40>>1].w = ~(CD_STOP + 0x0f) & 0x0f;
+
+      /* reset drive position */
+      cdd.index = cdd.lba = 0;
 
 #ifdef CD_TRAY_CALLBACK
       CD_TRAY_CALLBACK
@@ -2322,11 +2337,14 @@ void cdd_process(void)
 
       /* update status (RS1-RS8 ignored) */
       cdd.status = CD_OPEN;
-      scd.regs[0x38>>1].w = CD_OPEN << 8;
+      scd.regs[0x38>>1].w = (CD_OPEN << 8) | 0x0f;
       scd.regs[0x3a>>1].w = 0x0000;
       scd.regs[0x3c>>1].w = 0x0000;
       scd.regs[0x3e>>1].w = 0x0000;
-      scd.regs[0x40>>1].w = ~CD_OPEN & 0x0f;
+      scd.regs[0x40>>1].w = ~(CD_OPEN + 0x0f) & 0x0f;
+
+      /* reset drive position */
+      cdd.index = cdd.lba = 0;
 
 #ifdef CD_TRAY_CALLBACK
       CD_TRAY_CALLBACK

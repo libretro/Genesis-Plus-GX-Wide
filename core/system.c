@@ -5,7 +5,7 @@
  *  Support for 16-bit & 8-bit hardware modes
  *
  *  Copyright (C) 1998-2003  Charles Mac Donald (original code)
- *  Copyright (C) 2007-2021  Eke-Eke (Genesis Plus GX)
+ *  Copyright (C) 2007-2024  Eke-Eke (Genesis Plus GX)
  *
  *  Redistribution and use of this code or any derivative works are permitted
  *  provided that the following conditions are met:
@@ -352,8 +352,10 @@ void system_frame_gen(int do_skip)
   mcycles_vdp = 0;
 
   /* reset VDP FIFO */
-  fifo_write_cnt = 0;
-  fifo_slots = 0;
+  fifo_cycles[0] = 0;
+  fifo_cycles[1] = 0;
+  fifo_cycles[2] = 0;
+  fifo_cycles[3] = 0;
 
   /* check if display setings have changed during previous frame */
   if (bitmap.viewport.changed & 2)
@@ -439,8 +441,8 @@ void system_frame_gen(int do_skip)
   /* clear DMA Busy, FIFO FULL & field flags */
   status &= 0xFEED;
 
-  /* set VBLANK & FIFO EMPTY flags */
-  status |= 0x0208;
+  /* set VBLANK flag */
+  status |= 0x08;
 
   /* check interlaced modes */
   if (interlaced)
@@ -481,14 +483,14 @@ void system_frame_gen(int do_skip)
     v_counter = bitmap.viewport.h;
 
     /* delay between VBLANK flag & Vertical Interrupt (Dracula, OutRunners, VR Troopers) */
-    m68k_run(788);
+    m68k_run(vint_cycle);
     if (zstate == 1)
     {
-      z80_run(788);
+      z80_run(vint_cycle);
     }
 
     /* set VINT flag */
-    status |= 0x80;    
+    status |= 0x80;
    
     /* Vertical Interrupt */
     vint_pending = 0x20;
@@ -678,8 +680,10 @@ void system_frame_gen(int do_skip)
 
   /* adjust timings for next frame */
   input_end_frame(mcycles_vdp);
+  m68k.refresh_cycles -= mcycles_vdp;
   m68k.cycles -= mcycles_vdp;
   Z80.cycles -= mcycles_vdp;
+  dma_endCycles = 0;
 }
 
 void system_frame_scd(int do_skip)
@@ -692,8 +696,10 @@ void system_frame_scd(int do_skip)
   scd.cycles = 0;
 
   /* reset VDP FIFO */
-  fifo_write_cnt = 0;
-  fifo_slots = 0;
+  fifo_cycles[0] = 0;
+  fifo_cycles[1] = 0;
+  fifo_cycles[2] = 0;
+  fifo_cycles[3] = 0;
 
   /* check if display setings have changed during previous frame */
   if (bitmap.viewport.changed & 2)
@@ -779,8 +785,8 @@ void system_frame_scd(int do_skip)
   /* clear DMA Busy, FIFO FULL & field flags */
   status &= 0xFEED;
 
-  /* set VBLANK & FIFO EMPTY flags */
-  status |= 0x0208;
+  /* set VBLANK flag */
+  status |= 0x08;
 
   /* check interlaced modes */
   if (interlaced)
@@ -821,14 +827,14 @@ void system_frame_scd(int do_skip)
     v_counter = bitmap.viewport.h;
 
     /* delay between VBLANK flag & Vertical Interrupt (Dracula, OutRunners, VR Troopers) */
-    m68k_run(788);
+    m68k_run(vint_cycle);
     if (zstate == 1)
     {
-      z80_run(788);
+      z80_run(vint_cycle);
     }
 
     /* set VINT flag */
-    status |= 0x80;    
+    status |= 0x80;
 
     /* Vertical Interrupt */
     vint_pending = 0x20;
@@ -1003,8 +1009,10 @@ void system_frame_scd(int do_skip)
   /* adjust timings for next frame */
   scd_end_frame(scd.cycles);
   input_end_frame(mcycles_vdp);
+  m68k.refresh_cycles -= mcycles_vdp;
   m68k.cycles -= mcycles_vdp;
   Z80.cycles -= mcycles_vdp;
+  dma_endCycles = 0;
 }
 
 void system_frame_sms(int do_skip)
@@ -1016,8 +1024,10 @@ void system_frame_sms(int do_skip)
   mcycles_vdp = 0;
 
   /* reset VDP FIFO */
-  fifo_write_cnt = 0;
-  fifo_slots = 0;
+  fifo_cycles[0] = 0;
+  fifo_cycles[1] = 0;
+  fifo_cycles[2] = 0;
+  fifo_cycles[3] = 0;
 
   /* check if display settings has changed during previous frame */
   if (bitmap.viewport.changed & 2)

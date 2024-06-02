@@ -42,6 +42,7 @@ extern "C" {
 
 #if defined(M68K_OVERCLOCK_SHIFT) || defined(Z80_OVERCLOCK_SHIFT)
 #define HAVE_OVERCLOCK
+#define HAVE_EQ
 #endif
 
 /*
@@ -146,8 +147,8 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "disabled"
    },
    {
-      CORE_NAME "_bram",
-      "CD System BRAM",
+      CORE_NAME "_system_bram",
+      "CD System BRAM (Requires Restart)",
       NULL,
       "When running Sega CD/Mega-CD content, specifies whether to share a single save file between all games from a specific region (Per-BIOS) or to create a separate save file for each game (Per-Game). Note that the Sega CD/Mega-CD has limited internal storage, sufficient only for a handful of titles. To avoid running out of space, the 'Per-Game' setting is recommended.",
       NULL,
@@ -158,6 +159,39 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { NULL, NULL },
       },
       "per bios"
+   },
+   {
+      CORE_NAME "_cart_bram",
+      "CD Backup Cart BRAM (Requires Restart)",
+      NULL,
+      "When running Sega CD/Mega-CD content, specifies whether to share a single backup ram cart for all games (Per-Cart) or to create a separate backup ram cart for each game (Per-Game).",
+      NULL,
+      "system",
+      {
+         { "per cart", "Per-Cart" },
+         { "per game", "Per-Game" },
+         { NULL, NULL },
+      },
+      "per cart"
+   },
+   {
+      CORE_NAME "_cart_size",
+      "CD Backup Cart BRAM Size (Requires Restart)",
+      NULL,
+      "Sets the backup ram cart size when running Sega CD/Mega-CD content. Useful when setting the backup ram cart to Per-Game to avoid multiple larger cart sizes.",
+      NULL,
+      "system",
+      {
+         { "disabled", "Disabled" },
+         { "128k",     "128Kbit"  },
+         { "256k",     "256Kbit"  },
+         { "512k",     "512Kbit"  },
+         { "1meg",     "1Mbit"    },
+         { "2meg",     "2Mbit"    },
+         { "4meg",     "4Mbit"    },
+         { NULL, NULL },
+      },
+      "4meg"
    },
    {
       CORE_NAME "_add_on",
@@ -173,7 +207,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { "none",         "None" },
          { NULL, NULL },
       },
-      "disabled"
+      "auto"
    },
    {
       CORE_NAME "_lock_on",
@@ -457,7 +491,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       {
          { "disabled", NULL },
          { "low-pass", "Low-Pass" },
-#if HAVE_EQ
+#ifdef HAVE_EQ
          { "EQ",       NULL },
 #endif
          { NULL, NULL },
@@ -842,7 +876,7 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       CORE_NAME "_enhanced_vscroll_limit",
       "Enhanced per-tile vertical scroll limit",
       NULL,
-      "Only when Enchance per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled.",
+      "Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled.",
       NULL,
       "hacks",
       {
@@ -1434,6 +1468,11 @@ struct retro_core_options_v2 *options_intl[RETRO_LANGUAGE_LAST] = {
    &options_id,      /* RETRO_LANGUAGE_INDONESIAN */
    &options_sv,      /* RETRO_LANGUAGE_SWEDISH */
    &options_uk,      /* RETRO_LANGUAGE_UKRAINIAN */
+   &options_cs,      /* RETRO_LANGUAGE_CZECH */
+   &options_val,     /* RETRO_LANGUAGE_CATALAN_VALENCIA */
+   &options_ca,      /* RETRO_LANGUAGE_CATALAN */
+   &options_en,      /* RETRO_LANGUAGE_BRITISH_ENGLISH */
+   &options_hu,      /* RETRO_LANGUAGE_HUNGARIAN */
 };
 #endif
 

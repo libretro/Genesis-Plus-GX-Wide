@@ -139,6 +139,7 @@ static uint8_t brm_format[0x40] =
   0x53,0x45,0x47,0x41,0x5f,0x43,0x44,0x5f,0x52,0x4f,0x4d,0x00,0x01,0x00,0x00,0x00,
   0x52,0x41,0x4d,0x5f,0x43,0x41,0x52,0x54,0x52,0x49,0x44,0x47,0x45,0x5f,0x5f,0x5f
 };
+uint8_t cart_size;
 
 static bool is_running = 0;
 static uint8_t temp[0x10000];
@@ -199,8 +200,8 @@ static bool libretro_supports_bitmasks          = false;
 
 #define SOUND_FREQUENCY 44100
 
-/* Hide the EQ settings for now */
-/*#define HAVE_EQ*/
+/*EQ settings*/
+#define HAVE_EQ
 
 /* Frameskipping Support */
 
@@ -1338,25 +1339,127 @@ static void check_variables(bool first_run)
   bool update_frameskip     = false;
   struct retro_variable var = {0};
 
-  var.key = CORE_NAME "_bram";
-  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  if (first_run)
   {
-   if (!var.value || !strcmp(var.value, "per bios"))
-   {
-     fill_pathname_join(CD_BRAM_EU, save_dir, "scd_E.brm", sizeof(CD_BRAM_EU));
-     fill_pathname_join(CD_BRAM_US, save_dir, "scd_U.brm", sizeof(CD_BRAM_US));
-     fill_pathname_join(CD_BRAM_JP, save_dir, "scd_J.brm", sizeof(CD_BRAM_JP));
-   }
-   else
-   {
-     char newpath[4096];
-     fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
-     strlcat(newpath, ".brm", sizeof(newpath));
-     strlcpy(CD_BRAM_EU, newpath, sizeof(CD_BRAM_EU));
-     strlcpy(CD_BRAM_US, newpath, sizeof(CD_BRAM_US));
-     strlcpy(CD_BRAM_JP, newpath, sizeof(CD_BRAM_JP));
-   }
+    var.key = CORE_NAME "_system_bram";
+    environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+    {
+      if (!var.value || !strcmp(var.value, "per bios"))
+      {
+        fill_pathname_join(CD_BRAM_EU, save_dir, "scd_E.brm", sizeof(CD_BRAM_EU));
+        fill_pathname_join(CD_BRAM_US, save_dir, "scd_U.brm", sizeof(CD_BRAM_US));
+        fill_pathname_join(CD_BRAM_JP, save_dir, "scd_J.brm", sizeof(CD_BRAM_JP));
+      }
+      else
+      {
+        char newpath[4096];
+        fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+        strlcat(newpath, ".brm", sizeof(newpath));
+        strlcpy(CD_BRAM_EU, newpath, sizeof(CD_BRAM_EU));
+        strlcpy(CD_BRAM_US, newpath, sizeof(CD_BRAM_US));
+        strlcpy(CD_BRAM_JP, newpath, sizeof(CD_BRAM_JP));
+      }
+    }
   }
+
+  if (first_run)
+  {
+    var.key = CORE_NAME "_cart_size";
+    environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+    {
+      if (var.value && !strcmp(var.value, "disabled"))
+        cart_size = 0xff;
+      else if (var.value && !strcmp(var.value, "128k"))
+        cart_size = 1;
+      else if (var.value && !strcmp(var.value, "256k"))
+        cart_size = 2;
+      else if (var.value && !strcmp(var.value, "512k"))
+        cart_size = 3;
+      else if (var.value && !strcmp(var.value, "1meg"))
+        cart_size = 4;
+      else if (var.value && !strcmp(var.value, "2meg"))
+        cart_size = 5;
+      else if (var.value && !strcmp(var.value, "4meg"))
+        cart_size = 6;
+    }
+  }
+
+  if (first_run)
+  {
+    var.key = CORE_NAME "_cart_bram";
+    environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+    {
+      if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 1)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "128Kbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 2)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "256Kbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 3)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "512Kbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 4)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "1Mbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 5)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "2Mbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else if ((!var.value || !strcmp(var.value, "per cart")) && cart_size == 6)
+         {
+           fill_pathname_join(CART_BRAM, save_dir, "4Mbit_cart.brm", sizeof(CART_BRAM));
+         }
+      else
+      {
+      if (cart_size == 1)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_128Kbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      else if (cart_size == 2)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_256Kbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      else if (cart_size == 3)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_512Kbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      else if (cart_size == 4)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_1Mbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      else if (cart_size == 5)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_2Mbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      else if (cart_size == 6)
+         { 
+           char newpath[4096];
+           fill_pathname_join(newpath, save_dir, g_rom_name, sizeof(newpath));
+           strlcat(newpath, "_4Mbit_cart.brm", sizeof(newpath));
+           strlcpy(CART_BRAM, newpath, sizeof(CART_BRAM));
+         }
+      }
+     }
+   }
 
   var.key = CORE_NAME "_system_hw";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
@@ -1664,7 +1767,7 @@ static void check_variables(bool first_run)
     if (var.value && !strcmp(var.value, "low-pass"))
       config.filter = 1;
 
-#if HAVE_EQ 
+#ifdef HAVE_EQ 
     else if (var.value && !strcmp(var.value, "EQ"))
       config.filter = 2;
 #endif
@@ -1679,7 +1782,7 @@ static void check_variables(bool first_run)
     config.lp_range = (!var.value) ? 0x9999 : ((atoi(var.value) * 65536) / 100);
   }
 
-#if HAVE_EQ
+#ifdef HAVE_EQ
   var.key = CORE_NAME "_audio_eq_low";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
@@ -2852,7 +2955,7 @@ void retro_set_environment(retro_environment_t cb)
 
    static const struct retro_system_content_info_override content_overrides[] = {
       {
-         "mdx|md|smd|gen|bms|sms|gg|sg|68k|sgd", /* extensions */
+         "mdx|md|bin|smd|gen|bms|sms|gg|sg|68k|sgd", /* extensions */
 #if defined(LOW_MEMORY)
          true,                                   /* need_fullpath */
 #else
@@ -3307,8 +3410,7 @@ bool retro_load_game(const struct retro_game_info *info)
    fill_pathname_join(CD_BIOS_EU, dir, "bios_CD_E.bin", sizeof(CD_BIOS_EU));
    fill_pathname_join(CD_BIOS_US, dir, "bios_CD_U.bin", sizeof(CD_BIOS_US));
    fill_pathname_join(CD_BIOS_JP, dir, "bios_CD_J.bin", sizeof(CD_BIOS_JP));
-   fill_pathname_join(CART_BRAM,  dir, "cart.brm",      sizeof(CART_BRAM));
-
+ 
    check_variables(true);
 
    if (log_cb)
@@ -3514,7 +3616,7 @@ void retro_unload_game(void)
 
    if (md_ntsc)
       free(md_ntsc);
-   md_ntsc  = NULL;
+   md_ntsc   = NULL;
    if (sms_ntsc)
       free(sms_ntsc);
    sms_ntsc  = NULL;
@@ -3545,39 +3647,46 @@ size_t retro_get_memory_size(unsigned id)
    {
       case RETRO_MEMORY_SAVE_RAM:
       {
-        if (!sram.on)
-          return 0;
+         /* return 0 if SRAM is disabled */
+         if (!sram.on)
+            return 0;
 
-        /* if emulation is not running, we assume the frontend is requesting SRAM size for loading */
-        if (!is_running)
-        {
-          /* max supported size is returned */
-          return 0x10000;
-        }
-
-        /* otherwise, we assume this is for saving and we need to check if SRAM data has been modified */
-        /* this is obviously not %100 safe since the frontend could still be trying to load SRAM while emulation is running */
-        /* a better solution would be that the frontend itself checks if data has been modified before writing it to a file */
-        for (i=0xffff; i>=0; i--)
-        {
-          if (sram.sram[i] != 0xff)
-          {
-            /* only save modified size */
-            return (i+1);
-          }
-        }
-      }
-      case RETRO_MEMORY_SYSTEM_RAM:
-         if (system_hw == SYSTEM_SG)
-            return 0x00400;
-         else if (system_hw == SYSTEM_SGII)
-            return 0x00800;
-         else if (system_hw == SYSTEM_SGII_RAM_EXT || system_hw == SYSTEM_SMS || system_hw == SYSTEM_SMS2 || system_hw == SYSTEM_GG || system_hw == SYSTEM_GGMS || system_hw == SYSTEM_PBC)
-            return 0x02000;
-         else
+         /* if emulation is not running, we assume the frontend is requesting SRAM size for loading so max supported size is returned */
+         if (!is_running)
             return 0x10000;
-      default:
+
+         /* otherwise, we assume this is for saving and we return the size of SRAM data that has actually been modified */
+         /* this is obviously not %100 safe since the frontend could still be trying to load SRAM while emulation is running */
+         /* a better solution would be that the frontend itself checks if data has been modified before writing it to a file */
+         for (i=0xffff; i>=0; i--)
+            if (sram.sram[i] != 0xff)
+               return (i+1);
+
+         /* return 0 if SRAM is not modified */
          return 0;
+      }
+
+      case RETRO_MEMORY_SYSTEM_RAM:
+      {
+         /* 16-bit hardware */
+         if ((system_hw & SYSTEM_PBC) == SYSTEM_MD)
+            return 0x10000; /* 64KB internal RAM */
+
+         /* get 8-bit cartrige on-board RAM size */
+         i = sms_cart_ram_size();
+
+         if (i > 0)
+            return i + 0x2000; /* on-board RAM size + max 8KB internal RAM */
+         else if (system_hw == SYSTEM_SGII)
+            return 0x0800; /* 2KB internal RAM */
+         else if (system_hw == SYSTEM_SG)
+            return 0x0400; /* 1KB internal RAM */
+         else
+            return 0x2000; /* 8KB internal RAM */
+      }
+
+      default:
+        return 0;
    }
 }
 
