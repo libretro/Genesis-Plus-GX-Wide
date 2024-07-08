@@ -133,6 +133,21 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "auto"
    },
    {
+      CORE_NAME "_vdp_mode",
+      "Force VDP Mode",
+      NULL,
+      "Overrides the VDP mode to force it to run at either 60Hz (NTSC) or 50Hz (PAL), regardless of system region.",
+      NULL,
+      "system",
+      {
+         { "auto",  "Disabled" },
+         { "60hz",  "60Hz" },
+         { "50hz",  "50Hz" },
+         { NULL, NULL },
+      },
+      "auto"
+   },
+   {
       CORE_NAME "_bios",
       "System Boot ROM",
       NULL,
@@ -960,9 +975,9 @@ struct retro_core_option_v2_definition option_defs_us[] = {
    },
    {
       CORE_NAME "_cd_latency",
-      "CD access time",
+      "CD Access Time",
       NULL,
-        "Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabling this can be useful with MSU-MD games as it makes CD audio tracks loops more seamless.",
+      "Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabling this can be useful with MSU-MD games as it makes CD audio tracks loops more seamless.",
       NULL,
       "hacks",
       {
@@ -971,6 +986,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { NULL, NULL },
       },
       "enabled"
+   },
+   {
+      CORE_NAME "_cd_precache",
+      "CD Image Cache",
+      NULL,
+      "Load CD image to memory on startup. CHD supported only. Restart Required.",
+      NULL,
+      "hacks",
+      {
+         { "disabled", NULL },
+         { "enabled",  NULL },
+         { NULL, NULL },
+      },
+      "disabled"
    },
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
    {

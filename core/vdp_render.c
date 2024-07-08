@@ -1042,6 +1042,7 @@ void color_update_m4(int index, unsigned int data)
 
     case SYSTEM_SG:
     case SYSTEM_SGII:
+    case SYSTEM_SGII_RAM_EXT:
     {
       /* Fixed TMS99xx palette */
       if (index & 0x0F)
@@ -1540,7 +1541,6 @@ void render_bg_m5(int line)
   pf_row_mask  = playfield_row_mask;
   pf_shift     = playfield_shift;
 
-
   /* Window & Plane A */
   a = (reg[18] & 0x1F) << 3;
   w = (reg[18] >> 7) & 1;
@@ -1668,7 +1668,7 @@ void render_bg_m5(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
-	
+
     start_real = start + (config.h40_extra_columns / 4);
     end_real = end - (config.h40_extra_columns / 4);
 
@@ -1767,7 +1767,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < end; column++, index++)
   {
-	  int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -1885,7 +1885,7 @@ void render_bg_m5_vs(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
-	
+
     start_real = start + (config.h40_extra_columns / 4);
     end_real = end - (config.h40_extra_columns / 4);
 
@@ -1905,9 +1905,9 @@ void render_bg_m5_vs(int line)
 }
 
 /* Enhanced function that allows each cell to be vscrolled individually, instead of being limited to 2-cell */
-void render_bg_m5_vs_enhanced(int line) 
+void render_bg_m5_vs_enhanced(int line)
 {
-  int column;
+  int column, v_offset;
   int start_real, end_real;
   uint32 atex, atbuf, *src, *dst;
   uint32 v_line, next_v_line, *nt;
@@ -1915,10 +1915,6 @@ void render_bg_m5_vs_enhanced(int line)
   uint32 *vs;
   int a, w, start = 0, end;
   uint32 shift, index;
-
-  /* Vertical scroll offset */
-  int v_offset = 0;
-
   /* Common data */
   uint32 xscroll      = *(uint32 *)&vram[hscb + ((line & hscroll_mask) << 2)];
   if (
@@ -1989,7 +1985,7 @@ void render_bg_m5_vs_enhanced(int line)
 
   for(column = 0; column < end; column++, index++)
   {
-	  int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -2167,9 +2163,9 @@ void render_bg_m5_vs_enhanced(int line)
 #endif
 
 #ifdef LSB_FIRST
-      v_line = (line + v_offset + vs[column_capped]) & pf_row_mask;
+      v_line = (line + v_offset + vs[column]) & pf_row_mask;
 #else
-      v_line = (line + v_offset + (vs[column_capped] >> 16)) & pf_row_mask;
+      v_line = (line + v_offset + (vs[column] >> 16)) & pf_row_mask;
 #endif
 
       nt = (uint32 *)&vram[ntab + (((v_line >> 3) << pf_shift) & 0x1FC0)];
@@ -2208,7 +2204,7 @@ void render_bg_m5_vs_enhanced(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
-	
+
     start_real = start + (config.h40_extra_columns / 4);
     end_real = end - (config.h40_extra_columns / 4);
 
@@ -2383,7 +2379,7 @@ void render_bg_m5_im2(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
-	
+
     start_real = start + (config.h40_extra_columns / 4);
     end_real = end - (config.h40_extra_columns / 4);
 
@@ -2564,7 +2560,7 @@ void render_bg_m5_im2_vs(int line)
 
     for(column = start; column < end; column++, index++)
     {
-	    int column_capped = column - (config.h40_extra_columns / 4);
+      int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
 #ifdef LSB_FIRST
@@ -2599,7 +2595,7 @@ void render_bg_m5_im2_vs(int line)
 
     /* Plane A line buffer */
     dst = (uint32 *)&linebuf[1][0x20 + (start << 4)];
-	
+
     start_real = start + (config.h40_extra_columns / 4);
     end_real = end - (config.h40_extra_columns / 4);
 
@@ -2744,7 +2740,7 @@ void render_bg_m5(int line)
 
     /* Pattern row index */
     v_line = (line & 7) << 3;
-	
+
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
@@ -2944,8 +2940,8 @@ void render_bg_m5_vs(int line)
 
     /* Pattern row index */
     v_line = (line & 7) << 3;
-	
-	int start_real = start + (config.h40_extra_columns / 4);
+
+    int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
     for(column = start; column < end; column++)
@@ -2991,7 +2987,7 @@ void render_bg_m5_vs(int line)
 
   for(column = 0; column < width; column++, index++)
   {
-	  int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -3212,7 +3208,7 @@ void render_bg_m5_vs_enhanced(int line)
 
     /* Pattern row index */
     v_line = (line & 7) << 3;
-	
+
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
@@ -3259,7 +3255,7 @@ void render_bg_m5_vs_enhanced(int line)
 
   for(column = 0; column < width; column++, index++)
   {
-	  int column_capped = column - (config.h40_extra_columns / 4);
+    int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
 #ifdef LSB_FIRST
@@ -3502,7 +3498,7 @@ void render_bg_m5_im2(int line)
 
     /* Pattern row index */
     v_line = ((line & 7) << 1 | odd) << 3;
-	
+
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
@@ -3704,7 +3700,7 @@ void render_bg_m5_im2_vs(int line)
 
     /* Pattern row index */
     v_line = ((line & 7) << 1 | odd) << 3;
-	
+
 	int start_real = start + (config.h40_extra_columns / 4);
     int end_real = end - (config.h40_extra_columns / 4);
 
@@ -4732,7 +4728,7 @@ void parse_satb_m5(int line)
 
         /* Update sprite list (only name, attribute & xpos are parsed from VRAM) */
         object_info->attr  = p[link + 2];
-        
+
         if (config.h40_extra_columns > 0)
           object_info->xpos  = p[link + 3];
         else
@@ -5019,7 +5015,7 @@ void render_line(int line)
     /* Left-most column blanking */
     if (reg[0] & 0x20)
     {
-      if (system_hw > SYSTEM_SGII)
+      if (system_hw >= SYSTEM_MARKIII)
       {
         memset(&linebuf[0][0x20], 0x40, 8);
       }

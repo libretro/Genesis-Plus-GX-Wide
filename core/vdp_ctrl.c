@@ -741,7 +741,6 @@ void vdp_dma_update(unsigned int cycles)
     if (!dma_length)
     {
       /* DMA source address registers are incremented during DMA (even DMA Fill) */
-
       if (config.vdp_fix_dma_boundary_bug) {
         /* 
          * NOTICE: VDP has a hardware bug where DMA transfer source address is not incremented properly,
@@ -2218,7 +2217,7 @@ static void vdp_bus_w(unsigned int data)
       }
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_VRAM_W, 2, addr, data);
 #endif
 
@@ -2267,7 +2266,7 @@ static void vdp_bus_w(unsigned int data)
       }
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_CRAM_W, 2, addr, data);
 #endif
 
@@ -2293,7 +2292,7 @@ static void vdp_bus_w(unsigned int data)
       }
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_VSRAM_W, 2, addr, data);
 #endif
 
@@ -2504,7 +2503,7 @@ static unsigned int vdp_68k_data_r_m5(void)
       data = *(uint16 *)&vram[addr & 0xFFFE];
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_VRAM_R, 2, addr, data);
 #endif
 
@@ -2533,7 +2532,7 @@ static unsigned int vdp_68k_data_r_m5(void)
       data |= (fifo[fifo_idx] & ~0x7FF);
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_VSRAM_R, 2, addr, data);
 #endif
 
@@ -2555,7 +2554,7 @@ static unsigned int vdp_68k_data_r_m5(void)
       data |= (fifo[fifo_idx] & ~0xEEE);
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_CRAM_R, 2, addr, data);
 #endif
 
@@ -2574,7 +2573,7 @@ static unsigned int vdp_68k_data_r_m5(void)
       data |= (fifo[fifo_idx] & ~0xFF);
 
 #ifdef HOOK_CPU
-      if (cpu_hook)
+      if (UNLIKELY(cpu_hook))
         cpu_hook(HOOK_VRAM_R, 2, addr, data);
 #endif
 
@@ -3051,7 +3050,6 @@ static void vdp_dma_68k_ext(unsigned int length)
     source += 2;
 
     if (!config.vdp_fix_dma_boundary_bug) {
-    source = (reg[23] << 17) | (source & 0x1FFFF);
       /* 128k DMA window */
       source = (reg[23] << 17) | (source & 0x1FFFF);
     }
