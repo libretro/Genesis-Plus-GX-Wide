@@ -584,8 +584,11 @@ static PIXEL_OUT_T pixel[0x100];
 static PIXEL_OUT_T pixel_lut[3][0x200];
 static PIXEL_OUT_T pixel_lut_m4[0x40];
 
-/* Background & Sprite line buffers */
-static uint8 linebuf[2][0x200];
+/* Background & Sprite line buffers
+ * Max width = 320 + (h40_extra_columns * 8) + 0x40 padding
+ * With h40_extra_columns up to 24: 320 + 192 + 64 = 576 (0x240)
+ */
+static uint8 linebuf[2][0x280];
 
 /* Sprite limit flag */
 static uint8 spr_ovr;
