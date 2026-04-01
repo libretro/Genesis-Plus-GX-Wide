@@ -128,6 +128,7 @@ typedef struct
   uint8 gg_extra;
   uint8 left_border;
   uint8 h40_extra_columns;
+  uint8 h40_extra_columns_alpha;
   uint8 vdp_fix_dma_boundary_bug;
   uint8 render;
   t_input_config input[MAX_INPUTS];
