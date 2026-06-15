@@ -761,7 +761,7 @@ void md_cart_init(void)
               m68k.memory_map[i].base = cart.rom + 0x400000 + (i << 16);
             }
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
             for (i=0; i<0x200000; i+=2)
             {
               /* Byteswap ROM */

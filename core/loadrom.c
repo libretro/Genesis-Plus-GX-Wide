@@ -281,7 +281,7 @@ void getrominfo(char *romheader)
     memcpy (&rominfo.country, romheader + ROMCOUNTRY, 16);
 
     /* Checksums */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     rominfo.checksum =  (rominfo.checksum >> 8) | ((rominfo.checksum & 0xff) << 8);
 #endif
     rominfo.realchecksum = getchecksum(((uint8 *) cart.rom) + 0x200, cart.romsize - 0x200);
@@ -440,7 +440,7 @@ int load_bios(int system)
             scd.type = CD_TYPE_DEFAULT;
           }
          
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
           /* Byteswap ROM to optimize 16-bit access */
           int i;
           for (i = 0; i < size; i += 2)
@@ -696,7 +696,7 @@ int load_rom(char *filename)
   /* set console region */
   get_region((char *)(cart.rom));
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   /* 16-bit ROM specific */
   if (system_hw == SYSTEM_MD)
   {

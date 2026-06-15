@@ -109,7 +109,7 @@ void areplay_init(void)
       }
     }
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     if (action_replay.enabled)
     {
       int i;

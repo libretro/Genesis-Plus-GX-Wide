@@ -86,7 +86,7 @@ INLINE uint32 READ_LONG(void *address)
 {
   if ((uint32)address & 3)
   {
-#ifdef LSB_FIRST  /* little endian version */
+#ifndef MSB_FIRST  /* little endian version */
     return ( *((uint8 *)address) +
         (*((uint8 *)address+1) << 8)  +
         (*((uint8 *)address+2) << 16) +
@@ -96,7 +96,7 @@ INLINE uint32 READ_LONG(void *address)
         (*((uint8 *)address+2) << 8)  +
         (*((uint8 *)address+1) << 16) +
         (*((uint8 *)address)   << 24) );
-#endif  /* LSB_FIRST */
+#endif  /* MSB_FIRST */
   }
   else return *(uint32 *)address;
 }
@@ -105,7 +105,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
 {
   if ((uint32)address & 3)
   {
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       *((uint8 *)address) =  data;
       *((uint8 *)address+1) = (data >> 8);
       *((uint8 *)address+2) = (data >> 16);
@@ -115,7 +115,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
       *((uint8 *)address+2) = (data >> 8);
       *((uint8 *)address+1) = (data >> 16);
       *((uint8 *)address)   = (data >> 24);
-#endif /* LSB_FIRST */
+#endif /* MSB_FIRST */
     return;
   }
   else *(uint32 *)address = data;
@@ -190,7 +190,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
 */
 
 #ifdef ALIGN_LONG
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 #define DRAW_COLUMN(ATTR, LINE) \
   GET_LSB_TILE(ATTR, LINE) \
   WRITE_LONG(dst, src[0] | atex); \
@@ -238,7 +238,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
   dst++;
 #endif
 #else /* NOT ALIGNED */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 #define DRAW_COLUMN(ATTR, LINE) \
   GET_LSB_TILE(ATTR, LINE) \
   *dst++ = (src[0] | atex); \
@@ -279,7 +279,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
 /* This might be faster or slower than original method, depending on  */
 /* architecture (x86, PowerPC), cache size, memory access speed, etc...  */
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 #define DRAW_BG_TILE(SRC_A, SRC_B) \
   *lb++ = table[((SRC_B << 8) & 0xff00) | (SRC_A & 0xff)]; \
   *lb++ = table[(SRC_B & 0xff00) | ((SRC_A >> 8) & 0xff)]; \
@@ -294,7 +294,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
 #endif
 
 #ifdef ALIGN_LONG
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 #define DRAW_BG_COLUMN(ATTR, LINE, SRC_A, SRC_B) \
   GET_LSB_TILE(ATTR, LINE) \
   SRC_A = READ_LONG((uint32 *)lb); \
@@ -358,7 +358,7 @@ INLINE void WRITE_LONG(void *address, uint32 data)
   DRAW_BG_TILE(SRC_A, SRC_B)
 #endif
 #else /* NOT ALIGNED */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 #define DRAW_BG_COLUMN(ATTR, LINE, SRC_A, SRC_B) \
   GET_LSB_TILE(ATTR, LINE) \
   SRC_A = *(uint32 *)(lb); \
@@ -691,7 +691,7 @@ static void make_bp_lut(void)
 
     /* i = low byte in VRAM  (bp0 or bp2) */
     /* j = high byte in VRAM (bp1 or bp3) */
- #ifdef LSB_FIRST
+ #ifndef MSB_FIRST
     bp_lut[(j << 8) | (i)] = out;
  #else
     bp_lut[(i << 8) | (j)] = out;
@@ -1492,7 +1492,7 @@ void render_bg_m4(int line)
 
     /* Read name table attribute word */
     attr = nt[index % width];
-#ifndef LSB_FIRST
+#ifdef MSB_FIRST
     attr = (((attr & 0xFF) << 8) | ((attr & 0xFF00) >> 8));
 #endif
 
@@ -1553,7 +1553,7 @@ void render_bg_m5(int line)
   end   = bitmap.viewport.w >> 4;
 
   /* Plane B scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
   v_line = (line + (yscroll >> 16)) & pf_row_mask;
@@ -1610,7 +1610,7 @@ void render_bg_m5(int line)
     end   = clip[0].right;
 
     /* Plane A scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift   = (xscroll & 0x0F);
     index   = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
     v_line  = (line + yscroll) & pf_row_mask;
@@ -1728,7 +1728,7 @@ void render_bg_m5_vs(int line)
   end = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -1773,7 +1773,7 @@ void render_bg_m5_vs(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask;
 #else
     v_line = (line + vs[column_capped]) & pf_row_mask;
@@ -1810,7 +1810,7 @@ void render_bg_m5_vs(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -1856,7 +1856,7 @@ void render_bg_m5_vs(int line)
       column_capped = MAX(0, MIN(column_capped, 19));
 
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + vs[column_capped]) & pf_row_mask & pf_row_mask;
 #else
       v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask & pf_row_mask;
@@ -1946,7 +1946,7 @@ void render_bg_m5_vs_enhanced(int line)
   end = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -1991,7 +1991,7 @@ void render_bg_m5_vs_enhanced(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask;
     next_v_line = (line + (vs[column_capped + 1] >> 16)) & pf_row_mask;
 #else
@@ -2017,7 +2017,7 @@ void render_bg_m5_vs_enhanced(int line)
     v_line = (v_line & 7) << 3;
 
     atbuf = nt[index & pf_col_mask];
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     GET_LSB_TILE(atbuf, v_line)
 #else
     GET_MSB_TILE(atbuf, v_line)
@@ -2033,7 +2033,7 @@ void render_bg_m5_vs_enhanced(int line)
     *dst++ = (src[1] | atex);
 #endif
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + v_offset + (vs[column_capped] >> 16)) & pf_row_mask;
 #else
     v_line = (line + v_offset + vs[column_capped]) & pf_row_mask;
@@ -2043,7 +2043,7 @@ void render_bg_m5_vs_enhanced(int line)
     v_line = (v_line & 7) << 3;
     atbuf = nt[index & pf_col_mask];
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     GET_MSB_TILE(atbuf, v_line)
 #else
     GET_LSB_TILE(atbuf, v_line)
@@ -2080,7 +2080,7 @@ void render_bg_m5_vs_enhanced(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -2126,7 +2126,7 @@ void render_bg_m5_vs_enhanced(int line)
       column_capped = MAX(0, MIN(column_capped, 19));
 
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + vs[column_capped]) & pf_row_mask & pf_row_mask;
       next_v_line = (line + vs[column_capped + 1]) & pf_row_mask;
 #else
@@ -2150,7 +2150,7 @@ void render_bg_m5_vs_enhanced(int line)
       v_line = (v_line & 7) << 3;
 
       atbuf = nt[index & pf_col_mask];
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       GET_LSB_TILE(atbuf, v_line)
 #else
       GET_MSB_TILE(atbuf, v_line)
@@ -2165,7 +2165,7 @@ void render_bg_m5_vs_enhanced(int line)
       *dst++ = (src[1] | atex);
 #endif
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + v_offset + vs[column]) & pf_row_mask;
 #else
       v_line = (line + v_offset + (vs[column] >> 16)) & pf_row_mask;
@@ -2175,7 +2175,7 @@ void render_bg_m5_vs_enhanced(int line)
       v_line = (v_line & 7) << 3;
       atbuf = nt[index & pf_col_mask];
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       GET_MSB_TILE(atbuf, v_line)
 #else
       GET_LSB_TILE(atbuf, v_line)
@@ -2264,7 +2264,7 @@ void render_bg_m5_im2(int line)
   end = bitmap.viewport.w >> 4;
 
   /* Plane B scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
   v_line = (line + (yscroll >> 17)) & pf_row_mask;
@@ -2321,7 +2321,7 @@ void render_bg_m5_im2(int line)
     end   = clip[0].right;
 
     /* Plane A scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift   = (xscroll & 0x0F);
     index   = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
     v_line  = (line + (yscroll >> 1)) & pf_row_mask;
@@ -2439,7 +2439,7 @@ void render_bg_m5_im2_vs(int line)
   end   = bitmap.viewport.w >> 4;
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -2484,7 +2484,7 @@ void render_bg_m5_im2_vs(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 17)) & pf_row_mask;
 #else
     v_line = (line + (vs[column_capped] >> 1)) & pf_row_mask;
@@ -2521,7 +2521,7 @@ void render_bg_m5_im2_vs(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -2566,7 +2566,7 @@ void render_bg_m5_im2_vs(int line)
       int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + (vs[column_capped] >> 1)) & pf_row_mask;
 #else
       v_line = (line + (vs[column_capped] >> 17)) & pf_row_mask;
@@ -2678,7 +2678,7 @@ void render_bg_m5(int line)
     end   = clip[0].right;
 
     /* Plane A scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift  = (xscroll & 0x0F);
     index  = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
     v_line = (line + yscroll) & pf_row_mask;
@@ -2759,7 +2759,7 @@ void render_bg_m5(int line)
   }
 
   /* Plane B scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
   v_line = (line + (yscroll >> 16)) & pf_row_mask;
@@ -2862,7 +2862,7 @@ void render_bg_m5_vs(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -2905,7 +2905,7 @@ void render_bg_m5_vs(int line)
       int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + vs[column_capped]) & pf_row_mask;
 #else
       v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask;
@@ -2959,7 +2959,7 @@ void render_bg_m5_vs(int line)
   }
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift = (xscroll >> 16) & 0x0F;
   index = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -2993,7 +2993,7 @@ void render_bg_m5_vs(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask;
 #else
     v_line = (line + vs[column_capped]) & pf_row_mask;
@@ -3081,7 +3081,7 @@ void render_bg_m5_vs_enhanced(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -3124,7 +3124,7 @@ void render_bg_m5_vs_enhanced(int line)
       int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + vs[column_capped]) & pf_row_mask;
       next_v_line = (line + vs[column_capped + 1]) & pf_row_mask;
 #else
@@ -3148,7 +3148,7 @@ void render_bg_m5_vs_enhanced(int line)
       v_line = (v_line & 7) << 3;
 
       atbuf = nt[index & pf_col_mask];
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       GET_LSB_TILE(atbuf, v_line)
 #else
       GET_MSB_TILE(atbuf, v_line)
@@ -3163,7 +3163,7 @@ void render_bg_m5_vs_enhanced(int line)
       *dst++ = (src[1] | atex);
 #endif
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + v_offset + vs[column_capped]) & pf_row_mask;
 #else
       v_line = (line + v_offset + (vs[column_capped] >> 16)) & pf_row_mask;
@@ -3173,7 +3173,7 @@ void render_bg_m5_vs_enhanced(int line)
       v_line = (v_line & 7) << 3;
       atbuf = nt[index & pf_col_mask];
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       GET_MSB_TILE(atbuf, v_line)
 #else
       GET_LSB_TILE(atbuf, v_line)
@@ -3227,7 +3227,7 @@ void render_bg_m5_vs_enhanced(int line)
   }
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift = (xscroll >> 16) & 0x0F;
   index = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -3261,7 +3261,7 @@ void render_bg_m5_vs_enhanced(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 16)) & pf_row_mask;
     next_v_line = (line + (vs[column_capped + 1] >> 16)) & pf_row_mask;
 #else
@@ -3285,7 +3285,7 @@ void render_bg_m5_vs_enhanced(int line)
 
     atbuf = nt[index & pf_col_mask];
 #ifdef ALIGN_LONG
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   GET_LSB_TILE(atbuf, v_line)
   xscroll = READ_LONG((uint32 *)lb);
   yscroll = (src[0] | atex);
@@ -3329,7 +3329,7 @@ void render_bg_m5_vs_enhanced(int line)
   DRAW_BG_TILE(xscroll, yscroll)
 #endif
 #else /* NOT ALIGNED */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   GET_LSB_TILE(atbuf, v_line)
   xscroll = *(uint32 *)(lb);
   yscroll = (src[0] | atex);
@@ -3436,7 +3436,7 @@ void render_bg_m5_im2(int line)
     end   = clip[0].right;
 
     /* Plane A scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift  = (xscroll & 0x0F);
     index  = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
     v_line = (line + (yscroll >> 1)) & pf_row_mask;
@@ -3517,7 +3517,7 @@ void render_bg_m5_im2(int line)
   }
 
   /* Plane B scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift  = (xscroll >> 16) & 0x0F;
   index  = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
   v_line = (line + (yscroll >> 17)) & pf_row_mask;
@@ -3622,7 +3622,7 @@ void render_bg_m5_im2_vs(int line)
     end   = clip[0].right;
 
     /* Plane A horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     shift = (xscroll & 0x0F);
     index = pf_col_mask + start + 1 - ((xscroll >> 4) & pf_col_mask);
 #else
@@ -3665,7 +3665,7 @@ void render_bg_m5_im2_vs(int line)
       int column_capped = column - (config.h40_extra_columns / 4);
       column_capped = MAX(0, MIN(column_capped, 19));
       /* Plane A vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       v_line = (line + (vs[column_capped] >> 1)) & pf_row_mask;
 #else
       v_line = (line + (vs[column_capped] >> 17)) & pf_row_mask;
@@ -3719,7 +3719,7 @@ void render_bg_m5_im2_vs(int line)
   }
 
   /* Plane B horizontal scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   shift = (xscroll >> 16) & 0x0F;
   index = pf_col_mask + 1 - ((xscroll >> 20) & pf_col_mask);
 #else
@@ -3753,7 +3753,7 @@ void render_bg_m5_im2_vs(int line)
     int column_capped = column - (config.h40_extra_columns / 4);
     column_capped = MAX(0, MIN(column_capped, 19));
     /* Plane B vertical scroll */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
     v_line = (line + (vs[column_capped] >> 17)) & pf_row_mask;
 #else
     v_line = (line + (vs[column_capped] >> 1)) & pf_row_mask;
@@ -4853,7 +4853,7 @@ void update_bg_pattern_cache_m5(int index)
           /* Pattern cache data (one pattern = 8 bytes) */
           /* byte0 <-> p0 p1 p2 p3 p4 p5 p6 p7 <-> byte7 (hflip = 0) */
           /* byte0 <-> p7 p6 p5 p4 p3 p2 p1 p0 <-> byte7 (hflip = 1) */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
           /* Byteplane data = (msb) p4p5 p6p7 p0p1 p2p3 (lsb) */
           dst[0x00000 | (y << 3) | (x ^ 3)] = (c);        /* vflip=0, hflip=0 */
           dst[0x20000 | (y << 3) | (x ^ 4)] = (c);        /* vflip=0, hflip=1 */

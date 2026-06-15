@@ -21,7 +21,7 @@ typedef union
     uint16 w;
     struct
     {
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
         uint8 l;
         uint8 h;
 #else

@@ -1509,7 +1509,7 @@ void cdd_read_audio(unsigned int samples)
 #if defined(USE_LIBCHDR)
     if (cdd.chd.file)
     {
-#ifndef LSB_FIRST
+#ifdef MSB_FIRST
       int16 *ptr = (int16 *) (cdd.chd.hunk + (cdd.chd.hunkofs % cdd.chd.hunkbytes));
 #else
       uint8 *ptr = cdd.chd.hunk + (cdd.chd.hunkofs % cdd.chd.hunkbytes);
@@ -1533,7 +1533,7 @@ void cdd_read_audio(unsigned int samples)
         mul = (curVol & 0x7fc) ? (curVol & 0x7fc) : (curVol & 0x03);
 
         /* left & right channels */
-#ifndef LSB_FIRST
+#ifdef MSB_FIRST
         l = ((ptr[0] * mul) / 1024);
         r = ((ptr[1] * mul) / 1024);
         ptr+=2;
@@ -1562,7 +1562,7 @@ void cdd_read_audio(unsigned int samples)
           cdd.chd.hunkofs += CD_MAX_SUBCODE_DATA;
 
           /* reinitialize hunk cache pointer */
-#ifndef LSB_FIRST
+#ifdef MSB_FIRST
           ptr = (int16 *) (cdd.chd.hunk + (cdd.chd.hunkofs % cdd.chd.hunkbytes));
 #else
           ptr = cdd.chd.hunk + (cdd.chd.hunkofs % cdd.chd.hunkbytes);
@@ -1653,7 +1653,7 @@ void cdd_read_audio(unsigned int samples)
     else
 #endif
     {
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
       int16 *ptr = (int16 *) (cdc.ram);
 #else
       uint8 *ptr = cdc.ram;
@@ -1668,7 +1668,7 @@ void cdd_read_audio(unsigned int samples)
         mul = (curVol & 0x7fc) ? (curVol & 0x7fc) : (curVol & 0x03);
 
         /* left & right channels */
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
         l = ((ptr[0] * mul) / 1024);
         r = ((ptr[1] * mul) / 1024);
         ptr+=2;

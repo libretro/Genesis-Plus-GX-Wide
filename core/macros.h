@@ -1,7 +1,7 @@
 #ifndef _MACROS_H_
 #define _MACROS_H_
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
 
 #define READ_BYTE(BASE, ADDR) (BASE)[(ADDR)^1]
 

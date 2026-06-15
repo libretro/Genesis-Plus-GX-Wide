@@ -34,7 +34,7 @@ typedef signed int      INT32;
  ******************************************************************************/
 
 typedef union {
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   struct { UINT8 l,h,h2,h3; } b;
   struct { UINT16 l,h; } w;
 #else

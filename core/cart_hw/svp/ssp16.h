@@ -32,7 +32,7 @@ typedef union
 {
   unsigned int v;
   struct {
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
   unsigned short l;
   unsigned short h;
 #else

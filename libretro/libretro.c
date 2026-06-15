@@ -3816,7 +3816,7 @@ bool retro_load_game(const struct retro_game_info *info)
             system_bios |= SYSTEM_MD;
          }
 
-#ifdef LSB_FIRST
+#ifndef MSB_FIRST
          for (i=0; i<0x800; i+=2)
          {
             uint8 temp = boot_rom[i];

@@ -87,7 +87,7 @@ ifneq (,$(findstring unix,$(platform)))
    TARGET := $(TARGET_NAME)_libretro.so
    fpic := -fPIC
    SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,--no-undefined
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
    MAX_ROM_SIZE = 33554432
 
@@ -189,7 +189,7 @@ else ifeq ($(platform), classic_armv8_a35)
 	ARCH = arm
 	BUILTIN_GPU = neon
 	USE_DYNAREC = 1
-	ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+	ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
 	PLATFORM_DEFINES := -DHAVE_ZLIB
 	CFLAGS += -march=armv8-a
 	LDFLAGS += -static-libgcc -static-libstdc++
@@ -200,7 +200,7 @@ else ifeq ($(platform), linux-portable)
    TARGET := $(TARGET_NAME)_libretro.so
    fpic := -fPIC -nostdlib
    SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
    LIBS =
 
@@ -211,9 +211,9 @@ else ifeq ($(platform), osx)
    SHARED := -dynamiclib
    MINVERSION :=
 ifeq ($(arch),ppc)
-   ENDIANNESS_DEFINES := -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1 -DHAVE_NO_LANGEXTRA
+   ENDIANNESS_DEFINES := -DMSB_FIRST -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1 -DHAVE_NO_LANGEXTRA
 else
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
 endif
    PLATFORM_DEFINES := -DHAVE_ZLIB
    MAX_ROM_SIZE = 33554432
@@ -243,7 +243,7 @@ else ifneq (,$(findstring ios,$(platform)))
    TARGET := $(TARGET_NAME)_libretro_ios.dylib
    fpic := -fPIC
    SHARED := -dynamiclib
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
    MAX_ROM_SIZE = 33554432
    MINVERSION :=
@@ -274,7 +274,7 @@ else ifeq ($(platform), tvos-arm64)
    TARGET := $(TARGET_NAME)_libretro_tvos.dylib
    fpic := -fPIC
    SHARED := -dynamiclib
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
 
    ifeq ($(IOSSDK),)
@@ -301,7 +301,7 @@ else ifeq ($(platform), theos_ios)
 
    LIBRARY_NAME = $(TARGET_NAME)_libretro_ios
 
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
 
 # QNX
@@ -309,7 +309,7 @@ else ifeq ($(platform), qnx)
    TARGET := $(TARGET_NAME)_libretro_qnx.so
    fpic := -fPIC
    SHARED := -shared -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,--no-undefined
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB
    CC = qcc -Vgcc_ntoarmv7le
    CXX = qcc -Vgcc_ntoarmv7le
@@ -327,7 +327,7 @@ else ifneq (,$(filter $(platform), ps3 psl1ght))
    CC = $(PS3DEV)/ppu/bin/ppu-$(COMMONLV)gcc$(EXE_EXT)
    CXX = $(PS3DEV)/ppu/bin/ppu-$(COMMONLV)g++$(EXE_EXT)
    AR = $(PS3DEV)/ppu/bin/ppu-$(COMMONLV)ar$(EXE_EXT)
-   ENDIANNESS_DEFINES := -DBYTE_ORDER=BIG_ENDIAN -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
+   ENDIANNESS_DEFINES := -DMSB_FIRST -DBYTE_ORDER=BIG_ENDIAN -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
    STATIC_LINKING=1
    HAVE_SYS_PARAM = 0
    MAX_ROM_SIZE = 33554432
@@ -338,7 +338,7 @@ else ifeq ($(platform), psp1)
    CC = psp-gcc$(EXE_EXT)
    CXX = psp-g++$(EXE_EXT)
    AR = psp-ar$(EXE_EXT)
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DPSP
    CFLAGS += -G0
    STATIC_LINKING = 1
@@ -351,7 +351,7 @@ else ifeq ($(platform), vita)
    CXX = arm-vita-eabi-g++$(EXE_EXT)
    AR = arm-vita-eabi-ar$(EXE_EXT)
    CFLAGS += -O3 -mfloat-abi=hard -ffast-math -fsingle-precision-constant
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DALIGN_LONG -DALT_RENDERER -DHAVE_ALLOCA_H -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DALIGN_LONG -DALT_RENDERER -DHAVE_ALLOCA_H -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DVITA
    STATIC_LINKING = 1
    USE_PER_SOUND_CHANNELS_CONFIG = 0
@@ -363,7 +363,7 @@ else ifeq ($(platform), ctr)
    CC = $(DEVKITARM)/bin/arm-none-eabi-gcc$(EXE_EXT)
    CXX = $(DEVKITARM)/bin/arm-none-eabi-g++$(EXE_EXT)
    AR = $(DEVKITARM)/bin/arm-none-eabi-ar$(EXE_EXT)
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DALIGN_LONG -DBYTE_ORDER=LITTLE_ENDIAN -DUSE_DYNAMIC_ALLOC
+   ENDIANNESS_DEFINES := -DALIGN_LONG -DBYTE_ORDER=LITTLE_ENDIAN -DUSE_DYNAMIC_ALLOC
    PLATFORM_DEFINES := -DARM11 -D_3DS
    CFLAGS += -march=armv6k -mtune=mpcore -mfloat-abi=hard -marm -mfpu=vfp
    CFLAGS += -Wall -mword-relocations
@@ -379,7 +379,7 @@ else ifeq ($(platform), xenon)
    CXX = xenon-g++$(EXE_EXT)
    AR = xenon-ar$(EXE_EXT)
    PLATFORM_DEFINES := -D__LIBXENON__ -DALT_RENDER
-	ENDIANNESS_DEFINES := -DBYTE_ORDER=BIG_ENDIAN -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
+	ENDIANNESS_DEFINES := -DMSB_FIRST -DBYTE_ORDER=BIG_ENDIAN -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
    STATIC_LINKING = 1
    MAX_ROM_SIZE = 33554432
 
@@ -389,7 +389,7 @@ else ifneq (,$(filter $(platform), ngc wii wiiu))
    CC = $(DEVKITPPC)/bin/powerpc-eabi-gcc$(EXE_EXT)
    CXX = $(DEVKITPPC)/bin/powerpc-eabi-g++$(EXE_EXT)
    AR = $(DEVKITPPC)/bin/powerpc-eabi-ar$(EXE_EXT)
-	ENDIANNESS_DEFINES := -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
+	ENDIANNESS_DEFINES := -DMSB_FIRST -DBYTE_ORDER=BIG_ENDIAN -DCPU_IS_BIG_ENDIAN=1 -DWORDS_BIGENDIAN=1
    PLATFORM_DEFINES := -DGEKKO -mcpu=750 -meabi -mhard-float -DALT_RENDER -DDISABLE_MANY_OGG_OPEN_FILES
    PLATFORM_DEFINES += -ffunction-sections -fdata-sections -D__wiiu__ -D__wut__
    STATIC_LINKING = 1
@@ -424,7 +424,7 @@ else ifeq ($(platform), libnx)
    include $(DEVKITPRO)/libnx/switch_rules
    TARGET := $(TARGET_NAME)_libretro_$(platform).a
    CFLAGS += -D__SWITCH__ -DHAVE_LIBNX -I$(LIBNX)/include/ -fPIE -Wl,--allow-multiple-definition -specs=$(LIBNX)/switch.specs
-   PLATFORM_DEFINES += -DARM -march=armv8-a -mtune=cortex-a57 -mtp=soft -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -D__LIBRETRO__ -DALIGN_LONG -DALIGN_WORD -DM68K_OVERCLOCK_SHIFT=20 -DHAVE_ZLIB
+   PLATFORM_DEFINES += -DARM -march=armv8-a -mtune=cortex-a57 -mtp=soft -DBYTE_ORDER=LITTLE_ENDIAN -D__LIBRETRO__ -DALIGN_LONG -DALIGN_WORD -DM68K_OVERCLOCK_SHIFT=20 -DHAVE_ZLIB
    STATIC_LINKING=1
    STATIC_LINKING_LINK=1
    MAX_ROM_SIZE = 33554432
@@ -432,7 +432,7 @@ else ifeq ($(platform), libnx)
 # emscripten
 else ifeq ($(platform), emscripten)
    TARGET := $(TARGET_NAME)_libretro_$(platform).bc
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DALIGN_LONG -DBYTE_ORDER=LITTLE_ENDIAN -DHAVE_ZLIB
+   ENDIANNESS_DEFINES := -DALIGN_LONG -DBYTE_ORDER=LITTLE_ENDIAN -DHAVE_ZLIB
    STATIC_LINKING = 1
 
 # RS90
@@ -446,7 +446,7 @@ else ifeq ($(platform), rs90)
    LDFLAGS += $(PTHREAD_FLAGS)
    CFLAGS += $(PTHREAD_FLAGS) -G0
    CFLAGS += -ffast-math -march=mips32 -mtune=mips32 -fomit-frame-pointer
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
    USE_PER_SOUND_CHANNELS_CONFIG = 0
    LOW_MEMORY = 1
    MAX_ROM_SIZE = 16777216
@@ -462,7 +462,7 @@ else ifeq ($(platform), gcw0)
    LDFLAGS += $(PTHREAD_FLAGS)
    CFLAGS += $(PTHREAD_FLAGS) -G0
    CFLAGS += -ffast-math -march=mips32 -mtune=mips32r2 -mhard-float -fomit-frame-pointer
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
    USE_PER_SOUND_CHANNELS_CONFIG = 0
    MAX_ROM_SIZE = 16777216
 
@@ -477,7 +477,7 @@ else ifeq ($(platform), retrofw)
    LDFLAGS += $(PTHREAD_FLAGS)
    CFLAGS += $(PTHREAD_FLAGS) -G0
    CFLAGS += -ffast-math -march=mips32 -mtune=mips32 -mhard-float -fomit-frame-pointer
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
    USE_PER_SOUND_CHANNELS_CONFIG = 0
    MAX_ROM_SIZE = 16777216
    
@@ -492,7 +492,7 @@ else ifeq ($(platform), miyoo)
    LDFLAGS += $(PTHREAD_FLAGS)
    CFLAGS += $(PTHREAD_FLAGS) 
    CFLAGS += -ffast-math -march=armv5te -mtune=arm926ej-s -fomit-frame-pointer
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
    USE_PER_SOUND_CHANNELS_CONFIG = 0
    LOW_MEMORY = 1
    MAX_ROM_SIZE = 16777216
@@ -509,7 +509,7 @@ export INCLUDE := $(XDK)/xbox/include
 export LIB := $(XDK)/xbox/lib
 PATH := $(call unixcygpath,$(XDK)/xbox/bin/vc71):$(PATH)
 
-ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
 PSS_STYLE :=2
 CFLAGS   += -D_XBOX -D_XBOX1
 CXXFLAGS += -D_XBOX -D_XBOX1
@@ -659,7 +659,7 @@ else ifneq (,$(findstring windows_msvc2017,$(platform)))
 	PSS_STYLE :=2
 	LDFLAGS += -DLL
 
-  ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
+  ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN -DALIGN_LONG
 
 ifneq (,$(findstring windows_msvc2017_uwp_arm,$(platform)))
   #ENDIANNESS_DEFINES += -DALIGN_LONG
@@ -754,7 +754,7 @@ else
    CC ?= gcc
    CXX ?= g++
    SHARED := -shared -static-libgcc -static-libstdc++ -Wl,--version-script=$(CORE_DIR)/libretro/link.T -Wl,--no-undefined
-   ENDIANNESS_DEFINES := -DLSB_FIRST -DBYTE_ORDER=LITTLE_ENDIAN
+   ENDIANNESS_DEFINES := -DBYTE_ORDER=LITTLE_ENDIAN
    PLATFORM_DEFINES := -DHAVE_ZLIB -DENABLE_SUB_68K_ADDRESS_ERROR_EXCEPTIONS
    HAVE_CDROM = 1
    MAX_ROM_SIZE = 33554432
