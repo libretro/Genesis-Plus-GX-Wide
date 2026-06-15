@@ -41,6 +41,7 @@
 
 #include "shared.h"
 #include "eq.h"
+#include <math.h>
 
 extern int8 audio_hard_disable;
 
@@ -250,9 +251,47 @@ int audio_update(int16 *buffer)
 
     if (config.filter & 1)
     {
-      /* single-pole low-pass filter (6 dB/octave) */
-      uint32 factora  = config.lp_range;
-      uint32 factorb  = 0x10000 - factora;
+      /* single-pole low-pass filter (6 dB/octave)
+       *
+       * The feedback coefficient (config.lp_range) sets the cut-off only
+       * relative to the sample rate: y[n] = a*y[n-1] + (1-a)*x[n] has a
+       * cut-off fc = -ln(a)*fs/(2*pi), so re-using the same coefficient at
+       * a different rate would move the cut-off (e.g. ~2.2x higher at 96
+       * kHz than at 44.1 kHz, making the filter far too weak). The
+       * coefficient was historically tuned at 44.1 kHz, so rescale it to
+       * preserve that cut-off at any output rate:
+       *   a_fs = a_44100 ^ (44100 / fs)
+       * This is identity at 44.1 kHz and recomputed only when the range or
+       * sample rate changes (never per-sample). */
+      static uint32 cached_lp_range = 0;
+      static int    cached_rate     = 0;
+      static uint32 scaled_factora  = 0;
+      uint32 factora;
+      uint32 factorb;
+
+      if ((config.lp_range != cached_lp_range) || (snd.sample_rate != cached_rate))
+      {
+        double a0 = (double)config.lp_range / 65536.0;
+        cached_lp_range = config.lp_range;
+        cached_rate     = snd.sample_rate;
+
+        if ((a0 > 0.0) && (a0 < 1.0) && (snd.sample_rate > 0))
+        {
+          double a = pow(a0, 44100.0 / (double)snd.sample_rate);
+          int v = (int)(a * 65536.0 + 0.5);
+          if (v < 0)     v = 0;
+          if (v > 65536) v = 65536;
+          scaled_factora = (uint32)v;
+        }
+        else
+        {
+          /* degenerate (a0 == 0 or 1): no rescale possible/needed */
+          scaled_factora = config.lp_range;
+        }
+      }
+
+      factora = scaled_factora;
+      factorb = 0x10000 - factora;
 
       /* restore previous sample */
       l = llp;
