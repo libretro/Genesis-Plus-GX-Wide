@@ -506,6 +506,23 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "mame (ym2612)"
    },
    {
+      CORE_NAME "_sound_samplerate",
+      "Sound Samplerate (Hint)",
+      NULL,
+      "Select the audio output sample rate. The Mega Drive/Genesis has no sample-based audio hardware and no fixed output rate (sound is synthesised in real time), so this is a free choice. Higher rates raise the Nyquist limit, reducing aliasing and high-frequency low-pass 'smearing', and give better time-domain resolution, at the cost of more CPU for resampling. 'Auto' queries the frontend's target rate and selects the supported rate closest to it, which avoids extra frontend resampling.",
+      NULL,
+      "audio",
+      {
+         { "auto",  "Auto" },
+         { "32000", "32KHz" },
+         { "44100", "44KHz" },
+         { "48000", "48KHz" },
+         { "96000", "96KHz" },
+         { NULL, NULL },
+      },
+      "auto"
+   },
+   {
       CORE_NAME "_sound_output",
       "Sound Output",
       NULL,

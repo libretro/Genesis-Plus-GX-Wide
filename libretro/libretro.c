@@ -150,7 +150,13 @@ uint8_t cart_size;
 static bool is_running = 0;
 static bool restart_eq = false;
 static uint8_t temp[0x10000];
-static int16 soundbuffer[3068];
+/* Output audio buffer. Sized for one full video frame at the highest
+ * supported sample rate. Worst case is the lowest frame rate (PAL, ~49.7
+ * fps) at 96 kHz: 96000/49.7 ~= 1932 stereo frames -> 3864 int16. Round up
+ * to 4096 int16 (2048 stereo frames) for blip cycle-drift / alignment
+ * headroom (covers up to ~100 kHz at 49 fps). */
+#define SOUNDBUFFER_SIZE 4096
+static int16 soundbuffer[SOUNDBUFFER_SIZE];
 static uint16_t bitmap_data_[720 * 576];
 
 static char g_rom_dir[256];
@@ -223,7 +229,20 @@ static uint32_t overclock_delay;
 static bool libretro_supports_option_categories = false;
 static bool libretro_supports_bitmasks          = false;
 
-#define SOUND_FREQUENCY 44100
+/* Default audio sample rate (used until the core option / host hint is
+ * resolved). The Genesis/MD has no sample-based audio hardware and no
+ * fixed output rate (sound is synthesised in real time), so the output
+ * rate is a free choice; it is exposed as a hint core option. */
+#define SOUND_FREQUENCY_DEFAULT 44100
+
+/* Supported output sample rates for the "Sound Samplerate (Hint)" option. */
+#define SOUND_RATE_32K 32000
+#define SOUND_RATE_44K 44100
+#define SOUND_RATE_48K 48000
+#define SOUND_RATE_96K 96000
+
+/* Current resolved output sample rate. */
+static int sound_frequency = SOUND_FREQUENCY_DEFAULT;
 
 /*EQ settings*/
 #define HAVE_EQ
@@ -1466,6 +1485,54 @@ static void update_overclock(void)
 }
 #endif
 
+/* Resolve the output sample rate from the "Sound Samplerate (Hint)" core
+ * option. In "auto" mode, query the frontend's target rate (if the
+ * frontend supports RETRO_ENVIRONMENT_GET_TARGET_SAMPLE_RATE) and pick the
+ * supported rate closest to it; otherwise fall back to the default.
+ * Returns the resolved rate in Hz. */
+static int resolve_sound_frequency(void)
+{
+   struct retro_variable var;
+   var.key   = CORE_NAME "_sound_samplerate";
+   var.value = NULL;
+
+   if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+   {
+      if      (!strcmp(var.value, "32000")) return SOUND_RATE_32K;
+      else if (!strcmp(var.value, "44100")) return SOUND_RATE_44K;
+      else if (!strcmp(var.value, "48000")) return SOUND_RATE_48K;
+      else if (!strcmp(var.value, "96000")) return SOUND_RATE_96K;
+      /* else: "auto" (or unrecognised) -> fall through to host hint */
+   }
+
+   /* Auto: choose the supported rate nearest the frontend's target. */
+   {
+      unsigned target = 0;
+      if (environ_cb(RETRO_ENVIRONMENT_GET_TARGET_SAMPLE_RATE, &target) && target)
+      {
+         static const int supported[4] =
+            { SOUND_RATE_32K, SOUND_RATE_44K, SOUND_RATE_48K, SOUND_RATE_96K };
+         int best      = supported[0];
+         int best_dist = (int)target - best;
+         int i;
+         if (best_dist < 0) best_dist = -best_dist;
+         for (i = 1; i < 4; i++)
+         {
+            int dist = (int)target - supported[i];
+            if (dist < 0) dist = -dist;
+            if (dist < best_dist)
+            {
+               best_dist = dist;
+               best      = supported[i];
+            }
+         }
+         return best;
+      }
+   }
+
+   return SOUND_FREQUENCY_DEFAULT;
+}
+
 static void check_variables(bool first_run)
 {
   unsigned orig_value;
@@ -1478,7 +1545,23 @@ static void check_variables(bool first_run)
   bool update_viewports     = false;
   bool reinit               = false;
   bool update_frameskip     = false;
+  bool update_sample_rate   = false;
   struct retro_variable var = {0};
+
+  /* Resolve output sample rate from the "Sound Samplerate (Hint)" option.
+   * On first run audio has not been initialised yet, so just record the
+   * value (audio_init() in retro_load_game picks it up). On a later change
+   * we only need to re-init the resampler and push a fresh av_info so the
+   * frontend reconfigures audio - NOT a full system reset. */
+  {
+    int new_frequency = resolve_sound_frequency();
+    if (new_frequency != sound_frequency)
+    {
+      sound_frequency = new_frequency;
+      if (!first_run)
+        update_sample_rate = true;
+    }
+  }
 
   if (first_run)
   {
@@ -1707,7 +1790,7 @@ static void check_variables(bool first_run)
           };
 
           /* framerate might have changed, reinitialize audio timings */
-          audio_set_rate(44100, 0);
+          audio_set_rate(sound_frequency, 0);
           
           /* reinitialize I/O region register */
           if (system_hw == SYSTEM_MD)
@@ -1788,7 +1871,7 @@ static void check_variables(bool first_run)
           };
 
           /* framerate might have changed, reinitialize audio timings */
-          audio_set_rate(44100, 0);
+          audio_set_rate(sound_frequency, 0);
 
           /* reinitialize I/O region register */
           if (system_hw == SYSTEM_MD)
@@ -2406,7 +2489,7 @@ static void check_variables(bool first_run)
 #ifdef HAVE_OVERCLOCK
     overclock_delay = OVERCLOCK_FRAME_DELAY;
 #endif
-    audio_init(SOUND_FREQUENCY, 0);
+    audio_init(sound_frequency, 0);
     memcpy(temp, sram.sram, sizeof(temp));
     system_init();
     system_reset();
@@ -2416,6 +2499,18 @@ static void check_variables(bool first_run)
 
   if (update_viewports)
     bitmap.viewport.changed = 11;
+
+  /* Sample rate changed at runtime: re-init the resampler with the new
+   * rate and push fresh av_info so the frontend reconfigures its audio
+   * output. Skipped when a full reinit already happened above (that path
+   * re-runs audio_init with sound_frequency itself). */
+  if (update_sample_rate && !reinit && !first_run)
+  {
+    struct retro_system_av_info av_info;
+    audio_init(sound_frequency, 0);
+    retro_get_system_av_info(&av_info);
+    environ_cb(RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO, &av_info);
+  }
 
   /* Reinitialise frameskipping, if required */
   if ((update_frameskip || reinit) && !first_run)
@@ -3321,7 +3416,7 @@ void retro_get_system_av_info(struct retro_system_av_info *info)
 
    info->geometry.aspect_ratio  = vaspect_ratio;
    info->timing.fps             = (double)(system_clock) / (double)lines_per_frame / (double)MCYCLES_PER_LINE;
-   info->timing.sample_rate     = SOUND_FREQUENCY;
+   info->timing.sample_rate     = sound_frequency;
 
    if (!retro_fps)
       retro_fps = info->timing.fps;
@@ -3827,7 +3922,7 @@ bool retro_load_game(const struct retro_game_info *info)
       }
    }
 
-   audio_init(SOUND_FREQUENCY, 0);
+   audio_init(sound_frequency, 0);
    system_init();
    system_reset();
    is_running = false;
