@@ -83,6 +83,7 @@
 #include "md_ntsc.h"
 #include "sms_ntsc.h"
 #include "osd.h"
+#include "vdp_ctrl.h" // for vram
 
 #define STATIC_ASSERT(name, test) typedef struct { int assert_[(test)?1:-1]; } assert_ ## name ## _
 #define M68K_MAX_CYCLES 1107
@@ -167,6 +168,26 @@ static retro_audio_sample_batch_t audio_cb;
 
 enum RetroLightgunInputModes{RetroLightgun, RetroPointer};
 static enum RetroLightgunInputModes retro_gun_mode = RetroLightgun;
+
+/* Turbo Support */
+/* Minimum (and default) turbo pulse train
+ * is 2 frames ON, 2 frames OFF */
+#define TURBO_PERIOD_MIN      4
+#define TURBO_PERIOD_MAX      120
+#define TURBO_PULSE_WIDTH_MIN 2
+#define TURBO_PULSE_WIDTH_MAX 15
+
+static unsigned libretro_input_state = 0;
+static bool up_down_allowed          = false;
+static unsigned turbo_period         = TURBO_PERIOD_MIN;
+static unsigned turbo_pulse_width    = TURBO_PULSE_WIDTH_MIN;
+static unsigned turbo_a_counter[MAX_INPUTS] = {0};
+static unsigned turbo_b_counter[MAX_INPUTS] = {0};
+static unsigned turbo_c_counter[MAX_INPUTS] = {0};
+
+
+/* */
+
 
 /* Cheat Support */
 #define MAX_CHEATS (150)
@@ -920,6 +941,64 @@ static void osd_input_update_internal(void)
    }
 }
 
+
+static void handle_turbo_buttons(void)
+{
+   // derived from https://github.com/jdgleaver/gambatte-libretro/blob/master/libgambatte/libretro/libretro.cpp#L1355
+   
+   unsigned int res;
+   unsigned i;
+   bool turbo_a                = false;
+   bool turbo_b                = false;
+   bool turbo_c                = false;
+
+   for (i = 0; i < MAX_INPUTS; i++)
+   {
+      int16_t ret = input_state_cb(i, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_MASK);
+      
+      res = input.pad[i];
+      
+      turbo_a = (ret & (1 << RETRO_DEVICE_ID_JOYPAD_L2));
+      turbo_b = (ret & (1 << RETRO_DEVICE_ID_JOYPAD_R2));
+      turbo_c = (ret & (1 << RETRO_DEVICE_ID_JOYPAD_L3));
+
+      if (turbo_a)
+      {
+         res |= (turbo_a_counter[i] < turbo_pulse_width) ? INPUT_A : 0;
+
+         turbo_a_counter[i]++;
+         if (turbo_a_counter[i] >= turbo_period)
+            turbo_a_counter[i] = 0;
+      }
+      else
+         turbo_a_counter[i] = 0;
+         
+      if (turbo_b)
+      {
+         res |= (turbo_b_counter[i] < turbo_pulse_width) ? INPUT_B : 0;
+
+         turbo_b_counter[i]++;
+         if (turbo_b_counter[i] >= turbo_period)
+            turbo_b_counter[i] = 0;
+      }
+      else
+         turbo_b_counter[i] = 0;
+
+      if (turbo_c)
+      {
+         res |= (turbo_c_counter[i] < turbo_pulse_width) ? INPUT_C : 0;
+
+         turbo_c_counter[i]++;
+         if (turbo_c_counter[i] >= turbo_period)
+            turbo_c_counter[i] = 0;
+      }
+      else
+         turbo_c_counter[i] = 0;
+
+      input.pad[i] = res ;
+   }
+}
+
 void osd_input_update(void)
 {
   input_poll_cb();
@@ -931,6 +1010,8 @@ void osd_input_update(void)
      osd_input_update_internal_bitmasks();
   else
      osd_input_update_internal();
+
+  handle_turbo_buttons();
 }
 
 static void draw_cursor(int16_t x, int16_t y, uint16_t color)
@@ -2206,6 +2287,18 @@ static void check_variables(bool first_run)
       update_viewports = true;
   }
 
+  var.key = CORE_NAME "_h40_extra_columns_alpha";
+  environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
+  {
+    orig_value = config.h40_extra_columns_alpha;
+
+    if (!var.value) config.h40_extra_columns_alpha = 100;
+    else config.h40_extra_columns_alpha = atoi(var.value);
+
+    if (orig_value != config.h40_extra_columns_alpha)
+      update_viewports = true;
+  }
+  
   var.key = CORE_NAME "_vdp_fix_dma_boundary_bug";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);
   {
@@ -2992,6 +3085,9 @@ void retro_set_environment(retro_environment_t cb)
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 0, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3005,6 +3101,9 @@ void retro_set_environment(retro_environment_t cb)
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 1, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3018,6 +3117,9 @@ void retro_set_environment(retro_environment_t cb)
       { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 2, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3031,6 +3133,9 @@ void retro_set_environment(retro_environment_t cb)
       { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 3, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3044,6 +3149,9 @@ void retro_set_environment(retro_environment_t cb)
       { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 4, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3057,6 +3165,9 @@ void retro_set_environment(retro_environment_t cb)
       { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 5, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3070,6 +3181,9 @@ void retro_set_environment(retro_environment_t cb)
       { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 6, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3083,6 +3197,9 @@ void retro_set_environment(retro_environment_t cb)
       { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_Y,     "A" },
       { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L,     "X" },
       { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R,     "Z" },
+      { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L2,     "Turbo A" },
+      { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_R2,     "Turbo B" },
+      { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_L3,     "Turbo C" },
       { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_SELECT,    "Mode" },
       { 7, RETRO_DEVICE_JOYPAD, 0, RETRO_DEVICE_ID_JOYPAD_START,    "Start" },
 
@@ -3782,6 +3899,10 @@ void *retro_get_memory_data(unsigned id)
          return sram.on ? sram.sram : NULL;
       case RETRO_MEMORY_SYSTEM_RAM:
          return work_ram;
+      case RETRO_MEMORY_VIDEO_RAM:
+         return vram;
+      case RETRO_MEMORY_ROM:
+         return cart.rom;
       default:
          return NULL;
    }
@@ -3833,8 +3954,20 @@ size_t retro_get_memory_size(unsigned id)
             return 0x2000; /* 8KB internal RAM */
       }
 
+      case RETRO_MEMORY_VIDEO_RAM:
+      {
+         /* 16-bit hardware */
+         if ((system_hw & SYSTEM_PBC) == SYSTEM_MD)
+            return 0x10000; /* 64KB internal RAM */
+         else
+            return 0x4000; /* 16KB internal RAM */         
+      }
+         
+      case RETRO_MEMORY_ROM:
+         return cart.romsize;
+         
       default:
-        return 0;
+         return 0;
    }
 }
 

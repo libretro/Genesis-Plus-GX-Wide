@@ -5105,6 +5105,7 @@ void remap_line(int line)
 #else
     /* Convert VDP pixel data to output pixel format */
     PIXEL_OUT_T *dst = ((PIXEL_OUT_T *)&bitmap.data[(line * bitmap.pitch)]);
+    
     if (config.lcd)
     {
       do
@@ -5115,9 +5116,16 @@ void remap_line(int line)
     }
     else
     {
+      int left_border_end = config.h40_extra_columns*4;
+      int right_border_start = width - config.h40_extra_columns*4 ;
       do
       {
-        *dst++ = pixel[*src++];
+        if (config.h40_extra_columns && config.h40_extra_columns_alpha < 100 && (width <= left_border_end || width >= right_border_start))
+        {
+          RENDER_PIXEL_LOWER_ALPHA(src,dst,pixel,config.h40_extra_columns_alpha);
+        }
+        else
+          *dst++ = pixel[*src++];
       }
       while (--width);
     }

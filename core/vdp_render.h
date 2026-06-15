@@ -99,6 +99,15 @@
   *out++ = PIXEL(r,g,b); \
 }
 
+#define RENDER_PIXEL_LOWER_ALPHA(in, out, table, rate) \
+{ \
+    PIXEL_OUT_T pixel_out = table[*in++]; \
+    uint8 r = (uint8)((GET_R(pixel_out) * (rate)) / 100); \
+    uint8 g = (uint8)((GET_G(pixel_out) * (rate)) / 100); \
+    uint8 b = (uint8)((GET_B(pixel_out) * (rate)) / 100); \
+    *out++ = PIXEL(r, g, b); \
+}
+
 /* Global variables */
 extern uint16 spr_col;
 

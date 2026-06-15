@@ -298,6 +298,29 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "10"
    },
    {
+      CORE_NAME "_h40_extra_columns_alpha",
+      "Extra columns alpha %",
+      NULL,
+      "If extra columns are enabled, this option allows to specify their translucency.",
+      NULL,
+      "video",
+      {
+         { "100", NULL },
+         { "90", NULL },
+         { "80", NULL },
+         { "70", NULL },
+         { "60", NULL },
+         { "50", NULL },
+         { "40", NULL },
+         { "30", NULL },
+         { "20", NULL },
+         { "10", NULL },
+         { "0", NULL },
+         { NULL, NULL },
+      },
+      "100"
+   },
+   {
       CORE_NAME "_vdp_fix_dma_boundary_bug",
       "Fix VDP DMA boundary bug",
       NULL,
