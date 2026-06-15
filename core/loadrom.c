@@ -442,12 +442,14 @@ int load_bios(int system)
          
 #ifndef MSB_FIRST
           /* Byteswap ROM to optimize 16-bit access */
-          int i;
-          for (i = 0; i < size; i += 2)
           {
-            uint8 temp = scd.bootrom[i];
-            scd.bootrom[i] = scd.bootrom[i+1];
-            scd.bootrom[i+1] = temp;
+            int i;
+            for (i = 0; i < size; i += 2)
+            {
+              uint8 temp = scd.bootrom[i];
+              scd.bootrom[i] = scd.bootrom[i+1];
+              scd.bootrom[i+1] = temp;
+            }
           }
 #endif
           /* mark CD BIOS as being loaded */
