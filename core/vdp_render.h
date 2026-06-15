@@ -43,15 +43,8 @@
 #ifndef _RENDER_H_
 #define _RENDER_H_
 
-/* 3:3:2 RGB */
-#if defined(USE_8BPP_RENDERING)
-#define PIXEL(r,g,b) (((r) << 5) | ((g) << 2) | (b))
-#define GET_R(pixel) (((pixel) & 0xe0) >> 5)
-#define GET_G(pixel) (((pixel) & 0x1c) >> 2)
-#define GET_B(pixel) (((pixel) & 0x03) >> 0)
-
 /* 5:5:5 RGB */
-#elif defined(USE_15BPP_RENDERING)
+#if defined(USE_15BPP_RENDERING)
 #if defined(USE_ABGR)
 #define PIXEL(r,g,b) ((1 << 15) | ((b) << 10) | ((g) << 5) | (r))
 #define GET_B(pixel) (((pixel) & 0x7c00) >> 10)

@@ -64,13 +64,14 @@ extern sms_ntsc_t *sms_ntsc;
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
 
 /* Output pixels type*/
-#if defined(USE_8BPP_RENDERING)
-#define PIXEL_OUT_T uint8
-#elif defined(USE_32BPP_RENDERING)
+#if defined(USE_32BPP_RENDERING)
 #define PIXEL_OUT_T uint32
 #else
 #define PIXEL_OUT_T uint16
 #endif
+
+/* SIMD pixel-blend kernels (needs PIXEL_OUT_T and the RENDER_PIXEL_* macros) */
+#include "vdp_blend.h"
 
 
 /* Pixel priority look-up tables information */
@@ -479,12 +480,8 @@ INLINE void WRITE_LONG(void *address, uint32 data)
 
 /* Pixels conversion macro */
 /* 4-bit color channels are either compressed to 2/3-bit or dithered to 5/6/8-bit equivalents */
-/* 3:3:2 RGB */
-#if defined(USE_8BPP_RENDERING)
-#define MAKE_PIXEL(r,g,b)  (((r) >> 1) << 5 | ((g) >> 1) << 2 | (b) >> 2)
-
 /* 5:5:5 RGB */
-#elif defined(USE_15BPP_RENDERING)
+#if defined(USE_15BPP_RENDERING)
 #if defined(USE_ABGR)
 #define MAKE_PIXEL(r,g,b) ((1 << 15) | (b) << 11 | ((b) >> 3) << 10 | (g) << 6 | ((g) >> 3) << 5 | (r) << 1 | (r) >> 3)
 #else
@@ -530,16 +527,7 @@ static const uint8 tms_crom[16] =
 };
 
 /* original SG-1000 palette */
-#if defined(USE_8BPP_RENDERING)
-static const uint8 tms_palette[16] =
-{
-  0x00, 0x00, 0x39, 0x79,
-  0x4B, 0x6F, 0xC9, 0x5B,
-  0xE9, 0xED, 0xD5, 0xD9,
-  0x35, 0xCE, 0xDA, 0xFF
-};
-
-#elif defined(USE_15BPP_RENDERING)
+#if defined(USE_15BPP_RENDERING)
 static const uint16 tms_palette[16] =
 {
   0x8000, 0x8000, 0x9308, 0xAF6F,
@@ -5108,24 +5096,44 @@ void remap_line(int line)
     
     if (config.lcd)
     {
-      do
+      vdp_blend_lcd(src, dst, pixel, config.lcd, width);
+    }
+    else if (config.h40_extra_columns && (config.h40_extra_columns_alpha < 100))
+    {
+      /* widescreen extra columns are translucent: blend the left and right
+       * border runs, copy the opaque centre verbatim. The original scalar
+       * loop blended (border + 1) pixels at the left edge (the <= / >=
+       * comparisons overlap on one pixel) and border pixels at the right
+       * edge, so reproduce that split exactly. */
+      int border = config.h40_extra_columns * 4;
+      int left   = border + 1;
+      int right  = border;
+      if ((left + right) > width)
       {
-        RENDER_PIXEL_LCD(src,dst,pixel,config.lcd);
+        /* degenerate narrow line: fall back to fully scalar to stay exact */
+        do { RENDER_PIXEL_LOWER_ALPHA(src, dst, pixel, config.h40_extra_columns_alpha); } while (--width);
       }
-      while (--width);
+      else
+      {
+        int centre = width - left - right;
+
+        /* left border (border + 1 pixels) */
+        vdp_blend_alpha(src, dst, pixel, config.h40_extra_columns_alpha, left);
+        src += left; dst += left;
+
+        /* opaque centre */
+        while (centre-- > 0)
+          *dst++ = pixel[*src++];
+
+        /* right border (border pixels) */
+        vdp_blend_alpha(src, dst, pixel, config.h40_extra_columns_alpha, right);
+      }
     }
     else
     {
-      int left_border_end = config.h40_extra_columns*4;
-      int right_border_start = width - config.h40_extra_columns*4 ;
       do
       {
-        if (config.h40_extra_columns && config.h40_extra_columns_alpha < 100 && (width <= left_border_end || width >= right_border_start))
-        {
-          RENDER_PIXEL_LOWER_ALPHA(src,dst,pixel,config.h40_extra_columns_alpha);
-        }
-        else
-          *dst++ = pixel[*src++];
+        *dst++ = pixel[*src++];
       }
       while (--width);
     }
