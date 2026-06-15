@@ -1037,11 +1037,20 @@ static void draw_cursor(int16_t x, int16_t y, uint16_t color)
    if (y_start < -bitmap.viewport.y) y_start = -bitmap.viewport.y;
    if (y_end >= (bitmap.viewport.h + bitmap.viewport.y)) y_end = bitmap.viewport.h + bitmap.viewport.y - 1;
 
-   /* draw crosshair */
-   for (i = (x_start - x); i <= (x_end - x); i++)
-      ptr[i] = (i & 1) ? color : 0xffff;
-   for (i = (y_start - y); i <= (y_end - y); i++)
-      ptr[i * bitmap.width] = (i & 1) ? color : 0xffff;
+   /* draw crosshair (horizontal stroke keeps y fixed; only draw if that
+      row is on-screen, otherwise ptr[i] would write out of bounds) */
+   if ((y >= -bitmap.viewport.y) && (y < (bitmap.viewport.h + bitmap.viewport.y)))
+   {
+      for (i = (x_start - x); i <= (x_end - x); i++)
+         ptr[i] = (i & 1) ? color : 0xffff;
+   }
+
+   /* vertical stroke keeps x fixed; only draw if that column is on-screen */
+   if ((x >= -bitmap.viewport.x) && (x < (bitmap.viewport.w + bitmap.viewport.x)))
+   {
+      for (i = (y_start - y); i <= (y_end - y); i++)
+         ptr[i * bitmap.width] = (i & 1) ? color : 0xffff;
+   }
 }
 
 static void init_bitmap(void)
@@ -3640,8 +3649,12 @@ bool retro_load_game(const struct retro_game_info *info)
    }
 #endif
 
-   sms_ntsc = calloc(1, sizeof(sms_ntsc_t));
-   md_ntsc  = calloc(1, sizeof(md_ntsc_t));
+   /* allocate NTSC filter scratch buffers (reuse if a previous load did
+      not pair with retro_unload_game, to avoid leaking the old ones) */
+   if (!sms_ntsc)
+      sms_ntsc = calloc(1, sizeof(sms_ntsc_t));
+   if (!md_ntsc)
+      md_ntsc  = calloc(1, sizeof(md_ntsc_t));
 
    init_bitmap();
    config_default();
@@ -3750,6 +3763,7 @@ bool retro_load_game(const struct retro_game_info *info)
                }
             }
          }
+         filestream_close(fd);
       }
 
       /* automatically try to load first disk if at least one file was added to disk interface from M3U file list */
