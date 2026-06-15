@@ -263,7 +263,17 @@ void gen_reset(int hard_reset)
   else
   {
     /* when RESET button is pressed, 68k could be anywhere in VDP frame (Bonkers, Eternal Champions, X-Men 2) */
-    m68k.cycles = (uint32)((MCYCLES_PER_LINE * lines_per_frame) * ((double)rand() / (double)RAND_MAX));
+    /* A pseudo-random position is required, but it MUST be deterministic for */
+    /* libretro netplay, run-ahead and rewind to stay in sync (rand() is not: */
+    /* it is unseeded, host-libc dependent and not part of the save state).   */
+    /* Derive the phase from the current 68k cycle count instead, which is    */
+    /* already serialized in the save state and identical across netplay peers */
+    /* and re-run frames. A simple xorshift mix gives a well-spread value.     */
+    uint32 mix = (uint32)m68k.cycles;
+    mix ^= mix << 13;
+    mix ^= mix >> 17;
+    mix ^= mix << 5;
+    m68k.cycles = mix % (uint32)(MCYCLES_PER_LINE * lines_per_frame);
 
     /* reset YM2612 (on hard reset, this is done by sound_reset) */
     fm_reset(0);
