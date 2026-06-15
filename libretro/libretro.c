@@ -1360,7 +1360,7 @@ static double calculate_display_aspect_ratio(void)
    return (videosamplerate / dotrate) * ((double)(vwidth - vwoffset) / ((double)vheight * 2.0));
 }
 
-static bool update_geometry(void)
+static void update_geometry(void)
 {
    struct retro_system_av_info info;
    bool update_av_info = false;
@@ -1460,7 +1460,6 @@ static void update_overclock(void)
 static void check_variables(bool first_run)
 {
   unsigned orig_value;
-  struct retro_system_av_info info;
 #ifdef USE_PER_SOUND_CHANNELS_CONFIG
   unsigned c;
   char md_fm_channel_volume_base_str[]  = CORE_NAME "_md_channel_0_volume";
@@ -3625,7 +3624,7 @@ bool retro_load_game(const struct retro_game_info *info)
       strncpy(content_path, info->path, sizeof(content_path));
       content_path[sizeof(content_path) - 1] = '\0';
 
-      if (ext = strrchr(info->path, '.'))
+      if ((ext = strrchr(info->path, '.')))
       {
          strncpy(content_ext, ext + 1, sizeof(content_ext));
          content_ext[sizeof(content_ext) - 1] = '\0';
@@ -4060,7 +4059,6 @@ void retro_run(void)
    okay = environ_cb(RETRO_ENVIRONMENT_GET_AUDIO_VIDEO_ENABLE, &result);
    if (okay)
    {
-      bool audioEnabled = 0 != (result & 2);
       bool videoEnabled = 0 != (result & 1);
       bool hardDisableAudio = 0 != (result & 8);
       do_skip = !videoEnabled;
