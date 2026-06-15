@@ -644,8 +644,6 @@ static chd_error cdlz_codec_decompress(void *codec, const uint8_t *src, uint32_t
 	/* reassemble the data */
 	for (framenum = 0; framenum < frames; framenum++)
 	{
-		uint8_t *sector;
-
 		memcpy(&dest[framenum * CD_FRAME_SIZE], &cdlz->buffer[framenum * CD_MAX_SECTOR_DATA], CD_MAX_SECTOR_DATA);
 #ifdef WANT_SUBCODE
 		memcpy(&dest[framenum * CD_FRAME_SIZE + CD_MAX_SECTOR_DATA], &cdlz->buffer[frames * CD_MAX_SECTOR_DATA + framenum * CD_MAX_SUBCODE_DATA], CD_MAX_SUBCODE_DATA);
@@ -653,7 +651,7 @@ static chd_error cdlz_codec_decompress(void *codec, const uint8_t *src, uint32_t
 
 #ifdef WANT_RAW_DATA_SECTOR
 		/* reconstitute the ECC data and sync header */
-		sector = (uint8_t *)&dest[framenum * CD_FRAME_SIZE];
+		uint8_t *sector = (uint8_t *)&dest[framenum * CD_FRAME_SIZE];
 		if ((src[framenum / 8] & (1 << (framenum % 8))) != 0)
 		{
 			memcpy(sector, s_cd_sync_header, sizeof(s_cd_sync_header));
@@ -727,8 +725,6 @@ static chd_error cdzl_codec_decompress(void *codec, const uint8_t *src, uint32_t
 	/* reassemble the data */
 	for (framenum = 0; framenum < frames; framenum++)
 	{
-		uint8_t *sector;
-
 		memcpy(&dest[framenum * CD_FRAME_SIZE], &cdzl->buffer[framenum * CD_MAX_SECTOR_DATA], CD_MAX_SECTOR_DATA);
 #ifdef WANT_SUBCODE
 		memcpy(&dest[framenum * CD_FRAME_SIZE + CD_MAX_SECTOR_DATA], &cdzl->buffer[frames * CD_MAX_SECTOR_DATA + framenum * CD_MAX_SUBCODE_DATA], CD_MAX_SUBCODE_DATA);
@@ -736,7 +732,7 @@ static chd_error cdzl_codec_decompress(void *codec, const uint8_t *src, uint32_t
 
 #ifdef WANT_RAW_DATA_SECTOR
 		/* reconstitute the ECC data and sync header */
-		sector = (uint8_t *)&dest[framenum * CD_FRAME_SIZE];
+		uint8_t *sector = (uint8_t *)&dest[framenum * CD_FRAME_SIZE];
 		if ((src[framenum / 8] & (1 << (framenum % 8))) != 0)
 		{
 			memcpy(sector, s_cd_sync_header, sizeof(s_cd_sync_header));
@@ -1160,7 +1156,6 @@ INLINE int chd_compressed(chd_header* header) {
 
 static chd_error decompress_v5_map(chd_file* chd, chd_header* header)
 {
-	int result = 0;
 	int hunknum;
 	int repcount = 0;
 	uint8_t lastcomp = 0;
@@ -1184,13 +1179,13 @@ static chd_error decompress_v5_map(chd_file* chd, chd_header* header)
 	{
 		header->rawmap = (uint8_t*)malloc(rawmapsize);
 		core_fseek(chd->file, header->mapoffset, SEEK_SET);
-		result = core_fread(chd->file, header->rawmap, rawmapsize);
+		(void)core_fread(chd->file, header->rawmap, rawmapsize);
 		return CHDERR_NONE;
 	}
 
 	/* read the reader */
 	core_fseek(chd->file, header->mapoffset, SEEK_SET);
-	result = core_fread(chd->file, rawbuf, sizeof(rawbuf));
+	(void)core_fread(chd->file, rawbuf, sizeof(rawbuf));
 	mapbytes = get_bigendian_uint32(&rawbuf[0]);
 	firstoffs = get_bigendian_uint48(&rawbuf[4]);
 	mapcrc = get_bigendian_uint16(&rawbuf[10]);
@@ -1201,7 +1196,7 @@ static chd_error decompress_v5_map(chd_file* chd, chd_header* header)
 	/* now read the map */
 	compressed_ptr = (uint8_t*)malloc(sizeof(uint8_t) * mapbytes);
 	core_fseek(chd->file, header->mapoffset + 16, SEEK_SET);
-	result = core_fread(chd->file, compressed_ptr, mapbytes);
+	(void)core_fread(chd->file, compressed_ptr, mapbytes);
 	bitbuf = create_bitstream(compressed_ptr, sizeof(uint8_t) * mapbytes);
 	header->rawmap = (uint8_t*)malloc(rawmapsize);
 
@@ -2269,9 +2264,8 @@ static chd_error hunk_read_into_memory(chd_file *chd, UINT32 hunknum, UINT8 *des
 		{
 			blockoffs = (uint64_t)get_bigendian_uint32(rawmap) * (uint64_t)chd->header.hunkbytes;
 			if (blockoffs != 0) {
-                                int result;
 				core_fseek(chd->file, blockoffs, SEEK_SET);
-				result = core_fread(chd->file, dest, chd->header.hunkbytes);
+				(void)core_fread(chd->file, dest, chd->header.hunkbytes);
 			/* TODO
 			else if (m_parent_missing)
 				throw CHDERR_REQUIRES_PARENT; */
@@ -2546,8 +2540,6 @@ static void zlib_codec_free(void *codec)
 	/* deinit the streams */
 	if (data != NULL)
 	{
-		int i;
-
 		inflateEnd(&data->inflater);
 
 		/* free our fast memory */
