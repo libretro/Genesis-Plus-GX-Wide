@@ -4175,7 +4175,53 @@ void retro_run(void)
       retro_led_interface();
 
    if (!do_skip)
-      video_cb(bitmap.data + bmdoffset, vwidth - vwoffset, vheight, 720 * 2);
+   {
+      const unsigned out_w = vwidth - vwoffset;
+      const unsigned out_h = vheight;
+      const uint16_t *src  = (const uint16_t *)bitmap.data + (bmdoffset / 2);
+
+      /* Software framebuffer fast path: ask the frontend (e.g. the sw /
+       * DirectFB video driver) for a framebuffer we can write the visible
+       * sub-rect into directly, removing the frontend's core->video copy.
+       * The renderer keeps its own 720-wide bordered scratch buffer, so we
+       * cannot hand it the framebuffer to render into (the SW-FB contract
+       * forbids offset pointers and requires an exact width/height/pitch
+       * match); instead we copy the visible window in at the FB pitch. */
+      struct retro_framebuffer fb;
+      fb.width        = out_w;
+      fb.height       = out_h;
+      fb.access_flags = RETRO_MEMORY_ACCESS_WRITE;
+
+      if (environ_cb(RETRO_ENVIRONMENT_GET_CURRENT_SOFTWARE_FRAMEBUFFER, &fb)
+          && (fb.format == RETRO_PIXEL_FORMAT_RGB565)
+          && fb.data)
+      {
+         uint8_t       *dst       = (uint8_t *)fb.data;
+         const unsigned row_bytes = out_w * sizeof(uint16_t);
+         unsigned       y;
+
+         if ((fb.pitch == (size_t)(720 * 2)) && (bmdoffset == 0) && (out_w == 720))
+         {
+            /* No left/right border offset and identical stride/width: the
+             * visible region is contiguous in the source, single copy. */
+            memcpy(dst, src, (size_t)(720 * 2) * out_h);
+         }
+         else
+         {
+            /* General case: copy row by row, skipping the source borders. */
+            for (y = 0; y < out_h; y++)
+               memcpy(dst + (size_t)y * fb.pitch,
+                      src + (size_t)y * 720,
+                      row_bytes);
+         }
+
+         video_cb(fb.data, out_w, out_h, fb.pitch);
+      }
+      else
+      {
+         video_cb(bitmap.data + bmdoffset, out_w, out_h, 720 * 2);
+      }
+   }
    else
       video_cb(NULL, vwidth - vwoffset, vheight, 720 * 2);
 
