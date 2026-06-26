@@ -17,13 +17,25 @@
  ********************************************************************/
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <errno.h>
 #include <string.h>
 #include <math.h>
 
 #include "ivorbiscodec.h"
 #include "ivorbisfile.h"
+
+/* Whence constants for the seek callback. Normally from <stdio.h>, but this
+   file no longer performs any stdio file I/O (callbacks only), so define them
+   here if a prior include has not. */
+#ifndef SEEK_SET
+#define SEEK_SET 0
+#endif
+#ifndef SEEK_CUR
+#define SEEK_CUR 1
+#endif
+#ifndef SEEK_END
+#define SEEK_END 2
+#endif
 
 #include "misc.h"
 
@@ -665,13 +677,6 @@ static int _fetch_and_process_packet(OggVorbis_File *vf,
   return ret;
 }
 
-/* if, eg, 64 bit stdio is configured by default, this will build with
-   fseek64 */
-static int _fseek64_wrap(FILE *f,ogg_int64_t off,int whence){
-  if(f==NULL)return(-1);
-  return fseek(f,off,whence);
-}
-
 static int _ov_open1(void *f,OggVorbis_File *vf,char *initial,
 		     long ibytes, ov_callbacks callbacks){
   int offsettest=(f?callbacks.seek_func(f,0,SEEK_CUR):-1);
@@ -774,17 +779,6 @@ int ov_open_callbacks(void *f,OggVorbis_File *vf,char *initial,long ibytes,
   return _ov_open2(vf);
 }
 
-int ov_open(FILE *f,OggVorbis_File *vf,char *initial,long ibytes){
-  ov_callbacks callbacks = {
-    (size_t (*)(void *, size_t, size_t, void *))  fread,
-    (int (*)(void *, ogg_int64_t, int))              _fseek64_wrap,
-    (int (*)(void *))                             fclose,
-    (long (*)(void *))                            ftell
-  };
-
-  return ov_open_callbacks((void *)f, vf, initial, ibytes, callbacks);
-}
-  
 /* Only partially open the vorbis file; test for Vorbisness, and load
    the headers for the first chain.  Do not seek (although test for
    seekability).  Use ov_test_open to finish opening the file, else
@@ -796,17 +790,6 @@ int ov_test_callbacks(void *f,OggVorbis_File *vf,char *initial,long ibytes,
   return _ov_open1(f,vf,initial,ibytes,callbacks);
 }
 
-int ov_test(FILE *f,OggVorbis_File *vf,char *initial,long ibytes){
-  ov_callbacks callbacks = {
-    (size_t (*)(void *, size_t, size_t, void *))  fread,
-    (int (*)(void *, ogg_int64_t, int))              _fseek64_wrap,
-    (int (*)(void *))                             fclose,
-    (long (*)(void *))                            ftell
-  };
-
-  return ov_test_callbacks((void *)f, vf, initial, ibytes, callbacks);
-}
-  
 int ov_test_open(OggVorbis_File *vf){
   if(vf->ready_state!=PARTOPEN)return(OV_EINVAL);
   return _ov_open2(vf);
