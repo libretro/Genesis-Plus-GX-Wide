@@ -760,10 +760,6 @@ else
    MAX_ROM_SIZE = 33554432
 endif
 
-ifeq ($(SHARED_LIBVORBIS), 1)
-	LDFLAGS += -lvorbisfile
-endif
-
 ifeq ($(DEBUG), 1)
 ifneq (,$(findstring msvc,$(platform)))
 	CFLAGS   += -MTd
@@ -790,9 +786,7 @@ else
 endif
 endif
 
-ifeq ($(SHARED_LIBVORBIS),)
-   TREMOR_SRC_DIR := $(CORE_DIR)/core/tremor
-endif
+TREMOR_SRC_DIR := $(CORE_DIR)/core/tremor
 
 include $(CORE_DIR)/libretro/Makefile.common
 
@@ -802,11 +796,7 @@ ifeq ($(LOGSOUND), 1)
    LIBRETRO_CFLAGS := -DLOGSOUND
 endif
 
-ifeq ($(SHARED_LIBVORBIS), 1)
-	DEFINES := -DUSE_LIBVORBIS
-else
-	DEFINES := -DUSE_LIBTREMOR
-endif
+DEFINES := -DUSE_LIBTREMOR
 
 ifeq ($(HAVE_CHD), 1)
 	DEFINES += -DUSE_LIBCHDR -D_7ZIP_ST -DUSE_LIBRETRO_VFS

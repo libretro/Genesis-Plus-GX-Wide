@@ -84,9 +84,7 @@ SOURCES_C += \
 
 endif
 
-ifeq ($(SHARED_LIBVORBIS),)
-   SOURCES_C += $(foreach dir,$(TREMOR_SRC_DIR),$(wildcard $(dir)/*.c))
-endif
+SOURCES_C += $(foreach dir,$(TREMOR_SRC_DIR),$(wildcard $(dir)/*.c))
 
 SOURCES_C += $(LIBRETRO_DIR)/libretro.c
 
