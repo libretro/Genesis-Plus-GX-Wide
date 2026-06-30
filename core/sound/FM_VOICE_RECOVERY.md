@@ -133,6 +133,21 @@ For a best-effort "recovery" feature this is a reasonable choice, and it is the
 only part of the signal path that is not bit-exact-faithful -- and only ever on
 the *added* shadow voices, never on the six real channels. Off remains bit-exact.
 
+## Coverage: dropping the age gate
+
+An early version gated recovery on note age (only steals of notes older than
+~0.8-1.5 s were recovered). Instrumenting the capture path showed this rejected
+the overwhelming majority of real steals: SoR1 had 122 steal candidates but only 7
+passed the gate (114 were notes shorter than 0.5 s); Sonic 1 had 167 candidates,
+only 9 passed. Most stolen background notes are simply short, so a high gate
+discards them and the background line still drops out under sound effects -- the
+exact symptom this feature is meant to fix. Since the synthetic fade keeps a
+mistaken recovery to a gentle brief tail, the gate is not worth its cost.
+Aggressive now uses no age gate; conservative keeps a light ~0.25 s floor.
+Effect on SoR1 aggressive: recoveries 7 -> 122, samples changed 1.7% -> 12.4%,
+added RMS barely moves (67 -> 78). Listener-validated clean, including in
+music-dense passages. Off remains bit-exact.
+
 Status: shippable as an experimental, off-by-default option. Off is bit-exact on
 all three test games; on, it recovers stolen background notes as smoothly-decaying
 tones and never alters or removes any real channel.

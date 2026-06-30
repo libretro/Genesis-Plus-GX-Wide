@@ -1641,10 +1641,14 @@ INLINE void OPNWriteReg(int r, int v)
       {
         if (++fm_cap_cnt[c] >= FM_STEAL_THRESH)
         {
-          /* age gate: combat steals interrupt long-held notes (medians ~seconds),
-             melodic instrument changes hit short ~100ms notes -- skip those */
+          /* Recover on any patch-reload over a sounding note. Most stolen notes
+             are short (measured: ~94%% under 0.5s), so a high age gate would
+             reject the bulk of real steals -- aggressive uses no gate at all.
+             Conservative keeps a light ~0.25s floor to skip the shortest
+             transients. The synthetic fade keeps any instrument-change false
+             positive to a gentle, brief tail rather than an artefact. */
           unsigned long age = fm_samp - fm_kon[c];
-          unsigned long amin = (config.fm_voice_recovery == 2) ? 42000UL : 80000UL; /* ~0.8s / ~1.5s */
+          unsigned long amin = (config.fm_voice_recovery == 2) ? 0UL : 11025UL; /* none / ~0.25s */
           if (age >= amin)
             fm_shadow_spawn(c);             /* confirmed steal: keep the old note alive */
           fm_cap_armed[c] = 2;
