@@ -39,6 +39,7 @@
 
 #include "shared.h"
 #include "blip_buf.h"
+#include "fm_enhance.h"
 
 int8 audio_hard_disable = 0;
 
@@ -451,6 +452,10 @@ int sound_update(unsigned int cycles)
   if (YM_Update)
   {
     int prev_l, prev_r, preamp, time, l, r, *ptr;
+    /* FM-only enhancement routes FM onto its own Blip Buffer (blips[3]) so the
+       post-processor sees FM in isolation; otherwise FM mixes into blips[0]
+       alongside PSG exactly as before (bit-exact default). */
+    blip_t *fmblip = (config.fm_enhance && snd.blips[3]) ? snd.blips[3] : snd.blips[0];
 
     /* Run FM chip until end of frame */
     fm_update(cycles);
@@ -479,7 +484,7 @@ int sound_update(unsigned int cycles)
           /* left & right channels */
           l = ((*ptr++ * preamp) / 100);
           r = ((*ptr++ * preamp) / 100);
-          blip_add_delta(snd.blips[0], time, l - prev_l, r - prev_r);
+          blip_add_delta(fmblip, time, l - prev_l, r - prev_r);
           prev_l = l;
           prev_r = r;
 
@@ -495,7 +500,7 @@ int sound_update(unsigned int cycles)
           /* left & right channels */
           l = ((*ptr++ * preamp) / 100);
           r = ((*ptr++ * preamp) / 100);
-          blip_add_delta_fast(snd.blips[0], time, l - prev_l, r - prev_r);
+          blip_add_delta_fast(fmblip, time, l - prev_l, r - prev_r);
           prev_l = l;
           prev_r = r;
 
@@ -530,6 +535,8 @@ int sound_update(unsigned int cycles)
 
   /* end of blip buffer time frame */
   blip_end_frame(snd.blips[0], cycles);
+  if (config.fm_enhance && snd.blips[3])
+    blip_end_frame(snd.blips[3], cycles);
 
   /* return number of available samples */
   return blip_samples_avail(snd.blips[0]);

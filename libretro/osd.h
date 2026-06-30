@@ -91,6 +91,7 @@ typedef struct
 {
   char version[16];
   uint8 hq_fm;
+  uint8 fm_enhance;
   uint8 filter;
   uint8 hq_psg;
   uint8 ym2612;

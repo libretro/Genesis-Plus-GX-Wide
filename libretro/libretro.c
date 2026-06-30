@@ -80,6 +80,7 @@
 #include "libretro_core_options.h"
 
 #include "shared.h"
+#include "fm_enhance.h"
 #include "md_ntsc.h"
 #include "sms_ntsc.h"
 #include "osd.h"
@@ -1091,6 +1092,7 @@ static void config_default(void)
    config.cdda_volume    = 100;
    config.pcm_volume     = 100;
    config.hq_fm          = 1; /* high-quality FM resampling (slower) */
+   config.fm_enhance     = 0; /* FM bus enhancement: 0=off, 1=light, 2=rich */
    config.hq_psg         = 1; /* high-quality PSG resampling (slower) */
    config.filter         = 1; /* no filter */
    config.lp_range       = 0x9999; /* 0.6 in 0.16 fixed point */
@@ -2122,6 +2124,23 @@ static void check_variables(bool first_run)
 
   }
 #endif
+
+  var.key = CORE_NAME "_fm_enhance";
+  var.value = NULL;
+  if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+  {
+    uint8 new_fm_enhance = 0;
+    if (!strcmp(var.value, "light"))
+      new_fm_enhance = 1;
+    else if (!strcmp(var.value, "rich"))
+      new_fm_enhance = 2;
+
+    if (new_fm_enhance != config.fm_enhance)
+    {
+      config.fm_enhance = new_fm_enhance;
+      fm_enhance_set_level(config.fm_enhance);
+    }
+  }
 
   var.key = CORE_NAME "_ym2612";
   environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var);

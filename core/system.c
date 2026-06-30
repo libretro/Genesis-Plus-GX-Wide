@@ -41,6 +41,7 @@
 
 #include "shared.h"
 #include "eq.h"
+#include "fm_enhance.h"
 #include <math.h>
 
 extern int8 audio_hard_disable;
@@ -57,6 +58,7 @@ int16 SVP_cycles = 800;
 static uint8 pause_b;
 static EQSTATE eq[2];
 static int16 llp,rrp;
+static int16 *fm_scratch;   /* FM-only stream scratch for the enhancement insert */
 
 /******************************************************************************************/
 /* Audio subsystem                                                                        */
@@ -88,6 +90,16 @@ int audio_init(int samplerate, double framerate)
       audio_shutdown();
       return -1;
     }
+  }
+
+  /* Dedicated FM-only Blip Buffer + scratch for the optional FM enhancement.
+     Allocated unconditionally (small); only used when config.fm_enhance != 0. */
+  snd.blips[3] = blip_new(samplerate / 10);
+  fm_scratch   = (int16 *)malloc((samplerate / 10) * 2 * sizeof(int16));
+  if (!snd.blips[3] || !fm_scratch)
+  {
+    audio_shutdown();
+    return -1;
   }
 
   /* Initialize resampler internal rates */
@@ -133,6 +145,12 @@ void audio_set_rate(int samplerate, double framerate)
   /* resampled to desired rate at the end of each frame, using Blip Buffer.            */
   blip_set_rates(snd.blips[0], mclk, samplerate);
 
+  /* FM-only enhancement Blip Buffer shares the FM master-clock timebase */
+  if (snd.blips[3])
+  {
+    blip_set_rates(snd.blips[3], mclk, samplerate);
+  }
+
   /* Mega CD sound hardware enabled ? */
   if (snd.blips[1] && snd.blips[2])
   {
@@ -149,6 +167,11 @@ void audio_set_rate(int samplerate, double framerate)
   /* Reinitialize internal rates */
   snd.sample_rate = samplerate;
   snd.frame_rate  = framerate;
+
+  /* (Re)size the FM enhancement delay lines for the output rate and apply
+     the currently selected strength. */
+  fm_enhance_init(samplerate);
+  fm_enhance_set_level(config.fm_enhance);
 }
 
 void audio_reset(void)
@@ -156,13 +179,16 @@ void audio_reset(void)
   int i;
   
   /* Clear blip buffers */
-  for (i=0; i<3; i++)
+  for (i=0; i<4; i++)
   {
     if (snd.blips[i])
     {
       blip_clear(snd.blips[i]);
     }
   }
+
+  /* Clear FM enhancement reverb/filter history */
+  fm_enhance_reset();
 
   /* Low-Pass filter */
   llp = 0;
@@ -186,12 +212,19 @@ void audio_shutdown(void)
   int i;
   
   /* Delete blip buffers */
-  for (i=0; i<3; i++)
+  for (i=0; i<4; i++)
   {
     blip_delete(snd.blips[i]);
     snd.blips[i] = 0;
     blip_delete_buffer_state(snd.blip_states[i]);
     snd.blip_states[i] = 0;
+  }
+
+  /* Free FM enhancement scratch */
+  if (fm_scratch)
+  {
+    free(fm_scratch);
+    fm_scratch = 0;
   }
 }
 
@@ -219,6 +252,8 @@ int audio_update(int16 *buffer)
       blip_discard_samples_dirty(snd.blips[0], size);
       blip_discard_samples_dirty(snd.blips[1], size);
       blip_discard_samples_dirty(snd.blips[2], size);
+      if (config.fm_enhance)
+        blip_discard_samples_dirty(snd.blips[3], size);
       return 0;
     }
 
@@ -235,11 +270,36 @@ int audio_update(int16 *buffer)
     if (audio_hard_disable)
     {
       blip_discard_samples_dirty(snd.blips[0], size);
+      if (config.fm_enhance)
+        blip_discard_samples_dirty(snd.blips[3], size);
       return 0;
     }
 
     /* resample FM/PSG mixed stream to output buffer */
     blip_read_samples(snd.blips[0], buffer, size);
+  }
+
+  /* FM-only enhancement: read the isolated FM stream from its dedicated Blip
+     Buffer, post-process it, and mix it back into the output with a
+     deterministic integer add + clamp. When disabled, FM is already in the
+     output above and this block is skipped (bit-exact default). */
+  if (config.fm_enhance && snd.blips[3] && fm_scratch)
+  {
+    int n = size * 2;
+    int i;
+    int16 *o = buffer;
+    int16 *f = fm_scratch;
+
+    blip_read_samples(snd.blips[3], fm_scratch, size);
+    fm_enhance_block(fm_scratch, size);
+
+    for (i = 0; i < n; i++)
+    {
+      int s = o[i] + f[i];
+      if (s >  32767) s =  32767;
+      else if (s < -32768) s = -32768;
+      o[i] = (int16)s;
+    }
   }
 
   /* Audio filtering */

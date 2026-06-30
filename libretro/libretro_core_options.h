@@ -506,6 +506,21 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "mame (ym2612)"
    },
    {
+      CORE_NAME "_fm_enhance",
+      "FM Enhancement",
+      NULL,
+      "Optional, deliberately non-authentic post-processing applied only to the FM (YM2612/YM3438) bus: a stereo widener to spread the hard-panned FM image, a fixed-point reverb send, and a gentle analog-style low-pass with soft saturation. Adds width and depth to the FM voice at the cost of accuracy; PSG, PCM and CD-DA are left untouched. Fully integer/deterministic. 'Off' leaves the original sound bit-identical.",
+      NULL,
+      "audio",
+      {
+         { "off",   "Off" },
+         { "light", "Light" },
+         { "rich",  "Rich" },
+         { NULL, NULL },
+      },
+      "off"
+   },
+   {
       CORE_NAME "_sound_samplerate",
       "Sound Samplerate (Hint)",
       NULL,
