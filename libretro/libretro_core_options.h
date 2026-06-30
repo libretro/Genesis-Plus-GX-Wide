@@ -521,6 +521,21 @@ struct retro_core_option_v2_definition option_defs_us[] = {
       "off"
    },
    {
+      CORE_NAME "_fm_voice_recovery",
+      "FM Voice-Steal Recovery (Experimental)",
+      NULL,
+      "Experimental. When a sound effect commandeers an FM (YM2612) channel mid-song, the displaced musical note is snapshotted onto a hidden shadow voice that keeps sounding and is faded out smoothly with a synthetic decay so the stolen background note finishes instead of being cut dead. 'Conservative' uses fewer shadow voices and a shorter fade; 'Aggressive' recovers more. The trigger is gated by note age and audibility so it fires sparingly. Deterministic; 'Off' is bit-exact.",
+      NULL,
+      "audio",
+      {
+         { "off",          "Off" },
+         { "conservative", "Conservative" },
+         { "aggressive",   "Aggressive" },
+         { NULL, NULL },
+      },
+      "off"
+   },
+   {
       CORE_NAME "_sound_samplerate",
       "Sound Samplerate (Hint)",
       NULL,

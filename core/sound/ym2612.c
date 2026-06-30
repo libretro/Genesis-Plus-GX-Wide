@@ -630,7 +630,17 @@ static YM2612 ym2612;
 /* current chip state */
 static INT32  m2,c1,c2;   /* Phase Modulation input for operators 2,3,4 */
 static INT32  mem;        /* one sample delay memory */
-static INT32  out_fm[6];  /* outputs of working channels */
+static INT32  out_fm[10];  /* outputs of working channels + up to 4 FM-recovery shadow voices */
+/* --- FM voice-steal recovery (opt-in, gated by config.fm_voice_recovery) --- */
+#define FM_SHADOW_MAX   4
+#define FM_STEAL_THRESH 12   /* structural operator writes => patch reload (steal) */
+typedef struct { FM_CH ch; UINT32 pan[2]; int active, src, age, life, retiring; } fm_shadow_t;
+static fm_shadow_t fm_sh[FM_SHADOW_MAX];
+static FM_CH  fm_cap_snap[6];   /* speculative pre-reload note snapshot per source channel */
+static UINT32 fm_cap_pan[6][2];
+static int    fm_cap_cnt[6];
+static UINT8  fm_cap_armed[6];  /* 0=idle 1=armed 2=committed */
+static unsigned long fm_samp = 0, fm_kon[6] = {0};  /* sample clock + per-channel last key-on */
 
 /* chip type */
 static UINT32 op_mask[8][4];  /* operator output bitmasking (DAC quantization) */
@@ -949,6 +959,34 @@ INLINE void setup_connection( FM_CH *CH, int ch )
   CH->connect4 = carrier;
 }
 
+/* FM voice-steal recovery: commit a captured note onto a shadow voice */
+static void fm_shadow_spawn(int c)
+{
+  int k, slot = -1, oldest = 0, oldage = -1;
+  int maxv = (config.fm_voice_recovery == 2) ? 4 : (config.fm_voice_recovery == 1) ? 2 : 0;
+  int life = (config.fm_voice_recovery == 2) ? 32000 : 16000; /* hard hold cap (samples) */
+  if (maxv <= 0) return;
+  for (k = 0; k < maxv; k++)
+  {
+    if (!fm_sh[k].active) { slot = k; break; }
+    if (fm_sh[k].age > oldage) { oldage = fm_sh[k].age; oldest = k; }
+  }
+  if (slot < 0) slot = oldest;  /* evict oldest when pool full */
+  fm_sh[slot].ch       = fm_cap_snap[c];
+  setup_connection(&fm_sh[slot].ch, 6 + slot);
+  fm_sh[slot].pan[0]   = fm_cap_pan[c][0];
+  fm_sh[slot].pan[1]   = fm_cap_pan[c][1];
+  fm_sh[slot].src      = c;
+  fm_sh[slot].age      = 0;
+  fm_sh[slot].life     = life;
+  fm_sh[slot].retiring = 0;
+  fm_sh[slot].active   = 1;
+  /* Synthetic-fade variant: keep the note keyed on so even fast-release
+     notes are recovered, then impose a smooth quadratic output fade over
+     life (applied in the mix) so it decays without a flat-hold beep or a
+     hard cut. life is the total fade length, not a release bound. */
+}
+
 /* set detune & multiple */
 INLINE void set_det_mul(FM_CH *CH,FM_SLOT *SLOT,int v)
 {
@@ -1063,18 +1101,15 @@ INLINE void advance_lfo(void)
 }
 
 
-INLINE void advance_eg_channels(FM_CH *CH, unsigned int eg_cnt)
+INLINE void advance_eg_channel(FM_CH *CH, unsigned int eg_cnt)
 {
-  unsigned int i = 6; /* six channels */
   unsigned int j;
   FM_SLOT *SLOT;
 
+  SLOT = &CH->SLOT[SLOT1];
+  j = 4; /* four operators per channel */
   do
   {
-    SLOT = &CH->SLOT[SLOT1];
-    j = 4; /* four operators per channel */
-    do
-    {
       switch(SLOT->state)
       {
         case EG_ATT:    /* attack phase */
@@ -1212,29 +1247,28 @@ INLINE void advance_eg_channels(FM_CH *CH, unsigned int eg_cnt)
 
       /* next slot */
       SLOT++;
-    } while (--j);
+  } while (--j);
+}
 
-    /* next channel */
-    CH++;
-  } while (--i);
+INLINE void advance_eg_channels(FM_CH *CH, unsigned int eg_cnt)
+{
+  unsigned int i = 6; /* six channels */
+  do { advance_eg_channel(CH, eg_cnt); CH++; } while (--i);
 }
 
 /* SSG-EG update process */
 /* The behavior is based upon Nemesis tests on real hardware */
 /* This is actually executed before each samples */
-INLINE void update_ssg_eg_channels(FM_CH *CH)
+INLINE void update_ssg_eg_channel(FM_CH *CH)
 {
-  unsigned int i = 6; /* six channels */
   unsigned int j;
   FM_SLOT *SLOT;
 
+  j = 4; /* four operators per channel */
+  SLOT = &CH->SLOT[SLOT1];
+
   do
   {
-    j = 4; /* four operators per channel */
-    SLOT = &CH->SLOT[SLOT1];
-
-    do
-    {
       /* detect SSG-EG transition */
       /* this is not required during release phase as the attenuation has been forced to MAX and output invert flag is not used */
       /* if an Attack Phase is programmed, inversion can occur on each sample */
@@ -1283,11 +1317,13 @@ INLINE void update_ssg_eg_channels(FM_CH *CH)
 
       /* next slot */
       SLOT++;
-    } while (--j);
+  } while (--j);
+}
 
-    /* next channel */
-    CH++;
-  } while (--i);
+INLINE void update_ssg_eg_channels(FM_CH *CH)
+{
+  unsigned int i = 6; /* six channels */
+  do { update_ssg_eg_channel(CH); CH++; } while (--i);
 }
 
 INLINE void update_phase_lfo_slot(FM_SLOT *SLOT, UINT32 pm, UINT8 kc, UINT32 fc)
@@ -1557,6 +1593,8 @@ INLINE void OPNWriteMode(int r, int v)
       if( c == 3 ) break;
       if (v&0x04) c+=3; /* CH 4-6 */
       CH = &ym2612.CH[c];
+      fm_cap_armed[c] = 0; /* FM recovery: re-arm capture on next reload */
+      if(v&0xf0) fm_kon[c]=fm_samp;
       if (v&0x10) FM_KEYON(CH,SLOT1); else FM_KEYOFF(CH,SLOT1);
       if (v&0x20) FM_KEYON(CH,SLOT2); else FM_KEYOFF(CH,SLOT2);
       if (v&0x40) FM_KEYON(CH,SLOT3); else FM_KEYOFF(CH,SLOT3);
@@ -1580,6 +1618,40 @@ INLINE void OPNWriteReg(int r, int v)
   CH = &ym2612.CH[c];
 
   SLOT = &(CH->SLOT[OPN_SLOT(r)]);
+
+  /* FM voice-steal recovery: detect a patch reload over a sounding note */
+  if (config.fm_voice_recovery)
+  {
+    int hi = r & 0xf0;
+    if (hi==0x30||hi==0x50||hi==0x60||hi==0x70||hi==0x80||hi==0x90||hi==0xb0)
+    {
+      if (fm_cap_armed[c] == 0)
+      {
+        if (CH->SLOT[SLOT1].vol_out < ENV_QUIET || CH->SLOT[SLOT2].vol_out < ENV_QUIET ||
+            CH->SLOT[SLOT3].vol_out < ENV_QUIET || CH->SLOT[SLOT4].vol_out < ENV_QUIET)
+        {
+          fm_cap_snap[c]   = *CH;            /* snapshot the OLD note (pre-reload) */
+          fm_cap_pan[c][0] = ym2612.OPN.pan[2*c];
+          fm_cap_pan[c][1] = ym2612.OPN.pan[2*c+1];
+          fm_cap_cnt[c]    = 1;
+          fm_cap_armed[c]  = 1;
+        }
+      }
+      else if (fm_cap_armed[c] == 1)
+      {
+        if (++fm_cap_cnt[c] >= FM_STEAL_THRESH)
+        {
+          /* age gate: combat steals interrupt long-held notes (medians ~seconds),
+             melodic instrument changes hit short ~100ms notes -- skip those */
+          unsigned long age = fm_samp - fm_kon[c];
+          unsigned long amin = (config.fm_voice_recovery == 2) ? 42000UL : 80000UL; /* ~0.8s / ~1.5s */
+          if (age >= amin)
+            fm_shadow_spawn(c);             /* confirmed steal: keep the old note alive */
+          fm_cap_armed[c] = 2;
+        }
+      }
+    }
+  }
 
   switch( r & 0xf0 ) {
     case 0x30:  /* DET , MUL */
@@ -1913,6 +1985,9 @@ void YM2612ResetChip(void)
 {
   int i;
 
+  for (i = 0; i < FM_SHADOW_MAX; i++) fm_sh[i].active = 0;
+  for (i = 0; i < 6; i++) fm_cap_armed[i] = 0;
+
   ym2612.OPN.eg_timer     = 0;
   ym2612.OPN.eg_cnt       = 0;
 
@@ -2036,6 +2111,7 @@ void YM2612Update(int *buffer, int length)
   for(i=0; i<length; i++)
   {
     /* clear outputs */
+    fm_samp++;
     out_fm[0] = 0;
     out_fm[1] = 0;
     out_fm[2] = 0;
@@ -2058,6 +2134,21 @@ void YM2612Update(int *buffer, int length)
       chan_calc(&ym2612.CH[0],5);
     }
 
+    /* FM voice-steal recovery: render active shadow voices */
+    if (config.fm_voice_recovery)
+    {
+      int k, maxv = (config.fm_voice_recovery == 2) ? 4 : 2;
+      for (k = 0; k < maxv; k++)
+      {
+        if (!fm_sh[k].active) continue;
+        out_fm[6 + k] = 0;
+        update_ssg_eg_channel(&fm_sh[k].ch);
+        chan_calc(&fm_sh[k].ch, 1);
+        if (out_fm[6 + k] > 8191) out_fm[6 + k] = 8191;
+        else if (out_fm[6 + k] < -8192) out_fm[6 + k] = -8192;
+      }
+    }
+
     /* advance LFO */
     advance_lfo();
 
@@ -2077,6 +2168,14 @@ void YM2612Update(int *buffer, int length)
 
       /* advance envelope generator */
       advance_eg_channels(&ym2612.CH[0], ym2612.OPN.eg_cnt);
+
+      /* FM voice-steal recovery: advance shadow envelopes */
+      if (config.fm_voice_recovery)
+      {
+        int k, maxv = (config.fm_voice_recovery == 2) ? 4 : 2;
+        for (k = 0; k < maxv; k++)
+          if (fm_sh[k].active) advance_eg_channel(&fm_sh[k].ch, ym2612.OPN.eg_cnt);
+      }
     }
 
     /* channels accumulator output clipping (14-bit max) */
@@ -2116,6 +2215,26 @@ void YM2612Update(int *buffer, int length)
     rt += ((out_fm[4]) & ym2612.OPN.pan[9]);
     lt += ((out_fm[5]) & ym2612.OPN.pan[10]);
     rt += ((out_fm[5]) & ym2612.OPN.pan[11]);
+
+    /* FM voice-steal recovery: mix shadow voices, then age/retire them */
+    if (config.fm_voice_recovery)
+    {
+      int k, maxv = (config.fm_voice_recovery == 2) ? 4 : 2;
+      for (k = 0; k < maxv; k++)
+      {
+        if (!fm_sh[k].active) continue;
+        {
+          int rem = fm_sh[k].life - fm_sh[k].age;
+          int lin = (rem > 0) ? (rem * 256) / fm_sh[k].life : 0; /* 256..0 linear */
+          int g   = (lin * lin) >> 8;                            /* quadratic fade out */
+          INT32 v = (out_fm[6 + k] * g) >> 8;
+          lt += (v & fm_sh[k].pan[0]);
+          rt += (v & fm_sh[k].pan[1]);
+        }
+        fm_sh[k].age++;
+        if (fm_sh[k].age >= fm_sh[k].life) fm_sh[k].active = 0;
+      }
+    }
 
     /* discrete YM2612 DAC */
     if (chip_type == YM2612_DISCRETE)

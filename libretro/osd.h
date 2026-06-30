@@ -92,6 +92,7 @@ typedef struct
   char version[16];
   uint8 hq_fm;
   uint8 fm_enhance;
+  uint8 fm_voice_recovery;  /* FM voice-steal recovery (experimental): 0=off,1=conservative,2=aggressive */
   uint8 filter;
   uint8 hq_psg;
   uint8 ym2612;

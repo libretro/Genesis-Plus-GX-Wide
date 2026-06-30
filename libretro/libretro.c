@@ -1093,6 +1093,7 @@ static void config_default(void)
    config.pcm_volume     = 100;
    config.hq_fm          = 1; /* high-quality FM resampling (slower) */
    config.fm_enhance     = 0; /* FM bus enhancement: 0=off, 1=light, 2=rich */
+   config.fm_voice_recovery = 0; /* FM voice-steal recovery (experimental): 0=off,1=conservative,2=aggressive */
    config.hq_psg         = 1; /* high-quality PSG resampling (slower) */
    config.filter         = 1; /* no filter */
    config.lp_range       = 0x9999; /* 0.6 in 0.16 fixed point */
@@ -2140,6 +2141,18 @@ static void check_variables(bool first_run)
       config.fm_enhance = new_fm_enhance;
       fm_enhance_set_level(config.fm_enhance);
     }
+  }
+
+  var.key = CORE_NAME "_fm_voice_recovery";
+  var.value = NULL;
+  if (environ_cb(RETRO_ENVIRONMENT_GET_VARIABLE, &var) && var.value)
+  {
+    if (!strcmp(var.value, "conservative"))
+      config.fm_voice_recovery = 1;
+    else if (!strcmp(var.value, "aggressive"))
+      config.fm_voice_recovery = 2;
+    else
+      config.fm_voice_recovery = 0;
   }
 
   var.key = CORE_NAME "_ym2612";
