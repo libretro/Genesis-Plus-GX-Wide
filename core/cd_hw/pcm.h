@@ -65,7 +65,7 @@ typedef struct
 } pcm_t;
 
 /* Function prototypes */
-extern void pcm_init(double clock, int rate);
+extern void pcm_init(double clock, int rate, int exact);
 extern void pcm_reset(void);
 extern int pcm_context_save(uint8 *state);
 extern int pcm_context_load(uint8 *state);

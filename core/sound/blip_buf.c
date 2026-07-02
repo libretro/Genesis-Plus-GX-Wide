@@ -209,6 +209,28 @@ void blip_set_rates( blip_t* m, double clock_rate, double sample_rate )
 	have been rounded down in the floating-point calculation. */
 }
 
+/* Deterministic integer form of blip_set_rates for a rational clock rate.
+   Computes factor = ceil( time_unit * sample_rate * clock_den / clock_num )
+   in pure integer arithmetic, so the resample ratio is identical on every
+   platform. The double blip_set_rates() above rounds differently on FPUs
+   without IEEE-754 doubles (e.g. the PS2), and is even off by one code on
+   compliant ones for some fractional clocks (the Mega CD PCM rate). The clock
+   rate is supplied as the exact ratio clock_num / clock_den. */
+void blip_set_rates_exact( blip_t* m, unsigned clock_num, unsigned clock_den,
+                           unsigned sample_rate )
+{
+	/* Evaluate so no intermediate exceeds the width of fixed_t: split
+	   time_unit = q*clock_num + r, then time_unit*mult/clock_num
+	   = q*mult + (r*mult)/clock_num with mult = sample_rate*clock_den. */
+	fixed_t const num  = clock_num;
+	fixed_t const mult = (fixed_t) sample_rate * clock_den;
+	fixed_t const q    = time_unit / num;
+	fixed_t const r    = time_unit % num;
+	fixed_t const lo   = q * mult + (r * mult) / num; /* floor(time_unit*mult/num) */
+	fixed_t const rem  = (r * mult) % num;
+	m->factor = lo + (rem != 0);                      /* round up to match ceil */
+}
+
 void blip_clear( blip_t* m )
 {
 	/* We could set offset to 0, factor/2, or factor-1. 0 is suitable if

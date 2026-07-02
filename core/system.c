@@ -142,22 +142,34 @@ void audio_set_rate(int samplerate, double framerate)
   /* master clock timebase so they remain perfectly synchronized together, while still */
   /* being synchronized with 68K and Z80 CPUs as well. Mixed sound chip output is then */
   /* resampled to desired rate at the end of each frame, using Blip Buffer.            */
-  blip_set_rates(snd.blips[0], mclk, samplerate);
+  /* When no framerate is specified the base clock is the exact integer master
+     clock, so compute every resample ratio in integer arithmetic - identical
+     on every platform (see blip_set_rates_exact). Only the optional VSYNC-sync
+     path (framerate != 0) has a fractional clock and keeps the double form. */
+  int rate_exact = (framerate == 0);
+
+  if (rate_exact)
+    blip_set_rates_exact(snd.blips[0], system_clock, 1, samplerate);
+  else
+    blip_set_rates(snd.blips[0], mclk, samplerate);
 
   /* FM-only enhancement Blip Buffer shares the FM master-clock timebase */
   if (snd.blips[3])
   {
-    blip_set_rates(snd.blips[3], mclk, samplerate);
+    if (rate_exact)
+      blip_set_rates_exact(snd.blips[3], system_clock, 1, samplerate);
+    else
+      blip_set_rates(snd.blips[3], mclk, samplerate);
   }
 
   /* Mega CD sound hardware enabled ? */
   if (snd.blips[1] && snd.blips[2])
   {
-    /* number of SCD master clocks run per second */
+    /* number of SCD master clocks run per second (== SCD_CLOCK when exact) */
     mclk = (mclk / system_clock) * SCD_CLOCK;
 
     /* PCM core */
-    pcm_init(mclk, samplerate);
+    pcm_init(mclk, samplerate, rate_exact);
 
     /* CDD core */
     cdd_init(samplerate);

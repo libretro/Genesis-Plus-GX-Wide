@@ -22,6 +22,11 @@ blip_t* blip_new( int sample_count );
 clock_rate input clocks, approximately sample_rate samples are generated. */
 void blip_set_rates( blip_t*, double clock_rate, double sample_rate );
 
+/** Same as blip_set_rates but takes an exact rational clock rate
+    (clock_num / clock_den) and computes the ratio in integer arithmetic, so
+    the result is identical on every platform. */
+void blip_set_rates_exact( blip_t*, unsigned clock_num, unsigned clock_den, unsigned sample_rate );
+
 enum { /** Maximum clock_rate/sample_rate ratio. For a given sample_rate,
 clock_rate must not be greater than sample_rate*blip_max_ratio. */
 blip_max_ratio = 1 << 20 };

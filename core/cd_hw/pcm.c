@@ -46,11 +46,15 @@ extern int8 reset_do_not_clear_buffers;
 
 #define pcm scd.pcm_hw
 
-void pcm_init(double clock, int samplerate)
+void pcm_init(double clock, int samplerate, int exact)
 {
   /* PCM chip is running at original rate and is synchronized with SUB-CPU  */
   /* Chip output is resampled to desired rate using Blip Buffer. */
-  blip_set_rates(snd.blips[1], clock / PCM_SCYCLES_RATIO, samplerate);
+  if (exact)
+    /* clock is the exact SCD master clock; PCM rate = clock / PCM_SCYCLES_RATIO */
+    blip_set_rates_exact(snd.blips[1], (unsigned)clock, PCM_SCYCLES_RATIO, samplerate);
+  else
+    blip_set_rates(snd.blips[1], clock / PCM_SCYCLES_RATIO, samplerate);
 }
 
 void pcm_reset(void)
