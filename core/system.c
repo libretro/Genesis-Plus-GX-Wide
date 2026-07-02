@@ -200,11 +200,9 @@ void audio_reset(void)
 
 void audio_set_equalizer(void)
 {
-  init_3band_state(&eq[0],config.low_freq,config.high_freq,snd.sample_rate);
-  init_3band_state(&eq[1],config.low_freq,config.high_freq,snd.sample_rate);
-  eq[0].lg = eq[1].lg = (double)(config.lg) / 100.0;
-  eq[0].mg = eq[1].mg = (double)(config.mg) / 100.0;
-  eq[0].hg = eq[1].hg = (double)(config.hg) / 100.0;
+  /* gains (percent) are converted to fixed point inside the EQ */
+  init_3band_state(&eq[0],config.low_freq,config.high_freq,snd.sample_rate,config.lg,config.mg,config.hg);
+  init_3band_state(&eq[1],config.low_freq,config.high_freq,snd.sample_rate,config.lg,config.mg,config.hg);
 }
 
 void audio_shutdown(void)

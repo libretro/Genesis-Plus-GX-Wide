@@ -16,41 +16,55 @@
 //
 //----------------------------------------------------------------------------*/
 
+/* Fixed-point port: the filter no longer uses double/sin(). Coefficients and
+// gains are Q16, the pole/history state is Q24, and the crossover coefficient
+// 2*sin(pi*f/fs) is evaluated with an integer polynomial (see eq.c). This keeps
+// the audio path free of floating point (deterministic, no libm); output tracks
+// the previous double implementation to within ~1 LSB. */
+
 #ifndef __EQ3BAND__
 #define __EQ3BAND__
+
+/* signed 64-bit intermediate (this directory already relies on long long in
+// blip_buf.c; MSVC provides __int64) */
+#if defined(_MSC_VER)
+typedef __int64 eq_int64;
+#else
+typedef long long eq_int64;
+#endif
 
 /* ------------
 //| Structures |
 // ------------*/
 
 typedef struct {
-    /* Filter #1 (Low band) */
+    /* Filter #1 (Low band) -- Q16 coefficient, Q24 pole state */
 
-    double lf;      /* Frequency */
-    double f1p0;      /* Poles ... */
-    double f1p1;
-    double f1p2;
-    double f1p3;
+    eq_int64 lf;      /* Frequency (2*sin(pi*lowfreq/mixfreq), Q16) */
+    eq_int64 f1p0;      /* Poles ... */
+    eq_int64 f1p1;
+    eq_int64 f1p2;
+    eq_int64 f1p3;
 
     /* Filter #2 (High band) */
 
-    double hf;      /* Frequency */
-    double f2p0;      /* Poles ... */
-    double f2p1;
-    double f2p2;
-    double f2p3;
+    eq_int64 hf;      /* Frequency (Q16) */
+    eq_int64 f2p0;      /* Poles ... */
+    eq_int64 f2p1;
+    eq_int64 f2p2;
+    eq_int64 f2p3;
 
-    /* Sample history buffer */
+    /* Sample history buffer (Q24) */
 
-    double sdm1;      /* Sample data minus 1 */
-    double sdm2;      /*                   2 */
-    double sdm3;      /*                   3 */
+    eq_int64 sdm1;      /* Sample data minus 1 */
+    eq_int64 sdm2;      /*                   2 */
+    eq_int64 sdm3;      /*                   3 */
 
-    /* Gain Controls */
+    /* Gain Controls (Q16, 100% == unity) */
 
-    double lg;      /* low  gain */
-    double mg;      /* mid  gain */
-    double hg;      /* high gain */
+    eq_int64 lg;      /* low  gain */
+    eq_int64 mg;      /* mid  gain */
+    eq_int64 hg;      /* high gain */
 
 } EQSTATE;
 
@@ -60,8 +74,8 @@ typedef struct {
 // ---------*/
 
 extern void init_3band_state(EQSTATE * es, int lowfreq, int highfreq,
-           int mixfreq);
-extern double do_3band(EQSTATE * es, int sample);
+           int mixfreq, int lg, int mg, int hg);
+extern int do_3band(EQSTATE * es, int sample);
 
 
 #endif        /* #ifndef __EQ3BAND__ */
