@@ -3,7 +3,6 @@
 /* Common implementation of NTSC filters */
 
 #include <assert.h>
-#include <math.h>
 
 /* Copyright (C) 2006 Shay Green. This module is free software; you
 can redistribute it and/or modify it under the terms of the GNU Lesser
@@ -20,6 +19,8 @@ Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA */
 
 #undef PI
 #define PI 3.14159265358979323846f
+
+#include "ntsc_fixed.h"
 
 #ifndef LUMA_CUTOFF
   #define LUMA_CUTOFF 0.20
@@ -50,139 +51,132 @@ enum { kernel_size = kernel_half * 2 + 1 };
 
 typedef struct init_t
 {
-  float to_rgb [burst_count * 6];
-  float to_float [gamma_size];
-  float contrast;
-  float brightness;
-  float artifacts;
-  float fringing;
-  float kernel [rescale_out * kernel_size * 2];
+  ntsc_fx to_rgb [burst_count * 6];   /* Q16 */
+  ntsc_fx to_float [gamma_size];      /* Q16 */
+  ntsc_fx contrast;                   /* Q16 */
+  ntsc_fx brightness;                 /* Q16 */
+  ntsc_fx artifacts;                  /* Q16 */
+  ntsc_fx fringing;                   /* Q16 */
+  ntsc_fx kernel [rescale_out * kernel_size * 2]; /* Q16 */
 } init_t;
 
 #define ROTATE_IQ( i, q, sin_b, cos_b ) {\
-  float t;\
-  t = i * cos_b - q * sin_b;\
-  q = i * sin_b + q * cos_b;\
+  ntsc_fx t;\
+  t = ((i) * (cos_b) - (q) * (sin_b)) >> NTSC_FXB;\
+  q = ((i) * (sin_b) + (q) * (cos_b)) >> NTSC_FXB;\
   i = t;\
 }
 
 static void init_filters( init_t* impl, sms_ntsc_setup_t const* setup )
 {
 #if rescale_out > 1
-  float kernels [kernel_size * 2];
+  ntsc_fx kernels [kernel_size * 2];
 #else
-  float* const kernels = impl->kernel;
+  ntsc_fx* const kernels = impl->kernel;
 #endif
 
   /* generate luma (y) filter using sinc kernel */
   {
-    /* sinc with rolloff (dsf) */
-    float const rolloff = 1 + (float) setup->sharpness * (float) 0.032;
-    float const maxh = 32;
-    float const pow_a_n = (float) pow( rolloff, maxh );
-    float sum;
+    ntsc_fx const rolloff = NTSC_FXONE + ((NTSC_F(setup->sharpness) * NTSC_F(0.032)) >> NTSC_FXB);
+    ntsc_fx const pow_a_n = ntsc_powi( rolloff, 32 );
+    ntsc_fx sum;
     int i;
     /* quadratic mapping to reduce negative (blurring) range */
-    float to_angle = (float) setup->resolution + 1;
-    to_angle = PI / maxh * (float) LUMA_CUTOFF * (to_angle * to_angle + 1);
-    
-    kernels [kernel_size * 3 / 2] = maxh; /* default center value */
+    ntsc_fx res1 = NTSC_F(setup->resolution) + NTSC_FXONE;
+    ntsc_fx to_angle = ((((res1 * res1) >> NTSC_FXB) + NTSC_FXONE) * NTSC_F(PI / 32.0 * LUMA_CUTOFF)) >> NTSC_FXB;
+
+    kernels [kernel_size * 3 / 2] = NTSC_F(32.0); /* default center value */
     for ( i = 0; i < kernel_half * 2 + 1; i++ )
     {
       int x = i - kernel_half;
-      float angle = x * to_angle;
-      /* instability occurs at center point with rolloff very close to 1.0 */
-      if ( x || pow_a_n > (float) 1.056 || pow_a_n < (float) 0.981 )
+      ntsc_fx angle = (ntsc_fx) x * to_angle;
+      if ( x || pow_a_n > NTSC_F(1.056) || pow_a_n < NTSC_F(0.981) )
       {
-        float rolloff_cos_a = rolloff * (float) cos( angle );
-        float num = 1 - rolloff_cos_a -
-            pow_a_n * (float) cos( maxh * angle ) +
-            pow_a_n * rolloff * (float) cos( (maxh - 1) * angle );
-        float den = 1 - rolloff_cos_a - rolloff_cos_a + rolloff * rolloff;
-        float dsf = num / den;
-        kernels [kernel_size * 3 / 2 - kernel_half + i] = dsf - (float) 0.5;
+        ntsc_fx rca = (rolloff * ntsc_cos( angle )) >> NTSC_FXB;
+        ntsc_fx num = NTSC_FXONE - rca
+            - ((pow_a_n * ntsc_cos( (ntsc_fx)32 * angle )) >> NTSC_FXB)
+            + (((( pow_a_n * rolloff ) >> NTSC_FXB) * ntsc_cos( (ntsc_fx)31 * angle )) >> NTSC_FXB);
+        ntsc_fx den = NTSC_FXONE - rca - rca + ((rolloff * rolloff) >> NTSC_FXB);
+        ntsc_fx dsf = (num << NTSC_FXB) / den;
+        kernels [kernel_size * 3 / 2 - kernel_half + i] = dsf - (NTSC_FXONE >> 1);
       }
     }
-    
+
     /* apply blackman window and find sum */
     sum = 0;
     for ( i = 0; i < kernel_half * 2 + 1; i++ )
     {
-      float x = PI * 2 / (kernel_half * 2) * i;
-      float blackman = 0.42f - 0.5f * (float) cos( x ) + 0.08f * (float) cos( x * 2 );
-      sum += (kernels [kernel_size * 3 / 2 - kernel_half + i] *= blackman);
+      ntsc_fx x = NTSC_F(PI * 2 / (kernel_half * 2)) * i;
+      ntsc_fx blackman = NTSC_F(0.42) - ((NTSC_F(0.5) * ntsc_cos( x )) >> NTSC_FXB)
+                       + ((NTSC_F(0.08) * ntsc_cos( x * 2 )) >> NTSC_FXB);
+      {
+        int idx = kernel_size * 3 / 2 - kernel_half + i;
+        kernels [idx] = (kernels [idx] * blackman) >> NTSC_FXB;
+        sum += kernels [idx];
+      }
     }
-    
+
     /* normalize kernel */
-    sum = 1.0f / sum;
-    for ( i = 0; i < kernel_half * 2 + 1; i++ )
     {
-      int x = kernel_size * 3 / 2 - kernel_half + i;
-      kernels [x] *= sum;
-      assert( kernels [x] == kernels [x] ); /* catch numerical instability */
+      ntsc_fx inv = (NTSC_FXONE << NTSC_FXB) / sum;
+      for ( i = 0; i < kernel_half * 2 + 1; i++ )
+      {
+        int x = kernel_size * 3 / 2 - kernel_half + i;
+        kernels [x] = (kernels [x] * inv) >> NTSC_FXB;
+      }
     }
   }
 
   /* generate chroma (iq) filter using gaussian kernel */
   {
-    float const cutoff_factor = -0.03125f;
-    float cutoff = (float) setup->bleed;
+    ntsc_fx const cutoff_factor = NTSC_F(-0.03125);
+    ntsc_fx cutoff = NTSC_F(setup->bleed);
     int i;
-    
+
     if ( cutoff < 0 )
     {
       /* keep extreme value accessible only near upper end of scale (1.0) */
-      cutoff *= cutoff;
-      cutoff *= cutoff;
-      cutoff *= cutoff;
-      cutoff *= -30.0f / 0.65f;
+      cutoff = (cutoff * cutoff) >> NTSC_FXB;
+      cutoff = (cutoff * cutoff) >> NTSC_FXB;
+      cutoff = (cutoff * cutoff) >> NTSC_FXB;
+      cutoff = -((cutoff * NTSC_F(30.0 / 0.65)) >> NTSC_FXB);
     }
-    cutoff = cutoff_factor - 0.65f * cutoff_factor * cutoff;
-    
+    cutoff = cutoff_factor - ((((NTSC_F(0.65) * cutoff_factor) >> NTSC_FXB) * cutoff) >> NTSC_FXB);
+
     for ( i = -kernel_half; i <= kernel_half; i++ )
-      kernels [kernel_size / 2 + i] = (float) exp( i * i * cutoff );
-    
+      kernels [kernel_size / 2 + i] = ntsc_exp_neg( (ntsc_fx)(i * i) * cutoff );
+
     /* normalize even and odd phases separately */
     for ( i = 0; i < 2; i++ )
     {
-      float sum = 0;
+      ntsc_fx sum = 0;
       int x;
       for ( x = i; x < kernel_size; x += 2 )
         sum += kernels [x];
-      
-      sum = 1.0f / sum;
-      for ( x = i; x < kernel_size; x += 2 )
+
       {
-        kernels [x] *= sum;
-        assert( kernels [x] == kernels [x] ); /* catch numerical instability */
+        ntsc_fx inv = (NTSC_FXONE << NTSC_FXB) / sum;
+        for ( x = i; x < kernel_size; x += 2 )
+          kernels [x] = (kernels [x] * inv) >> NTSC_FXB;
       }
     }
   }
-  
-  /*
-  printf( "luma:\n" );
-  for ( i = kernel_size; i < kernel_size * 2; i++ )
-    printf( "%f\n", kernels [i] );
-  printf( "chroma:\n" );
-  for ( i = 0; i < kernel_size; i++ )
-    printf( "%f\n", kernels [i] );
-  */
-  
+
   /* generate linear rescale kernels */
   #if rescale_out > 1
   {
-    float weight = 1.0f;
-    float* out = impl->kernel;
+    ntsc_fx weight = NTSC_FXONE;
+    ntsc_fx* out = impl->kernel;
     int n = rescale_out;
     do
     {
-      float remain = 0;
+      ntsc_fx remain = 0;
       int i;
-      weight -= 1.0f / rescale_in;
+      weight -= NTSC_FXONE / rescale_in;
       for ( i = 0; i < kernel_size * 2; i++ )
       {
-        float cur = kernels [i];
-        float m = cur * weight;
+        ntsc_fx cur = kernels [i];
+        ntsc_fx m = (cur * weight) >> NTSC_FXB;
         *out++ = m + remain;
         remain = cur - m;
       }
@@ -192,78 +186,88 @@ static void init_filters( init_t* impl, sms_ntsc_setup_t const* setup )
   #endif
 }
 
-static float const default_decoder [6] =
-  { 0.956f, 0.621f, -0.272f, -0.647f, -1.105f, 1.702f };
+static ntsc_fx const default_decoder [6] =
+  { NTSC_F(0.956), NTSC_F(0.621), NTSC_F(-0.272), NTSC_F(-0.647), NTSC_F(-1.105), NTSC_F(1.702) };
 
 static void init( init_t* impl, sms_ntsc_setup_t const* setup )
 {
-  impl->brightness = (float) setup->brightness * (0.5f * rgb_unit) + rgb_offset;
-  impl->contrast   = (float) setup->contrast   * (0.5f * rgb_unit) + rgb_unit;
+  impl->brightness = NTSC_F(setup->brightness) * (rgb_unit / 2) + NTSC_F(rgb_unit * 2 + 0.5);
+  impl->contrast   = NTSC_F(setup->contrast)   * (rgb_unit / 2) + NTSC_F(rgb_unit);
   #ifdef default_palette_contrast
     if ( !setup->palette )
-      impl->contrast *= default_palette_contrast;
+      impl->contrast = (impl->contrast * NTSC_F(default_palette_contrast)) >> NTSC_FXB;
   #endif
-  
-  impl->artifacts = (float) setup->artifacts;
-  if ( impl->artifacts > 0 )
-    impl->artifacts *= artifacts_max - artifacts_mid;
-  impl->artifacts = impl->artifacts * artifacts_mid + artifacts_mid;
 
-  impl->fringing = (float) setup->fringing;
+  impl->artifacts = NTSC_F(setup->artifacts);
+  if ( impl->artifacts > 0 )
+    impl->artifacts = (impl->artifacts * NTSC_F(artifacts_max - artifacts_mid)) >> NTSC_FXB;
+  impl->artifacts = ((impl->artifacts * NTSC_F(artifacts_mid)) >> NTSC_FXB) + NTSC_F(artifacts_mid);
+
+  impl->fringing = NTSC_F(setup->fringing);
   if ( impl->fringing > 0 )
-    impl->fringing *= fringing_max - fringing_mid;
-  impl->fringing = impl->fringing * fringing_mid + fringing_mid;
-  
+    impl->fringing = (impl->fringing * NTSC_F(fringing_max - fringing_mid)) >> NTSC_FXB;
+  impl->fringing = ((impl->fringing * NTSC_F(fringing_mid)) >> NTSC_FXB) + NTSC_F(fringing_mid);
+
   init_filters( impl, setup );
-  
+
   /* generate gamma table */
   if ( gamma_size > 1 )
   {
-    float const to_float = 1.0f / (gamma_size - (gamma_size > 1));
-    float const gamma = 1.1333f - (float) setup->gamma * 0.5f;
+    ntsc_fx const gamma = NTSC_F(1.1333) - (NTSC_F(setup->gamma) >> 1);
     /* match common PC's 2.2 gamma to TV's 2.65 gamma */
     int i;
     for ( i = 0; i < gamma_size; i++ )
+    {
+      ntsc_fx base = ((ntsc_fx) i << NTSC_FXB) / (gamma_size - 1);
       impl->to_float [i] =
-          (float) pow( i * to_float, gamma ) * impl->contrast + impl->brightness;
+          ((ntsc_pow( base, gamma ) * impl->contrast) >> NTSC_FXB) + impl->brightness;
+    }
   }
-  
+
   /* setup decoder matricies */
   {
-    float hue = (float) setup->hue * PI + PI / 180 * ext_decoder_hue;
-    float sat = (float) setup->saturation + 1;
-    float const* decoder = setup->decoder_matrix;
-    if ( !decoder )
+    ntsc_fx hue = ((NTSC_F(setup->hue) * NTSC_F(PI)) >> NTSC_FXB) + NTSC_F(PI / 180 * ext_decoder_hue);
+    ntsc_fx sat = NTSC_F(setup->saturation) + NTSC_FXONE;
+    ntsc_fx dec_buf [6];
+    ntsc_fx const* decoder;
+    if ( setup->decoder_matrix )
+    {
+      int z;
+      for ( z = 0; z < 6; z++ )
+        dec_buf [z] = NTSC_F(setup->decoder_matrix [z]);
+      decoder = dec_buf;
+    }
+    else
     {
       decoder = default_decoder;
       if ( STD_HUE_CONDITION( setup ) )
-        hue += PI / 180 * (std_decoder_hue - ext_decoder_hue);
+        hue += NTSC_F(PI / 180 * (std_decoder_hue - ext_decoder_hue));
     }
-    
+
     {
-      float s = (float) sin( hue ) * sat;
-      float c = (float) cos( hue ) * sat;
-      float* out = impl->to_rgb;
-      int n;
-      
-      n = burst_count;
+      ntsc_fx s = (ntsc_sin( hue ) * sat) >> NTSC_FXB;
+      ntsc_fx c = (ntsc_cos( hue ) * sat) >> NTSC_FXB;
+      ntsc_fx* out = impl->to_rgb;
+      int nb;
+
+      nb = burst_count;
       do
       {
-        float const* in = decoder;
+        ntsc_fx const* in = decoder;
         int n = 3;
         do
         {
-          float i = *in++;
-          float q = *in++;
-          *out++ = i * c - q * s;
-          *out++ = i * s + q * c;
+          ntsc_fx iv = *in++;
+          ntsc_fx qv = *in++;
+          *out++ = ((iv * c) >> NTSC_FXB) - ((qv * s) >> NTSC_FXB);
+          *out++ = ((iv * s) >> NTSC_FXB) + ((qv * c) >> NTSC_FXB);
         }
         while ( --n );
         if ( burst_count <= 1 )
           break;
-        ROTATE_IQ( s, c, 0.866025f, -0.5f ); /* +120 degrees */
+        ROTATE_IQ( s, c, NTSC_F(0.866025), NTSC_F(-0.5) ); /* +120 degrees */
       }
-      while ( --n );
+      while ( --nb );
     }
   }
 }
@@ -271,15 +275,15 @@ static void init( init_t* impl, sms_ntsc_setup_t const* setup )
 /* kernel generation */
 
 #define RGB_TO_YIQ( r, g, b, y, i ) (\
-  (y = (r) * 0.299f + (g) * 0.587f + (b) * 0.114f),\
-  (i = (r) * 0.596f - (g) * 0.275f - (b) * 0.321f),\
-  ((r) * 0.212f - (g) * 0.523f + (b) * 0.311f)\
+  (y = ((r) * NTSC_C_RY + (g) * NTSC_C_GY + (b) * NTSC_C_BY) >> NTSC_FXB),\
+  (i = ((r) * NTSC_C_RI - (g) * NTSC_C_GI - (b) * NTSC_C_BI) >> NTSC_FXB),\
+  (((r) * NTSC_C_RQ - (g) * NTSC_C_GQ + (b) * NTSC_C_BQ) >> NTSC_FXB)\
 )
 
 #define YIQ_TO_RGB( y, i, q, to_rgb, type, r, g ) (\
-  r = (type) (y + to_rgb [0] * i + to_rgb [1] * q),\
-  g = (type) (y + to_rgb [2] * i + to_rgb [3] * q),\
-  (type) (y + to_rgb [4] * i + to_rgb [5] * q)\
+  r = (type) ntsc_fxint( (y) + (((to_rgb) [0] * (i)) >> NTSC_FXB) + (((to_rgb) [1] * (q)) >> NTSC_FXB) ),\
+  g = (type) ntsc_fxint( (y) + (((to_rgb) [2] * (i)) >> NTSC_FXB) + (((to_rgb) [3] * (q)) >> NTSC_FXB) ),\
+  (type) ntsc_fxint( (y) + (((to_rgb) [4] * (i)) >> NTSC_FXB) + (((to_rgb) [5] * (q)) >> NTSC_FXB) )\
 )
 
 #define PACK_RGB( r, g, b ) ((r) << 21 | (g) << 11 | (b) << 1)
@@ -290,8 +294,8 @@ enum { rgb_bias = rgb_unit * 2 * sms_ntsc_rgb_builder };
 typedef struct pixel_info_t
 {
   int offset;
-  float negate;
-  float kernel [4];
+  ntsc_fx negate;
+  ntsc_fx kernel [4];
 } pixel_info_t;
 
 #if rescale_in > 1
@@ -302,22 +306,22 @@ typedef struct pixel_info_t
   #define PIXEL_OFFSET( ntsc, scaled ) \
     PIXEL_OFFSET_( ((ntsc) - (scaled) / rescale_out * rescale_in),\
         (((scaled) + rescale_out * 10) % rescale_out) ),\
-    (1.0f - (((ntsc) + 100) & 2))
+    NTSC_F(1.0 - (((ntsc) + 100) & 2))
 #else
   #define PIXEL_OFFSET( ntsc, scaled ) \
     (kernel_size / 2 + (ntsc) - (scaled)),\
-    (1.0f - (((ntsc) + 100) & 2))
+    NTSC_F(1.0 - (((ntsc) + 100) & 2))
 #endif
 
 extern pixel_info_t const sms_ntsc_pixels [alignment_count];
 
 /* Generate pixel at all burst phases and column alignments */
-static void gen_kernel( init_t* impl, float y, float i, float q, sms_ntsc_rgb_t* out )
+static void gen_kernel( init_t* impl, ntsc_fx y, ntsc_fx i, ntsc_fx q, sms_ntsc_rgb_t* out )
 {
   /* generate for each scanline burst phase */
-  float const* to_rgb = impl->to_rgb;
+  ntsc_fx const* to_rgb = impl->to_rgb;
   int burst_remain = burst_count;
-  y -= rgb_offset;
+  y -= NTSC_F(rgb_offset);
   do
   {
     /* Encode yiq into *two* composite signals (to allow control over artifacting).
@@ -329,30 +333,30 @@ static void gen_kernel( init_t* impl, float y, float i, float q, sms_ntsc_rgb_t*
     do
     {
       /* negate is -1 when composite starts at odd multiple of 2 */
-      float const yy = y * impl->fringing * pixel->negate;
-      float const ic0 = (i + yy) * pixel->kernel [0];
-      float const qc1 = (q + yy) * pixel->kernel [1];
-      float const ic2 = (i - yy) * pixel->kernel [2];
-      float const qc3 = (q - yy) * pixel->kernel [3];
-      
-      float const factor = impl->artifacts * pixel->negate;
-      float const ii = i * factor;
-      float const yc0 = (y + ii) * pixel->kernel [0];
-      float const yc2 = (y - ii) * pixel->kernel [2];
-      
-      float const qq = q * factor;
-      float const yc1 = (y + qq) * pixel->kernel [1];
-      float const yc3 = (y - qq) * pixel->kernel [3];
-      
-      float const* k = &impl->kernel [pixel->offset];
+      ntsc_fx const yy = (((y * impl->fringing) >> NTSC_FXB) * pixel->negate) >> NTSC_FXB;
+      ntsc_fx const ic0 = ((i + yy) * pixel->kernel [0]) >> NTSC_FXB;
+      ntsc_fx const qc1 = ((q + yy) * pixel->kernel [1]) >> NTSC_FXB;
+      ntsc_fx const ic2 = ((i - yy) * pixel->kernel [2]) >> NTSC_FXB;
+      ntsc_fx const qc3 = ((q - yy) * pixel->kernel [3]) >> NTSC_FXB;
+
+      ntsc_fx const factor = (impl->artifacts * pixel->negate) >> NTSC_FXB;
+      ntsc_fx const ii = (i * factor) >> NTSC_FXB;
+      ntsc_fx const yc0 = ((y + ii) * pixel->kernel [0]) >> NTSC_FXB;
+      ntsc_fx const yc2 = ((y - ii) * pixel->kernel [2]) >> NTSC_FXB;
+
+      ntsc_fx const qq = (q * factor) >> NTSC_FXB;
+      ntsc_fx const yc1 = ((y + qq) * pixel->kernel [1]) >> NTSC_FXB;
+      ntsc_fx const yc3 = ((y - qq) * pixel->kernel [3]) >> NTSC_FXB;
+
+      ntsc_fx const* k = &impl->kernel [pixel->offset];
       int n;
       ++pixel;
       for ( n = rgb_kernel_size; n; --n )
       {
-        float i = k[0]*ic0 + k[2]*ic2;
-        float q = k[1]*qc1 + k[3]*qc3;
-        float y = k[kernel_size+0]*yc0 + k[kernel_size+1]*yc1 +
-                  k[kernel_size+2]*yc2 + k[kernel_size+3]*yc3 + rgb_offset;
+        ntsc_fx fi = ((k[0] * ic0) >> NTSC_FXB) + ((k[2] * ic2) >> NTSC_FXB);
+        ntsc_fx fq = ((k[1] * qc1) >> NTSC_FXB) + ((k[3] * qc3) >> NTSC_FXB);
+        ntsc_fx fy = ((k[kernel_size+0] * yc0) >> NTSC_FXB) + ((k[kernel_size+1] * yc1) >> NTSC_FXB) +
+                     ((k[kernel_size+2] * yc2) >> NTSC_FXB) + ((k[kernel_size+3] * yc3) >> NTSC_FXB) + NTSC_F(rgb_offset);
         if ( rescale_out <= 1 )
           k--;
         else if ( k < &impl->kernel [kernel_size * 2 * (rescale_out - 1)] )
@@ -360,19 +364,19 @@ static void gen_kernel( init_t* impl, float y, float i, float q, sms_ntsc_rgb_t*
         else
           k -= kernel_size * 2 * (rescale_out - 1) + 2;
         {
-          int r, g, b = YIQ_TO_RGB( y, i, q, to_rgb, int, r, g );
+          int r, g, b = YIQ_TO_RGB( fy, fi, fq, to_rgb, int, r, g );
           *out++ = PACK_RGB( r, g, b ) - rgb_bias;
         }
       }
     }
     while ( alignment_count > 1 && --alignment_remain );
-    
+
     if ( burst_count <= 1 )
       break;
-    
+
     to_rgb += 6;
-    
-    ROTATE_IQ( i, q, -0.866025f, -0.5f ); /* -120 degrees */
+
+    ROTATE_IQ( i, q, NTSC_F(-0.866025), NTSC_F(-0.5) ); /* -120 degrees */
   }
   while ( --burst_remain );
 }

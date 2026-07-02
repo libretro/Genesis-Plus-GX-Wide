@@ -38,8 +38,8 @@ md_ntsc_setup_t const md_ntsc_rgb        = { 0, 0, 0, 0,.2,  0,.7, -1, -1,-1, 0,
 
 /* 2 input pixels -> 4 composite samples */
 pixel_info_t const md_ntsc_pixels [alignment_count] = {
-  { PIXEL_OFFSET( -4, -9 ), { 0.1f, 0.9f, 0.9f, 0.1f } },
-  { PIXEL_OFFSET( -2, -7 ), { 0.1f, 0.9f, 0.9f, 0.1f } },
+  { PIXEL_OFFSET( -4, -9 ), { NTSC_F(0.1), NTSC_F(0.9), NTSC_F(0.9), NTSC_F(0.1) } },
+  { PIXEL_OFFSET( -2, -7 ), { NTSC_F(0.1), NTSC_F(0.9), NTSC_F(0.9), NTSC_F(0.1) } },
 };
 
 static void correct_errors( md_ntsc_rgb_t color, md_ntsc_rgb_t* out )
@@ -65,11 +65,11 @@ void md_ntsc_init( md_ntsc_t* ntsc, md_ntsc_setup_t const* setup )
 
   for ( entry = 0; entry < md_ntsc_palette_size; entry++ )
   {
-    float bb = impl.to_float [entry >> 6 & 7];
-    float gg = impl.to_float [entry >> 3 & 7];
-    float rr = impl.to_float [entry      & 7];
+    ntsc_fx bb = impl.to_float [entry >> 6 & 7];
+    ntsc_fx gg = impl.to_float [entry >> 3 & 7];
+    ntsc_fx rr = impl.to_float [entry      & 7];
 
-    float y, i, q = RGB_TO_YIQ( rr, gg, bb, y, i );
+    ntsc_fx y, i, q = RGB_TO_YIQ( rr, gg, bb, y, i );
 
     int r, g, b = YIQ_TO_RGB( y, i, q, impl.to_rgb, int, r, g );
     md_ntsc_rgb_t rgb = PACK_RGB( r, g, b );

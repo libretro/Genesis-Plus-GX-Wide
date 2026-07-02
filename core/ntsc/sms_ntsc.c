@@ -37,9 +37,9 @@ sms_ntsc_setup_t const sms_ntsc_rgb        = { 0, 0, 0, 0,.2,  0,.70, -1, -1,-1,
 
 /* 3 input pixels -> 8 composite samples */
 pixel_info_t const sms_ntsc_pixels [alignment_count] = {
-  { PIXEL_OFFSET( -4, -9 ), { 1, 1, .6667f, 0 } },
-  { PIXEL_OFFSET( -2, -7 ), {       .3333f, 1, 1, .3333f } },
-  { PIXEL_OFFSET(  0, -5 ), {                  0, .6667f, 1, 1 } },
+  { PIXEL_OFFSET( -4, -9 ), { NTSC_F(1), NTSC_F(1), NTSC_F(.6667), NTSC_F(0) } },
+  { PIXEL_OFFSET( -2, -7 ), { NTSC_F(.3333), NTSC_F(1), NTSC_F(1), NTSC_F(.3333) } },
+  { PIXEL_OFFSET(  0, -5 ), { NTSC_F(0), NTSC_F(.6667), NTSC_F(1), NTSC_F(1) } },
 };
 
 static void correct_errors( sms_ntsc_rgb_t color, sms_ntsc_rgb_t* out )
@@ -64,11 +64,11 @@ void sms_ntsc_init( sms_ntsc_t* ntsc, sms_ntsc_setup_t const* setup )
   
   for ( entry = 0; entry < sms_ntsc_palette_size; entry++ )
   {
-    float bb = impl.to_float [entry >> 8 & 0x0F];
-    float gg = impl.to_float [entry >> 4 & 0x0F];
-    float rr = impl.to_float [entry      & 0x0F];
+    ntsc_fx bb = impl.to_float [entry >> 8 & 0x0F];
+    ntsc_fx gg = impl.to_float [entry >> 4 & 0x0F];
+    ntsc_fx rr = impl.to_float [entry      & 0x0F];
     
-    float y, i, q = RGB_TO_YIQ( rr, gg, bb, y, i );
+    ntsc_fx y, i, q = RGB_TO_YIQ( rr, gg, bb, y, i );
     
     int r, g, b = YIQ_TO_RGB( y, i, q, impl.to_rgb, int, r, g );
     sms_ntsc_rgb_t rgb = PACK_RGB( r, g, b );
