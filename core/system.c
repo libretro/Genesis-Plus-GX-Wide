@@ -42,7 +42,6 @@
 #include "shared.h"
 #include "eq.h"
 #include "fm_enhance.h"
-#include <math.h>
 
 extern int8 audio_hard_disable;
 
@@ -226,6 +225,76 @@ void audio_shutdown(void)
   }
 }
 
+/* Rescale the single-pole low-pass coefficient from its 44.1 kHz tuning to the
+   current output rate: a_fs = a0 ^ (44100 / fs) with a0 = lp_range / 65536.
+   Done entirely in fixed point (Q30 internal) so the coefficient is identical
+   on every platform - the former pow() could diverge by a step across libm
+   implementations and desync netplay. Bit-exact with pow() at 44.1 kHz; within
+   one 0.16 step at other rates (verified against libm over the whole range). */
+#define LP_Q          30
+#define LP_Q1         ((eq_int64)1 << LP_Q)
+#define LP_LN2        ((eq_int64)744261118)      /* round(ln2 * 2^30) */
+#define LP_MULQ(a, b) (((a) * (b)) >> LP_Q)
+
+static eq_int64 lp_ln_q30(eq_int64 x)
+{
+  eq_int64 y, y2, t;
+  int k = 0;
+  if (x <= 0)
+    return -((eq_int64)40 << LP_Q);
+  while (x <  LP_Q1)         { x <<= 1; k++; }
+  while (x >= (LP_Q1 << 1))  { x >>= 1; k--; }
+  y  = ((x - LP_Q1) << LP_Q) / (x + LP_Q1);      /* |y| < 1/3 */
+  y2 = LP_MULQ(y, y);
+  t = LP_Q1 / 13;
+  t = LP_Q1 / 11 + LP_MULQ(y2, t);
+  t = LP_Q1 / 9  + LP_MULQ(y2, t);
+  t = LP_Q1 / 7  + LP_MULQ(y2, t);
+  t = LP_Q1 / 5  + LP_MULQ(y2, t);
+  t = LP_Q1 / 3  + LP_MULQ(y2, t);
+  t = LP_Q1      + LP_MULQ(y2, t);
+  t = LP_MULQ(y, t) << 1;
+  return t - (eq_int64) k * LP_LN2;              /* ln(x) in Q30 */
+}
+
+static eq_int64 lp_exp_neg_q30(eq_int64 z)
+{
+  eq_int64 f, t;
+  int n = 0;
+  if (z > 0)
+    z = 0;
+  if (z < -((eq_int64)45 << LP_Q))
+    return 0;
+  while (z <= -LP_LN2) { z += LP_LN2; n++; }
+  if (n >= 31)
+    return 0;   /* result < 2^-31: sub-LSB in 0.16 (also avoids UB shift >= width) */
+  f = -z;
+  t = LP_Q1 - f / 7;
+  t = LP_Q1 - LP_MULQ(f / 6, t);
+  t = LP_Q1 - LP_MULQ(f / 5, t);
+  t = LP_Q1 - LP_MULQ(f / 4, t);
+  t = LP_Q1 - LP_MULQ(f / 3, t);
+  t = LP_Q1 - LP_MULQ(f / 2, t);
+  t = LP_Q1 - LP_MULQ(f, t);
+  return t >> n;                                 /* exp(z) in Q30 */
+}
+
+static uint32 lp_scale_factora(uint32 lp_range, int sample_rate)
+{
+  eq_int64 ln, arg, a;
+  int v;
+  /* degenerate (a0 == 0 or 1, or unset rate): no rescale possible/needed */
+  if (!(lp_range > 0 && lp_range < 65536 && sample_rate > 0))
+    return lp_range;
+  ln  = lp_ln_q30((eq_int64) lp_range << 14);              /* ln(a0), Q30 (< 0) */
+  arg = ((((eq_int64) 44100 << 16) / sample_rate) * ln) >> 16; /* (44100/fs)*ln(a0) */
+  a   = lp_exp_neg_q30(arg);                               /* a0 ^ (44100/fs), Q30 */
+  v   = (int) ((a >> 14) + ((a >> 13) & 1));               /* Q30 -> 0.16, rounded */
+  if (v < 0)     v = 0;
+  if (v > 65536) v = 65536;
+  return (uint32) v;
+}
+
 int audio_update(int16 *buffer)
 {
   /* run sound chips until end of frame */
@@ -329,23 +398,9 @@ int audio_update(int16 *buffer)
 
       if ((config.lp_range != cached_lp_range) || (snd.sample_rate != cached_rate))
       {
-        double a0 = (double)config.lp_range / 65536.0;
         cached_lp_range = config.lp_range;
         cached_rate     = snd.sample_rate;
-
-        if ((a0 > 0.0) && (a0 < 1.0) && (snd.sample_rate > 0))
-        {
-          double a = pow(a0, 44100.0 / (double)snd.sample_rate);
-          int v = (int)(a * 65536.0 + 0.5);
-          if (v < 0)     v = 0;
-          if (v > 65536) v = 65536;
-          scaled_factora = (uint32)v;
-        }
-        else
-        {
-          /* degenerate (a0 == 0 or 1): no rescale possible/needed */
-          scaled_factora = config.lp_range;
-        }
+        scaled_factora  = lp_scale_factora(config.lp_range, snd.sample_rate);
       }
 
       factora = scaled_factora;
