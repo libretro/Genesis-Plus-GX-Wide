@@ -1857,40 +1857,81 @@ static void reset_channels(FM_CH *CH , int num )
   }
 }
 
+/* YM2612 log-sine and exponent ROMs.
+ * The real chip reads two small fixed ROMs; earlier code reconstructed them at
+ * init with sin()/pow()/log()/floor(), which is slower, pulls in libm, and can
+ * round differently across build targets. These integer tables are the exact
+ * values that generation produced (equivalently, the die-derived ROMs used by
+ * Nuked-OPN2 / the jt12 FPGA core: attenuation = -256*log2(sin), and the
+ * matching 2^-x exponent), and the working tl_tab/sin_tab are rebuilt from them
+ * below with integer-only arithmetic -- bit-identical output, no float. */
+static const UINT16 logsin_rom[256] =
+{
+  2137, 1731, 1543, 1419, 1326, 1252, 1190, 1137, 1091, 1050, 1013, 979,
+  949, 920, 894, 869, 846, 825, 804, 785, 767, 749, 732, 717,
+  701, 687, 672, 659, 646, 633, 621, 609, 598, 587, 576, 566,
+  556, 546, 536, 527, 518, 509, 501, 492, 484, 476, 468, 461,
+  453, 446, 439, 432, 425, 418, 411, 405, 399, 392, 386, 380,
+  375, 369, 363, 358, 352, 347, 341, 336, 331, 326, 321, 316,
+  311, 307, 302, 297, 293, 289, 284, 280, 276, 271, 267, 263,
+  259, 255, 251, 248, 244, 240, 236, 233, 229, 226, 222, 219,
+  215, 212, 209, 205, 202, 199, 196, 193, 190, 187, 184, 181,
+  178, 175, 172, 169, 167, 164, 161, 159, 156, 153, 151, 148,
+  146, 143, 141, 138, 136, 134, 131, 129, 127, 125, 122, 120,
+  118, 116, 114, 112, 110, 108, 106, 104, 102, 100, 98, 96,
+  94, 92, 91, 89, 87, 85, 83, 82, 80, 78, 77, 75,
+  74, 72, 70, 69, 67, 66, 64, 63, 62, 60, 59, 57,
+  56, 55, 53, 52, 51, 49, 48, 47, 46, 45, 43, 42,
+  41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30,
+  29, 28, 27, 26, 25, 24, 23, 23, 22, 21, 20, 20,
+  19, 18, 17, 17, 16, 15, 15, 14, 13, 13, 12, 12,
+  11, 10, 10, 9, 9, 8, 8, 7, 7, 7, 6, 6,
+  5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2,
+  2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+  0, 0, 0, 0,
+};
+
+static const UINT16 exp_rom[256] =
+{
+  8168, 8148, 8124, 8104, 8080, 8060, 8040, 8016, 7996, 7972, 7952, 7932,
+  7908, 7888, 7864, 7844, 7824, 7804, 7780, 7760, 7740, 7720, 7696, 7676,
+  7656, 7636, 7616, 7592, 7572, 7552, 7532, 7512, 7492, 7472, 7452, 7432,
+  7412, 7392, 7372, 7352, 7332, 7312, 7292, 7272, 7252, 7232, 7212, 7192,
+  7176, 7156, 7136, 7116, 7096, 7076, 7060, 7040, 7020, 7000, 6984, 6964,
+  6944, 6928, 6908, 6888, 6868, 6852, 6832, 6816, 6796, 6776, 6760, 6740,
+  6724, 6704, 6688, 6668, 6652, 6632, 6616, 6596, 6580, 6560, 6544, 6524,
+  6508, 6492, 6472, 6456, 6436, 6420, 6404, 6384, 6368, 6352, 6336, 6316,
+  6300, 6284, 6264, 6248, 6232, 6216, 6200, 6180, 6164, 6148, 6132, 6116,
+  6100, 6080, 6064, 6048, 6032, 6016, 6000, 5984, 5968, 5952, 5936, 5920,
+  5904, 5888, 5872, 5856, 5840, 5824, 5808, 5792, 5776, 5760, 5744, 5732,
+  5716, 5700, 5684, 5668, 5652, 5636, 5624, 5608, 5592, 5576, 5564, 5548,
+  5532, 5516, 5504, 5488, 5472, 5456, 5444, 5428, 5412, 5400, 5384, 5368,
+  5356, 5340, 5328, 5312, 5296, 5284, 5268, 5256, 5240, 5228, 5212, 5200,
+  5184, 5168, 5156, 5144, 5128, 5116, 5100, 5088, 5072, 5060, 5044, 5032,
+  5020, 5004, 4992, 4976, 4964, 4952, 4936, 4924, 4912, 4896, 4884, 4872,
+  4856, 4844, 4832, 4820, 4804, 4792, 4780, 4768, 4752, 4740, 4728, 4716,
+  4704, 4688, 4676, 4664, 4652, 4640, 4628, 4616, 4600, 4588, 4576, 4564,
+  4552, 4540, 4528, 4516, 4504, 4492, 4480, 4468, 4456, 4444, 4432, 4420,
+  4408, 4396, 4384, 4372, 4360, 4348, 4336, 4324, 4312, 4300, 4288, 4276,
+  4264, 4256, 4244, 4232, 4220, 4208, 4196, 4184, 4176, 4164, 4152, 4140,
+  4128, 4120, 4108, 4096,
+};
+
 /* initialize generic tables */
 static void init_tables(void)
 {
   signed int d,i,x;
   signed int n;
-  double o,m;
 
-  /* build Linear Power Table */
+  /* build Linear Power (exponent) table from exp_rom -- integer only.
+     one entry uses the format xxxxxyyyyyyyys: s=sign, yyyyyyyy=8-bit mantissa,
+     xxxxx=5-bit shift (>=13 discarded, matching the 13-bit chip output). */
   for (x=0; x<TL_RES_LEN; x++)
   {
-    m = (1<<16) / pow(2,(x+1) * (ENV_STEP/4.0) / 8.0);
-    m = floor(m);
-
-    /* we never reach (1<<16) here due to the (x+1) */
-    /* result fits within 16 bits at maximum */
-
-    n = (int)m; /* 16 bits here */
-    n >>= 4;    /* 12 bits here */
-    if (n&1)    /* round to nearest */
-      n = (n>>1)+1;
-    else
-      n = n>>1;
-                /* 11 bits here (rounded) */
-    n <<= 2;    /* 13 bits here (as in real chip) */
-
-    /* 14 bits (with sign bit) */
+    n = exp_rom[x]; /* 13-bit rounded mantissa (was pow(2,...) at runtime) */
     tl_tab[ x*2 + 0 ] = n;
     tl_tab[ x*2 + 1 ] = -tl_tab[ x*2 + 0 ];
 
-    /* one entry in the 'Power' table use the following format, xxxxxyyyyyyyys with:            */
-    /*        s = sign bit                                                                      */
-    /* yyyyyyyy = 8-bits decimal part (0-TL_RES_LEN)                                            */
-    /* xxxxx    = 5-bits integer 'shift' value (0-31) but, since Power table output is 13 bits, */
-    /*            any value above 13 (included) would be discarded.                             */
     for (i=1; i<13; i++)
     {
       tl_tab[ x*2+0 + i*2*TL_RES_LEN ] =  tl_tab[ x*2+0 ]>>i;
@@ -1898,28 +1939,16 @@ static void init_tables(void)
     }
   }
 
-  /* build Logarithmic Sinus table */
-  for (i=0; i<SIN_LEN; i++)
+  /* build Logarithmic Sinus table from logsin_rom -- quarter-wave mirrored into
+     four quadrants (was sin()/log() at runtime). LSB carries the sign the
+     'Power' table expects. */
+  for (i=0; i<256; i++)
   {
-    /* non-standard sinus */
-    m = sin( ((i*2)+1) * M_PI / SIN_LEN ); /* checked against the real chip */
-    /* we never reach zero here due to ((i*2)+1) */
-
-    if (m>0.0)
-      o = 8*log(1.0/m)/log(2);  /* convert to 'decibels' */
-    else
-      o = 8*log(-1.0/m)/log(2);  /* convert to 'decibels' */
-
-    o = o / (ENV_STEP/4);
-
-    n = (int)(2.0*o);
-    if (n&1)            /* round to nearest */
-      n = (n>>1)+1;
-    else
-      n = n>>1;
-
-    /* 13-bits (8.5) value is formatted for above 'Power' table */
-    sin_tab[ i ] = n*2 + (m>=0.0? 0: 1 );
+    n = logsin_rom[i]*2;
+    sin_tab[ i        ] = n;     /* quadrant 1 (+) */
+    sin_tab[ 511 - i  ] = n;     /* quadrant 2 (+) */
+    sin_tab[ 512 + i  ] = n + 1; /* quadrant 3 (-) */
+    sin_tab[ 1023 - i ] = n + 1; /* quadrant 4 (-) */
   }
 
   /* build LFO PM modulation table */

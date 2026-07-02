@@ -1131,27 +1131,71 @@ INLINE void rhythm_calc( YM2413_OPLL_CH *CH, unsigned int noise )
 
 
 /* generic table initialize */
+/* YM2413 (OPLL) log-sine and exponent ROMs -- see ym2612.c for rationale.
+ * Integer tables replacing runtime sin()/pow()/log()/floor(); the working
+ * tl_tab/sin_tab are rebuilt from them below with integer-only arithmetic
+ * (bit-identical to the previous float generation, no libm, deterministic). */
+static const UINT16 logsin_rom[256] =
+{
+  2137, 1731, 1543, 1419, 1326, 1252, 1190, 1137, 1091, 1050, 1013, 979,
+  949, 920, 894, 869, 846, 825, 804, 785, 767, 749, 732, 717,
+  701, 687, 672, 659, 646, 633, 621, 609, 598, 587, 576, 566,
+  556, 546, 536, 527, 518, 509, 501, 492, 484, 476, 468, 461,
+  453, 446, 439, 432, 425, 418, 411, 405, 399, 392, 386, 380,
+  375, 369, 363, 358, 352, 347, 341, 336, 331, 326, 321, 316,
+  311, 307, 302, 297, 293, 289, 284, 280, 276, 271, 267, 263,
+  259, 255, 251, 248, 244, 240, 236, 233, 229, 226, 222, 219,
+  215, 212, 209, 205, 202, 199, 196, 193, 190, 187, 184, 181,
+  178, 175, 172, 169, 167, 164, 161, 159, 156, 153, 151, 148,
+  146, 143, 141, 138, 136, 134, 131, 129, 127, 125, 122, 120,
+  118, 116, 114, 112, 110, 108, 106, 104, 102, 100, 98, 96,
+  94, 92, 91, 89, 87, 85, 83, 82, 80, 78, 77, 75,
+  74, 72, 70, 69, 67, 66, 64, 63, 62, 60, 59, 57,
+  56, 55, 53, 52, 51, 49, 48, 47, 46, 45, 43, 42,
+  41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30,
+  29, 28, 27, 26, 25, 24, 23, 23, 22, 21, 20, 20,
+  19, 18, 17, 17, 16, 15, 15, 14, 13, 13, 12, 12,
+  11, 10, 10, 9, 9, 8, 8, 7, 7, 7, 6, 6,
+  5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2,
+  2, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+  0, 0, 0, 0,
+};
+
+static const UINT16 exp_rom[256] =
+{
+  2042, 2037, 2031, 2026, 2020, 2015, 2010, 2004, 1999, 1993, 1988, 1983,
+  1977, 1972, 1966, 1961, 1956, 1951, 1945, 1940, 1935, 1930, 1924, 1919,
+  1914, 1909, 1904, 1898, 1893, 1888, 1883, 1878, 1873, 1868, 1863, 1858,
+  1853, 1848, 1843, 1838, 1833, 1828, 1823, 1818, 1813, 1808, 1803, 1798,
+  1794, 1789, 1784, 1779, 1774, 1769, 1765, 1760, 1755, 1750, 1746, 1741,
+  1736, 1732, 1727, 1722, 1717, 1713, 1708, 1704, 1699, 1694, 1690, 1685,
+  1681, 1676, 1672, 1667, 1663, 1658, 1654, 1649, 1645, 1640, 1636, 1631,
+  1627, 1623, 1618, 1614, 1609, 1605, 1601, 1596, 1592, 1588, 1584, 1579,
+  1575, 1571, 1566, 1562, 1558, 1554, 1550, 1545, 1541, 1537, 1533, 1529,
+  1525, 1520, 1516, 1512, 1508, 1504, 1500, 1496, 1492, 1488, 1484, 1480,
+  1476, 1472, 1468, 1464, 1460, 1456, 1452, 1448, 1444, 1440, 1436, 1433,
+  1429, 1425, 1421, 1417, 1413, 1409, 1406, 1402, 1398, 1394, 1391, 1387,
+  1383, 1379, 1376, 1372, 1368, 1364, 1361, 1357, 1353, 1350, 1346, 1342,
+  1339, 1335, 1332, 1328, 1324, 1321, 1317, 1314, 1310, 1307, 1303, 1300,
+  1296, 1292, 1289, 1286, 1282, 1279, 1275, 1272, 1268, 1265, 1261, 1258,
+  1255, 1251, 1248, 1244, 1241, 1238, 1234, 1231, 1228, 1224, 1221, 1218,
+  1214, 1211, 1208, 1205, 1201, 1198, 1195, 1192, 1188, 1185, 1182, 1179,
+  1176, 1172, 1169, 1166, 1163, 1160, 1157, 1154, 1150, 1147, 1144, 1141,
+  1138, 1135, 1132, 1129, 1126, 1123, 1120, 1117, 1114, 1111, 1108, 1105,
+  1102, 1099, 1096, 1093, 1090, 1087, 1084, 1081, 1078, 1075, 1072, 1069,
+  1066, 1064, 1061, 1058, 1055, 1052, 1049, 1046, 1044, 1041, 1038, 1035,
+  1032, 1030, 1027, 1024,
+};
+
 static int init_tables(void)
 {
   signed int i,x;
   signed int n;
-  double o,m;
 
+  /* exponent table from exp_rom (11-bit mantissa + up to 10 shifts) -- integer */
   for (x=0; x<TL_RES_LEN; x++)
   {
-    m = (1<<16) / pow(2, (x+1) * (ENV_STEP/4.0) / 8.0);
-    m = floor(m);
-
-    /* we never reach (1<<16) here due to the (x+1) */
-    /* result fits within 16 bits at maximum */
-
-    n = (int)m;    /* 16 bits here */
-    n >>= 4;    /* 12 bits here */
-    if (n&1)    /* round to nearest */
-      n = (n>>1)+1;
-    else
-      n = n>>1;
-            /* 11 bits here (rounded) */
+    n = exp_rom[x];
     tl_tab[ x*2 + 0 ] = n;
     tl_tab[ x*2 + 1 ] = -tl_tab[ x*2 + 0 ];
 
@@ -1162,36 +1206,23 @@ static int init_tables(void)
     }
   }
 
+  /* waveform 0: full log-sine from logsin_rom (quarter-wave mirrored) */
+  for (i=0; i<256; i++)
+  {
+    n = logsin_rom[i]*2;
+    sin_tab[ i        ] = n;
+    sin_tab[ 511 - i  ] = n;
+    sin_tab[ 512 + i  ] = n + 1;
+    sin_tab[ 1023 - i ] = n + 1;
+  }
+
+  /* waveform 1: positive half only (negative lobe silenced) */
   for (i=0; i<SIN_LEN; i++)
   {
-    /* non-standard sinus */
-    m = sin( ((i*2)+1) * M_PI / SIN_LEN ); /* checked against the real chip */
-
-    /* we never reach zero here due to ((i*2)+1) */
-
-    if (m>0.0)
-      o = 8*log(1.0/m)/log(2);  /* convert to 'decibels' */
+    if (i & (1<<(SIN_BITS-1)))
+      sin_tab[1*SIN_LEN + i] = TL_TAB_LEN;
     else
-      o = 8*log(-1.0/m)/log(2);  /* convert to 'decibels' */
-
-    o = o / (ENV_STEP/4);
-
-    n = (int)(2.0*o);
-    if (n&1)            /* round to nearest */
-      n = (n>>1)+1;
-    else
-      n = n>>1;
-
-    /* waveform 0: standard sinus  */
-    sin_tab[ i ] = n*2 + (m>=0.0? 0: 1 );
-
-    /* waveform 1:  __      __     */
-    /*             /  \____/  \____*/
-    /* output only first half of the sinus waveform (positive one) */
-    if (i & (1<<(SIN_BITS-1)) )
-      sin_tab[1*SIN_LEN+i] = TL_TAB_LEN;
-    else
-      sin_tab[1*SIN_LEN+i] = sin_tab[i];
+      sin_tab[1*SIN_LEN + i] = sin_tab[i];
   }
 
   return 1;
@@ -1202,27 +1233,24 @@ static void OPLL_initalize(void)
 {
   int i;
 
-  /* YM2413 always running at original frequency */
-  double freqbase = 1.0;
-
-  /* make fnumber -> increment counter table */
+  /* make fnumber -> increment counter table (integer: freqbase is 1) */
   for( i = 0 ; i < 1024; i++ )
   {
-    /* OPLL (YM2413) phase increment counter = 18bit */
-    ym2413.fn_tab[i] = (UINT32)( (double)i * 64 * freqbase * (1<<(FREQ_SH-10)) ); /* -10 because chip works with 10.10 fixed point, while we use 16.16 */
+    /* OPLL (YM2413) phase increment counter = 18bit; -10 because the chip
+       works in 10.10 fixed point while we use 16.16 */
+    ym2413.fn_tab[i] = (UINT32)i * 64 * (1 << (FREQ_SH-10));
   }
 
-  /* Amplitude modulation: 27 output levels (triangle waveform); 1 level takes one of: 192, 256 or 448 samples */
-  /* One entry from LFO_AM_TABLE lasts for 64 samples */
-  ym2413.lfo_am_inc = (1.0 / 64.0 ) * (1<<LFO_SH) * freqbase;
+  /* Amplitude modulation: one LFO_AM_TABLE entry lasts 64 samples (freqbase 1) */
+  ym2413.lfo_am_inc = (1U << LFO_SH) / 64;
 
-  /* Vibrato: 8 output levels (triangle waveform); 1 level takes 1024 samples */
-  ym2413.lfo_pm_inc = (1.0 / 1024.0) * (1<<LFO_SH) * freqbase;
+  /* Vibrato: one level lasts 1024 samples */
+  ym2413.lfo_pm_inc = (1U << LFO_SH) / 1024;
 
   /* Noise generator: a step takes 1 sample */
-  ym2413.noise_f = (1.0 / 1.0) * (1<<FREQ_SH) * freqbase;
+  ym2413.noise_f = (1U << FREQ_SH); /* freqbase 1 */
 
-  ym2413.eg_timer_add  = (1<<EG_SH) * freqbase;
+  ym2413.eg_timer_add  = (1U << EG_SH); /* freqbase 1 */
   ym2413.eg_timer_overflow = ( 1 ) * (1<<EG_SH);
 }
 
