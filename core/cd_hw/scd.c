@@ -1773,7 +1773,15 @@ void scd_init(void)
   gfx_init();
 
   /* Initialize CD hardware master clock count per scanline */
-  scd.cycles_per_line = (uint32) (MCYCLES_PER_LINE * ((float)SCD_CLOCK / (float)system_clock));
+  /* Integer master-clock count per scanline. The 64-bit product avoids
+     overflow (MCYCLES_PER_LINE * SCD_CLOCK exceeds 32 bits); the result is
+     bit-identical to the former float form for both the NTSC and PAL master
+     clocks (the only two values system_clock can take). */
+#if defined(_MSC_VER)
+  scd.cycles_per_line = (uint32) (((unsigned __int64)MCYCLES_PER_LINE * SCD_CLOCK) / system_clock);
+#else
+  scd.cycles_per_line = (uint32) (((unsigned long long)MCYCLES_PER_LINE * SCD_CLOCK) / system_clock);
+#endif
 
   /* Clear RAM */
   if (!reset_do_not_clear_buffers)
