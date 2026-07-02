@@ -157,6 +157,20 @@ int state_load(unsigned char *state)
     load_param(&m68k.cycles, sizeof(m68k.cycles));
     load_param(&m68k.int_level, sizeof(m68k.int_level));
     load_param(&m68k.stopped, sizeof(m68k.stopped));
+
+    /* 68k bus refresh cycle counter (savestate format 1.7.7 and later).
+       It is genuine timing state (advanced by long instructions, rebased
+       every frame) and must be restored exactly for deterministic replay
+       and netplay resync. Older savestates predate the field, so fall back
+       to an approximation derived from the restored cycle count. */
+    if ((((version[11] - '0') * 100) + ((version[13] - '0') * 10) + (version[15] - '0')) >= 177)
+    {
+      load_param(&m68k.refresh_cycles, sizeof(m68k.refresh_cycles));
+    }
+    else
+    {
+      m68k.refresh_cycles = (m68k.cycles / (128*7)) * (128*7);
+    }
   }
 
   /* Z80 */ 
@@ -256,6 +270,9 @@ int state_save(unsigned char *state)
     save_param(&m68k.cycles, sizeof(m68k.cycles));
     save_param(&m68k.int_level, sizeof(m68k.int_level));
     save_param(&m68k.stopped, sizeof(m68k.stopped));
+
+    /* 68k bus refresh cycle counter (savestate format 1.7.7 and later) */
+    save_param(&m68k.refresh_cycles, sizeof(m68k.refresh_cycles));
   }
 
   /* Z80 */ 
