@@ -273,6 +273,12 @@ int cdd_context_load(uint8 *state, char *version)
   load_param(&cdd.fader, sizeof(cdd.fader));
   load_param(&cdd.status, sizeof(cdd.status));
 
+  /* reject invalid current track index */
+  if (index > cdd.toc.last)
+  {
+    return 0;
+  }
+
   /* update current sector */
   cdd.lba = lba;
 
