@@ -1129,7 +1129,7 @@ int cdd_load(char *filename, char *header)
 
         /* auto-detect PAUSE within audio files */
         ov_pcm_seek(&cdd.toc.tracks[cdd.toc.last].vf, 100 * 588);
-        ov_read(&cdd.toc.tracks[cdd.toc.last].vf, (char *)head, 32, 0);
+        ov_read(&cdd.toc.tracks[cdd.toc.last].vf, (char *)head, 4, 0);
         ov_pcm_seek(&cdd.toc.tracks[cdd.toc.last].vf, 0);
         if (*(int32 *)head == 0)
         {
